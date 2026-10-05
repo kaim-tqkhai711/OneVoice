@@ -1,0 +1,629 @@
+{
+ "version": "v0",
+ "pair": "vi>en",
+ "notes": "en forms are lowercase substrings matched in the lowercased output; strict=hard means a miss must be reported to the gate, soft = informational. Slots follow contracts.SlotCheck.",
+ "terms": [
+  {
+   "vi": "đau ngực",
+   "en": [
+    "chest pain",
+    "chest hurt",
+    "pain in your chest",
+    "pain in my chest",
+    "hurt in the chest",
+    "hurts in the chest"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "tức ngực",
+   "en": [
+    "chest tight",
+    "tight chest",
+    "tightness",
+    "pressure in"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "khó thở",
+   "en": [
+    "difficulty breathing",
+    "short of breath",
+    "shortness of breath",
+    "trouble breathing",
+    "hard to breathe",
+    "can't breathe",
+    "cannot breathe",
+    "breathing difficult"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "thở được",
+   "en": [
+    "breathe",
+    "breathing"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "thở",
+   "en": [
+    "breath"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "chóng mặt",
+   "en": [
+    "dizz",
+    "light-headed",
+    "lightheaded"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "buồn nôn",
+   "en": [
+    "nause",
+    "feel sick",
+    "sick to"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "nôn",
+   "en": [
+    "vomit",
+    "throw up",
+    "threw up",
+    "puke",
+    "puked"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "sốt",
+   "en": [
+    "fever",
+    "temperature"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "ho",
+   "en": [
+    "cough"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "đau đầu",
+   "en": [
+    "headache",
+    "head hurts",
+    "head pain",
+    "pain in your head",
+    "pain in my head"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "đau bụng",
+   "en": [
+    "stomach",
+    "abdom",
+    "belly"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "đau lưng",
+   "en": [
+    "back pain",
+    "pain in your back",
+    "pain in my back"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "tê",
+   "en": [
+    "numb",
+    "tingl"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "chảy máu",
+   "en": [
+    "bleed",
+    "blood"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "co giật",
+   "en": [
+    "seizure",
+    "convuls"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "ngất",
+   "en": [
+    "faint",
+    "pass out",
+    "passed out",
+    "unconscious"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "mất ý thức",
+   "en": [
+    "unconscious",
+    "consciousness"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "phát ban",
+   "en": [
+    "rash"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "sưng",
+   "en": [
+    "swell",
+    "swollen"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "ngứa",
+   "en": [
+    "itch"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "đau",
+   "en": [
+    "pain",
+    "hurt",
+    "ache",
+    "sore"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "huyết áp",
+   "en": [
+    "blood pressure"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "tiểu đường",
+   "en": [
+    "diabet"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "đột quỵ",
+   "en": [
+    "stroke"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "tim",
+   "en": [
+    "heart",
+    "cardiac"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "mang thai",
+   "en": [
+    "pregnan"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "phẫu thuật",
+   "en": [
+    "surgery",
+    "operation",
+    "surgical"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "thuốc chống đông máu",
+   "en": [
+    "blood thinner",
+    "anticoagulant"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "khó nuốt",
+   "en": [
+    "swallow"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "tiêu chảy",
+   "en": [
+    "diarrh"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "táo bón",
+   "en": [
+    "constipat"
+   ],
+   "slot": "symptom",
+   "strict": "hard"
+  },
+  {
+   "vi": "dị ứng",
+   "en": [
+    "allerg"
+   ],
+   "slot": "allergy",
+   "strict": "hard"
+  },
+  {
+   "vi": "penicillin",
+   "en": [
+    "penicillin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "paracetamol",
+   "en": [
+    "paracetamol",
+    "acetaminophen",
+    "tylenol"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "ibuprofen",
+   "en": [
+    "ibuprofen",
+    "advil",
+    "motrin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "aspirin",
+   "en": [
+    "aspirin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "amoxicillin",
+   "en": [
+    "amoxicillin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "insulin",
+   "en": [
+    "insulin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "morphin",
+   "en": [
+    "morphine"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "heparin",
+   "en": [
+    "heparin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "warfarin",
+   "en": [
+    "warfarin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "metformin",
+   "en": [
+    "metformin"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "omeprazole",
+   "en": [
+    "omeprazole"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "diazepam",
+   "en": [
+    "diazepam"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "adrenaline",
+   "en": [
+    "adrenaline",
+    "epinephrine"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "kháng sinh",
+   "en": [
+    "antibiotic"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "thuốc giảm đau",
+   "en": [
+    "painkiller",
+    "pain medication",
+    "analgesic",
+    "pain relief"
+   ],
+   "slot": "medication",
+   "strict": "hard",
+   "note": "drug names must be copied through exactly"
+  },
+  {
+   "vi": "thuốc",
+   "en": [
+    "medic",
+    "drug",
+    "pill",
+    "tablet"
+   ],
+   "slot": "medication",
+   "strict": "soft"
+  },
+  {
+   "vi": "miligam",
+   "en": [
+    "milligram",
+    "mg"
+   ],
+   "slot": "dose_unit",
+   "strict": "hard"
+  },
+  {
+   "vi": "microgam",
+   "en": [
+    "microgram",
+    "mcg"
+   ],
+   "slot": "dose_unit",
+   "strict": "hard"
+  },
+  {
+   "vi": "mililít",
+   "en": [
+    "milliliter",
+    "millilitre",
+    "ml"
+   ],
+   "slot": "dose_unit",
+   "strict": "hard"
+  },
+  {
+   "vi": "gam",
+   "en": [
+    "gram"
+   ],
+   "slot": "dose_unit",
+   "strict": "hard"
+  },
+  {
+   "vi": "viên",
+   "en": [
+    "tablet",
+    "pill",
+    "capsule"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "ống",
+   "en": [
+    "vial",
+    "ampoule",
+    "ampule"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "giọt",
+   "en": [
+    "drop"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "giờ",
+   "en": [
+    "hour",
+    "o'clock"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "phút",
+   "en": [
+    "minute"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "ngày",
+   "en": [
+    "day",
+    "daily"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "lần",
+   "en": [
+    "time",
+    "times",
+    "twice",
+    "once"
+   ],
+   "slot": "dose_unit",
+   "strict": "soft"
+  },
+  {
+   "vi": "không",
+   "en": [
+    "not",
+    "no ",
+    "n't",
+    "never",
+    "cannot",
+    "without",
+    "none",
+    "nothing",
+    "any "
+   ],
+   "slot": "negation",
+   "strict": "hard",
+   "note": "'không' at sentence end before '?' is a question particle, not negation (handled in the safety check)"
+  },
+  {
+   "vi": "chưa",
+   "en": [
+    "not",
+    "n't",
+    "never",
+    "yet",
+    "haven't",
+    "hasn't",
+    "hadn't",
+    "no "
+   ],
+   "slot": "negation",
+   "strict": "hard"
+  },
+  {
+   "vi": "đừng",
+   "en": [
+    "don't",
+    "do not",
+    "never",
+    "stop",
+    "avoid"
+   ],
+   "slot": "negation",
+   "strict": "hard"
+  },
+  {
+   "vi": "chẳng",
+   "en": [
+    "not",
+    "n't",
+    "never",
+    "no "
+   ],
+   "slot": "negation",
+   "strict": "hard"
+  }
+ ]
+}

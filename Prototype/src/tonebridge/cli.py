@@ -42,15 +42,21 @@ def main() -> None:
     ap.add_argument("--wav", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--config", type=Path, default=Path("configs/pipeline.json"))
+    ap.add_argument("--real", action="store_true", help="real VAD/denoise/ASR/NMT/TTS (Branch B, safety, gate still stubs)")
     ap.add_argument("--log", type=Path, default=Path("results/turns.jsonl"))
     a = ap.parse_args()
     cfg = PipelineConfig.load(a.config) if a.config.exists() else PipelineConfig()
-    pipe = Pipeline(cfg, build_stub_stages(cfg, a.wav.with_suffix(".txt")))
+    if a.real:
+        from tonebridge.stages.factory import real_branch_a
+        stages = real_branch_a(cfg)
+    else:
+        stages = build_stub_stages(cfg, a.wav.with_suffix(".txt"))
+    pipe = Pipeline(cfg, stages)
     res = pipe.run(load_wav(a.wav, cfg.sample_rate), utt_id=a.wav.stem)
     row = json.loads(res.record.model_dump_json())
     JsonlLogger(a.log).write(row)
     if res.out_wav.size:
-        wavfile.write(a.out, cfg.tts_sample_rate, res.out_wav)  # [T_out] float32
+        wavfile.write(a.out, getattr(stages.tts, 'sample_rate', cfg.tts_sample_rate), res.out_wav)  # [T_out] float32
     print(json.dumps(row, ensure_ascii=False, indent=2))
 
 

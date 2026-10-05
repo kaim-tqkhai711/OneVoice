@@ -1,0 +1,10 @@
+{
+ "model": "piper en_US-ljspeech-medium via sherpa-onnx",
+ "threads": 2,
+ "n": 90,
+ "first_audio_ms_p50": 165.8,
+ "first_audio_ms_p95": 246.0,
+ "rtf_p50": 0.079,
+ "sample_rate": 22050,
+ "peak_rss_mb": 276
+}

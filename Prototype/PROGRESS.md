@@ -113,3 +113,27 @@ Used later for k calibration: same file, same script on the phone.
 - Export: optimum ONNX, max logit diff vs torch 2.8e-5. Quantized with **`arm64` dynamic INT8** config (`tools/bench_hop.py --quant arm64`): encoder 44.8 MB + merged decoder 77.9 MB = **122.7 MB** (fp32 485.9 MB). License Apache-2.0, repo sha c8d2853e.
 - Real stage `stages/nmt_ort.py`: ORT + sentencepiece + numpy only, own greedy KV-cache loop (no torch/transformers; matches the portability law). Lean bench (`tools/bench_nmt_ort.py`, 30 sentences x 3, 2 threads, x86 proxy): **p50 38.1 ms, p95 57.6 ms**, encoder p50 2.8 ms, decoder step p50 3.99 ms, 9.0 steps mean, **peak RSS 282 MB**. Composed estimate (encoder + n x step) = 38.7 ms vs measured 38.1 ms: the composition method used for the phone agrees with the whole-sentence number on laptop. The optimum/torch bench path gave p50 125 ms / RSS 1.78 GB: that was framework overhead, not the model.
 - Quality (INT8 arm64, greedy, `results/nmt_vi_en_int8_vs_fp32.json`): output identical to fp32 on 24/30; differences are mixed (INT8 corrupts "ibuprofen" -> "medrine"; fp32 has "wine" for "rượu bia"). Errors that matter clinically in both: "năm miligam" -> "five millimetres" (unit), "Huyết áp rất cao" -> "High blood pressure" (drops "very"), "Uống một viên" -> "Take one" (drops "tablet"), "ibuprofen" -> "medrine". These are the classes the glossary and Semantic Safety Check must catch.
+
+### Glossary, front-end arms, TTS, wiring (D2)
+- Glossary v0: `configs/glossary_vi_en.json` (64 terms: symptoms, allergy, 15 medications, dose units, 4 negation markers; `strict` hard/soft) + `src/tonebridge/glossary.py` (longest-first, span-consuming match; `check(src, tgt)` reports hit/miss per term). It detects, it does not rewrite. Tests confirm it flags the two D2 NMT errors (miligam -> millimetres, ibuprofen -> medrine). "viên" is soft because "two paracetamols" is acceptable English for "hai viên paracetamol". Note: sentence-final "không?" is a question particle; handled in the D3 safety check.
+- ADR-001 arms: `stages/denoise.py` (OFF / GTCRN via sherpa-onnx / `oa_mix`, y = beta*enh + (1-beta)*noisy), `evalkit/noise.py` (SNR mixer, whole-clip power). Tests: OA endpoints + midpoint, length-mismatch rejection, mixer hits 10/5/0 dB within 0.05 dB, **GTCRN output has lag 0 samples and equal length vs noisy input** (the alignment test). 25 tests pass.
+- Classical-NS arm: not started (optional, 1 h timebox, laptop only).
+- Piper EN (ljspeech-medium, fp32 60.6 MB, sherpa-onnx, 2 threads, 30 sentences x 3, x86 proxy): **full-synthesis time p50 165.8 ms, p95 246.0 ms** (sherpa generates the whole utterance before yielding, so this is first-audio latency), RTF 0.079, peak RSS 276 MB. Proposal target "<400 ms first-audio" (§4.2).
+- Silero VAD through sherpa-onnx (`stages/vad_silero.py`), real-stage factory (`stages/factory.py`), `cli --real`. Smoke run, 2.4 s Vietnamese clip -> English wav: ASR "những nơi đã khống chế được căn bệnh" -> "Where the disease is controlled." (source is a noun-phrase fragment from the FLEURS-style test wav; translation not rated), gate SPEAK, endpoint -> first audio 385 ms (first call, cold). **Branch B, safety check and gate are still stubs until D3**, so G-L's "0 stubs" is not met yet.
+
+
+### ADR-001 dev run (x86, `tools/run_adr001_grid.py`, `results/adr001_dev.json`, log `logs/adr001_dev.log`)
+200 FLEURS test utterances (seed 0), noise = DEMAND OHALLWAY/OOFFICE/PCAFETER/PSTATION round-robin (CC-BY-4.0, **not hospital recordings**), measured SNR 10.0 / 5.0 / -0.0 dB, shipped INT8 ASR files, 2 threads. beta = 0.5 fixed, **not tuned**.
+
+n_utts=200  noise=['OHALLWAY', 'OOFFICE', 'PCAFETER', 'PSTATION']  measured SNR={'10': 10.0, '5': 5.0, '0': -0.0}
+
+| SNR | OFF WER / CER | OA0.5 WER / CER | ON WER / CER | best arm by 2-pt rule |
+|---|---|---|---|---|
+| clean | 13.08 / 8.62 | 13.04 / 8.59 (Δ +0.05 [-0.12, +0.23]) | 14.49 / 10.00 (Δ -1.41 [-1.93, -0.92]) | OFF |
+| 10 | 13.29 / 8.82 | 13.24 / 8.86 (Δ +0.05 [-0.16, +0.24]) | 14.88 / 10.40 (Δ -1.59 [-2.18, -1.02]) | OFF |
+| 5 | 13.40 / 9.14 | 13.27 / 9.05 (Δ +0.12 [-0.08, +0.33]) | 16.08 / 11.33 (Δ -2.69 [-3.48, -1.96]) | OFF |
+| 0 | 15.44 / 11.14 | 15.63 / 11.24 (Δ -0.19 [-0.51, +0.12]) | 21.47 / 16.17 (Δ -6.03 [-7.37, -4.82]) | OFF |
+
+Δ = WER(OFF) − WER(arm) in points, positive = arm better; paired bootstrap over utterances, 95% CI.
+
+Reading, restricted to what was measured: under this noise set GTCRN-ON is worse than OFF in every cell (CI excludes 0 in all four) and the loss grows as SNR drops (+1.4 points clean, +6.0 points at 0 dB); OA(0.5) is indistinguishable from OFF (all CIs include 0). By the >= 2-point rule no arm beats OFF in any cell. Limits: the ASR shows little degradation under DEMAND noise (OFF 13.1 -> 15.4 % from clean to 0 dB), so this grid says little about harsher non-stationary hospital noise (alarms, overlapping speech); this is a dev run on a 200-utterance subset of a read-speech set, and the final ADR-001 table (D4) uses the in-domain recordings and the full protocol.

@@ -26,3 +26,11 @@ Status: **V** = verified from the primary source (HF model card/API or GitHub AP
 | Kaggle Hospital Ambient Noise (nafin59) | Noise eval set | unknown | U | Check dataset page before use |
 | MUSAN, DNS noise | Noise tune sets | CC / research | U | Check per subset |
 | espeak-ng | Phonemizer for Piper-style VITS | **GPL-3.0** | V (known) | **license chưa chốt**: how it is linked into the APK decides the consequence. Options: `docs/TTS_GPL_OPTIONS.md`. Deadline: before freeze |
+| google/fleurs (vi_vn) | Generic WER eval set | CC-BY-4.0 | V (HF dataset API, 2026-10-06) | Possible overlap with the 70k h pseudo-label training data cannot be excluded |
+| AILAB-VNUHCM/vivos | VI eval set (not used) | CC-BY-NC-SA-4.0 | V (HF API) | **REJECTED**: NC |
+| DEMAND noise (Zenodo 1227121) | Noise for the SNR grid (OHALLWAY, OOFFICE, PCAFETER, PSTATION used) | CC-BY-4.0 | V (Zenodo API) | Not hospital recordings; labelled "hospital-like at best". Hospital-specific noise (Kaggle) still **U** |
+| m42-health/hospital_ambient_noise | Candidate | no license on card | U | Speech with hospital ambience, not used |
+| GTCRN weights `gtcrn_simple.onnx` (sherpa-onnx release `speech-enhancement-models`) | Neural denoise arm | code MIT (GitHub API) | weights terms **U** | 535 KB; training data terms (DNS3) to check |
+| silero_vad.onnx (sherpa-onnx `asr-models` release) | VAD | MIT (upstream) | V upstream, packaging U | |
+| vits-piper-en_US-ljspeech-medium (sherpa-onnx `tts-models` release) | EN TTS | voice data public domain (MODEL_CARD, read) | V | 60.6 MB fp32; bundles espeak-ng-data (GPL-3.0), see docs/TTS_GPL_OPTIONS.md |
+| csukuangfj/sherpa-onnx-zipformer-vi-int8-2025-04-20 | ASR packaging of zzasdf checkpoint | Apache-2.0 (README points to zzasdf) | V | decoder INT8 taken from zzasdf/viet_iter3_pseudo_label (Apache-2.0) |

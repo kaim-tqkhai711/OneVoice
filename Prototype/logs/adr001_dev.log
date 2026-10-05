@@ -1,0 +1,13 @@
+noise envs: {'OHALLWAY': 300, 'OOFFICE': 300, 'PCAFETER': 300, 'PSTATION': 300}
+snr=clean arm=off    WER=0.1308 CER=0.0862  (290s)
+snr=clean arm=on     WER=0.1449 CER=0.1000  (378s)
+snr=clean arm=oa0.5  WER=0.1304 CER=0.0859  (468s)
+snr=   10 arm=off    WER=0.1329 CER=0.0882  (759s)
+snr=   10 arm=on     WER=0.1488 CER=0.1040  (852s)
+snr=   10 arm=oa0.5  WER=0.1324 CER=0.0886  (941s)
+snr=    5 arm=off    WER=0.1340 CER=0.0914  (1223s)
+snr=    5 arm=on     WER=0.1608 CER=0.1133  (1310s)
+snr=    5 arm=oa0.5  WER=0.1327 CER=0.0905  (1397s)
+snr=    0 arm=off    WER=0.1544 CER=0.1114  (1687s)
+snr=    0 arm=on     WER=0.2147 CER=0.1617  (1777s)
+snr=    0 arm=oa0.5  WER=0.1563 CER=0.1124  (1867s)

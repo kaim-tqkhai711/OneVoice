@@ -1,0 +1,12 @@
+numpy==2.2.6
+onnx==1.23.1
+onnxruntime==1.23.2
+optimum==2.1.0
+psutil==7.2.2
+pydantic==2.13.5
+pytest==9.1.1
+sacremoses==0.2.0
+scipy==1.15.3
+sentencepiece==0.2.2
+torch==2.14.1+cpu
+transformers==4.57.6

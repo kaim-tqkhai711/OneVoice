@@ -1,0 +1,90 @@
+{"rep": 0, "idx": 0, "src_tokens": 10, "out_tokens": 14, "ms": 300.5518999998458, "src": "Bạn có bị đau ngực không?", "text": "당신은 가슴에 고통을 느낀가요?"}
+{"rep": 0, "idx": 1, "src_tokens": 7, "out_tokens": 12, "ms": 411.89010000016424, "src": "Bạn đau ở đâu?", "text": "어디에 고통을 받았습니까?"}
+{"rep": 0, "idx": 2, "src_tokens": 10, "out_tokens": 18, "ms": 416.473400000541, "src": "Bạn bị đau này bao lâu rồi?", "text": "여러분은 얼마나 오래 이 고통을 겪었습니까?"}
+{"rep": 0, "idx": 3, "src_tokens": 12, "out_tokens": 13, "ms": 299.30029999923136, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "어떤 약에 알레르기가 있습니까?"}
+{"rep": 0, "idx": 4, "src_tokens": 12, "out_tokens": 15, "ms": 310.84439999904134, "src": "Tôi bị dị ứng với penicillin.", "text": "나는 페니실린에 알레르기가있다."}
+{"rep": 0, "idx": 5, "src_tokens": 14, "out_tokens": 17, "ms": 385.57220000075176, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "6 시간마다 두 개의 파라세타мол을 마십시오."}
+{"rep": 0, "idx": 6, "src_tokens": 11, "out_tokens": 15, "ms": 294.9234999996406, "src": "Không uống thuốc này cùng với rượu bia.", "text": "이 약을 맥주와 함께 복용하지 마십시오."}
+{"rep": 0, "idx": 7, "src_tokens": 11, "out_tokens": 13, "ms": 220.0682999991841, "src": "Cơn đau có đang nặng hơn không?", "text": "통증은 더 심해지고 있습니까?"}
+{"rep": 0, "idx": 8, "src_tokens": 11, "out_tokens": 13, "ms": 256.4222000000882, "src": "Bạn có thở bình thường được không?", "text": "정상적으로 호흡을 할 수 있습니까?"}
+{"rep": 0, "idx": 9, "src_tokens": 8, "out_tokens": 9, "ms": 198.0887999998231, "src": "Tôi không thở được.", "text": "난 숨을 수 없어."}
+{"rep": 0, "idx": 10, "src_tokens": 11, "out_tokens": 15, "ms": 355.952800000523, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "환자는 이날 아침부터 아무것도 먹지 않았습니다."}
+{"rep": 0, "idx": 11, "src_tokens": 12, "out_tokens": 13, "ms": 283.10749999945983, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "여러분의 이름과 생일을 알려주십시오."}
+{"rep": 0, "idx": 12, "src_tokens": 11, "out_tokens": 14, "ms": 268.7418000004982, "src": "Bạn có bị sốt hoặc ho không?", "text": "당신은 열이나 기침을 가지고 있습니까?"}
+{"rep": 0, "idx": 13, "src_tokens": 11, "out_tokens": 13, "ms": 151.26340000097116, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "나는 가두르고 가슴을 느꼈습니다."}
+{"rep": 0, "idx": 14, "src_tokens": 12, "out_tokens": 16, "ms": 191.16899999971793, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "과거에 수술을 해본 적이 있습니까?"}
+{"rep": 0, "idx": 15, "src_tokens": 12, "out_tokens": 15, "ms": 210.25379999991856, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "당신은 피를 피를 복용하고 있습니까?"}
+{"rep": 0, "idx": 16, "src_tokens": 15, "out_tokens": 17, "ms": 243.3854999999312, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "이브플로겐을 마시고 더 많은 물을 마십시오."}
+{"rep": 0, "idx": 17, "src_tokens": 8, "out_tokens": 10, "ms": 119.82870000065304, "src": "Huyết áp rất cao.", "text": "피 압력은 매우 높습니다."}
+{"rep": 0, "idx": 18, "src_tokens": 11, "out_tokens": 13, "ms": 195.95070000104897, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "고통을 시작하는 곳을 알려주십시오."}
+{"rep": 0, "idx": 19, "src_tokens": 11, "out_tokens": 15, "ms": 168.80549999950745, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "나는 10년 동안 당뇨병을 앓고 있었다."}
+{"rep": 0, "idx": 20, "src_tokens": 11, "out_tokens": 12, "ms": 161.58569999970496, "src": "Bạn có thấy tê ở cánh tay không?", "text": "팔에 거두기를 보았습니까?"}
+{"rep": 0, "idx": 21, "src_tokens": 13, "out_tokens": 15, "ms": 195.46400000035646, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "우리는 당신에게 5 밀리그램을 주입 할 것입니다."}
+{"rep": 0, "idx": 22, "src_tokens": 12, "out_tokens": 12, "ms": 159.4174000001658, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "누워서 평화롭게 하십시오."}
+{"rep": 0, "idx": 23, "src_tokens": 14, "out_tokens": 15, "ms": 204.01250000031723, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "통증은 등이나 허리에 퍼져나가요?"}
+{"rep": 0, "idx": 24, "src_tokens": 10, "out_tokens": 13, "ms": 167.68620000038936, "src": "Tôi đau bụng và buồn nôn.", "text": "나는 위에 아프고 부드럽습니다."}
+{"rep": 0, "idx": 25, "src_tokens": 12, "out_tokens": 16, "ms": 239.3646999989869, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "오늘은 몇 번이나 구토를 겪었습니까?"}
+{"rep": 0, "idx": 26, "src_tokens": 13, "out_tokens": 14, "ms": 243.92079999961425, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "그녀는 알레르기가있는 약은 없었습니다."}
+{"rep": 0, "idx": 27, "src_tokens": 15, "out_tokens": 18, "ms": 256.09929999882297, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "식사 후에 한 알약을 마시고, 하루에 두 번."}
+{"rep": 0, "idx": 28, "src_tokens": 13, "out_tokens": 21, "ms": 301.6767000008258, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "피가 흘러가 멈추지 않으면 의사에게 전화하십시오."}
+{"rep": 0, "idx": 29, "src_tokens": 10, "out_tokens": 9, "ms": 201.29180000003544, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "나는 지금 도움을 필요로."}
+{"rep": 1, "idx": 0, "src_tokens": 10, "out_tokens": 14, "ms": 340.82069999931264, "src": "Bạn có bị đau ngực không?", "text": "당신은 가슴에 고통을 느낀가요?"}
+{"rep": 1, "idx": 1, "src_tokens": 7, "out_tokens": 12, "ms": 252.19039999865345, "src": "Bạn đau ở đâu?", "text": "어디에 고통을 받았습니까?"}
+{"rep": 1, "idx": 2, "src_tokens": 10, "out_tokens": 18, "ms": 459.0597999995225, "src": "Bạn bị đau này bao lâu rồi?", "text": "여러분은 얼마나 오래 이 고통을 겪었습니까?"}
+{"rep": 1, "idx": 3, "src_tokens": 12, "out_tokens": 13, "ms": 338.6573000007047, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "어떤 약에 알레르기가 있습니까?"}
+{"rep": 1, "idx": 4, "src_tokens": 12, "out_tokens": 15, "ms": 207.41979999911564, "src": "Tôi bị dị ứng với penicillin.", "text": "나는 페니실린에 알레르기가있다."}
+{"rep": 1, "idx": 5, "src_tokens": 14, "out_tokens": 17, "ms": 238.2529999995313, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "6 시간마다 두 개의 파라세타мол을 마십시오."}
+{"rep": 1, "idx": 6, "src_tokens": 11, "out_tokens": 15, "ms": 204.61099999920407, "src": "Không uống thuốc này cùng với rượu bia.", "text": "이 약을 맥주와 함께 복용하지 마십시오."}
+{"rep": 1, "idx": 7, "src_tokens": 11, "out_tokens": 13, "ms": 199.62060000034398, "src": "Cơn đau có đang nặng hơn không?", "text": "통증은 더 심해지고 있습니까?"}
+{"rep": 1, "idx": 8, "src_tokens": 11, "out_tokens": 13, "ms": 196.1245999991661, "src": "Bạn có thở bình thường được không?", "text": "정상적으로 호흡을 할 수 있습니까?"}
+{"rep": 1, "idx": 9, "src_tokens": 8, "out_tokens": 9, "ms": 132.07750000037777, "src": "Tôi không thở được.", "text": "난 숨을 수 없어."}
+{"rep": 1, "idx": 10, "src_tokens": 11, "out_tokens": 15, "ms": 217.6884999989852, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "환자는 이날 아침부터 아무것도 먹지 않았습니다."}
+{"rep": 1, "idx": 11, "src_tokens": 12, "out_tokens": 13, "ms": 220.1148000003741, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "여러분의 이름과 생일을 알려주십시오."}
+{"rep": 1, "idx": 12, "src_tokens": 11, "out_tokens": 14, "ms": 195.42559999899822, "src": "Bạn có bị sốt hoặc ho không?", "text": "당신은 열이나 기침을 가지고 있습니까?"}
+{"rep": 1, "idx": 13, "src_tokens": 11, "out_tokens": 13, "ms": 163.04409999975178, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "나는 가두르고 가슴을 느꼈습니다."}
+{"rep": 1, "idx": 14, "src_tokens": 12, "out_tokens": 16, "ms": 205.53860000109125, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "과거에 수술을 해본 적이 있습니까?"}
+{"rep": 1, "idx": 15, "src_tokens": 12, "out_tokens": 15, "ms": 214.60470000056375, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "당신은 피를 피를 복용하고 있습니까?"}
+{"rep": 1, "idx": 16, "src_tokens": 15, "out_tokens": 17, "ms": 224.53499999937776, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "이브플로겐을 마시고 더 많은 물을 마십시오."}
+{"rep": 1, "idx": 17, "src_tokens": 8, "out_tokens": 10, "ms": 116.34499999854597, "src": "Huyết áp rất cao.", "text": "피 압력은 매우 높습니다."}
+{"rep": 1, "idx": 18, "src_tokens": 11, "out_tokens": 13, "ms": 224.84780000013416, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "고통을 시작하는 곳을 알려주십시오."}
+{"rep": 1, "idx": 19, "src_tokens": 11, "out_tokens": 15, "ms": 233.19780000019819, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "나는 10년 동안 당뇨병을 앓고 있었다."}
+{"rep": 1, "idx": 20, "src_tokens": 11, "out_tokens": 12, "ms": 186.36340000011842, "src": "Bạn có thấy tê ở cánh tay không?", "text": "팔에 거두기를 보았습니까?"}
+{"rep": 1, "idx": 21, "src_tokens": 13, "out_tokens": 15, "ms": 190.15229999968142, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "우리는 당신에게 5 밀리그램을 주입 할 것입니다."}
+{"rep": 1, "idx": 22, "src_tokens": 12, "out_tokens": 12, "ms": 191.75369999902614, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "누워서 평화롭게 하십시오."}
+{"rep": 1, "idx": 23, "src_tokens": 14, "out_tokens": 15, "ms": 200.66039999983332, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "통증은 등이나 허리에 퍼져나가요?"}
+{"rep": 1, "idx": 24, "src_tokens": 10, "out_tokens": 13, "ms": 183.47370000083174, "src": "Tôi đau bụng và buồn nôn.", "text": "나는 위에 아프고 부드럽습니다."}
+{"rep": 1, "idx": 25, "src_tokens": 12, "out_tokens": 16, "ms": 256.6291999992245, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "오늘은 몇 번이나 구토를 겪었습니까?"}
+{"rep": 1, "idx": 26, "src_tokens": 13, "out_tokens": 14, "ms": 253.16680000105407, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "그녀는 알레르기가있는 약은 없었습니다."}
+{"rep": 1, "idx": 27, "src_tokens": 15, "out_tokens": 18, "ms": 303.9064000004146, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "식사 후에 한 알약을 마시고, 하루에 두 번."}
+{"rep": 1, "idx": 28, "src_tokens": 13, "out_tokens": 21, "ms": 332.47279999886814, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "피가 흘러가 멈추지 않으면 의사에게 전화하십시오."}
+{"rep": 1, "idx": 29, "src_tokens": 10, "out_tokens": 9, "ms": 146.26849999876868, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "나는 지금 도움을 필요로."}
+{"rep": 2, "idx": 0, "src_tokens": 10, "out_tokens": 14, "ms": 190.17340000027616, "src": "Bạn có bị đau ngực không?", "text": "당신은 가슴에 고통을 느낀가요?"}
+{"rep": 2, "idx": 1, "src_tokens": 7, "out_tokens": 12, "ms": 181.8742999985261, "src": "Bạn đau ở đâu?", "text": "어디에 고통을 받았습니까?"}
+{"rep": 2, "idx": 2, "src_tokens": 10, "out_tokens": 18, "ms": 287.8995999999461, "src": "Bạn bị đau này bao lâu rồi?", "text": "여러분은 얼마나 오래 이 고통을 겪었습니까?"}
+{"rep": 2, "idx": 3, "src_tokens": 12, "out_tokens": 13, "ms": 248.74500000078115, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "어떤 약에 알레르기가 있습니까?"}
+{"rep": 2, "idx": 4, "src_tokens": 12, "out_tokens": 15, "ms": 212.99610000096436, "src": "Tôi bị dị ứng với penicillin.", "text": "나는 페니실린에 알레르기가있다."}
+{"rep": 2, "idx": 5, "src_tokens": 14, "out_tokens": 17, "ms": 277.624399999695, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "6 시간마다 두 개의 파라세타мол을 마십시오."}
+{"rep": 2, "idx": 6, "src_tokens": 11, "out_tokens": 15, "ms": 227.0955000003596, "src": "Không uống thuốc này cùng với rượu bia.", "text": "이 약을 맥주와 함께 복용하지 마십시오."}
+{"rep": 2, "idx": 7, "src_tokens": 11, "out_tokens": 13, "ms": 182.09290000049805, "src": "Cơn đau có đang nặng hơn không?", "text": "통증은 더 심해지고 있습니까?"}
+{"rep": 2, "idx": 8, "src_tokens": 11, "out_tokens": 13, "ms": 165.18470000119123, "src": "Bạn có thở bình thường được không?", "text": "정상적으로 호흡을 할 수 있습니까?"}
+{"rep": 2, "idx": 9, "src_tokens": 8, "out_tokens": 9, "ms": 118.67390000043088, "src": "Tôi không thở được.", "text": "난 숨을 수 없어."}
+{"rep": 2, "idx": 10, "src_tokens": 11, "out_tokens": 15, "ms": 181.6599000012502, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "환자는 이날 아침부터 아무것도 먹지 않았습니다."}
+{"rep": 2, "idx": 11, "src_tokens": 12, "out_tokens": 13, "ms": 173.18300000079034, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "여러분의 이름과 생일을 알려주십시오."}
+{"rep": 2, "idx": 12, "src_tokens": 11, "out_tokens": 14, "ms": 199.56180000008317, "src": "Bạn có bị sốt hoặc ho không?", "text": "당신은 열이나 기침을 가지고 있습니까?"}
+{"rep": 2, "idx": 13, "src_tokens": 11, "out_tokens": 13, "ms": 218.68950000134646, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "나는 가두르고 가슴을 느꼈습니다."}
+{"rep": 2, "idx": 14, "src_tokens": 12, "out_tokens": 16, "ms": 188.39529999968363, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "과거에 수술을 해본 적이 있습니까?"}
+{"rep": 2, "idx": 15, "src_tokens": 12, "out_tokens": 15, "ms": 343.00380000058794, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "당신은 피를 피를 복용하고 있습니까?"}
+{"rep": 2, "idx": 16, "src_tokens": 15, "out_tokens": 17, "ms": 425.4990999997972, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "이브플로겐을 마시고 더 많은 물을 마십시오."}
+{"rep": 2, "idx": 17, "src_tokens": 8, "out_tokens": 10, "ms": 259.8823000007542, "src": "Huyết áp rất cao.", "text": "피 압력은 매우 높습니다."}
+{"rep": 2, "idx": 18, "src_tokens": 11, "out_tokens": 13, "ms": 290.8949000011489, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "고통을 시작하는 곳을 알려주십시오."}
+{"rep": 2, "idx": 19, "src_tokens": 11, "out_tokens": 15, "ms": 271.5693000009196, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "나는 10년 동안 당뇨병을 앓고 있었다."}
+{"rep": 2, "idx": 20, "src_tokens": 11, "out_tokens": 12, "ms": 156.72380000069097, "src": "Bạn có thấy tê ở cánh tay không?", "text": "팔에 거두기를 보았습니까?"}
+{"rep": 2, "idx": 21, "src_tokens": 13, "out_tokens": 15, "ms": 199.05929999913496, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "우리는 당신에게 5 밀리그램을 주입 할 것입니다."}
+{"rep": 2, "idx": 22, "src_tokens": 12, "out_tokens": 12, "ms": 193.0606000005355, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "누워서 평화롭게 하십시오."}
+{"rep": 2, "idx": 23, "src_tokens": 14, "out_tokens": 15, "ms": 242.51150000054622, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "통증은 등이나 허리에 퍼져나가요?"}
+{"rep": 2, "idx": 24, "src_tokens": 10, "out_tokens": 13, "ms": 209.4811999995727, "src": "Tôi đau bụng và buồn nôn.", "text": "나는 위에 아프고 부드럽습니다."}
+{"rep": 2, "idx": 25, "src_tokens": 12, "out_tokens": 16, "ms": 282.89800000129617, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "오늘은 몇 번이나 구토를 겪었습니까?"}
+{"rep": 2, "idx": 26, "src_tokens": 13, "out_tokens": 14, "ms": 237.95539999991888, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "그녀는 알레르기가있는 약은 없었습니다."}
+{"rep": 2, "idx": 27, "src_tokens": 15, "out_tokens": 18, "ms": 356.8459999987681, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "식사 후에 한 알약을 마시고, 하루에 두 번."}
+{"rep": 2, "idx": 28, "src_tokens": 13, "out_tokens": 21, "ms": 319.9807000000874, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "피가 흘러가 멈추지 않으면 의사에게 전화하십시오."}
+{"rep": 2, "idx": 29, "src_tokens": 10, "out_tokens": 9, "ms": 141.6984000006778, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "나는 지금 도움을 필요로."}

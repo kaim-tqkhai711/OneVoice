@@ -1,0 +1,36 @@
+{
+  "seed": 1234,
+  "sample_rate": 16000,
+  "tts_sample_rate": 22050,
+  "direction": "vi-en",
+  "denoise_mode": "off",
+  "oa_beta": 0.5,
+  "thresholds": {
+    "asr_confidence_min": 0.5,
+    "voicing_quality_min": 0.5,
+    "urgency_high": 0.7
+  },
+  "max_utterance_s": 15.0,
+  "models": {
+    "asr_vi": {
+      "name": "sherpa-onnx-zipformer-vi-int8-2025-04-20",
+      "version": "2025-04-20",
+      "license": "Apache-2.0"
+    },
+    "nmt_vi_en": {
+      "name": "Helsinki-NLP/opus-mt-vi-en",
+      "version": "unpinned (pin hash D2)",
+      "license": "Apache-2.0"
+    },
+    "tts_en": {
+      "name": "piper en_US-ljspeech-medium",
+      "version": "unpinned (pin hash D2)",
+      "license": "Public domain (LJ Speech)"
+    },
+    "vad": {
+      "name": "silero-vad",
+      "version": "unpinned",
+      "license": "MIT"
+    }
+  }
+}

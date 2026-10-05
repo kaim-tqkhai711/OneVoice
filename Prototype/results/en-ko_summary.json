@@ -1,0 +1,43 @@
+{
+  "tag": "en-ko",
+  "hf_id": "Helsinki-NLP/opus-mt-tc-big-en-ko",
+  "n_runs": 90,
+  "n_sentences": 30,
+  "p50_ms": 170.71814999962953,
+  "p95_ms": 607.7462399995965,
+  "p50_ci95": [
+    151.48090000002412,
+    196.06410000051255
+  ],
+  "p95_ci95": [
+    287.0342000005621,
+    664.1085949995611
+  ],
+  "mean_out_tokens": 15.2,
+  "peak_rss_mb": 966.19921875,
+  "int8_size_mb": 265.4828300476074,
+  "fp32_size_mb": 1056.3167934417725,
+  "env": {
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "threads": 2,
+    "ort": "1.23.2",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 22
+  },
+  "config": {
+    "model_dir": "models\\nmt\\en-ko-fp32",
+    "tag": "en-ko",
+    "hf_id": "Helsinki-NLP/opus-mt-tc-big-en-ko",
+    "threads": 2,
+    "max_new_tokens": 48,
+    "num_beams": 1,
+    "warmup": 3,
+    "repeats": 3,
+    "seed": 1234,
+    "limit_ms": 500.0,
+    "sentences_file": null,
+    "tokenizer_kind": "auto",
+    "tgt_lang": null
+  },
+  "pass_limit": false
+}

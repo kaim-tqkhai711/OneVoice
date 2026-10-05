@@ -1,0 +1,45 @@
+{
+ "model": "sherpa-onnx-zipformer-vi-int8-2025-04-20",
+ "sherpa_onnx": "1.13.8",
+ "threads": 2,
+ "repeats": 10,
+ "host": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+ "files_mb": {
+  "encoder-epoch-12-avg-8.int8.onnx": 67.59,
+  "decoder-epoch-12-avg-8.onnx": 4.93,
+  "joiner-epoch-12-avg-8.int8.onnx": 0.99,
+  "tokens.txt": 0.02,
+  "bpe.model": 0.26
+ },
+ "model_mb_total": 73.5,
+ "load_s": 1.96,
+ "rss_mb_before": 35,
+ "rss_mb_after": 231,
+ "rtf_pooled": 0.0399,
+ "rows": [
+  {
+   "wav": "0.wav",
+   "audio_s": 3.74,
+   "text": "RỒI CŨNG HỖ TRỢ CHO LÂU LÂU CŨNG CHO GẠO CHO NÀY KIA",
+   "decode_ms_p50": 138.6,
+   "decode_ms_max": 225.4,
+   "rtf_p50": 0.0371
+  },
+  {
+   "wav": "1.wav",
+   "audio_s": 2.4,
+   "text": "NHỮNG NƠI ĐÃ KHỐNG CHẾ ĐƯỢC CĂN BỆNH",
+   "decode_ms_p50": 98.7,
+   "decode_ms_max": 113.7,
+   "rtf_p50": 0.0411
+  },
+  {
+   "wav": "2.wav",
+   "audio_s": 1.55,
+   "text": "ÂM LƯỢNG TIVI GIẢM",
+   "decode_ms_p50": 69.5,
+   "decode_ms_max": 85.4,
+   "rtf_p50": 0.0448
+  }
+ ]
+}

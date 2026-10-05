@@ -1,0 +1,43 @@
+{
+  "tag": "vi-ko-small100",
+  "hf_id": "alirezamsh/small100",
+  "n_runs": 90,
+  "n_sentences": 30,
+  "p50_ms": 218.18900000016583,
+  "p95_ms": 372.64540999985906,
+  "p50_ci95": [
+    202.65215000017633,
+    238.6600499994529
+  ],
+  "p95_ci95": [
+    335.87427499987825,
+    421.4375350001319
+  ],
+  "mean_out_tokens": 14.166666666666666,
+  "peak_rss_mb": 1595.5390625,
+  "int8_size_mb": 580.9073438644409,
+  "fp32_size_mb": 2282.540491104126,
+  "env": {
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "threads": 2,
+    "ort": "1.23.2",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 22
+  },
+  "config": {
+    "model_dir": "models\\nmt\\small100-fp32",
+    "tag": "vi-ko-small100",
+    "hf_id": "alirezamsh/small100",
+    "threads": 2,
+    "max_new_tokens": 48,
+    "num_beams": 1,
+    "warmup": 3,
+    "repeats": 3,
+    "seed": 1234,
+    "limit_ms": 500.0,
+    "sentences_file": "configs\\sentences_vi.txt",
+    "tokenizer_kind": "small100",
+    "tgt_lang": "ko"
+  },
+  "pass_limit": true
+}

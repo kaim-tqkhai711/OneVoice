@@ -1,0 +1,22 @@
+{
+ "set": "fleurs",
+ "decoder": "decoder-epoch-12-avg-8.int8.onnx",
+ "threads": 2,
+ "all": {
+  "utts": 857,
+  "words": 27200,
+  "WER": 0.146,
+  "CER": 0.0961
+ },
+ "by_tag": {
+  "fleurs": {
+   "utts": 857,
+   "words": 27200,
+   "WER": 0.146,
+   "CER": 0.0961
+  }
+ },
+ "rtf": 0.0328,
+ "audio_s": 10813.7,
+ "mean_conf": 0.858
+}

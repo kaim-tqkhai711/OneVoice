@@ -44,6 +44,7 @@ class HopBenchConfig(BaseModel):
     sentences_file: Path | None = None  # one source sentence per line; default = built-in EN list
     tokenizer_kind: str = "auto"  # "auto" | "small100"
     tgt_lang: str | None = None  # small100 only
+    quant: str = "avx2"  # "avx2" | "arm64": ORT dynamic-quantization config; ship artifacts use arm64
 
 
 # Short clinical sentences (EN). 30 items, ~6-16 words. Used only for the latency benchmark.
@@ -104,11 +105,11 @@ def load_tokenizer(cfg: HopBenchConfig):
 
 def quantize(cfg: HopBenchConfig) -> Path:
     """Dynamic INT8 quantization of encoder + merged decoder. Returns output dir."""
-    out = cfg.model_dir.parent / f"{cfg.tag}-int8"
+    out = cfg.model_dir.parent / (f"{cfg.tag}-int8" if cfg.quant == "avx2" else f"{cfg.tag}-int8-{cfg.quant}")
     if (out / "encoder_model_quantized.onnx").exists():
         return out
     out.mkdir(parents=True, exist_ok=True)
-    qcfg = AutoQuantizationConfig.avx2(is_static=False, per_channel=False)
+    qcfg = getattr(AutoQuantizationConfig, cfg.quant)(is_static=False, per_channel=False)
     for name in ["encoder_model.onnx", "decoder_model_merged.onnx"]:
         q = ORTQuantizer.from_pretrained(cfg.model_dir, file_name=name)
         q.quantize(save_dir=out, quantization_config=qcfg)
@@ -192,8 +193,9 @@ if __name__ == "__main__":
     ap.add_argument("--sentences-file", type=Path, default=None)
     ap.add_argument("--tokenizer-kind", default="auto")
     ap.add_argument("--tgt-lang", default=None)
+    ap.add_argument("--quant", default="avx2", choices=["avx2", "arm64"])
     a = ap.parse_args()
     c = HopBenchConfig(model_dir=a.model_dir, tag=a.tag, hf_id=a.hf_id, threads=a.threads,
-                       sentences_file=a.sentences_file, tokenizer_kind=a.tokenizer_kind, tgt_lang=a.tgt_lang)
+                       sentences_file=a.sentences_file, tokenizer_kind=a.tokenizer_kind, tgt_lang=a.tgt_lang, quant=a.quant)
     d = quantize(c)
     print(json.dumps(bench(c, d), ensure_ascii=False, indent=2))

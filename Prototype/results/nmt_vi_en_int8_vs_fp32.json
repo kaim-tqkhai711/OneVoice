@@ -1,0 +1,152 @@
+[
+ {
+  "src": "Bạn có bị đau ngực không?",
+  "int8": "Do you have chest pains?",
+  "fp32": "Do you have chest pains?"
+ },
+ {
+  "src": "Bạn đau ở đâu?",
+  "int8": "Where do you hurt?",
+  "fp32": "Where do you hurt?"
+ },
+ {
+  "src": "Bạn bị đau này bao lâu rồi?",
+  "int8": "How long have you been in this pain?",
+  "fp32": "How long have you been in this pain?"
+ },
+ {
+  "src": "Bạn có dị ứng với loại thuốc nào không?",
+  "int8": "Are you allergic to any drugs?",
+  "fp32": "Are you allergic to any drugs?"
+ },
+ {
+  "src": "Tôi bị dị ứng với penicillin.",
+  "int8": "I'm allergic to penicillin.",
+  "fp32": "I'm allergic to penicillin."
+ },
+ {
+  "src": "Uống hai viên paracetamol mỗi sáu giờ.",
+  "int8": "Take two paracetamols every six hours.",
+  "fp32": "Take two paracetamols every six hours."
+ },
+ {
+  "src": "Không uống thuốc này cùng với rượu bia.",
+  "int8": "Don't take this with the alcohol.",
+  "fp32": "Don't take this medicine with the wine."
+ },
+ {
+  "src": "Cơn đau có đang nặng hơn không?",
+  "int8": "Is the pain getting worse?",
+  "fp32": "Is the pain getting worse?"
+ },
+ {
+  "src": "Bạn có thở bình thường được không?",
+  "int8": "Can you breathe normally?",
+  "fp32": "Can you breathe normally?"
+ },
+ {
+  "src": "Tôi không thở được.",
+  "int8": "I can't breathe.",
+  "fp32": "I can't breathe."
+ },
+ {
+  "src": "Bệnh nhân chưa ăn gì từ sáng nay.",
+  "int8": "Patient hasn't eaten since this morning.",
+  "fp32": "Patient hasn't eaten since this morning."
+ },
+ {
+  "src": "Xin cho biết tên và ngày sinh của bạn.",
+  "int8": "Please state your name and date of birth.",
+  "fp32": "Please contact your name and date of birth."
+ },
+ {
+  "src": "Bạn có bị sốt hoặc ho không?",
+  "int8": "Do you have a fever or a cough?",
+  "fp32": "Do you have a fever or a cough?"
+ },
+ {
+  "src": "Tôi thấy chóng mặt và tức ngực.",
+  "int8": "I felt dizzy and hurt by my chest.",
+  "fp32": "I felt dizzy and hurt by my chest."
+ },
+ {
+  "src": "Trước đây bạn đã từng phẫu thuật chưa?",
+  "int8": "Have you had surgery before?",
+  "fp32": "Have you had surgery before?"
+ },
+ {
+  "src": "Bạn có đang dùng thuốc chống đông máu không?",
+  "int8": "Are you on blood thinners?",
+  "fp32": "Are you on blood thinners?"
+ },
+ {
+  "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.",
+  "int8": "Stop drinking medrine and drink more water.",
+  "fp32": "Stop drinking ibuprofen and drink more water."
+ },
+ {
+  "src": "Huyết áp rất cao.",
+  "int8": "High blood pressure.",
+  "fp32": "High blood pressure."
+ },
+ {
+  "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.",
+  "int8": "Show me where it started.",
+  "fp32": "Show me where it started."
+ },
+ {
+  "src": "Tôi bị tiểu đường mười năm rồi.",
+  "int8": "I've been diabetes for ten years.",
+  "fp32": "I've been diabetes for ten years."
+ },
+ {
+  "src": "Bạn có thấy tê ở cánh tay không?",
+  "int8": "Do you feel numb in your arm?",
+  "fp32": "Do you feel numb in your arm?"
+ },
+ {
+  "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.",
+  "int8": "We'll give you five millimetres.",
+  "fp32": "We'll give you five millimetres."
+ },
+ {
+  "src": "Xin hãy nằm xuống và giữ bình tĩnh.",
+  "int8": "Please lie down and remain calm.",
+  "fp32": "Please lie down and remain calm."
+ },
+ {
+  "src": "Cơn đau có lan ra lưng hoặc hàm không?",
+  "int8": "Does the pain spread to the back or to the jaw?",
+  "fp32": "Does the pain spread to the back or to the jaw?"
+ },
+ {
+  "src": "Tôi đau bụng và buồn nôn.",
+  "int8": "I have stomach pains and nausea.",
+  "fp32": "I'm sick of stomach pains and nausea."
+ },
+ {
+  "src": "Hôm nay bạn đã nôn mấy lần?",
+  "int8": "How many times have you puked today?",
+  "fp32": "How many times did you throw up today?"
+ },
+ {
+  "src": "Cô ấy không có dị ứng thuốc nào được biết.",
+  "int8": "She has no allergies to know about.",
+  "fp32": "She has no allergies to know about."
+ },
+ {
+  "src": "Uống một viên sau bữa ăn, hai lần một ngày.",
+  "int8": "Take one after dinner, twice a day.",
+  "fp32": "Take one after dinner, twice a day."
+ },
+ {
+  "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.",
+  "int8": "Call the doctor if the blood doesn't stop bleeding.",
+  "fp32": "Call a doctor if the blood won't stop flowing."
+ },
+ {
+  "src": "Tôi cần giúp đỡ ngay bây giờ.",
+  "int8": "I need help right now.",
+  "fp32": "I need help right now."
+ }
+]

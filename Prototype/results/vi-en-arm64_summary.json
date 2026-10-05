@@ -1,0 +1,44 @@
+{
+  "tag": "vi-en-arm64",
+  "hf_id": "Helsinki-NLP/opus-mt-vi-en",
+  "n_runs": 90,
+  "n_sentences": 30,
+  "p50_ms": 125.36694999926112,
+  "p95_ms": 187.5659900006212,
+  "p50_ci95": [
+    118.84725000072649,
+    138.4534499993606
+  ],
+  "p95_ci95": [
+    179.0780999999697,
+    223.43334999968644
+  ],
+  "mean_out_tokens": 10.0,
+  "peak_rss_mb": 1780.0390625,
+  "int8_size_mb": 122.66167068481445,
+  "fp32_size_mb": 485.8930540084839,
+  "env": {
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "threads": 2,
+    "ort": "1.23.2",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 22
+  },
+  "config": {
+    "model_dir": "models\\nmt\\vi-en-fp32",
+    "tag": "vi-en-arm64",
+    "hf_id": "Helsinki-NLP/opus-mt-vi-en",
+    "threads": 2,
+    "max_new_tokens": 48,
+    "num_beams": 1,
+    "warmup": 3,
+    "repeats": 3,
+    "seed": 1234,
+    "limit_ms": 500.0,
+    "sentences_file": "configs\\sentences_vi.txt",
+    "tokenizer_kind": "auto",
+    "tgt_lang": null,
+    "quant": "arm64"
+  },
+  "pass_limit": true
+}

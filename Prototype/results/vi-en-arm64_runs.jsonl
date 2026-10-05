@@ -1,0 +1,90 @@
+{"rep": 0, "idx": 0, "src_tokens": 8, "out_tokens": 8, "ms": 102.7763000001869, "src": "Bạn có bị đau ngực không?", "text": "Do you have chest pains?"}
+{"rep": 0, "idx": 1, "src_tokens": 6, "out_tokens": 7, "ms": 62.16900000072201, "src": "Bạn đau ở đâu?", "text": "Where do you hurt?"}
+{"rep": 0, "idx": 2, "src_tokens": 9, "out_tokens": 11, "ms": 79.09429999926942, "src": "Bạn bị đau này bao lâu rồi?", "text": "How long have you been in this pain?"}
+{"rep": 0, "idx": 3, "src_tokens": 11, "out_tokens": 9, "ms": 108.01609999907669, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "Are you allergic to any drugs?"}
+{"rep": 0, "idx": 4, "src_tokens": 8, "out_tokens": 9, "ms": 154.86430000055407, "src": "Tôi bị dị ứng với penicillin.", "text": "I'm allergic to penicillin."}
+{"rep": 0, "idx": 5, "src_tokens": 12, "out_tokens": 14, "ms": 243.29330000000482, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "Take two paracetamols every six hours."}
+{"rep": 0, "idx": 6, "src_tokens": 10, "out_tokens": 11, "ms": 137.5716000002285, "src": "Không uống thuốc này cùng với rượu bia.", "text": "Don't take this with the alcohol."}
+{"rep": 0, "idx": 7, "src_tokens": 9, "out_tokens": 9, "ms": 150.4523000003246, "src": "Cơn đau có đang nặng hơn không?", "text": "Is the pain getting worse?"}
+{"rep": 0, "idx": 8, "src_tokens": 9, "out_tokens": 7, "ms": 89.80209999936051, "src": "Bạn có thở bình thường được không?", "text": "Can you breathe normally?"}
+{"rep": 0, "idx": 9, "src_tokens": 6, "out_tokens": 8, "ms": 142.31459999973595, "src": "Tôi không thở được.", "text": "I can't breathe."}
+{"rep": 0, "idx": 10, "src_tokens": 10, "out_tokens": 11, "ms": 132.7240000009624, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "Patient hasn't eaten since this morning."}
+{"rep": 0, "idx": 11, "src_tokens": 11, "out_tokens": 11, "ms": 170.33080000146583, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "Please state your name and date of birth."}
+{"rep": 0, "idx": 12, "src_tokens": 9, "out_tokens": 11, "ms": 162.9188000006252, "src": "Bạn có bị sốt hoặc ho không?", "text": "Do you have a fever or a cough?"}
+{"rep": 0, "idx": 13, "src_tokens": 9, "out_tokens": 11, "ms": 130.44869999976072, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "I felt dizzy and hurt by my chest."}
+{"rep": 0, "idx": 14, "src_tokens": 10, "out_tokens": 8, "ms": 90.90519999881508, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "Have you had surgery before?"}
+{"rep": 0, "idx": 15, "src_tokens": 11, "out_tokens": 9, "ms": 96.85819999867817, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "Are you on blood thinners?"}
+{"rep": 0, "idx": 16, "src_tokens": 10, "out_tokens": 12, "ms": 163.28389999944193, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "Stop drinking medrine and drink more water."}
+{"rep": 0, "idx": 17, "src_tokens": 6, "out_tokens": 6, "ms": 54.1743999983737, "src": "Huyết áp rất cao.", "text": "High blood pressure."}
+{"rep": 0, "idx": 18, "src_tokens": 10, "out_tokens": 8, "ms": 75.11469999917608, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "Show me where it started."}
+{"rep": 0, "idx": 19, "src_tokens": 9, "out_tokens": 11, "ms": 169.73569999936444, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "I've been diabetes for ten years."}
+{"rep": 0, "idx": 20, "src_tokens": 10, "out_tokens": 10, "ms": 108.3939999989525, "src": "Bạn có thấy tê ở cánh tay không?", "text": "Do you feel numb in your arm?"}
+{"rep": 0, "idx": 21, "src_tokens": 11, "out_tokens": 13, "ms": 200.2359999987675, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "We'll give you five millimetres."}
+{"rep": 0, "idx": 22, "src_tokens": 10, "out_tokens": 9, "ms": 103.11390000060783, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "Please lie down and remain calm."}
+{"rep": 0, "idx": 23, "src_tokens": 11, "out_tokens": 14, "ms": 190.86170000082348, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "Does the pain spread to the back or to the jaw?"}
+{"rep": 0, "idx": 24, "src_tokens": 8, "out_tokens": 9, "ms": 118.23879999974451, "src": "Tôi đau bụng và buồn nôn.", "text": "I have stomach pains and nausea."}
+{"rep": 0, "idx": 25, "src_tokens": 9, "out_tokens": 11, "ms": 172.91580000164686, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "How many times have you puked today?"}
+{"rep": 0, "idx": 26, "src_tokens": 12, "out_tokens": 10, "ms": 139.3352999984927, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "She has no allergies to know about."}
+{"rep": 0, "idx": 27, "src_tokens": 13, "out_tokens": 11, "ms": 174.62420000083512, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "Take one after dinner, twice a day."}
+{"rep": 0, "idx": 28, "src_tokens": 11, "out_tokens": 14, "ms": 216.38509999866073, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "Call the doctor if the blood doesn't stop bleeding."}
+{"rep": 0, "idx": 29, "src_tokens": 9, "out_tokens": 8, "ms": 122.45070000062697, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "I need help right now."}
+{"rep": 1, "idx": 0, "src_tokens": 8, "out_tokens": 8, "ms": 107.67450000093959, "src": "Bạn có bị đau ngực không?", "text": "Do you have chest pains?"}
+{"rep": 1, "idx": 1, "src_tokens": 6, "out_tokens": 7, "ms": 71.34309999855759, "src": "Bạn đau ở đâu?", "text": "Where do you hurt?"}
+{"rep": 1, "idx": 2, "src_tokens": 9, "out_tokens": 11, "ms": 229.2001000005257, "src": "Bạn bị đau này bao lâu rồi?", "text": "How long have you been in this pain?"}
+{"rep": 1, "idx": 3, "src_tokens": 11, "out_tokens": 9, "ms": 137.1028000012302, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "Are you allergic to any drugs?"}
+{"rep": 1, "idx": 4, "src_tokens": 8, "out_tokens": 9, "ms": 153.95340000031865, "src": "Tôi bị dị ứng với penicillin.", "text": "I'm allergic to penicillin."}
+{"rep": 1, "idx": 5, "src_tokens": 12, "out_tokens": 14, "ms": 179.0780999999697, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "Take two paracetamols every six hours."}
+{"rep": 1, "idx": 6, "src_tokens": 10, "out_tokens": 11, "ms": 161.17930000109482, "src": "Không uống thuốc này cùng với rượu bia.", "text": "Don't take this with the alcohol."}
+{"rep": 1, "idx": 7, "src_tokens": 9, "out_tokens": 9, "ms": 147.37400000012713, "src": "Cơn đau có đang nặng hơn không?", "text": "Is the pain getting worse?"}
+{"rep": 1, "idx": 8, "src_tokens": 9, "out_tokens": 7, "ms": 75.73770000090008, "src": "Bạn có thở bình thường được không?", "text": "Can you breathe normally?"}
+{"rep": 1, "idx": 9, "src_tokens": 6, "out_tokens": 8, "ms": 111.55630000030214, "src": "Tôi không thở được.", "text": "I can't breathe."}
+{"rep": 1, "idx": 10, "src_tokens": 10, "out_tokens": 11, "ms": 134.33459999941988, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "Patient hasn't eaten since this morning."}
+{"rep": 1, "idx": 11, "src_tokens": 11, "out_tokens": 11, "ms": 160.68169999925885, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "Please state your name and date of birth."}
+{"rep": 1, "idx": 12, "src_tokens": 9, "out_tokens": 11, "ms": 146.3808999997127, "src": "Bạn có bị sốt hoặc ho không?", "text": "Do you have a fever or a cough?"}
+{"rep": 1, "idx": 13, "src_tokens": 9, "out_tokens": 11, "ms": 153.1427000008989, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "I felt dizzy and hurt by my chest."}
+{"rep": 1, "idx": 14, "src_tokens": 10, "out_tokens": 8, "ms": 118.67540000093868, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "Have you had surgery before?"}
+{"rep": 1, "idx": 15, "src_tokens": 11, "out_tokens": 9, "ms": 134.04149999951187, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "Are you on blood thinners?"}
+{"rep": 1, "idx": 16, "src_tokens": 10, "out_tokens": 12, "ms": 160.91980000055628, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "Stop drinking medrine and drink more water."}
+{"rep": 1, "idx": 17, "src_tokens": 6, "out_tokens": 6, "ms": 57.386299999052426, "src": "Huyết áp rất cao.", "text": "High blood pressure."}
+{"rep": 1, "idx": 18, "src_tokens": 10, "out_tokens": 8, "ms": 75.9381999996549, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "Show me where it started."}
+{"rep": 1, "idx": 19, "src_tokens": 9, "out_tokens": 11, "ms": 123.99529999856895, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "I've been diabetes for ten years."}
+{"rep": 1, "idx": 20, "src_tokens": 10, "out_tokens": 10, "ms": 163.23299999930896, "src": "Bạn có thấy tê ở cánh tay không?", "text": "Do you feel numb in your arm?"}
+{"rep": 1, "idx": 21, "src_tokens": 11, "out_tokens": 13, "ms": 155.2532000005158, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "We'll give you five millimetres."}
+{"rep": 1, "idx": 22, "src_tokens": 10, "out_tokens": 9, "ms": 92.46589999929711, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "Please lie down and remain calm."}
+{"rep": 1, "idx": 23, "src_tokens": 11, "out_tokens": 14, "ms": 183.53790000037407, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "Does the pain spread to the back or to the jaw?"}
+{"rep": 1, "idx": 24, "src_tokens": 8, "out_tokens": 9, "ms": 131.02009999965958, "src": "Tôi đau bụng và buồn nôn.", "text": "I have stomach pains and nausea."}
+{"rep": 1, "idx": 25, "src_tokens": 9, "out_tokens": 11, "ms": 113.9444000000367, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "How many times have you puked today?"}
+{"rep": 1, "idx": 26, "src_tokens": 12, "out_tokens": 10, "ms": 113.53500000041095, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "She has no allergies to know about."}
+{"rep": 1, "idx": 27, "src_tokens": 13, "out_tokens": 11, "ms": 126.6512000001967, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "Take one after dinner, twice a day."}
+{"rep": 1, "idx": 28, "src_tokens": 11, "out_tokens": 14, "ms": 181.64669999896432, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "Call the doctor if the blood doesn't stop bleeding."}
+{"rep": 1, "idx": 29, "src_tokens": 9, "out_tokens": 8, "ms": 92.13719999934256, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "I need help right now."}
+{"rep": 2, "idx": 0, "src_tokens": 8, "out_tokens": 8, "ms": 92.09499999997206, "src": "Bạn có bị đau ngực không?", "text": "Do you have chest pains?"}
+{"rep": 2, "idx": 1, "src_tokens": 6, "out_tokens": 7, "ms": 63.00550000014482, "src": "Bạn đau ở đâu?", "text": "Where do you hurt?"}
+{"rep": 2, "idx": 2, "src_tokens": 9, "out_tokens": 11, "ms": 160.8909999995376, "src": "Bạn bị đau này bao lâu rồi?", "text": "How long have you been in this pain?"}
+{"rep": 2, "idx": 3, "src_tokens": 11, "out_tokens": 9, "ms": 119.0191000005143, "src": "Bạn có dị ứng với loại thuốc nào không?", "text": "Are you allergic to any drugs?"}
+{"rep": 2, "idx": 4, "src_tokens": 8, "out_tokens": 9, "ms": 82.33260000088194, "src": "Tôi bị dị ứng với penicillin.", "text": "I'm allergic to penicillin."}
+{"rep": 2, "idx": 5, "src_tokens": 12, "out_tokens": 14, "ms": 173.94880000028934, "src": "Uống hai viên paracetamol mỗi sáu giờ.", "text": "Take two paracetamols every six hours."}
+{"rep": 2, "idx": 6, "src_tokens": 10, "out_tokens": 11, "ms": 173.39850000098522, "src": "Không uống thuốc này cùng với rượu bia.", "text": "Don't take this with the alcohol."}
+{"rep": 2, "idx": 7, "src_tokens": 9, "out_tokens": 9, "ms": 117.39000000125088, "src": "Cơn đau có đang nặng hơn không?", "text": "Is the pain getting worse?"}
+{"rep": 2, "idx": 8, "src_tokens": 9, "out_tokens": 7, "ms": 87.95409999947879, "src": "Bạn có thở bình thường được không?", "text": "Can you breathe normally?"}
+{"rep": 2, "idx": 9, "src_tokens": 6, "out_tokens": 8, "ms": 90.52759999940463, "src": "Tôi không thở được.", "text": "I can't breathe."}
+{"rep": 2, "idx": 10, "src_tokens": 10, "out_tokens": 11, "ms": 140.45959999930346, "src": "Bệnh nhân chưa ăn gì từ sáng nay.", "text": "Patient hasn't eaten since this morning."}
+{"rep": 2, "idx": 11, "src_tokens": 11, "out_tokens": 11, "ms": 121.74620000041614, "src": "Xin cho biết tên và ngày sinh của bạn.", "text": "Please state your name and date of birth."}
+{"rep": 2, "idx": 12, "src_tokens": 9, "out_tokens": 11, "ms": 124.24680000003718, "src": "Bạn có bị sốt hoặc ho không?", "text": "Do you have a fever or a cough?"}
+{"rep": 2, "idx": 13, "src_tokens": 9, "out_tokens": 11, "ms": 123.14839999999094, "src": "Tôi thấy chóng mặt và tức ngực.", "text": "I felt dizzy and hurt by my chest."}
+{"rep": 2, "idx": 14, "src_tokens": 10, "out_tokens": 8, "ms": 101.37360000044282, "src": "Trước đây bạn đã từng phẫu thuật chưa?", "text": "Have you had surgery before?"}
+{"rep": 2, "idx": 15, "src_tokens": 11, "out_tokens": 9, "ms": 119.00000000059663, "src": "Bạn có đang dùng thuốc chống đông máu không?", "text": "Are you on blood thinners?"}
+{"rep": 2, "idx": 16, "src_tokens": 10, "out_tokens": 12, "ms": 126.48709999848506, "src": "Ngừng uống ibuprofen và uống nhiều nước hơn.", "text": "Stop drinking medrine and drink more water."}
+{"rep": 2, "idx": 17, "src_tokens": 6, "out_tokens": 6, "ms": 58.59020000025339, "src": "Huyết áp rất cao.", "text": "High blood pressure."}
+{"rep": 2, "idx": 18, "src_tokens": 10, "out_tokens": 8, "ms": 111.67200000090816, "src": "Hãy chỉ cho tôi chỗ bắt đầu đau.", "text": "Show me where it started."}
+{"rep": 2, "idx": 19, "src_tokens": 9, "out_tokens": 11, "ms": 180.92090000027383, "src": "Tôi bị tiểu đường mười năm rồi.", "text": "I've been diabetes for ten years."}
+{"rep": 2, "idx": 20, "src_tokens": 10, "out_tokens": 10, "ms": 122.48160000126518, "src": "Bạn có thấy tê ở cánh tay không?", "text": "Do you feel numb in your arm?"}
+{"rep": 2, "idx": 21, "src_tokens": 11, "out_tokens": 13, "ms": 183.11639999956242, "src": "Chúng tôi sẽ tiêm cho bạn năm miligam.", "text": "We'll give you five millimetres."}
+{"rep": 2, "idx": 22, "src_tokens": 10, "out_tokens": 9, "ms": 122.62050000026647, "src": "Xin hãy nằm xuống và giữ bình tĩnh.", "text": "Please lie down and remain calm."}
+{"rep": 2, "idx": 23, "src_tokens": 11, "out_tokens": 14, "ms": 178.24780000046303, "src": "Cơn đau có lan ra lưng hoặc hàm không?", "text": "Does the pain spread to the back or to the jaw?"}
+{"rep": 2, "idx": 24, "src_tokens": 8, "out_tokens": 9, "ms": 88.40070000042033, "src": "Tôi đau bụng và buồn nôn.", "text": "I have stomach pains and nausea."}
+{"rep": 2, "idx": 25, "src_tokens": 9, "out_tokens": 11, "ms": 163.51770000073884, "src": "Hôm nay bạn đã nôn mấy lần?", "text": "How many times have you puked today?"}
+{"rep": 2, "idx": 26, "src_tokens": 12, "out_tokens": 10, "ms": 91.23379999982717, "src": "Cô ấy không có dị ứng thuốc nào được biết.", "text": "She has no allergies to know about."}
+{"rep": 2, "idx": 27, "src_tokens": 13, "out_tokens": 11, "ms": 117.76830000053451, "src": "Uống một viên sau bữa ăn, hai lần một ngày.", "text": "Take one after dinner, twice a day."}
+{"rep": 2, "idx": 28, "src_tokens": 11, "out_tokens": 14, "ms": 180.07639999996172, "src": "Hãy gọi bác sĩ nếu máu không ngừng chảy.", "text": "Call the doctor if the blood doesn't stop bleeding."}
+{"rep": 2, "idx": 29, "src_tokens": 9, "out_tokens": 8, "ms": 104.75690000021132, "src": "Tôi cần giúp đỡ ngay bây giờ.", "text": "I need help right now."}

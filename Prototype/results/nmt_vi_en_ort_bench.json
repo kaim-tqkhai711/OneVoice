@@ -1,0 +1,15 @@
+{
+ "model": "opus-mt-vi-en INT8 arm64-config, greedy",
+ "threads": 2,
+ "n_runs": 90,
+ "host": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+ "total_ms_p50": 38.1,
+ "total_ms_p95": 57.6,
+ "encoder_ms_p50": 2.8,
+ "decoder_step_ms_p50": 3.99,
+ "decoder_steps_mean": 9.0,
+ "composed_est_ms_p50": 38.7,
+ "peak_rss_mb": 282,
+ "rss_mb": 232,
+ "int8_mb": 122.7
+}

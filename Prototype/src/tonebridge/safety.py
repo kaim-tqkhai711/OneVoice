@@ -37,6 +37,15 @@ def _any(text: str, forms: list[str]) -> str | None:
     return None
 
 
+def _any_word(text: str, forms: list[str]) -> str | None:
+    """Whole-word match (optional plural s/es) for drug and allergen names: 'advilized' or 'paracetamino' must NOT count as 'advil' / 'paracetamol'.
+    Multi-word forms and the stems used for classes ('antibiotic') still work because only the right edge is anchored after an optional plural."""
+    for f in forms:
+        if re.search(r"(?<![a-z0-9])" + re.escape(f) + r"(?:s|es)?(?![a-z0-9])", text):
+            return f
+    return None
+
+
 def _word_re(term: str) -> re.Pattern:
     return re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)")
 
@@ -161,12 +170,12 @@ class SemanticSafetyChecker:
                 mo = rx.search(rest)
                 if mo:
                     rest = rest[:mo.start()] + " " * (mo.end() - mo.start()) + rest[mo.end():]
-                    hit = _any(t, m["en"])
+                    hit = _any_word(t, m["en"])
                     rec("medication", m["vi"], hit, hit is not None, f"medication_missing:{m['vi']}")
             if "dị ứng" in s:
                 for m in lex["allergens_other"]:
                     if _word_re(m["vi"]).search(s):
-                        hit = _any(t, m["en"])
+                        hit = _any_word(t, m["en"])
                         rec("medication", m["vi"], hit, hit is not None, f"allergen_missing:{m['vi']}")
 
         # dose: number immediately before a dose unit; unit must appear, number must match

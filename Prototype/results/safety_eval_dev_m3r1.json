@@ -1,0 +1,619 @@
+{
+ "seeded": {
+  "recall": [
+   1329,
+   1329
+  ],
+  "false_block_critical_on_correct_refs": [
+   0,
+   612
+  ],
+  "false_block_any_on_correct_refs": [
+   0,
+   612
+  ],
+  "recall_by_type": {
+   "negation_dropped": [
+    150,
+    150
+   ],
+   "drug_swapped": [
+    275,
+    275
+   ],
+   "drug_mangled": [
+    150,
+    150
+   ],
+   "dose_number_changed": [
+    150,
+    150
+   ],
+   "unit_changed": [
+    150,
+    150
+   ],
+   "unit_dropped": [
+    150,
+    150
+   ],
+   "allergy_lost": [
+    76,
+    76
+   ],
+   "allergen_swapped": [
+    76,
+    76
+   ],
+   "intensifier_dropped": [
+    76,
+    76
+   ],
+   "intensifier_weakened": [
+    65,
+    65
+   ],
+   "intensifier_strengthened": [
+    11,
+    11
+   ]
+  }
+ },
+ "real": {
+  "recall": [
+   26,
+   31
+  ],
+  "false_block_any": [
+   0,
+   581
+  ],
+  "false_block_critical": [
+   0,
+   581
+  ],
+  "by_group": {
+   "negation": {
+    "err": [
+     1,
+     1
+    ],
+    "ok": [
+     0,
+     159
+    ]
+   },
+   "medication": {
+    "err": [
+     3,
+     3
+    ],
+    "ok": [
+     0,
+     147
+    ]
+   },
+   "dose": {
+    "err": [
+     15,
+     15
+    ],
+    "ok": [
+     0,
+     135
+    ]
+   },
+   "allergy": {
+    "err": [
+     7,
+     12
+    ],
+    "ok": [
+     0,
+     64
+    ]
+   },
+   "severity": {
+    "err": [
+     0,
+     0
+    ],
+    "ok": [
+     0,
+     76
+    ]
+   }
+  },
+  "n_items": 612
+ },
+ "real_errors": [
+  {
+   "id": "s0032",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống thuốc giảm đau cùng với rượu bia.",
+   "hyp": "painkillers and alcohol.",
+   "ref": "Do not take painkillers with alcohol.",
+   "failed_slots": [
+    "negation"
+   ],
+   "flagged": true,
+   "reasons": [
+    "negation_missing"
+   ]
+  },
+  {
+   "id": "s0445",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê omeprazole cho bạn.",
+   "hyp": "The doctor has prescribed you a peerazile.",
+   "ref": "The doctor has prescribed omeprazole for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0453",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê omeprazole cho bạn.",
+   "hyp": "The doctor has prescribed you a peerazile.",
+   "ref": "The doctor has prescribed omeprazole for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0466",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê warfarin cho bạn.",
+   "hyp": "The doctor gave you a prescription.",
+   "ref": "The doctor has prescribed warfarin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0647",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm miligam heparin.",
+   "hyp": "5 mgm of heparin.",
+   "ref": "Inject 5 milligrams of heparin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0649",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một miligam omeprazole.",
+   "hyp": "1 milligrams of eprazole.",
+   "ref": "Inject 1 milligrams of omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0654",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm ba mililít ibuprofen.",
+   "hyp": "3 milliliters per shot.",
+   "ref": "Inject 3 milliliters of ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0666",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một mililít warfarin.",
+   "hyp": "1 milliliters per watt.",
+   "ref": "Inject 1 milliliters of warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0667",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm ba mililít ibuprofen.",
+   "hyp": "3 milliliters per shot.",
+   "ref": "Inject 3 milliliters of ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0669",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm mililít heparin.",
+   "hyp": "5 milliliters of the garland.",
+   "ref": "Inject 5 milliliters of heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0738",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai trăm năm mươi viên warfarin hai lần một ngày.",
+   "hyp": "Two hundred fifty pills a day.",
+   "ref": "Take 250 tablets of warfarin twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0741",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm viên warfarin hai lần một ngày.",
+   "hyp": "5 pills a day.",
+   "ref": "Take 5 tablets of warfarin twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0820",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống một viên insulin sau bữa ăn.",
+   "hyp": "Take an insulin after dinner.",
+   "ref": "Take 1 tablets of insulin after meals.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0833",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống ba viên ibuprofen sau bữa ăn.",
+   "hyp": "Three pills after dinner.",
+   "ref": "Take 3 tablets of ibuprofen after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0837",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm viên omeprazole sau bữa ăn.",
+   "hyp": "Take 5 pills after dinner.",
+   "ref": "Take 5 tablets of omeprazole after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0841",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm viên omeprazole sau bữa ăn.",
+   "hyp": "Take 5 pills after dinner.",
+   "ref": "Take 5 tablets of omeprazole after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0870",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là một miligam omeprazole.",
+   "hyp": "Maximum dose is a mg ofeprazole.",
+   "ref": "The maximum dose is 1 milligrams of omeprazole.",
+   "failed_slots": [
+    "dose_number",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0873",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai mươi lăm viên heparin.",
+   "hyp": "The maximum dose is twenty-five pills.",
+   "ref": "The maximum dose is 25 tablets of heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0886",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là năm trăm viên amoxicillin.",
+   "hyp": "500 amoxicillins at maximum.",
+   "ref": "The maximum dose is 500 tablets of amoxicillin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0965",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0966",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0968",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0971",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với trứng.",
+   "hyp": "The patient's allergic to eggs.",
+   "ref": "The patient is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0974",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với trứng.",
+   "hyp": "The patient's allergic to eggs.",
+   "ref": "The patient is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0990",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với latex.",
+   "hyp": "My kid's allergic to lasers.",
+   "ref": "My child is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1037",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với trứng.",
+   "hyp": "Tell me if you're allergic to eggs.",
+   "ref": "Tell us if you are allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1040",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với latex.",
+   "hyp": "Tell me if you're allergic to lasers.",
+   "ref": "Tell us if you are allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1047",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với latex.",
+   "hyp": "Tell me if you're allergic to lasers.",
+   "ref": "Tell us if you are allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1055",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với trứng.",
+   "hyp": "My family has an allergic reaction to eggs.",
+   "ref": "Someone in my family is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1061",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với trứng.",
+   "hyp": "My family has an allergic reaction to eggs.",
+   "ref": "Someone in my family is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1067",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với latex.",
+   "hyp": "My family has an allergic reaction to lasers.",
+   "ref": "Someone in my family is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  }
+ ]
+}

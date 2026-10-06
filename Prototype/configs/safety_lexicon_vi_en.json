@@ -1,5 +1,5 @@
 {
-  "version": "v1",
+  "version": "v1.1",
   "note": "Pure-data lexicon for src/tonebridge/safety.py (portable: the Kotlin port reads this file). Source side = Vietnamese ASR text (lowercase, usually no punctuation). Target forms are accepted English renderings; a form is matched on a word boundary on the left, and on the right too if it is <= 3 chars or starts with a digit.",
   "negation": {
     "src_cues": ["không", "chưa", "đừng", "chẳng", "chớ", "tránh", "cấm"],
@@ -9,8 +9,8 @@
   },
   "allergy": {"src": ["dị ứng"], "tgt_forms": ["allerg"]},
   "medications": [
-    {"vi": "penicillin", "en": ["penicillin"]}, {"vi": "paracetamol", "en": ["paracetamol", "acetaminophen", "tylenol"]},
-    {"vi": "ibuprofen", "en": ["ibuprofen", "advil", "motrin"]}, {"vi": "aspirin", "en": ["aspirin"]}, {"vi": "amoxicillin", "en": ["amoxicillin"]},
+    {"vi": "penicillin", "en": ["penicillin"]}, {"vi": "paracetamol", "en": ["paracetamol", "acetaminophen"]},
+    {"vi": "ibuprofen", "en": ["ibuprofen"]}, {"vi": "aspirin", "en": ["aspirin"]}, {"vi": "amoxicillin", "en": ["amoxicillin"]},
     {"vi": "insulin", "en": ["insulin"]}, {"vi": "morphin", "en": ["morphine"]}, {"vi": "morphine", "en": ["morphine"]}, {"vi": "heparin", "en": ["heparin"]},
     {"vi": "warfarin", "en": ["warfarin"]}, {"vi": "metformin", "en": ["metformin"]}, {"vi": "omeprazole", "en": ["omeprazole"]},
     {"vi": "diazepam", "en": ["diazepam"]}, {"vi": "adrenaline", "en": ["adrenaline", "epinephrine"]},

@@ -1,0 +1,4223 @@
+{
+ "seeded": {
+  "recall": [
+   1329,
+   1329
+  ],
+  "false_block_critical_on_correct_refs": [
+   0,
+   612
+  ],
+  "false_block_any_on_correct_refs": [
+   0,
+   612
+  ],
+  "recall_by_type": {
+   "negation_dropped": [
+    150,
+    150
+   ],
+   "drug_swapped": [
+    275,
+    275
+   ],
+   "drug_mangled": [
+    150,
+    150
+   ],
+   "dose_number_changed": [
+    150,
+    150
+   ],
+   "unit_changed": [
+    150,
+    150
+   ],
+   "unit_dropped": [
+    150,
+    150
+   ],
+   "allergy_lost": [
+    76,
+    76
+   ],
+   "allergen_swapped": [
+    76,
+    76
+   ],
+   "intensifier_dropped": [
+    76,
+    76
+   ],
+   "intensifier_weakened": [
+    65,
+    65
+   ],
+   "intensifier_strengthened": [
+    11,
+    11
+   ]
+  }
+ },
+ "real": {
+  "recall": [
+   248,
+   254
+  ],
+  "false_block_any": [
+   0,
+   358
+  ],
+  "false_block_critical": [
+   0,
+   358
+  ],
+  "by_group": {
+   "negation": {
+    "err": [
+     39,
+     39
+    ],
+    "ok": [
+     0,
+     121
+    ]
+   },
+   "medication": {
+    "err": [
+     63,
+     63
+    ],
+    "ok": [
+     0,
+     87
+    ]
+   },
+   "dose": {
+    "err": [
+     89,
+     90
+    ],
+    "ok": [
+     0,
+     60
+    ]
+   },
+   "allergy": {
+    "err": [
+     25,
+     30
+    ],
+    "ok": [
+     0,
+     46
+    ]
+   },
+   "severity": {
+    "err": [
+     32,
+     32
+    ],
+    "ok": [
+     0,
+     44
+    ]
+   }
+  },
+  "n_items": 612
+ },
+ "real_errors": [
+  {
+   "id": "s0001",
+   "group": "negation",
+   "template": "N1",
+   "split": "dev",
+   "vi": "Bạn không bị dị ứng với heparin.",
+   "hyp": "You're not allergic to the right one.",
+   "ref": "You are not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0002",
+   "group": "negation",
+   "template": "N1",
+   "split": "dev",
+   "vi": "Bạn không bị dị ứng với ibuprofen.",
+   "hyp": "You're not allergic to Sedgwick.",
+   "ref": "You are not allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0009",
+   "group": "negation",
+   "template": "N1",
+   "split": "dev",
+   "vi": "Bạn không bị dị ứng với heparin.",
+   "hyp": "You're not allergic to the right one.",
+   "ref": "You are not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0018",
+   "group": "negation",
+   "template": "N1",
+   "split": "dev",
+   "vi": "Bạn không bị dị ứng với heparin.",
+   "hyp": "You're not allergic to the right one.",
+   "ref": "You are not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0022",
+   "group": "negation",
+   "template": "N1",
+   "split": "dev",
+   "vi": "Bạn không bị dị ứng với heparin.",
+   "hyp": "You're not allergic to the right one.",
+   "ref": "You are not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0025",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống metformin cùng với rượu bia.",
+   "hyp": "No metreformin with the beer.",
+   "ref": "Do not take metformin with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin"
+   ]
+  },
+  {
+   "id": "s0030",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống omeprazole cùng với rượu bia.",
+   "hyp": "No peprazole and no alcohol.",
+   "ref": "Do not take omeprazole with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0032",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống thuốc giảm đau cùng với rượu bia.",
+   "hyp": "No pain meds and no alcohol.",
+   "ref": "Do not take painkillers with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0034",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống ibuprofen cùng với rượu bia.",
+   "hyp": "No more medevacs and no more alcohol.",
+   "ref": "Do not take ibuprofen with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0041",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống warfarin cùng với rượu bia.",
+   "hyp": "No more Talus and no more alcohol.",
+   "ref": "Do not take warfarin with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0046",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống ibuprofen cùng với rượu bia.",
+   "hyp": "No more medevacs and no more alcohol.",
+   "ref": "Do not take ibuprofen with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0047",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống ibuprofen cùng với rượu bia.",
+   "hyp": "No more medevacs and no more alcohol.",
+   "ref": "Do not take ibuprofen with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0049",
+   "group": "negation",
+   "template": "N2",
+   "split": "dev",
+   "vi": "Không uống omeprazole cùng với rượu bia.",
+   "hyp": "No peprazole and no alcohol.",
+   "ref": "Do not take omeprazole with alcohol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0151",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với thuốc giảm đau.",
+   "hyp": "She's not allergic to pain meds.",
+   "ref": "She is not allergic to painkillers.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0152",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với ibuprofen.",
+   "hyp": "She's not allergic to Sedgwick.",
+   "ref": "She is not allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0155",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với thuốc giảm đau.",
+   "hyp": "She's not allergic to pain meds.",
+   "ref": "She is not allergic to painkillers.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0158",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với thuốc giảm đau.",
+   "hyp": "She's not allergic to pain meds.",
+   "ref": "She is not allergic to painkillers.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0161",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với warfarin.",
+   "hyp": "She's not allergic to Arborlon.",
+   "ref": "She is not allergic to warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0163",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với omeprazole.",
+   "hyp": "She's not allergic to lyeprazole.",
+   "ref": "She is not allergic to omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0164",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với heparin.",
+   "hyp": "She's not allergic to the right one.",
+   "ref": "She is not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0171",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với heparin.",
+   "hyp": "She's not allergic to the right one.",
+   "ref": "She is not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0173",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với heparin.",
+   "hyp": "She's not allergic to the right one.",
+   "ref": "She is not allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0174",
+   "group": "negation",
+   "template": "N7",
+   "split": "dev",
+   "vi": "Cô ấy không dị ứng với thuốc giảm đau.",
+   "hyp": "She's not allergic to pain meds.",
+   "ref": "She is not allergic to painkillers.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0175",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng omeprazole nếu bạn đang mang thai.",
+   "hyp": "No lyeprazole if you're pregnant.",
+   "ref": "Do not use omeprazole if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0179",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng omeprazole nếu bạn đang mang thai.",
+   "hyp": "No lyeprazole if you're pregnant.",
+   "ref": "Do not use omeprazole if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0181",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng warfarin nếu bạn đang mang thai.",
+   "hyp": "Don't use the T.B.I. if you're pregnant.",
+   "ref": "Do not use warfarin if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0183",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng warfarin nếu bạn đang mang thai.",
+   "hyp": "Don't use the T.B.I. if you're pregnant.",
+   "ref": "Do not use warfarin if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0184",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng thuốc giảm đau nếu bạn đang mang thai.",
+   "hyp": "No pain meds if you're pregnant.",
+   "ref": "Do not use painkillers if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0186",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng heparin nếu bạn đang mang thai.",
+   "hyp": "No more gargantua if you're pregnant.",
+   "ref": "Do not use heparin if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0189",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng thuốc giảm đau nếu bạn đang mang thai.",
+   "hyp": "No pain meds if you're pregnant.",
+   "ref": "Do not use painkillers if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0193",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng warfarin nếu bạn đang mang thai.",
+   "hyp": "Don't use the T.B.I. if you're pregnant.",
+   "ref": "Do not use warfarin if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0194",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng warfarin nếu bạn đang mang thai.",
+   "hyp": "Don't use the T.B.I. if you're pregnant.",
+   "ref": "Do not use warfarin if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0198",
+   "group": "negation",
+   "template": "N8",
+   "split": "dev",
+   "vi": "Không được dùng omeprazole nếu bạn đang mang thai.",
+   "hyp": "No lyeprazole if you're pregnant.",
+   "ref": "Do not use omeprazole if you are pregnant.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0250",
+   "group": "negation",
+   "template": "N11",
+   "split": "dev",
+   "vi": "Bạn không nên uống warfarin lúc đói.",
+   "hyp": "You shouldn't drink a Babbitt when you're hungry.",
+   "ref": "You should not take warfarin on an empty stomach.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0253",
+   "group": "negation",
+   "template": "N11",
+   "split": "dev",
+   "vi": "Bạn không nên uống omeprazole lúc đói.",
+   "hyp": "You shouldn't drink eprazole when you're hungry.",
+   "ref": "You should not take omeprazole on an empty stomach.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0261",
+   "group": "negation",
+   "template": "N11",
+   "split": "dev",
+   "vi": "Bạn không nên uống heparin lúc đói.",
+   "hyp": "You shouldn't drink the old-fashioned-drink-drink.",
+   "ref": "You should not take heparin on an empty stomach.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0271",
+   "group": "negation",
+   "template": "N11",
+   "split": "dev",
+   "vi": "Bạn không nên uống heparin lúc đói.",
+   "hyp": "You shouldn't drink the old-fashioned-drink-drink.",
+   "ref": "You should not take heparin on an empty stomach.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0315",
+   "group": "negation",
+   "template": "N14",
+   "split": "dev",
+   "vi": "Bạn có đang dùng thuốc giảm đau không?",
+   "hyp": "Are you on pain meds?",
+   "ref": "Are you taking painkillers?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0317",
+   "group": "negation",
+   "template": "N14",
+   "split": "dev",
+   "vi": "Bạn có đang dùng omeprazole không?",
+   "hyp": "Are you using escarazile?",
+   "ref": "Are you taking omeprazole?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0351",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng ibuprofen phải không?",
+   "hyp": "Are you using the LPD?",
+   "ref": "You are taking ibuprofen, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0354",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng ibuprofen phải không?",
+   "hyp": "Are you using the LPD?",
+   "ref": "You are taking ibuprofen, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0355",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng thuốc giảm đau phải không?",
+   "hyp": "Are you on pain meds?",
+   "ref": "You are taking painkillers, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0358",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng thuốc giảm đau phải không?",
+   "hyp": "Are you on pain meds?",
+   "ref": "You are taking painkillers, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0362",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng ibuprofen phải không?",
+   "hyp": "Are you using the LPD?",
+   "ref": "You are taking ibuprofen, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0368",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng heparin phải không?",
+   "hyp": "Are you using the right one?",
+   "ref": "You are taking heparin, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0369",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng heparin phải không?",
+   "hyp": "Are you using the right one?",
+   "ref": "You are taking heparin, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0370",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng ibuprofen phải không?",
+   "hyp": "Are you using the LPD?",
+   "ref": "You are taking ibuprofen, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0373",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng heparin phải không?",
+   "hyp": "Are you using the right one?",
+   "ref": "You are taking heparin, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0377",
+   "group": "medication",
+   "template": "M2",
+   "split": "dev",
+   "vi": "Bạn đang dùng diazepam phải không?",
+   "hyp": "Are you using dizezam?",
+   "ref": "You are taking diazepam, right?",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s0410",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng thuốc giảm đau và gọi bác sĩ.",
+   "hyp": "Stop taking pain meds and call a doctor.",
+   "ref": "Stop taking painkillers and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0413",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng heparin và gọi bác sĩ.",
+   "hyp": "Stop taking the harp and call a doctor.",
+   "ref": "Stop taking heparin and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0414",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng ibuprofen và gọi bác sĩ.",
+   "hyp": "Stop taking Escondido and call a doctor.",
+   "ref": "Stop taking ibuprofen and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0416",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng omeprazole và gọi bác sĩ.",
+   "hyp": "Stop taking the eprazole and call a doctor.",
+   "ref": "Stop taking omeprazole and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0420",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng omeprazole và gọi bác sĩ.",
+   "hyp": "Stop taking the eprazole and call a doctor.",
+   "ref": "Stop taking omeprazole and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0426",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng ibuprofen và gọi bác sĩ.",
+   "hyp": "Stop taking Escondido and call a doctor.",
+   "ref": "Stop taking ibuprofen and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0433",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng warfarin và gọi bác sĩ.",
+   "hyp": "Stop taking embezzling and call a doctor.",
+   "ref": "Stop taking warfarin and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0434",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng heparin và gọi bác sĩ.",
+   "hyp": "Stop taking the harp and call a doctor.",
+   "ref": "Stop taking heparin and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0436",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng thuốc giảm đau và gọi bác sĩ.",
+   "hyp": "Stop taking pain meds and call a doctor.",
+   "ref": "Stop taking painkillers and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0439",
+   "group": "medication",
+   "template": "M4",
+   "split": "dev",
+   "vi": "Ngừng dùng thuốc giảm đau và gọi bác sĩ.",
+   "hyp": "Stop taking pain meds and call a doctor.",
+   "ref": "Stop taking painkillers and call the doctor.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0442",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê amoxicillin cho bạn.",
+   "hyp": "The doctor gave you aoxicillin.",
+   "ref": "The doctor has prescribed amoxicillin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:amoxicillin"
+   ]
+  },
+  {
+   "id": "s0443",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê paracetamol cho bạn.",
+   "hyp": "The doctor gave you paracetamino.",
+   "ref": "The doctor has prescribed paracetamol for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0444",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê ibuprofen cho bạn.",
+   "hyp": "The doctor gave you the LPD.",
+   "ref": "The doctor has prescribed ibuprofen for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0445",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê omeprazole cho bạn.",
+   "hyp": "The doctor has prescribed you a peerazile.",
+   "ref": "The doctor has prescribed omeprazole for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0446",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê paracetamol cho bạn.",
+   "hyp": "The doctor gave you paracetamino.",
+   "ref": "The doctor has prescribed paracetamol for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0449",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê heparin cho bạn.",
+   "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one.",
+   "ref": "The doctor has prescribed heparin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0450",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê thuốc giảm đau cho bạn.",
+   "hyp": "The doctor has prescribed your pain meds.",
+   "ref": "The doctor has prescribed painkillers for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0452",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê paracetamol cho bạn.",
+   "hyp": "The doctor gave you paracetamino.",
+   "ref": "The doctor has prescribed paracetamol for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0453",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê omeprazole cho bạn.",
+   "hyp": "The doctor has prescribed you a peerazile.",
+   "ref": "The doctor has prescribed omeprazole for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0454",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê heparin cho bạn.",
+   "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one.",
+   "ref": "The doctor has prescribed heparin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0455",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê amoxicillin cho bạn.",
+   "hyp": "The doctor gave you aoxicillin.",
+   "ref": "The doctor has prescribed amoxicillin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:amoxicillin"
+   ]
+  },
+  {
+   "id": "s0456",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê thuốc giảm đau cho bạn.",
+   "hyp": "The doctor has prescribed your pain meds.",
+   "ref": "The doctor has prescribed painkillers for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0457",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê paracetamol cho bạn.",
+   "hyp": "The doctor gave you paracetamino.",
+   "ref": "The doctor has prescribed paracetamol for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0458",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê heparin cho bạn.",
+   "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one.",
+   "ref": "The doctor has prescribed heparin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0466",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê warfarin cho bạn.",
+   "hyp": "The doctor gave you a prescription.",
+   "ref": "The doctor has prescribed warfarin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0468",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê heparin cho bạn.",
+   "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one.",
+   "ref": "The doctor has prescribed heparin for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0469",
+   "group": "medication",
+   "template": "M5",
+   "split": "dev",
+   "vi": "Bác sĩ đã kê ibuprofen cho bạn.",
+   "hyp": "The doctor gave you the LPD.",
+   "ref": "The doctor has prescribed ibuprofen for you.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0472",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm warfarin cho bạn.",
+   "hyp": "We'll give you a shot of Talus.",
+   "ref": "We will give you warfarin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0474",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm omeprazole cho bạn.",
+   "hyp": "We'll give you a eprazole shot.",
+   "ref": "We will give you omeprazole by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0476",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm metformin cho bạn.",
+   "hyp": "We'll give you a metronin injection.",
+   "ref": "We will give you metformin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin"
+   ]
+  },
+  {
+   "id": "s0477",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm warfarin cho bạn.",
+   "hyp": "We'll give you a shot of Talus.",
+   "ref": "We will give you warfarin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0479",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm metformin cho bạn.",
+   "hyp": "We'll give you a metronin injection.",
+   "ref": "We will give you metformin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin"
+   ]
+  },
+  {
+   "id": "s0480",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm heparin cho bạn.",
+   "hyp": "We'll give you a shot of the right one.",
+   "ref": "We will give you heparin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0481",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm heparin cho bạn.",
+   "hyp": "We'll give you a shot of the right one.",
+   "ref": "We will give you heparin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0486",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm thuốc giảm đau cho bạn.",
+   "hyp": "We'll give you an injection of the pain meds.",
+   "ref": "We will give you painkillers by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0487",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm thuốc giảm đau cho bạn.",
+   "hyp": "We'll give you an injection of the pain meds.",
+   "ref": "We will give you painkillers by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0491",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm ibuprofen cho bạn.",
+   "hyp": "We'll give you a Twilight shot.",
+   "ref": "We will give you ibuprofen by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0492",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm heparin cho bạn.",
+   "hyp": "We'll give you a shot of the right one.",
+   "ref": "We will give you heparin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0493",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm ibuprofen cho bạn.",
+   "hyp": "We'll give you a Twilight shot.",
+   "ref": "We will give you ibuprofen by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0497",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm warfarin cho bạn.",
+   "hyp": "We'll give you a shot of Talus.",
+   "ref": "We will give you warfarin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0498",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm heparin cho bạn.",
+   "hyp": "We'll give you a shot of the right one.",
+   "ref": "We will give you heparin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0499",
+   "group": "medication",
+   "template": "M6",
+   "split": "dev",
+   "vi": "Chúng tôi sẽ tiêm metformin cho bạn.",
+   "hyp": "We'll give you a metronin injection.",
+   "ref": "We will give you metformin by injection.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin"
+   ]
+  },
+  {
+   "id": "s0591",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là warfarin của bạn.",
+   "hyp": "This is your Arjan.",
+   "ref": "This is your warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0592",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là heparin của bạn.",
+   "hyp": "This is your beta.",
+   "ref": "This is your heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0595",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là heparin của bạn.",
+   "hyp": "This is your beta.",
+   "ref": "This is your heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0596",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là heparin của bạn.",
+   "hyp": "This is your beta.",
+   "ref": "This is your heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0597",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là heparin của bạn.",
+   "hyp": "This is your beta.",
+   "ref": "This is your heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0600",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là thuốc giảm đau của bạn.",
+   "hyp": "This is your pain meds.",
+   "ref": "This is your painkillers.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:thuốc giảm đau"
+   ]
+  },
+  {
+   "id": "s0602",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là warfarin của bạn.",
+   "hyp": "This is your Arjan.",
+   "ref": "This is your warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0609",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là omeprazole của bạn.",
+   "hyp": "This is your eprazole.",
+   "ref": "This is your omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0611",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là heparin của bạn.",
+   "hyp": "This is your beta.",
+   "ref": "This is your heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0616",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là omeprazole của bạn.",
+   "hyp": "This is your eprazole.",
+   "ref": "This is your omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0619",
+   "group": "medication",
+   "template": "M10",
+   "split": "dev",
+   "vi": "Đây là ibuprofen của bạn.",
+   "hyp": "This is your I.V.I.",
+   "ref": "This is your ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0645",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm ba mililít morphin.",
+   "hyp": "Intravenous morphine.",
+   "ref": "Inject 3 milliliters of morphine.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:mililít",
+    "dose_number_mismatch:3"
+   ]
+  },
+  {
+   "id": "s0647",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm miligam heparin.",
+   "hyp": "In five millimetres of the right.",
+   "ref": "Inject 5 milligrams of heparin.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin",
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0648",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một mililít diazepam.",
+   "hyp": "One milliliter injection of di Octa.",
+   "ref": "Inject 1 milliliters of diazepam.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s0649",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một miligam omeprazole.",
+   "hyp": "One milligram of eprazole.",
+   "ref": "Inject 1 milligrams of omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0651",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm mươi miligam warfarin.",
+   "hyp": "Fifty milligrams of amphora.",
+   "ref": "Inject 50 milligrams of warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0653",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm mươi miligam warfarin.",
+   "hyp": "Fifty milligrams of amphora.",
+   "ref": "Inject 50 milligrams of warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0654",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm ba mililít ibuprofen.",
+   "hyp": "Inject three milliliters.",
+   "ref": "Inject 3 milliliters of ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0656",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm hai mươi lăm mililít paracetamol.",
+   "hyp": "Intravenous twenty-five milliliters of paracetamino.",
+   "ref": "Inject 25 milliliters of paracetamol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0657",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm mililít omeprazole.",
+   "hyp": "Five milliliters of eprazole.",
+   "ref": "Inject 5 milliliters of omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0658",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm trăm miligam amoxicillin.",
+   "hyp": "Five hundred milligrams of amoxicilin.",
+   "ref": "Inject 500 milligrams of amoxicillin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:amoxicillin"
+   ]
+  },
+  {
+   "id": "s0659",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm hai mươi miligam ibuprofen.",
+   "hyp": "Take a shot of twenty milligrams of zinc.",
+   "ref": "Inject 20 milligrams of ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0660",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một mililít paracetamol.",
+   "hyp": "Inject a milliliter paracetamino.",
+   "ref": "Inject 1 milliliters of paracetamol.",
+   "failed_slots": [
+    "dose_number",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0662",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm hai mươi miligam paracetamol.",
+   "hyp": "Take a shot of twenty milligrams of paracetamino.",
+   "ref": "Inject 20 milligrams of paracetamol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0666",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm một mililít warfarin.",
+   "hyp": "One milliliter per shot.",
+   "ref": "Inject 1 milliliters of warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0667",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm ba mililít ibuprofen.",
+   "hyp": "Inject three milliliters.",
+   "ref": "Inject 3 milliliters of ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0669",
+   "group": "dose",
+   "template": "D2",
+   "split": "dev",
+   "vi": "Tiêm năm mililít heparin.",
+   "hyp": "In five milliliters of the garland.",
+   "ref": "Inject 5 milliliters of heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0670",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống năm viên.",
+   "hyp": "Five at a time.",
+   "ref": "Take 5 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0674",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống năm trăm viên.",
+   "hyp": "Five hundred each.",
+   "ref": "Take 500 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0677",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống mười viên.",
+   "hyp": "Take ten each time.",
+   "ref": "Take 10 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0679",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống năm viên.",
+   "hyp": "Five at a time.",
+   "ref": "Take 5 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0682",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống năm miligam.",
+   "hyp": "Five millimers at a time.",
+   "ref": "Take 5 milligrams each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0683",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống một miligam.",
+   "hyp": "Every time I take a millimorphic.",
+   "ref": "Take 1 milligrams each time.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0684",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống một mililít.",
+   "hyp": "Every time I drink a milliliter.",
+   "ref": "Take 1 milliliters each time.",
+   "failed_slots": [
+    "dose_number"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0685",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống hai mươi lăm viên.",
+   "hyp": "Every time I take twenty-five.",
+   "ref": "Take 25 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0687",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống mười viên.",
+   "hyp": "Take ten each time.",
+   "ref": "Take 10 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0690",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống năm miligam.",
+   "hyp": "Five millimers at a time.",
+   "ref": "Take 5 milligrams each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0691",
+   "group": "dose",
+   "template": "D3",
+   "split": "dev",
+   "vi": "Mỗi lần uống một trăm viên.",
+   "hyp": "One hundred each.",
+   "ref": "Take 100 tablets each time.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0697",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là một trăm viên mỗi ngày.",
+   "hyp": "The dose is one hundred per day.",
+   "ref": "The dose is 100 tablets per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0700",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là năm trăm viên mỗi ngày.",
+   "hyp": "Five hundred per day.",
+   "ref": "The dose is 500 tablets per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0701",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là một trăm viên mỗi ngày.",
+   "hyp": "The dose is one hundred per day.",
+   "ref": "The dose is 100 tablets per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0702",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là ba miligam mỗi ngày.",
+   "hyp": "The dose is three millimers a day.",
+   "ref": "The dose is 3 milligrams per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0706",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là hai miligam mỗi ngày.",
+   "hyp": "The dose is two millimers a day.",
+   "ref": "The dose is 2 milligrams per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0708",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là năm miligam mỗi ngày.",
+   "hyp": "The risk is five millimetres a day.",
+   "ref": "The dose is 5 milligrams per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0713",
+   "group": "dose",
+   "template": "D4",
+   "split": "dev",
+   "vi": "Liều là một trăm miligam mỗi ngày.",
+   "hyp": "The dose is a hundred millimetres a day.",
+   "ref": "The dose is 100 milligrams per day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0720",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai mươi miligam ibuprofen hai lần một ngày.",
+   "hyp": "Twenty milligrams of zinc per day.",
+   "ref": "Take 20 milligrams of ibuprofen twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0721",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai trăm năm mươi miligam paracetamol hai lần một ngày.",
+   "hyp": "Two hundred fifty milligrams of paracetamino twice a day.",
+   "ref": "Take 250 milligrams of paracetamol twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0723",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng một trăm viên omeprazole hai lần một ngày.",
+   "hyp": "Take a hundred tyeprazole twice a day.",
+   "ref": "Take 100 tablets of omeprazole twice a day.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0724",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng ba viên penicillin hai lần một ngày.",
+   "hyp": "Three penicillins a day.",
+   "ref": "Take 3 tablets of penicillin twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0725",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng ba viên amoxicillin hai lần một ngày.",
+   "hyp": "Three amoxicillins a day.",
+   "ref": "Take 3 tablets of amoxicillin twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0726",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai mươi lăm miligam paracetamol hai lần một ngày.",
+   "hyp": "Take two-and-a-half milligrams of paracetamino twice a day.",
+   "ref": "Take 25 milligrams of paracetamol twice a day.",
+   "failed_slots": [
+    "dose_number",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol",
+    "dose_number_mismatch:25"
+   ]
+  },
+  {
+   "id": "s0729",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng mười viên heparin hai lần một ngày.",
+   "hyp": "Take ten of the right to the right, two times a day.",
+   "ref": "Take 10 tablets of heparin twice a day.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0730",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng mười viên penicillin hai lần một ngày.",
+   "hyp": "Take ten penicillin twice a day.",
+   "ref": "Take 10 tablets of penicillin twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0732",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng mười viên diazepam hai lần một ngày.",
+   "hyp": "Take ten diazepams twice a day.",
+   "ref": "Take 10 tablets of diazepam twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0733",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai trăm năm mươi viên amoxicillin hai lần một ngày.",
+   "hyp": "Two hundred and fifty amoxicillins twice a day.",
+   "ref": "Take 250 tablets of amoxicillin twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0734",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai mươi viên omeprazole hai lần một ngày.",
+   "hyp": "Twenty lygrazole twice a day.",
+   "ref": "Take 20 tablets of omeprazole twice a day.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0735",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm mươi viên omeprazole hai lần một ngày.",
+   "hyp": "Fifty pills a day of the poprazole.",
+   "ref": "Take 50 tablets of omeprazole twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0736",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm trăm viên paracetamol hai lần một ngày.",
+   "hyp": "Five hundred paracetamols a day.",
+   "ref": "Take 500 tablets of paracetamol twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0737",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm viên paracetamol hai lần một ngày.",
+   "hyp": "Five paracetamols a day.",
+   "ref": "Take 5 tablets of paracetamol twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0738",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai trăm năm mươi viên warfarin hai lần một ngày.",
+   "hyp": "Two hundred fifty pills a day.",
+   "ref": "Take 250 tablets of warfarin twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0740",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm trăm miligam omeprazole hai lần một ngày.",
+   "hyp": "Take five hundred milligrams of eprazole twice a day.",
+   "ref": "Take 500 milligrams of omeprazole twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0741",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm viên warfarin hai lần một ngày.",
+   "hyp": "Take five Piotr twice a day.",
+   "ref": "Take 5 tablets of warfarin twice a day.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0742",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng một trăm viên heparin hai lần một ngày.",
+   "hyp": "Take a hundred of the rights of the right, a couple of times a day.",
+   "ref": "Take 100 tablets of heparin twice a day.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0743",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng năm mươi viên paracetamol hai lần một ngày.",
+   "hyp": "Fifty paracetamols twice a day.",
+   "ref": "Take 50 tablets of paracetamol twice a day.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0744",
+   "group": "dose",
+   "template": "D5",
+   "split": "dev",
+   "vi": "Dùng hai trăm năm mươi miligam warfarin hai lần một ngày.",
+   "hyp": "Two hundred fifty milligrams of zinc per day.",
+   "ref": "Take 250 milligrams of warfarin twice a day.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0820",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống một viên insulin sau bữa ăn.",
+   "hyp": "Take an insulin after dinner.",
+   "ref": "Take 1 tablets of insulin after meals.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0821",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm mươi viên penicillin sau bữa ăn.",
+   "hyp": "Take fifty penicillin after dinner.",
+   "ref": "Take 50 tablets of penicillin after meals.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0822",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống ba viên metformin sau bữa ăn.",
+   "hyp": "Three metreformins after dinner.",
+   "ref": "Take 3 tablets of metformin after meals.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0823",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống mười viên diazepam sau bữa ăn.",
+   "hyp": "Take ten diazepams after dinner.",
+   "ref": "Take 10 tablets of diazepam after meals.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0824",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai trăm năm mươi miligam omeprazole sau bữa ăn.",
+   "hyp": "Drink two hundred fifty milligrams of eprazole after dinner.",
+   "ref": "Take 250 milligrams of omeprazole after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0828",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai mươi lăm miligam diazepam sau bữa ăn.",
+   "hyp": "Drink twenty-five milligrams of dinar after dinner.",
+   "ref": "Take 25 milligrams of diazepam after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s0829",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai mươi lăm miligam heparin sau bữa ăn.",
+   "hyp": "Drink twenty-five milligrams of the right one, the next.",
+   "ref": "Take 25 milligrams of heparin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0830",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm mươi miligam omeprazole sau bữa ăn.",
+   "hyp": "Drink fifty milligrams of eprazole after dinner.",
+   "ref": "Take 50 milligrams of omeprazole after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0831",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai viên paracetamol sau bữa ăn.",
+   "hyp": "Take two paracetamols after dinner.",
+   "ref": "Take 2 tablets of paracetamol after meals.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0833",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống ba viên ibuprofen sau bữa ăn.",
+   "hyp": "Three more Piscetons after dinner.",
+   "ref": "Take 3 tablets of ibuprofen after meals.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0834",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai mươi lăm miligam ibuprofen sau bữa ăn.",
+   "hyp": "Drink twenty-five milligrams of zinc after dinner.",
+   "ref": "Take 25 milligrams of ibuprofen after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0836",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai mươi lăm miligam heparin sau bữa ăn.",
+   "hyp": "Drink twenty-five milligrams of the right one, the next.",
+   "ref": "Take 25 milligrams of heparin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0837",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm viên omeprazole sau bữa ăn.",
+   "hyp": "Take five of those eprazole after dinner.",
+   "ref": "Take 5 tablets of omeprazole after meals.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0839",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống hai mươi lăm viên penicillin sau bữa ăn.",
+   "hyp": "Take twenty-five penicillin after dinner.",
+   "ref": "Take 25 tablets of penicillin after meals.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0840",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm trăm viên paracetamol sau bữa ăn.",
+   "hyp": "Five hundred paracetaminos after dinner.",
+   "ref": "Take 500 tablets of paracetamol after meals.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0841",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm viên omeprazole sau bữa ăn.",
+   "hyp": "Take five of those eprazole after dinner.",
+   "ref": "Take 5 tablets of omeprazole after meals.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0842",
+   "group": "dose",
+   "template": "D9",
+   "split": "dev",
+   "vi": "Uống năm miligam penicillin sau bữa ăn.",
+   "hyp": "Drink five millimittrium penicillin after dinner.",
+   "ref": "Take 5 milligrams of penicillin after meals.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0870",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là một miligam omeprazole.",
+   "hyp": "Maximum dose is a millimetre of aphorazole.",
+   "ref": "The maximum dose is 1 milligrams of omeprazole.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0871",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là mười viên morphin.",
+   "hyp": "The maximum dose is ten morphine.",
+   "ref": "The maximum dose is 10 tablets of morphine.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0873",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai mươi lăm viên heparin.",
+   "hyp": "The maximum dose is twenty-five.",
+   "ref": "The maximum dose is 25 tablets of heparin.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0874",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai trăm năm mươi viên penicillin.",
+   "hyp": "The maximum dose is two hundred fifty penicillin.",
+   "ref": "The maximum dose is 250 tablets of penicillin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0875",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai trăm năm mươi viên penicillin.",
+   "hyp": "The maximum dose is two hundred fifty penicillin.",
+   "ref": "The maximum dose is 250 tablets of penicillin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0876",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là ba miligam adrenaline.",
+   "hyp": "Maximum dose of three millimers adrenaline.",
+   "ref": "The maximum dose is 3 milligrams of adrenaline.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0877",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai mươi lăm miligam paracetamol.",
+   "hyp": "The maximum dose is twenty-five milligrams of paracetamino.",
+   "ref": "The maximum dose is 25 milligrams of paracetamol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0879",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là năm mươi viên penicillin.",
+   "hyp": "Fifty penicillin at maximum.",
+   "ref": "The maximum dose is 50 tablets of penicillin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0881",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai mươi lăm viên omeprazole.",
+   "hyp": "The maximum dose is twenty-five of a caperazile.",
+   "ref": "The maximum dose is 25 tablets of omeprazole.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole",
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0882",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai mươi lăm viên morphin.",
+   "hyp": "The maximum dose is twenty-five morphine.",
+   "ref": "The maximum dose is 25 tablets of morphine.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0883",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là ba miligam paracetamol.",
+   "hyp": "The maximum dose is three millims of paracetamol.",
+   "ref": "The maximum dose is 3 milligrams of paracetamol.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0884",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai miligam ibuprofen.",
+   "hyp": "The maximum dose is two millimetres.",
+   "ref": "The maximum dose is 2 milligrams of ibuprofen.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen",
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0885",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là một trăm viên aspirin.",
+   "hyp": "The maximum dose is one hundred aspirins.",
+   "ref": "The maximum dose is 100 tablets of aspirin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0886",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là năm trăm viên amoxicillin.",
+   "hyp": "Five hundred amoxicillins max.",
+   "ref": "The maximum dose is 500 tablets of amoxicillin.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0888",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là năm mươi miligam paracetamol.",
+   "hyp": "The maximum dose is 50 milligrams of paracetamino.",
+   "ref": "The maximum dose is 50 milligrams of paracetamol.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol"
+   ]
+  },
+  {
+   "id": "s0889",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là một trăm miligam paracetamol.",
+   "hyp": "The maximum dose is one hundred millimetre paracetamino.",
+   "ref": "The maximum dose is 100 milligrams of paracetamol.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:paracetamol",
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0890",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là ba miligam adrenaline.",
+   "hyp": "Maximum dose of three millimers adrenaline.",
+   "ref": "The maximum dose is 3 milligrams of adrenaline.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0891",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là năm trăm miligam heparin.",
+   "hyp": "Five hundred milligrams of the maximum risk, the right is the full amount of it.",
+   "ref": "The maximum dose is 500 milligrams of heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0892",
+   "group": "dose",
+   "template": "D11",
+   "split": "dev",
+   "vi": "Liều tối đa là hai trăm năm mươi viên paracetamol.",
+   "hyp": "The maximum risk is two hundred fifty paracetamols.",
+   "ref": "The maximum dose is 250 tablets of paracetamol.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0958",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với ibuprofen.",
+   "hyp": "The patient's allergic to Sedgwick.",
+   "ref": "The patient is allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0959",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với omeprazole.",
+   "hyp": "The patient's allergic to eprazole.",
+   "ref": "The patient is allergic to omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0963",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với heparin.",
+   "hyp": "The patient's allergic to the gorilla.",
+   "ref": "The patient is allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0965",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0966",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0968",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với latex.",
+   "hyp": "The patient's allergic to lasers.",
+   "ref": "The patient is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0970",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với omeprazole.",
+   "hyp": "The patient's allergic to eprazole.",
+   "ref": "The patient is allergic to omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0971",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với trứng.",
+   "hyp": "The patient's allergic to eggs.",
+   "ref": "The patient is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0974",
+   "group": "allergy",
+   "template": "A3",
+   "split": "dev",
+   "vi": "Bệnh nhân dị ứng với trứng.",
+   "hyp": "The patient's allergic to eggs.",
+   "ref": "The patient is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0980",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với metformin.",
+   "hyp": "My son's allergic to metreformin.",
+   "ref": "My child is allergic to metformin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:metformin"
+   ]
+  },
+  {
+   "id": "s0982",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với ibuprofen.",
+   "hyp": "My kid's allergic to Sedgwick.",
+   "ref": "My child is allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0983",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với heparin.",
+   "hyp": "My son's allergic to the one with the one with the one.",
+   "ref": "My child is allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0988",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với heparin.",
+   "hyp": "My son's allergic to the one with the one with the one.",
+   "ref": "My child is allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0989",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với warfarin.",
+   "hyp": "My son's allergic to Arborlon.",
+   "ref": "My child is allergic to warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0990",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với latex.",
+   "hyp": "My kid's allergic to lasers.",
+   "ref": "My child is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0991",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với ibuprofen.",
+   "hyp": "My kid's allergic to Sedgwick.",
+   "ref": "My child is allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0995",
+   "group": "allergy",
+   "template": "A4",
+   "split": "dev",
+   "vi": "Con tôi bị dị ứng với heparin.",
+   "hyp": "My son's allergic to the one with the one with the one.",
+   "ref": "My child is allergic to heparin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s1037",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với trứng.",
+   "hyp": "Tell me if you're allergic to eggs.",
+   "ref": "Tell us if you are allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1040",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với latex.",
+   "hyp": "Tell me if you're allergic to lasers.",
+   "ref": "Tell us if you are allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1047",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với latex.",
+   "hyp": "Tell me if you're allergic to lasers.",
+   "ref": "Tell us if you are allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1048",
+   "group": "allergy",
+   "template": "A7",
+   "split": "dev",
+   "vi": "Hãy cho biết nếu bạn dị ứng với warfarin.",
+   "hyp": "Tell me if you are allergic to Erebus.",
+   "ref": "Tell us if you are allergic to warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s1055",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với trứng.",
+   "hyp": "My family has an allergic reaction to eggs.",
+   "ref": "Someone in my family is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1057",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với warfarin.",
+   "hyp": "My family has an allergic reaction to Arborlon.",
+   "ref": "Someone in my family is allergic to warfarin.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s1058",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với diazepam.",
+   "hyp": "My family has an allergic reaction to dizeza.",
+   "ref": "Someone in my family is allergic to diazepam.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s1059",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với ibuprofen.",
+   "hyp": "My family has an allergic reaction to Sedgwick.",
+   "ref": "Someone in my family is allergic to ibuprofen.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s1061",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với trứng.",
+   "hyp": "My family has an allergic reaction to eggs.",
+   "ref": "Someone in my family is allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1063",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với omeprazole.",
+   "hyp": "My family has an allergic reaction to lyeprazole.",
+   "ref": "Someone in my family is allergic to omeprazole.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s1066",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với diazepam.",
+   "hyp": "My family has an allergic reaction to dizeza.",
+   "ref": "Someone in my family is allergic to diazepam.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s1067",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với latex.",
+   "hyp": "My family has an allergic reaction to lasers.",
+   "ref": "Someone in my family is allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1068",
+   "group": "allergy",
+   "template": "A8",
+   "split": "dev",
+   "vi": "Gia đình tôi có người dị ứng với diazepam.",
+   "hyp": "My family has an allergic reaction to dizeza.",
+   "ref": "Someone in my family is allergic to diazepam.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:diazepam"
+   ]
+  },
+  {
+   "id": "s1130",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy rất mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel very tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1132",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy rất mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel very tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1134",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy rất mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel very tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1135",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy vô cùng mệt.",
+   "hyp": "I'm really tired.",
+   "ref": "I feel extremely tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  },
+  {
+   "id": "s1137",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy rất mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel very tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1138",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1139",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1140",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1141",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1143",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy rất mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel very tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1144",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy vô cùng mệt.",
+   "hyp": "I'm really tired.",
+   "ref": "I feel extremely tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  },
+  {
+   "id": "s1145",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1146",
+   "group": "severity",
+   "template": "S4",
+   "split": "dev",
+   "vi": "Tôi thấy quá mệt.",
+   "hyp": "I'm tired.",
+   "ref": "I feel too tired.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1148",
+   "group": "severity",
+   "template": "S5",
+   "split": "dev",
+   "vi": "Vết thương rất nghiêm trọng.",
+   "hyp": "The wound is serious.",
+   "ref": "The wound is very serious.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1153",
+   "group": "severity",
+   "template": "S5",
+   "split": "dev",
+   "vi": "Vết thương rất nghiêm trọng.",
+   "hyp": "The wound is serious.",
+   "ref": "The wound is very serious.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1205",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau cực kỳ nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:cực kỳ"
+   ]
+  },
+  {
+   "id": "s1206",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau vô cùng nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  },
+  {
+   "id": "s1207",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau quá nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is too worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1208",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau cực kỳ nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:cực kỳ"
+   ]
+  },
+  {
+   "id": "s1209",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1210",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau cực kỳ nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:cực kỳ"
+   ]
+  },
+  {
+   "id": "s1213",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1214",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1215",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1216",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau quá nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is too worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1217",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau quá nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is too worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1218",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  },
+  {
+   "id": "s1219",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau cực kỳ nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:cực kỳ"
+   ]
+  },
+  {
+   "id": "s1220",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau quá nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is too worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1221",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau vô cùng nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is extremely worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  },
+  {
+   "id": "s1222",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau quá nặng hơn.",
+   "hyp": "The pain is getting worse.",
+   "ref": "The pain is too worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:quá"
+   ]
+  },
+  {
+   "id": "s1223",
+   "group": "severity",
+   "template": "S8",
+   "split": "dev",
+   "vi": "Cơn đau rất nặng hơn.",
+   "hyp": "The pain is worse.",
+   "ref": "The pain is very worse.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:rất"
+   ]
+  }
+ ]
+}

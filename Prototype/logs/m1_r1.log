@@ -1,0 +1,3 @@
+babble|0|off             WER=0.5383 CER=0.4439 (272s)
+babble|-5|off            WER=0.9464 CER=0.7613 (539s)
+DONE 539.1241443157196

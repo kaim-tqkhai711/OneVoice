@@ -1,0 +1,5 @@
+alarm|10|off             WER=0.1922 CER=0.1204 (280s)
+alarm|5|off              WER=0.1923 CER=0.1212 (558s)
+alarm|0|off              WER=0.1930 CER=0.1214 (834s)
+alarm|-5|off             WER=0.1934 CER=0.1212 (1115s)
+DONE 1114.8331110477448

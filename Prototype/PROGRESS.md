@@ -57,7 +57,7 @@ Quality (official numbers, laptop, shipping artifacts):
 
 Performance (PROXY, not a reported number; every laptop number labelled "x86 proxy"):
 - E2E PTT release -> first TTS sample, 100 utterances, 2 threads: p50 <= 375 ms, p95 < 500 ms (= Proposal 1.5 s / 2.0 s divided by k = 4, **k is an estimate, not measured**).
-- Peak RSS whole pipeline < 1.5 GB. Per-stage latency reported.
+- Peak RSS whole pipeline < 1.0 GB (owner 2026-10-07, was 1.5 GB: SD712 free RAM est. <= 1.5 GB, not measured). Per-stage latency reported. Energy/battery NOT measured (battery cannot be read on the test phone); battery temperature + thermal zones before/after each run instead.
 - A failing cell is reported as failed; thresholds are not edited.
 
 ## k calibration (as soon as the SD712 is connected, not waiting for G-L)
@@ -142,3 +142,15 @@ Reading, restricted to what was measured: under this noise set GTCRN-ON is worse
 Resume rule: read this section, continue from the last item without a "done" line.
 | Item | Status | Wall-clock | Notes |
 |---|---|---|---|
+| A1 total RSS | done | 5 min | peak 1021 MB (20 FLEURS utts, ~12 s) over the 1.0 GB line; 760 MB with utts <= 7 s; x86 proxy |
+| A2 SD712 specs applied | done | 5 min | RSS line 1.0 GB; energy not measured, battery temp + thermal zones logged instead |
+| A3 DEVIATIONS | done | 5 min | docs/DEVIATIONS.md |
+| A4 Timeline v5 | done | 5 min | docs/TIMELINE_v5.md, factor 0.10 (one sample, caveated) |
+| B ADR-001 re-check | done | 2 h 45 min incl. 2 h 10 min background grid | OFF wins all 13 dev cells; docs/ADR-001-denoise.md |
+| C NMT quality + safety set | done | ~1 h | reports/NMT_QUALITY.md |
+| D latency | done | ~1 h 15 min | projected E2E fails 1.5 s for >= 4 s utterances; ASR chunking +2.4 pts WER |
+| E Branch B | done (no MLP / F1) | ~40 min | 21 features, tests green, ablation done |
+| F safety + fusion + gate | done | ~45 min | all 5 actions tested incl. ABSTAIN and TTS-blocked seeded errors |
+| G phone prep | done (dry-run only) | ~20 min | tools/device_session.sh, docs/DEVICE_SESSION.md |
+| M loop + final test | done | ~1 h 30 min | M2, M3 reached 70 % in one round; M1 below 70 % in 3 of 13 cells (babble <= 0 dB, demand -5 dB); test run once |
+Report: reports/OVERNIGHT_SUMMARY.md. Decisions to review: reports/OVERNIGHT_DECISIONS.md. Resume rule: all items above are finished; nothing is half done.

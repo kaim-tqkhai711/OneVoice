@@ -1,0 +1,5 @@
+babble|10|off            WER=0.2020 CER=0.1311 (282s)
+babble|5|off             WER=0.2628 CER=0.1876 (562s)
+babble|0|off             WER=0.6036 CER=0.4889 (841s)
+babble|-5|off            WER=0.9308 CER=0.7481 (1124s)
+DONE 1123.7000496387482

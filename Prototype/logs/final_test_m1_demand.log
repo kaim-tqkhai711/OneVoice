@@ -1,0 +1,6 @@
+demand|clean|off         WER=0.1921 CER=0.1202 (268s)
+demand|10|off            WER=0.1922 CER=0.1215 (547s)
+demand|5|off             WER=0.1963 CER=0.1257 (823s)
+demand|0|off             WER=0.2216 CER=0.1496 (1101s)
+demand|-5|off            WER=0.3841 CER=0.3125 (1283s)
+DONE 1283.3825929164886

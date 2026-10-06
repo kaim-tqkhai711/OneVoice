@@ -1,0 +1,17 @@
+{
+ "n": 1400,
+ "n_bad": 549,
+ "auc_bad_has_lower_blind_snr": 0.748,
+ "threshold_db": 8.28,
+ "false_reject_good": 0.1,
+ "caught_bad": 0.175,
+ "by_cell_mean_blind_snr": {
+  "clean|None": 23.9,
+  "demand|5": 13.5,
+  "demand|0": 10.9,
+  "demand|-5": 9.7,
+  "babble|5": 13.5,
+  "babble|0": 11.0,
+  "babble|-5": 10.2
+ }
+}

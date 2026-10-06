@@ -1,0 +1,26 @@
+### Set 1: seeded (synthetic) errors
+- detection recall: 100.0% [99.7, 100.0] (n=1329)
+  - allergen_swapped: 100.0% [95.3, 100.0] (n=76)
+  - allergy_lost: 100.0% [95.3, 100.0] (n=76)
+  - dose_number_changed: 100.0% [97.6, 100.0] (n=150)
+  - drug_mangled: 100.0% [97.6, 100.0] (n=150)
+  - drug_swapped: 100.0% [98.7, 100.0] (n=275)
+  - intensifier_dropped: 100.0% [95.3, 100.0] (n=76)
+  - intensifier_strengthened: 100.0% [71.5, 100.0] (n=11)
+  - intensifier_weakened: 100.0% [94.5, 100.0] (n=65)
+  - negation_dropped: 100.0% [97.6, 100.0] (n=150)
+  - unit_changed: 100.0% [97.6, 100.0] (n=150)
+  - unit_dropped: 100.0% [97.6, 100.0] (n=150)
+- false-block (critical) on correct references: 0.0% [0.0, 0.6] (n=612)
+- false-block (critical or confirm) on correct references: 0.0% [0.0, 0.6] (n=612)
+### Set 2: real NMT errors
+- NMT outputs with >= 1 checkable slot error: 31 of 612
+- detection recall: 83.9% [66.3, 94.5] (n=31)
+- false-block (critical or confirm) on error-free NMT outputs: 0.0% [0.0, 0.6] (n=581)
+- false-block (critical only): 0.0% [0.0, 0.6] (n=581)
+  - allergy: recall 58.3% [27.7, 84.8] (n=12); false-block 0.0% [0.0, 5.6] (n=64)
+  - dose: recall 100.0% [78.2, 100.0] (n=15); false-block 0.0% [0.0, 2.7] (n=135)
+  - medication: recall 100.0% [29.2, 100.0] (n=3); false-block 0.0% [0.0, 2.5] (n=147)
+  - negation: recall 100.0% [2.5, 100.0] (n=1); false-block 0.0% [0.0, 2.3] (n=159)
+  - severity: recall n/a (n=0); false-block 0.0% [0.0, 4.7] (n=76)
+{'metric': 'M3', 'tag': 'm3_r1', 'split': 'dev', 'hypothesis': 'whole-word med matching, no brand aliases', 'note': 'see M2 line m3_r1', 'recall_real': 0.8387096774193549, 'n_errors': 31, 'false_block_any': 0.0, 'n_ok': 581, 'seeded_recall': 1.0, 't': '2026-10-07 02:33:36'}

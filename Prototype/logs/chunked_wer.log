@@ -1,0 +1,1 @@
+{"n_other_python_procs": 9, "wer": {"n_utts": 200, "full_WER": 9.42, "chunked_WER": 11.85, "delta_pts_full_minus_chunked": -2.42, "delta_ci95": [-3.2, -1.75], "mean_segments": 2.55, "utts_with_gt1_segment": 126}}

@@ -1,0 +1,820 @@
+{
+ "seeded": {
+  "recall": [
+   1249,
+   1279
+  ],
+  "false_block_critical_on_correct_refs": [
+   0,
+   612
+  ],
+  "false_block_any_on_correct_refs": [
+   25,
+   612
+  ],
+  "recall_by_type": {
+   "negation_dropped": [
+    150,
+    150
+   ],
+   "drug_swapped": [
+    225,
+    225
+   ],
+   "drug_mangled": [
+    150,
+    150
+   ],
+   "dose_number_changed": [
+    145,
+    150
+   ],
+   "unit_changed": [
+    150,
+    150
+   ],
+   "unit_dropped": [
+    125,
+    150
+   ],
+   "allergy_lost": [
+    76,
+    76
+   ],
+   "allergen_swapped": [
+    76,
+    76
+   ],
+   "intensifier_dropped": [
+    76,
+    76
+   ],
+   "intensifier_weakened": [
+    56,
+    56
+   ],
+   "intensifier_strengthened": [
+    20,
+    20
+   ]
+  }
+ },
+ "real": {
+  "recall": [
+   39,
+   43
+  ],
+  "false_block_any": [
+   21,
+   569
+  ],
+  "false_block_critical": [
+   0,
+   569
+  ],
+  "by_group": {
+   "negation": {
+    "err": [
+     0,
+     0
+    ],
+    "ok": [
+     0,
+     160
+    ]
+   },
+   "medication": {
+    "err": [
+     10,
+     10
+    ],
+    "ok": [
+     0,
+     140
+    ]
+   },
+   "dose": {
+    "err": [
+     24,
+     25
+    ],
+    "ok": [
+     21,
+     125
+    ]
+   },
+   "allergy": {
+    "err": [
+     3,
+     6
+    ],
+    "ok": [
+     0,
+     70
+    ]
+   },
+   "severity": {
+    "err": [
+     2,
+     2
+    ],
+    "ok": [
+     0,
+     74
+    ]
+   }
+  },
+  "n_items": 612
+ },
+ "real_errors": [
+  {
+   "id": "s0321",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0322",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống ibuprofen sau bữa ăn.",
+   "hyp": "Drink after dinner.",
+   "ref": "Take ibuprofen after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0325",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0328",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0330",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống heparin sau bữa ăn.",
+   "hyp": "Drink after dinner.",
+   "ref": "Take heparin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0335",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0337",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0341",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống heparin sau bữa ăn.",
+   "hyp": "Drink after dinner.",
+   "ref": "Take heparin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0349",
+   "group": "medication",
+   "template": "M1",
+   "split": "test",
+   "vi": "Uống warfarin sau bữa ăn.",
+   "hyp": "Drinks after dinner.",
+   "ref": "Take warfarin after meals.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0512",
+   "group": "medication",
+   "template": "M7",
+   "split": "test",
+   "vi": "Bệnh nhân đã dùng heparin sáng nay.",
+   "hyp": "She was on the harbinger this morning.",
+   "ref": "The patient took heparin this morning.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0625",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống năm viên diazepam mỗi sáu giờ.",
+   "hyp": "5 diazepam per six hours.",
+   "ref": "Take 5 tablets of diazepam every six hours.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0626",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống ba viên warfarin mỗi sáu giờ.",
+   "hyp": "Three pills per six hours.",
+   "ref": "Take 3 tablets of warfarin every six hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0627",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống năm viên ibuprofen mỗi sáu giờ.",
+   "hyp": "5 pills per six hours.",
+   "ref": "Take 5 tablets of ibuprofen every six hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0632",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống một viên diazepam mỗi sáu giờ.",
+   "hyp": "Take a diazepam every six hours.",
+   "ref": "Take 1 tablets of diazepam every six hours.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0636",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống năm viên omeprazole mỗi sáu giờ.",
+   "hyp": "5 pills per hour.",
+   "ref": "Take 5 tablets of omeprazole every six hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0639",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống mười viên aspirin mỗi sáu giờ.",
+   "hyp": "Take 10 aspirin per six hours.",
+   "ref": "Take 10 tablets of aspirin every six hours.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0642",
+   "group": "dose",
+   "template": "D1",
+   "split": "test",
+   "vi": "Uống hai mươi viên ibuprofen mỗi sáu giờ.",
+   "hyp": "20 pills per six hours.",
+   "ref": "Take 20 tablets of ibuprofen every six hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0746",
+   "group": "dose",
+   "template": "D6",
+   "split": "test",
+   "vi": "Không uống quá một miligam mỗi ngày.",
+   "hyp": "Don't drink too much mg every day.",
+   "ref": "Do not take more than 1 milligrams per day.",
+   "failed_slots": [
+    "dose_number"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_number_mismatch:1"
+   ]
+  },
+  {
+   "id": "s0756",
+   "group": "dose",
+   "template": "D6",
+   "split": "test",
+   "vi": "Không uống quá một miligam mỗi ngày.",
+   "hyp": "Don't drink too much mg every day.",
+   "ref": "Do not take more than 1 milligrams per day.",
+   "failed_slots": [
+    "dose_number"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_number_mismatch:1"
+   ]
+  },
+  {
+   "id": "s0791",
+   "group": "dose",
+   "template": "D7",
+   "split": "test",
+   "vi": "Chúng tôi sẽ tiêm cho bạn một miligam.",
+   "hyp": "We'll give you a milligrams.",
+   "ref": "We will give you an injection of 1 milligrams.",
+   "failed_slots": [
+    "dose_number"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0851",
+   "group": "dose",
+   "template": "D10",
+   "split": "test",
+   "vi": "Truyền hai miligam omeprazole trong một giờ.",
+   "hyp": "Put 2 milligrams of eprazole in an hour.",
+   "ref": "Infuse 2 milligrams of omeprazole over one hour.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0856",
+   "group": "dose",
+   "template": "D10",
+   "split": "test",
+   "vi": "Truyền hai mươi lăm mililít ibuprofen trong một giờ.",
+   "hyp": "Put 25 milliliters per hour.",
+   "ref": "Infuse 25 milliliters of ibuprofen over one hour.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:ibuprofen"
+   ]
+  },
+  {
+   "id": "s0862",
+   "group": "dose",
+   "template": "D10",
+   "split": "test",
+   "vi": "Truyền một mililít heparin trong một giờ.",
+   "hyp": "1 milliliters of the garland per hour.",
+   "ref": "Infuse 1 milliliters of heparin over one hour.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0868",
+   "group": "dose",
+   "template": "D10",
+   "split": "test",
+   "vi": "Truyền một miligam omeprazole trong một giờ.",
+   "hyp": "Send 1 mg of eprazole in an hour.",
+   "ref": "Infuse 1 milligrams of omeprazole over one hour.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:omeprazole"
+   ]
+  },
+  {
+   "id": "s0896",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần năm viên penicillin mỗi tám giờ.",
+   "hyp": "You need 5 penicillin per eight hours.",
+   "ref": "You need 5 tablets of penicillin every eight hours.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0897",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một viên paracetamol mỗi tám giờ.",
+   "hyp": "You need a paracetamol every eight hours.",
+   "ref": "You need 1 tablets of paracetamol every eight hours.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0900",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần mười viên warfarin mỗi tám giờ.",
+   "hyp": "You need 10 pills per eight hours.",
+   "ref": "You need 10 tablets of warfarin every eight hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0902",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một viên omeprazole mỗi tám giờ.",
+   "hyp": "You need omeprazole every eight hours.",
+   "ref": "You need 1 tablets of omeprazole every eight hours.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên",
+    "dose_number_mismatch:1"
+   ]
+  },
+  {
+   "id": "s0905",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một viên penicillin mỗi tám giờ.",
+   "hyp": "You need a penicillin every eight hours.",
+   "ref": "You need 1 tablets of penicillin every eight hours.",
+   "failed_slots": [
+    "dose_number",
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:viên"
+   ]
+  },
+  {
+   "id": "s0906",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một viên heparin mỗi tám giờ.",
+   "hyp": "You need a pills every eight hours.",
+   "ref": "You need 1 tablets of heparin every eight hours.",
+   "failed_slots": [
+    "dose_number",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0910",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một miligam warfarin mỗi tám giờ.",
+   "hyp": "You need 1 mgmmm every eight hours.",
+   "ref": "You need 1 milligrams of warfarin every eight hours.",
+   "failed_slots": [
+    "dose_unit",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin",
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0911",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần năm trăm viên warfarin mỗi tám giờ.",
+   "hyp": "You need 500 pills per eight hours.",
+   "ref": "You need 500 tablets of warfarin every eight hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0915",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một viên heparin mỗi tám giờ.",
+   "hyp": "You need a pills every eight hours.",
+   "ref": "You need 1 tablets of heparin every eight hours.",
+   "failed_slots": [
+    "dose_number",
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:heparin"
+   ]
+  },
+  {
+   "id": "s0918",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần một miligam amoxicillin mỗi tám giờ.",
+   "hyp": "You need 1 mgm amoxicillin every eight hours.",
+   "ref": "You need 1 milligrams of amoxicillin every eight hours.",
+   "failed_slots": [
+    "dose_unit"
+   ],
+   "flagged": true,
+   "reasons": [
+    "dose_unit_missing:miligam"
+   ]
+  },
+  {
+   "id": "s0919",
+   "group": "dose",
+   "template": "D12",
+   "split": "test",
+   "vi": "Bạn cần hai mươi viên warfarin mỗi tám giờ.",
+   "hyp": "You need 20 pills per eight hours.",
+   "ref": "You need 20 tablets of warfarin every eight hours.",
+   "failed_slots": [
+    "medication"
+   ],
+   "flagged": true,
+   "reasons": [
+    "medication_missing:warfarin"
+   ]
+  },
+  {
+   "id": "s0924",
+   "group": "allergy",
+   "template": "A1",
+   "split": "test",
+   "vi": "Tôi bị dị ứng với latex.",
+   "hyp": "I'm allergic to lasers.",
+   "ref": "I am allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0929",
+   "group": "allergy",
+   "template": "A1",
+   "split": "test",
+   "vi": "Tôi bị dị ứng với trứng.",
+   "hyp": "I'm allergic to eggs.",
+   "ref": "I am allergic to eggs.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0933",
+   "group": "allergy",
+   "template": "A1",
+   "split": "test",
+   "vi": "Tôi bị dị ứng với latex.",
+   "hyp": "I'm allergic to lasers.",
+   "ref": "I am allergic to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s0950",
+   "group": "allergy",
+   "template": "A2",
+   "split": "test",
+   "vi": "Bạn có dị ứng với trứng không?",
+   "hyp": "Are you allergic to eggs?",
+   "ref": "Are you allergic to eggs?",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s0956",
+   "group": "allergy",
+   "template": "A2",
+   "split": "test",
+   "vi": "Bạn có dị ứng với trứng không?",
+   "hyp": "Are you allergic to eggs?",
+   "ref": "Are you allergic to eggs?",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": false,
+   "reasons": []
+  },
+  {
+   "id": "s1015",
+   "group": "allergy",
+   "template": "A6",
+   "split": "test",
+   "vi": "Cô ấy bị dị ứng nặng với latex.",
+   "hyp": "She's having a serious allergic reaction to lasers.",
+   "ref": "She has a severe allergy to latex.",
+   "failed_slots": [
+    "allergen"
+   ],
+   "flagged": true,
+   "reasons": [
+    "allergen_missing:latex"
+   ]
+  },
+  {
+   "id": "s1104",
+   "group": "severity",
+   "template": "S2",
+   "split": "test",
+   "vi": "Cơn đau vô cùng dữ dội.",
+   "hyp": "The pain was intense.",
+   "ref": "The pain is extremely intense.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  },
+  {
+   "id": "s1109",
+   "group": "severity",
+   "template": "S2",
+   "split": "test",
+   "vi": "Cơn đau vô cùng dữ dội.",
+   "hyp": "The pain was intense.",
+   "ref": "The pain is extremely intense.",
+   "failed_slots": [
+    "intensity"
+   ],
+   "flagged": true,
+   "reasons": [
+    "intensity_missing:vô cùng"
+   ]
+  }
+ ]
+}

@@ -42,3 +42,9 @@ def test_intensity_confirm_not_block():
 def test_en_number_with_and_and_plural_egg():
     assert 250 in C._en_numbers("two hundred and fifty milliliters")
     assert C.check_texts("bệnh nhân dị ứng với trứng", "The patient is allergic to eggs.").passed
+
+
+def test_khong_qua_is_a_limit_not_an_intensifier():
+    r = C.check_texts("không uống quá hai mươi lăm miligam mỗi ngày", "No more than 25 milligrams a day.")
+    assert r.passed and not r.confirm
+    assert C.check_texts("tôi thấy quá mệt", "I feel tired.").confirm  # a real intensifier still needs the English counterpart

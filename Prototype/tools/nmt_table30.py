@@ -37,4 +37,4 @@ for name, kw in VARIANTS.items():
         out["variants"][f"{name}|{decode}"] = {"hyp": hyp, "p50_ms": round(float(np.percentile(lat, 50)), 1), "p95_ms": round(float(np.percentile(lat, 95)), 1),
                                                 "n": len(lat), "size_mb": round(size / 2**20, 1)}
         print(name, decode, out["variants"][f"{name}|{decode}"]["p50_ms"], out["variants"][f"{name}|{decode}"]["p95_ms"], flush=True)
-(ROOT / "results/nmt30.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf8")
+import os; (ROOT / os.environ.get("NMT30_OUT", "results/nmt30.json")).write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf8")

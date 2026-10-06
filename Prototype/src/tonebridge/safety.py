@@ -202,7 +202,10 @@ class SemanticSafetyChecker:
 
         # intensity -> CONFIRM
         if self.enable["intensity"]:
-            rest = s
+            # "quá" directly before a number = "more than N" (a limit, e.g. "không uống quá hai viên"), not the intensifier "quá". Found on the TEST split
+            # after the single run: this fix is v1.2 and is NOT part of the reported test numbers.
+            nums = "|".join(re.escape(k) for k, v in self.vi_num.items() if len(k) > 1 and k not in ("mươi", "trăm", "nghìn", "ngàn"))
+            rest = re.sub(r"quá (?=(?:\d|" + nums + r")(?!\w))", "    ", s)
             for m in self.inten:
                 rx = _word_re(m["vi"])
                 mo = rx.search(rest)

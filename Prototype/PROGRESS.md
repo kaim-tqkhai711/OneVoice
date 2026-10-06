@@ -137,3 +137,8 @@ n_utts=200  noise=['OHALLWAY', 'OOFFICE', 'PCAFETER', 'PSTATION']  measured SNR=
 Δ = WER(OFF) − WER(arm) in points, positive = arm better; paired bootstrap over utterances, 95% CI.
 
 Reading, restricted to what was measured: under this noise set GTCRN-ON is worse than OFF in every cell (CI excludes 0 in all four) and the loss grows as SNR drops (+1.4 points clean, +6.0 points at 0 dB); OA(0.5) is indistinguishable from OFF (all CIs include 0). By the >= 2-point rule no arm beats OFF in any cell. Limits: the ASR shows little degradation under DEMAND noise (OFF 13.1 -> 15.4 % from clean to 0 dB), so this grid says little about harsher non-stationary hospital noise (alarms, overlapping speech); this is a dev run on a 200-utterance subset of a read-speech set, and the final ADR-001 table (D4) uses the in-domain recordings and the full protocol.
+
+## Overnight session (start 2026-10-07 01:42, stop 07:00)
+Resume rule: read this section, continue from the last item without a "done" line.
+| Item | Status | Wall-clock | Notes |
+|---|---|---|---|

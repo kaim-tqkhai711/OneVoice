@@ -1,0 +1,15 @@
+{
+ "threads": 2,
+ "rss_baseline_mb": 29.5,
+ "rss_after_imports_mb": 57.0,
+ "rss_after_asr_load_mb": 194.5,
+ "rss_after_nmt_load_mb": 370.9,
+ "rss_after_tts_load_mb": 442.8,
+ "rss_after_vad_load_mb": 447.2,
+ "rss_after_gtcrn_load_mb": 448.8,
+ "rss_after_20_utts_mb": 975.7,
+ "peak_rss_mb": 982.2,
+ "n_utts": 20,
+ "gtcrn_loaded": true,
+ "note": "x86 Windows proxy; phone RSS differs (different allocator/ORT build). Phone threshold for total pipeline: 1.0 GB (owner, 2026-10-07)."
+}

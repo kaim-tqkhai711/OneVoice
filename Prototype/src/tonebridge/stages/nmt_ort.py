@@ -56,7 +56,8 @@ class OrtMarianNmt:
              "encoder": np.zeros((1, self.heads, enc_len, self.head_dim), np.float32)}
         return {n: z[n.split(".")[2]] for n in self.dec_in if n.startswith("past_key_values")}
 
-    def greedy(self, src_ids: list[int]) -> tuple[list[int], dict[str, float]]:
+    def greedy(self, src_ids: list[int], constraints: list[list[list[int]]] | None = None, bonus: float = 0.0,
+               eos_penalty: float | None = None) -> tuple[list[int], dict[str, float]]:
         """Returns generated ids (no start/eos) and {"encoder_ms", "decoder_steps"} for composed-latency accounting."""
         import time
 
@@ -68,13 +69,43 @@ class OrtMarianNmt:
         past = self._empty_past(ids.shape[1])
         out_ids: list[int] = []
         cur = self.pad
+        # Soft lexical constraints (glossary): each constraint = list of accepted token-id sequences. Unsatisfied constraints add `bonus` to the first
+        # token of every alternative (and subtract `eos_penalty` from EOS); once a first token is emitted the rest of that alternative is forced.
+        cons = constraints or []
+        sat = [False] * len(cons)
+        active: tuple[int, list[int], int] | None = None
+        eos_pen = bonus if eos_penalty is None else eos_penalty
         for step in range(self.max_new):
             feed = {"encoder_attention_mask": mask, "input_ids": np.asarray([[cur]], np.int64), "encoder_hidden_states": h,
                     "use_cache_branch": np.asarray([step > 0]), **past}
             res = self.dec.run(None, feed)
             logits = res[0][0, -1].copy()  # [V]
             logits[self.pad] = -np.inf  # bad_words_ids in generation_config
-            cur = int(np.argmax(logits))
+            if active is not None:
+                ci, alt, pos = active
+                cur = alt[pos]
+                if pos + 1 >= len(alt):
+                    sat[ci], active = True, None
+                else:
+                    active = (ci, alt, pos + 1)
+            else:
+                pend = [i for i in range(len(cons)) if not sat[i]]
+                if pend and bonus:
+                    for i in pend:
+                        for alt in cons[i]:
+                            logits[alt[0]] += bonus
+                    logits[self.eos] -= eos_pen
+                cur = int(np.argmax(logits))
+                for i in pend:
+                    for alt in cons[i]:
+                        if cur == alt[0]:
+                            if len(alt) == 1:
+                                sat[i] = True
+                            else:
+                                active = (i, alt, 1)
+                            break
+                    if sat[i] or active is not None:
+                        break
             if cur == self.eos:
                 break
             out_ids.append(cur)
@@ -146,8 +177,18 @@ class OrtMarianNmt:
         best = max(finished, key=lambda f: f[0])[1]
         return best, {"encoder_ms": enc_ms, "decoder_steps": float(steps)}
 
+    def piece_ids(self, word: str) -> list[int]:
+        """Target-side token ids for a surface form (SentencePiece pieces -> vocab ids)."""
+        return [self.vocab.get(p, self.unk) for p in self.sp_tgt.encode(word, out_type=str)]
+
+    constrainer = None  # optional callable (src_text, piece_ids) -> constraints; set by the factory when the glossary lever is on
+    constraint_bonus = 0.0
+
     def translate(self, text: str, src: Lang, tgt: Lang) -> MtResult:
         assert (src, tgt) == ("vi", "en"), (src, tgt)
         ids = self.encode_ids(text)
-        out, _ = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
+        if getattr(self, "constrainer", None) is not None:
+            out, _ = self.greedy(ids, self.constrainer(text, self.piece_ids), self.constraint_bonus)
+        else:
+            out, _ = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
         return MtResult(src_text=text, tgt_text=self.decode_ids(out), src_lang=src, tgt_lang=tgt, hops=["vi>en"])

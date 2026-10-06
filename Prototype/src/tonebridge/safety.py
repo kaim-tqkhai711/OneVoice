@@ -85,8 +85,10 @@ class SemanticSafetyChecker:
         vals: set[int] = set(int(m) for m in re.findall(r"(?<![\d.])(\d+)(?![\d])", text))
         toks = re.findall(r"[a-z]+", text.replace("-", " "))
         cur, seen = 0, False
-        for t in toks + ["#"]:
+        for ti, t in enumerate(toks + ["#"]):
             v = self.en_num.get(t)
+            if t == "and" and seen and ti + 1 < len(toks) and toks[ti + 1] in self.en_num:
+                continue  # "two hundred and fifty": 'and' joins number words
             if v is None:
                 if seen:
                     vals.add(cur)

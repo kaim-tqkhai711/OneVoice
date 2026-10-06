@@ -20,7 +20,7 @@
     {"vi": "furosemide", "en": ["furosemide"]}, {"vi": "prednisolone", "en": ["prednisolone", "prednisone"]}, {"vi": "lisinopril", "en": ["lisinopril"]}
   ],
   "allergens_other": [
-    {"vi": "hải sản", "en": ["seafood", "shellfish"]}, {"vi": "đậu phộng", "en": ["peanut"]}, {"vi": "trứng", "en": ["egg"]}, {"vi": "latex", "en": ["latex"]}
+    {"vi": "hải sản", "en": ["seafood", "shellfish"]}, {"vi": "đậu phộng", "en": ["peanut"]}, {"vi": "trứng", "en": ["egg", "eggs"]}, {"vi": "latex", "en": ["latex"]}
   ],
   "dose_units": [
     {"vi": "miligam", "en": ["mg", "milligram", "milligramme"]}, {"vi": "microgam", "en": ["mcg", "microgram", "microgramme"]},

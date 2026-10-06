@@ -1,0 +1,1224 @@
+{"id": "s0000", "hyp": "You're not allergic to amoxicillin.", "ms": 345.9}
+{"id": "s0001", "hyp": "You're not allergic to the right one.", "ms": 304.8}
+{"id": "s0002", "hyp": "You're not allergic to Sedgwick.", "ms": 372.0}
+{"id": "s0003", "hyp": "You're not allergic to paracetamol.", "ms": 443.7}
+{"id": "s0004", "hyp": "You're not allergic to aspirin.", "ms": 234.0}
+{"id": "s0005", "hyp": "You're not allergic to adrenaline.", "ms": 309.3}
+{"id": "s0006", "hyp": "You're not allergic to diazepam.", "ms": 375.1}
+{"id": "s0007", "hyp": "You're not allergic to morphine.", "ms": 265.0}
+{"id": "s0008", "hyp": "You're not allergic to metformin.", "ms": 363.8}
+{"id": "s0009", "hyp": "You're not allergic to the right one.", "ms": 346.1}
+{"id": "s0010", "hyp": "You're not allergic to morphine.", "ms": 246.3}
+{"id": "s0011", "hyp": "You're not allergic to aspirin.", "ms": 241.0}
+{"id": "s0012", "hyp": "You're not allergic to amoxicillin.", "ms": 344.4}
+{"id": "s0013", "hyp": "You're not allergic to penicillin.", "ms": 267.9}
+{"id": "s0014", "hyp": "You're not allergic to paracetamol.", "ms": 361.1}
+{"id": "s0015", "hyp": "You're not allergic to antibiotics.", "ms": 290.2}
+{"id": "s0016", "hyp": "You're not allergic to amoxicillin.", "ms": 353.7}
+{"id": "s0017", "hyp": "You're not allergic to morphine.", "ms": 233.7}
+{"id": "s0018", "hyp": "You're not allergic to the right one.", "ms": 322.8}
+{"id": "s0019", "hyp": "You're not allergic to penicillin.", "ms": 263.3}
+{"id": "s0020", "hyp": "You're not allergic to adrenaline.", "ms": 246.4}
+{"id": "s0021", "hyp": "You're not allergic to paracetamol.", "ms": 313.5}
+{"id": "s0022", "hyp": "You're not allergic to the right one.", "ms": 265.4}
+{"id": "s0023", "hyp": "You're not allergic to insulin.", "ms": 253.1}
+{"id": "s0024", "hyp": "You're not allergic to metformin.", "ms": 281.6}
+{"id": "s0025", "hyp": "No metreformin with the beer.", "ms": 273.3}
+{"id": "s0026", "hyp": "No insulin and no beer.", "ms": 181.2}
+{"id": "s0027", "hyp": "No insulin and no beer.", "ms": 210.7}
+{"id": "s0028", "hyp": "No penicillin and no beer.", "ms": 232.7}
+{"id": "s0029", "hyp": "No diazepam with no beer.", "ms": 254.3}
+{"id": "s0030", "hyp": "No peprazole and no alcohol.", "ms": 237.0}
+{"id": "s0031", "hyp": "No amoxicillin with the wine.", "ms": 304.4}
+{"id": "s0032", "hyp": "No pain meds along with alcohol.", "ms": 226.1}
+{"id": "s0033", "hyp": "No adrenaline with the beer.", "ms": 197.1}
+{"id": "s0034", "hyp": "No more medevacs and beer.", "ms": 279.4}
+{"id": "s0035", "hyp": "No amoxicillin with the wine.", "ms": 291.5}
+{"id": "s0036", "hyp": "No penicillin and no beer.", "ms": 173.3}
+{"id": "s0037", "hyp": "No adrenaline with the beer.", "ms": 175.0}
+{"id": "s0038", "hyp": "No penicillin and no beer.", "ms": 182.9}
+{"id": "s0039", "hyp": "No morphine and no beer.", "ms": 230.1}
+{"id": "s0040", "hyp": "No penicillin and no beer.", "ms": 166.2}
+{"id": "s0041", "hyp": "No more drinking and no more drinking.", "ms": 201.2}
+{"id": "s0042", "hyp": "No adrenaline with the beer.", "ms": 162.9}
+{"id": "s0043", "hyp": "No paracetamol with no beer.", "ms": 297.1}
+{"id": "s0044", "hyp": "No adrenaline with the beer.", "ms": 169.2}
+{"id": "s0045", "hyp": "No penicillin and no beer.", "ms": 218.0}
+{"id": "s0046", "hyp": "No more medevacs and beer.", "ms": 317.1}
+{"id": "s0047", "hyp": "No more medevacs and beer.", "ms": 299.5}
+{"id": "s0048", "hyp": "No insulin and no beer.", "ms": 214.9}
+{"id": "s0049", "hyp": "No peprazole and no alcohol.", "ms": 296.6}
+{"id": "s0050", "hyp": "Patients aren't dizzy.", "ms": 198.7}
+{"id": "s0051", "hyp": "Patient doesn't have a headache.", "ms": 227.4}
+{"id": "s0052", "hyp": "Patient doesn't have a headache.", "ms": 357.7}
+{"id": "s0053", "hyp": "Patients don't throw up.", "ms": 238.6}
+{"id": "s0054", "hyp": "Patients aren't dizzy.", "ms": 235.8}
+{"id": "s0055", "hyp": "Patients don't have seizures.", "ms": 225.8}
+{"id": "s0056", "hyp": "Patients don't throw up.", "ms": 224.6}
+{"id": "s0057", "hyp": "Patient doesn't have chest pains.", "ms": 235.8}
+{"id": "s0058", "hyp": "Patient doesn't have a cough.", "ms": 276.3}
+{"id": "s0059", "hyp": "Patient doesn't have a cough.", "ms": 205.5}
+{"id": "s0060", "hyp": "Patients don't have diarrhea.", "ms": 288.0}
+{"id": "s0061", "hyp": "Patient doesn't have a headache.", "ms": 249.4}
+{"id": "s0062", "hyp": "Patient doesn't have a headache.", "ms": 258.5}
+{"id": "s0063", "hyp": "Patient doesn't have a fever.", "ms": 245.8}
+{"id": "s0064", "hyp": "Patient doesn't have chest pains.", "ms": 236.4}
+{"id": "s0065", "hyp": "Patient doesn't have a cough.", "ms": 219.3}
+{"id": "s0066", "hyp": "Patient doesn't have a rash.", "ms": 217.7}
+{"id": "s0067", "hyp": "Patients aren't dizzy.", "ms": 198.8}
+{"id": "s0068", "hyp": "Patient doesn't have a headache.", "ms": 257.0}
+{"id": "s0069", "hyp": "Patient doesn't have chest pains.", "ms": 186.3}
+{"id": "s0070", "hyp": "Patients don't have diarrhea.", "ms": 248.9}
+{"id": "s0071", "hyp": "Patient doesn't have a headache.", "ms": 199.8}
+{"id": "s0072", "hyp": "Patient doesn't have a rash.", "ms": 254.1}
+{"id": "s0073", "hyp": "Patient doesn't have a cough.", "ms": 333.5}
+{"id": "s0074", "hyp": "Patients don't have seizures.", "ms": 254.4}
+{"id": "s0075", "hyp": "I'm not sick.", "ms": 166.6}
+{"id": "s0076", "hyp": "I'm not dizzy.", "ms": 240.2}
+{"id": "s0077", "hyp": "I don't have a rash.", "ms": 257.5}
+{"id": "s0078", "hyp": "I don't have a headache.", "ms": 233.8}
+{"id": "s0079", "hyp": "I don't have a headache.", "ms": 246.6}
+{"id": "s0080", "hyp": "I didn't have a seizure.", "ms": 253.4}
+{"id": "s0081", "hyp": "I don't have chest pains.", "ms": 265.4}
+{"id": "s0082", "hyp": "I don't have a headache.", "ms": 247.6}
+{"id": "s0083", "hyp": "I don't have chest pains.", "ms": 232.6}
+{"id": "s0084", "hyp": "I don't have a rash.", "ms": 263.3}
+{"id": "s0085", "hyp": "I'm not dizzy.", "ms": 235.1}
+{"id": "s0086", "hyp": "I don't have chest pains.", "ms": 270.5}
+{"id": "s0087", "hyp": "I'm not sick.", "ms": 175.4}
+{"id": "s0088", "hyp": "I'm not dizzy.", "ms": 228.5}
+{"id": "s0089", "hyp": "I don't have chest pains.", "ms": 198.2}
+{"id": "s0090", "hyp": "I don't have diarrhea.", "ms": 234.2}
+{"id": "s0091", "hyp": "I'm not dizzy.", "ms": 188.6}
+{"id": "s0092", "hyp": "I don't have trouble breathing.", "ms": 268.9}
+{"id": "s0093", "hyp": "I don't have diarrhea.", "ms": 290.5}
+{"id": "s0094", "hyp": "I don't have a cough.", "ms": 285.8}
+{"id": "s0095", "hyp": "I'm not sick.", "ms": 192.5}
+{"id": "s0096", "hyp": "I don't have a fever.", "ms": 277.5}
+{"id": "s0097", "hyp": "I don't have a headache.", "ms": 235.9}
+{"id": "s0098", "hyp": "I don't have a cough.", "ms": 314.8}
+{"id": "s0099", "hyp": "I don't have a fever.", "ms": 292.5}
+{"id": "s0100", "hyp": "You haven't had adrenaline today.", "ms": 286.6}
+{"id": "s0101", "hyp": "You haven't had your morphine today.", "ms": 266.9}
+{"id": "s0102", "hyp": "You haven't had your morphine today.", "ms": 293.8}
+{"id": "s0103", "hyp": "You haven't had aspirin today.", "ms": 275.4}
+{"id": "s0104", "hyp": "You haven't had a eprazole today.", "ms": 393.6}
+{"id": "s0105", "hyp": "You haven't had a Pinot today.", "ms": 297.2}
+{"id": "s0106", "hyp": "You haven't had penicillin today.", "ms": 190.8}
+{"id": "s0107", "hyp": "You haven't had a SIGI today.", "ms": 353.9}
+{"id": "s0108", "hyp": "You haven't had aspirin today.", "ms": 238.5}
+{"id": "s0109", "hyp": "You haven't had a eprazole today.", "ms": 324.1}
+{"id": "s0110", "hyp": "You haven't had a SIGI today.", "ms": 380.6}
+{"id": "s0111", "hyp": "You haven't had a bead today.", "ms": 331.7}
+{"id": "s0112", "hyp": "You haven't had aspirin today.", "ms": 232.7}
+{"id": "s0113", "hyp": "You haven't had a eprazole today.", "ms": 405.1}
+{"id": "s0114", "hyp": "You haven't had a SIGI today.", "ms": 330.0}
+{"id": "s0115", "hyp": "You haven't taken any pain meds today.", "ms": 291.7}
+{"id": "s0116", "hyp": "You haven't taken any pain meds today.", "ms": 260.2}
+{"id": "s0117", "hyp": "You haven't had amoxicillin today.", "ms": 353.4}
+{"id": "s0118", "hyp": "You haven't had penicillin today.", "ms": 240.0}
+{"id": "s0119", "hyp": "You haven't had a Pinot today.", "ms": 293.0}
+{"id": "s0120", "hyp": "You haven't had penicillin today.", "ms": 229.1}
+{"id": "s0121", "hyp": "You haven't had aspirin today.", "ms": 218.7}
+{"id": "s0122", "hyp": "You haven't had adrenaline today.", "ms": 195.9}
+{"id": "s0123", "hyp": "You haven't drunk diazepam today.", "ms": 450.9}
+{"id": "s0124", "hyp": "You haven't drunk diazepam today.", "ms": 279.8}
+{"id": "s0125", "hyp": "Don't stop drinking amoxicillin.", "ms": 284.8}
+{"id": "s0126", "hyp": "Don't stop drinking the harp.", "ms": 245.2}
+{"id": "s0127", "hyp": "Don't stop drinking aspirin.", "ms": 173.1}
+{"id": "s0128", "hyp": "Don't stop drinking Twilight.", "ms": 222.4}
+{"id": "s0129", "hyp": "Don't stop drinking the harp.", "ms": 297.1}
+{"id": "s0130", "hyp": "Don't stop drinking insulin.", "ms": 214.7}
+{"id": "s0131", "hyp": "Don't stop drinking morphine.", "ms": 207.1}
+{"id": "s0132", "hyp": "Don't stop drinking amoxicillin.", "ms": 348.6}
+{"id": "s0133", "hyp": "Don't stop drinking the harp.", "ms": 318.2}
+{"id": "s0134", "hyp": "Don't stop taking adrenaline.", "ms": 190.1}
+{"id": "s0135", "hyp": "Don't stop drinking the harp.", "ms": 320.7}
+{"id": "s0136", "hyp": "Don't stop drinking metformin.", "ms": 287.6}
+{"id": "s0137", "hyp": "Don't stop drinking diazepam.", "ms": 370.2}
+{"id": "s0138", "hyp": "Don't stop drinking metformin.", "ms": 194.5}
+{"id": "s0139", "hyp": "Don't stop drinking theeprazole.", "ms": 289.8}
+{"id": "s0140", "hyp": "Don't stop drinking diazepam.", "ms": 286.1}
+{"id": "s0141", "hyp": "Don't stop drinking metformin.", "ms": 286.5}
+{"id": "s0142", "hyp": "Don't stop taking pain meds.", "ms": 253.7}
+{"id": "s0143", "hyp": "Don't stop taking adrenaline.", "ms": 225.6}
+{"id": "s0144", "hyp": "Don't stop drinking theeprazole.", "ms": 284.0}
+{"id": "s0145", "hyp": "Don't stop drinking insulin.", "ms": 203.2}
+{"id": "s0146", "hyp": "Don't stop drinking amoxicillin.", "ms": 309.9}
+{"id": "s0147", "hyp": "Don't stop drinking diazepam.", "ms": 333.1}
+{"id": "s0148", "hyp": "Don't stop drinking Twilight.", "ms": 258.0}
+{"id": "s0149", "hyp": "Don't stop drinking metformin.", "ms": 266.4}
+{"id": "s0150", "hyp": "She's not allergic to antibiotics.", "ms": 252.1}
+{"id": "s0151", "hyp": "She's not allergic to pain meds.", "ms": 256.6}
+{"id": "s0152", "hyp": "She's not allergic to Sedgwick.", "ms": 300.1}
+{"id": "s0153", "hyp": "She's not allergic to insulin.", "ms": 243.6}
+{"id": "s0154", "hyp": "She's not allergic to amoxicillin.", "ms": 324.1}
+{"id": "s0155", "hyp": "She's not allergic to pain meds.", "ms": 311.5}
+{"id": "s0156", "hyp": "She's not allergic to paracetamol.", "ms": 302.8}
+{"id": "s0157", "hyp": "She's not allergic to amoxicillin.", "ms": 364.3}
+{"id": "s0158", "hyp": "She's not allergic to pain meds.", "ms": 271.3}
+{"id": "s0159", "hyp": "She's not allergic to adrenaline.", "ms": 219.2}
+{"id": "s0160", "hyp": "She's not allergic to amoxicillin.", "ms": 318.1}
+{"id": "s0161", "hyp": "She's not allergic to Breslin.", "ms": 286.2}
+{"id": "s0162", "hyp": "She's not allergic to metformin.", "ms": 310.0}
+{"id": "s0163", "hyp": "She's not allergic to esperazile.", "ms": 349.8}
+{"id": "s0164", "hyp": "She's not allergic to the harp.", "ms": 332.8}
+{"id": "s0165", "hyp": "She's not allergic to amoxicillin.", "ms": 302.6}
+{"id": "s0166", "hyp": "She's not allergic to morphine.", "ms": 228.4}
+{"id": "s0167", "hyp": "She's not allergic to amoxicillin.", "ms": 367.5}
+{"id": "s0168", "hyp": "She's not allergic to morphine.", "ms": 229.4}
+{"id": "s0169", "hyp": "She's not allergic to paracetamol.", "ms": 329.7}
+{"id": "s0170", "hyp": "She's not allergic to morphine.", "ms": 218.0}
+{"id": "s0171", "hyp": "She's not allergic to the harp.", "ms": 353.6}
+{"id": "s0172", "hyp": "She's not allergic to diazepam.", "ms": 250.3}
+{"id": "s0173", "hyp": "She's not allergic to the harp.", "ms": 298.3}
+{"id": "s0174", "hyp": "She's not allergic to pain meds.", "ms": 241.2}
+{"id": "s0175", "hyp": "Don't use eprazole if you're pregnant.", "ms": 378.0}
+{"id": "s0176", "hyp": "No paracetamol if you're pregnant.", "ms": 341.7}
+{"id": "s0177", "hyp": "Do not use amoxicillin if you are pregnant.", "ms": 351.0}
+{"id": "s0178", "hyp": "No morphine if you're pregnant.", "ms": 266.7}
+{"id": "s0179", "hyp": "Don't use eprazole if you're pregnant.", "ms": 399.5}
+{"id": "s0180", "hyp": "You can't use metformin if you're pregnant.", "ms": 449.0}
+{"id": "s0181", "hyp": "Do not use the T.B.I.P. if you are pregnant.", "ms": 453.0}
+{"id": "s0182", "hyp": "Do not use amoxicillin if you are pregnant.", "ms": 369.3}
+{"id": "s0183", "hyp": "Do not use the T.B.I.P. if you are pregnant.", "ms": 437.0}
+{"id": "s0184", "hyp": "No pain meds if you're pregnant.", "ms": 231.2}
+{"id": "s0185", "hyp": "No insulin if you're pregnant.", "ms": 256.3}
+{"id": "s0186", "hyp": "No more gargantua if you're pregnant.", "ms": 411.3}
+{"id": "s0187", "hyp": "You can't use metformin if you're pregnant.", "ms": 387.9}
+{"id": "s0188", "hyp": "You can't use metformin if you're pregnant.", "ms": 393.3}
+{"id": "s0189", "hyp": "No pain meds if you're pregnant.", "ms": 234.8}
+{"id": "s0190", "hyp": "No paracetamol if you're pregnant.", "ms": 319.1}
+{"id": "s0191", "hyp": "No morphine if you're pregnant.", "ms": 221.4}
+{"id": "s0192", "hyp": "No insulin if you're pregnant.", "ms": 258.8}
+{"id": "s0193", "hyp": "Do not use the T.B.I.P. if you are pregnant.", "ms": 437.9}
+{"id": "s0194", "hyp": "Do not use the T.B.I.P. if you are pregnant.", "ms": 462.9}
+{"id": "s0195", "hyp": "No aspirin if you're pregnant.", "ms": 219.9}
+{"id": "s0196", "hyp": "Do not use amoxicillin if you are pregnant.", "ms": 366.1}
+{"id": "s0197", "hyp": "Do not use amoxicillin if you are pregnant.", "ms": 369.2}
+{"id": "s0198", "hyp": "Don't use eprazole if you're pregnant.", "ms": 383.6}
+{"id": "s0199", "hyp": "You can't use diazepam if you're pregnant.", "ms": 375.8}
+{"id": "s0200", "hyp": "Patient has no history of seizures.", "ms": 180.4}
+{"id": "s0201", "hyp": "Patient has no history of chest pain.", "ms": 254.0}
+{"id": "s0202", "hyp": "Patients don't have a history of cough.", "ms": 312.1}
+{"id": "s0203", "hyp": "Patients don't have a history of fever.", "ms": 300.2}
+{"id": "s0204", "hyp": "Patients have no history of breathing problems.", "ms": 236.5}
+{"id": "s0205", "hyp": "Patients don't have a history of fever.", "ms": 316.6}
+{"id": "s0206", "hyp": "Patient has no history of chest pain.", "ms": 184.9}
+{"id": "s0207", "hyp": "Patients don't have a history of diarrhea.", "ms": 294.8}
+{"id": "s0208", "hyp": "Patients don't have a history of fever.", "ms": 288.0}
+{"id": "s0209", "hyp": "Patients don't have a history of cough.", "ms": 341.5}
+{"id": "s0210", "hyp": "Patients don't have a history of fever.", "ms": 294.1}
+{"id": "s0211", "hyp": "Patients don't have a history of dizzyity.", "ms": 313.6}
+{"id": "s0212", "hyp": "Patients have no history of breathing problems.", "ms": 236.7}
+{"id": "s0213", "hyp": "Patient has no history of seizures.", "ms": 215.7}
+{"id": "s0214", "hyp": "Patients don't have a history of diarrhea.", "ms": 308.5}
+{"id": "s0215", "hyp": "Patient has no history of nausea.", "ms": 220.4}
+{"id": "s0216", "hyp": "Patients don't have a history of dizzyity.", "ms": 319.3}
+{"id": "s0217", "hyp": "Patient has no history of chest pain.", "ms": 216.8}
+{"id": "s0218", "hyp": "Patients don't have a history of dizzyity.", "ms": 326.2}
+{"id": "s0219", "hyp": "Patient has no history of seizures.", "ms": 210.9}
+{"id": "s0220", "hyp": "Patient has no history of seizures.", "ms": 228.7}
+{"id": "s0221", "hyp": "Patients have no history of breathing problems.", "ms": 258.6}
+{"id": "s0222", "hyp": "Patients have no history of breathing problems.", "ms": 308.0}
+{"id": "s0223", "hyp": "Patients don't have a history of diarrhea.", "ms": 318.9}
+{"id": "s0224", "hyp": "Patient has no history of chest pain.", "ms": 235.6}
+{"id": "s0225", "hyp": "I've never had a dizzy moment.", "ms": 260.6}
+{"id": "s0226", "hyp": "I've never been sick.", "ms": 185.2}
+{"id": "s0227", "hyp": "I've never had chest pains.", "ms": 187.4}
+{"id": "s0228", "hyp": "I've never had a fever.", "ms": 208.6}
+{"id": "s0229", "hyp": "I've never had a fever.", "ms": 257.2}
+{"id": "s0230", "hyp": "I've never had a dizzy moment.", "ms": 230.0}
+{"id": "s0231", "hyp": "I've never had a headache.", "ms": 241.0}
+{"id": "s0232", "hyp": "I've never had trouble breathing.", "ms": 292.5}
+{"id": "s0233", "hyp": "I've never had diarrhea.", "ms": 179.8}
+{"id": "s0234", "hyp": "I've never had chest pains.", "ms": 287.4}
+{"id": "s0235", "hyp": "I've never had trouble breathing.", "ms": 270.5}
+{"id": "s0236", "hyp": "I've never had a seizure.", "ms": 224.8}
+{"id": "s0237", "hyp": "I've never had a fever.", "ms": 251.4}
+{"id": "s0238", "hyp": "I've never had chest pains.", "ms": 232.4}
+{"id": "s0239", "hyp": "I've never had trouble breathing.", "ms": 271.0}
+{"id": "s0240", "hyp": "I've never had diarrhea.", "ms": 230.5}
+{"id": "s0241", "hyp": "I've never had a fever.", "ms": 246.4}
+{"id": "s0242", "hyp": "I've never had a headache.", "ms": 235.5}
+{"id": "s0243", "hyp": "I've never been sick.", "ms": 248.5}
+{"id": "s0244", "hyp": "I've never had a dizzy moment.", "ms": 311.4}
+{"id": "s0245", "hyp": "I've never had a headache.", "ms": 258.8}
+{"id": "s0246", "hyp": "I've never had chest pains.", "ms": 274.4}
+{"id": "s0247", "hyp": "I've never had a rash.", "ms": 236.1}
+{"id": "s0248", "hyp": "I've never had chest pains.", "ms": 238.6}
+{"id": "s0249", "hyp": "I've never had a cough.", "ms": 229.4}
+{"id": "s0250", "hyp": "You shouldn't drink at hunger.", "ms": 255.9}
+{"id": "s0251", "hyp": "You shouldn't drink metformin when you're hungry.", "ms": 367.8}
+{"id": "s0252", "hyp": "You shouldn't drink adrenaline when you're hungry.", "ms": 388.9}
+{"id": "s0253", "hyp": "You shouldn't drink a eprazole when you're hungry.", "ms": 469.3}
+{"id": "s0254", "hyp": "You shouldn't drink morphine when you're hungry.", "ms": 314.4}
+{"id": "s0255", "hyp": "You shouldn't drink antibiotics when you're hungry.", "ms": 341.7}
+{"id": "s0256", "hyp": "You shouldn't drink metformin when you're hungry.", "ms": 517.5}
+{"id": "s0257", "hyp": "You shouldn't drink metformin when you're hungry.", "ms": 326.1}
+{"id": "s0258", "hyp": "You shouldn't drink amoxicillin when you're hungry.", "ms": 437.8}
+{"id": "s0259", "hyp": "You shouldn't drink aspirin when you're hungry.", "ms": 345.3}
+{"id": "s0260", "hyp": "You shouldn't drink morphine when you're hungry.", "ms": 355.6}
+{"id": "s0261", "hyp": "You shouldn't drink the old-fashioned-drunk.", "ms": 417.1}
+{"id": "s0262", "hyp": "You shouldn't drink penicillin when you're hungry.", "ms": 321.9}
+{"id": "s0263", "hyp": "You shouldn't drink antibiotics when you're hungry.", "ms": 322.5}
+{"id": "s0264", "hyp": "You shouldn't drink amoxicillin when you're hungry.", "ms": 410.0}
+{"id": "s0265", "hyp": "You shouldn't drink aspirin when you're hungry.", "ms": 346.1}
+{"id": "s0266", "hyp": "You shouldn't drink penicillin when you're hungry.", "ms": 305.1}
+{"id": "s0267", "hyp": "You shouldn't drink penicillin when you're hungry.", "ms": 306.9}
+{"id": "s0268", "hyp": "You shouldn't drink diazepam when you're hungry.", "ms": 428.5}
+{"id": "s0269", "hyp": "You shouldn't drink adrenaline when you're hungry.", "ms": 333.1}
+{"id": "s0270", "hyp": "You shouldn't drink adrenaline when you're hungry.", "ms": 311.6}
+{"id": "s0271", "hyp": "You shouldn't drink the old-fashioned-drunk.", "ms": 379.9}
+{"id": "s0272", "hyp": "You shouldn't drink metformin when you're hungry.", "ms": 361.3}
+{"id": "s0273", "hyp": "You shouldn't drink ibuprofen when you're hungry.", "ms": 411.0}
+{"id": "s0274", "hyp": "You shouldn't drink insulin when you're hungry.", "ms": 288.1}
+{"id": "s0275", "hyp": "He's not on insulin.", "ms": 206.9}
+{"id": "s0276", "hyp": "He's not on antibiotics.", "ms": 202.5}
+{"id": "s0277", "hyp": "He's not on the harbinger.", "ms": 265.9}
+{"id": "s0278", "hyp": "He's not on aspirin.", "ms": 204.5}
+{"id": "s0279", "hyp": "He's not on metformin.", "ms": 224.2}
+{"id": "s0280", "hyp": "He's not on paracetamol.", "ms": 321.6}
+{"id": "s0281", "hyp": "He doesn't use esperazile.", "ms": 308.5}
+{"id": "s0282", "hyp": "He doesn't use diazepam.", "ms": 314.5}
+{"id": "s0283", "hyp": "He's not on ibuprofen.", "ms": 277.0}
+{"id": "s0284", "hyp": "He doesn't use diazepam.", "ms": 242.7}
+{"id": "s0285", "hyp": "He's not on the harbinger.", "ms": 311.3}
+{"id": "s0286", "hyp": "He's not on antibiotics.", "ms": 225.6}
+{"id": "s0287", "hyp": "He's not on ibuprofen.", "ms": 257.6}
+{"id": "s0288", "hyp": "He's not on ibuprofen.", "ms": 393.9}
+{"id": "s0289", "hyp": "He doesn't use amoxicillin.", "ms": 369.7}
+{"id": "s0290", "hyp": "He's not on paracetamol.", "ms": 326.4}
+{"id": "s0291", "hyp": "He doesn't use esperazile.", "ms": 321.3}
+{"id": "s0292", "hyp": "He doesn't use esperazile.", "ms": 345.9}
+{"id": "s0293", "hyp": "He's not on the harbinger.", "ms": 325.9}
+{"id": "s0294", "hyp": "He doesn't use diazepam.", "ms": 272.6}
+{"id": "s0295", "hyp": "He's not on paracetamol.", "ms": 358.4}
+{"id": "s0296", "hyp": "He's not on paracetamol.", "ms": 314.8}
+{"id": "s0297", "hyp": "He's not on pain meds.", "ms": 238.1}
+{"id": "s0298", "hyp": "He's not on insulin.", "ms": 229.4}
+{"id": "s0299", "hyp": "He's not on insulin.", "ms": 218.9}
+{"id": "s0300", "hyp": "Are you dizzy?", "ms": 153.1}
+{"id": "s0301", "hyp": "Are you dizzy?", "ms": 135.4}
+{"id": "s0302", "hyp": "Are you sick?", "ms": 147.3}
+{"id": "s0303", "hyp": "Are you sick?", "ms": 196.7}
+{"id": "s0304", "hyp": "Do you have a cough?", "ms": 228.9}
+{"id": "s0305", "hyp": "Do you have a fever?", "ms": 187.3}
+{"id": "s0306", "hyp": "Are you having trouble breathing?", "ms": 224.1}
+{"id": "s0307", "hyp": "Do you have chest pains?", "ms": 233.0}
+{"id": "s0308", "hyp": "Do you have headaches?", "ms": 150.2}
+{"id": "s0309", "hyp": "Do you have a rash?", "ms": 213.4}
+{"id": "s0310", "hyp": "Are you using insulin?", "ms": 176.4}
+{"id": "s0311", "hyp": "Are you using paracetamol?", "ms": 252.8}
+{"id": "s0312", "hyp": "Are you taking aspirin?", "ms": 166.6}
+{"id": "s0313", "hyp": "Are you on penicillin?", "ms": 172.5}
+{"id": "s0314", "hyp": "Are you on antibiotics?", "ms": 161.9}
+{"id": "s0315", "hyp": "Are you on pain meds?", "ms": 193.0}
+{"id": "s0316", "hyp": "Are you taking aspirin?", "ms": 152.6}
+{"id": "s0317", "hyp": "Are you using escarazile?", "ms": 257.8}
+{"id": "s0318", "hyp": "Are you using paracetamol?", "ms": 239.1}
+{"id": "s0319", "hyp": "Are you on adrenaline?", "ms": 142.1}
+{"id": "s0320", "hyp": "Take the antibiotics after dinner.", "ms": 165.3}
+{"id": "s0321", "hyp": "Drinks after dinner.", "ms": 178.1}
+{"id": "s0322", "hyp": "Drink after dinner.", "ms": 155.2}
+{"id": "s0323", "hyp": "Drink a eprazole after dinner.", "ms": 359.0}
+{"id": "s0324", "hyp": "Have a metformin after dinner.", "ms": 233.6}
+{"id": "s0325", "hyp": "Drinks after dinner.", "ms": 146.9}
+{"id": "s0326", "hyp": "Take adrenaline after dinner.", "ms": 201.0}
+{"id": "s0327", "hyp": "Have penicillin after dinner.", "ms": 199.1}
+{"id": "s0328", "hyp": "Drinks after dinner.", "ms": 191.4}
+{"id": "s0329", "hyp": "Have a metformin after dinner.", "ms": 278.1}
+{"id": "s0330", "hyp": "Drink the old one after dinner.", "ms": 240.0}
+{"id": "s0331", "hyp": "Take adrenaline after dinner.", "ms": 194.8}
+{"id": "s0332", "hyp": "Have a metformin after dinner.", "ms": 263.2}
+{"id": "s0333", "hyp": "Take the antibiotics after dinner.", "ms": 167.5}
+{"id": "s0334", "hyp": "Take the antibiotics after dinner.", "ms": 167.1}
+{"id": "s0335", "hyp": "Drinks after dinner.", "ms": 164.2}
+{"id": "s0336", "hyp": "Drink a eprazole after dinner.", "ms": 356.5}
+{"id": "s0337", "hyp": "Drinks after dinner.", "ms": 196.3}
+{"id": "s0338", "hyp": "Drink a eprazole after dinner.", "ms": 274.8}
+{"id": "s0339", "hyp": "Take the pain meds after dinner.", "ms": 248.8}
+{"id": "s0340", "hyp": "Take adrenaline after dinner.", "ms": 182.1}
+{"id": "s0341", "hyp": "Drink the old one after dinner.", "ms": 203.8}
+{"id": "s0342", "hyp": "Have a metformin after dinner.", "ms": 240.1}
+{"id": "s0343", "hyp": "Take adrenaline after dinner.", "ms": 197.7}
+{"id": "s0344", "hyp": "Drink dinam after dinner.", "ms": 205.9}
+{"id": "s0345", "hyp": "Have a metformin after dinner.", "ms": 207.9}
+{"id": "s0346", "hyp": "Drink a eprazole after dinner.", "ms": 302.6}
+{"id": "s0347", "hyp": "Drink amoxicillin after dinner.", "ms": 509.9}
+{"id": "s0348", "hyp": "Have penicillin after dinner.", "ms": 223.2}
+{"id": "s0349", "hyp": "Drinks after dinner.", "ms": 177.8}
+{"id": "s0350", "hyp": "Are you taking aspirin?", "ms": 204.8}
+{"id": "s0351", "hyp": "Are you using the LPD?", "ms": 245.4}
+{"id": "s0352", "hyp": "Are you on adrenaline?", "ms": 217.9}
+{"id": "s0353", "hyp": "Are you taking aspirin?", "ms": 181.4}
+{"id": "s0354", "hyp": "Are you using the LPD?", "ms": 295.8}
+{"id": "s0355", "hyp": "Are you on pain meds?", "ms": 233.9}
+{"id": "s0356", "hyp": "Are you taking aspirin?", "ms": 164.2}
+{"id": "s0357", "hyp": "Are you taking aspirin?", "ms": 158.8}
+{"id": "s0358", "hyp": "Are you on pain meds?", "ms": 170.1}
+{"id": "s0359", "hyp": "Are you on adrenaline?", "ms": 235.0}
+{"id": "s0360", "hyp": "Are you using paracetamol?", "ms": 309.0}
+{"id": "s0361", "hyp": "Are you on antibiotics?", "ms": 166.2}
+{"id": "s0362", "hyp": "Are you using the LPD?", "ms": 241.1}
+{"id": "s0363", "hyp": "Are you taking aspirin?", "ms": 188.0}
+{"id": "s0364", "hyp": "Are you taking aspirin?", "ms": 179.8}
+{"id": "s0365", "hyp": "Are you on adrenaline?", "ms": 153.5}
+{"id": "s0366", "hyp": "Are you on penicillin?", "ms": 192.6}
+{"id": "s0367", "hyp": "Are you using metformin?", "ms": 221.6}
+{"id": "s0368", "hyp": "Are you using the right one?", "ms": 239.4}
+{"id": "s0369", "hyp": "Are you using the right one?", "ms": 204.9}
+{"id": "s0370", "hyp": "Are you using the LPD?", "ms": 228.9}
+{"id": "s0371", "hyp": "Are you using morphine?", "ms": 148.1}
+{"id": "s0372", "hyp": "Are you using metformin?", "ms": 241.0}
+{"id": "s0373", "hyp": "Are you using the right one?", "ms": 238.9}
+{"id": "s0374", "hyp": "Are you using paracetamol?", "ms": 312.9}
+{"id": "s0375", "hyp": "Are you using metformin?", "ms": 164.1}
+{"id": "s0376", "hyp": "Are you using metformin?", "ms": 196.0}
+{"id": "s0377", "hyp": "Are you using dizezam?", "ms": 198.0}
+{"id": "s0378", "hyp": "Are you using amoxicillin?", "ms": 279.0}
+{"id": "s0379", "hyp": "Are you using paracetamol?", "ms": 273.1}
+{"id": "s0380", "hyp": "I need a eprazole now.", "ms": 309.0}
+{"id": "s0381", "hyp": "I need Bremner now.", "ms": 291.0}
+{"id": "s0382", "hyp": "I need morphine now.", "ms": 225.1}
+{"id": "s0383", "hyp": "I need a sedative right now.", "ms": 237.2}
+{"id": "s0384", "hyp": "I need insulin now.", "ms": 165.1}
+{"id": "s0385", "hyp": "I need antibiotics now.", "ms": 167.2}
+{"id": "s0386", "hyp": "I need aspirin now.", "ms": 171.0}
+{"id": "s0387", "hyp": "I need adrenaline now.", "ms": 220.1}
+{"id": "s0388", "hyp": "I need to move Giambi now.", "ms": 271.6}
+{"id": "s0389", "hyp": "I need aspirin now.", "ms": 172.6}
+{"id": "s0390", "hyp": "I need adrenaline now.", "ms": 144.4}
+{"id": "s0391", "hyp": "I need Esseker now.", "ms": 274.1}
+{"id": "s0392", "hyp": "I need a sedative right now.", "ms": 243.7}
+{"id": "s0393", "hyp": "I need insulin now.", "ms": 166.4}
+{"id": "s0394", "hyp": "I need insulin now.", "ms": 162.4}
+{"id": "s0395", "hyp": "I need insulin now.", "ms": 165.3}
+{"id": "s0396", "hyp": "I need penicillin now.", "ms": 154.3}
+{"id": "s0397", "hyp": "I need Esseker now.", "ms": 253.3}
+{"id": "s0398", "hyp": "I need metformin now.", "ms": 220.5}
+{"id": "s0399", "hyp": "I need adrenaline now.", "ms": 239.7}
+{"id": "s0400", "hyp": "I need Esseker now.", "ms": 235.1}
+{"id": "s0401", "hyp": "I need paracetamol now.", "ms": 267.7}
+{"id": "s0402", "hyp": "I need a eprazole now.", "ms": 319.4}
+{"id": "s0403", "hyp": "I need insulin now.", "ms": 165.5}
+{"id": "s0404", "hyp": "I need Esseker now.", "ms": 224.4}
+{"id": "s0405", "hyp": "I need a eprazole now.", "ms": 265.1}
+{"id": "s0406", "hyp": "I need aspirin now.", "ms": 192.7}
+{"id": "s0407", "hyp": "I need Bremner now.", "ms": 273.7}
+{"id": "s0408", "hyp": "I need paracetamol now.", "ms": 230.6}
+{"id": "s0409", "hyp": "I need antibiotics now.", "ms": 158.5}
+{"id": "s0410", "hyp": "Stop taking pain meds and call a doctor.", "ms": 291.0}
+{"id": "s0411", "hyp": "Stop the penicillin and call the doctor.", "ms": 243.5}
+{"id": "s0412", "hyp": "Stop taking amoxicillin and call a doctor.", "ms": 355.1}
+{"id": "s0413", "hyp": "Stop taking the harp and call the doctor.", "ms": 297.3}
+{"id": "s0414", "hyp": "Stop taking ibuprofen and call a doctor.", "ms": 359.6}
+{"id": "s0415", "hyp": "Stop the penicillin and call the doctor.", "ms": 239.0}
+{"id": "s0416", "hyp": "Stop taking the eprazole and call a doctor.", "ms": 332.8}
+{"id": "s0417", "hyp": "Stop taking antibiotics and call a doctor.", "ms": 289.2}
+{"id": "s0418", "hyp": "Stop taking paracetamol and call a doctor.", "ms": 316.5}
+{"id": "s0419", "hyp": "Stop taking aspirin and call a doctor.", "ms": 182.8}
+{"id": "s0420", "hyp": "Stop taking the eprazole and call a doctor.", "ms": 415.0}
+{"id": "s0421", "hyp": "Stop taking amoxicillin and call a doctor.", "ms": 351.7}
+{"id": "s0422", "hyp": "Stop taking paracetamol and call a doctor.", "ms": 364.7}
+{"id": "s0423", "hyp": "Stop the penicillin and call the doctor.", "ms": 239.7}
+{"id": "s0424", "hyp": "Stop the penicillin and call the doctor.", "ms": 236.2}
+{"id": "s0425", "hyp": "Stop adrenaline and call a doctor.", "ms": 203.0}
+{"id": "s0426", "hyp": "Stop taking ibuprofen and call a doctor.", "ms": 309.8}
+{"id": "s0427", "hyp": "Stop taking antibiotics and call a doctor.", "ms": 248.2}
+{"id": "s0428", "hyp": "Stop taking amoxicillin and call a doctor.", "ms": 335.0}
+{"id": "s0429", "hyp": "Stop taking paracetamol and call a doctor.", "ms": 419.8}
+{"id": "s0430", "hyp": "Stop the morphine and call the doctor.", "ms": 306.0}
+{"id": "s0431", "hyp": "Stop taking antibiotics and call a doctor.", "ms": 225.5}
+{"id": "s0432", "hyp": "Stop the morphine and call the doctor.", "ms": 286.1}
+{"id": "s0433", "hyp": "Stop taking Bremner and call a doctor.", "ms": 268.9}
+{"id": "s0434", "hyp": "Stop taking the harp and call the doctor.", "ms": 293.0}
+{"id": "s0435", "hyp": "Stop taking amoxicillin and call a doctor.", "ms": 370.3}
+{"id": "s0436", "hyp": "Stop taking pain meds and call a doctor.", "ms": 268.7}
+{"id": "s0437", "hyp": "Stop taking antibiotics and call a doctor.", "ms": 300.5}
+{"id": "s0438", "hyp": "Stop the penicillin and call the doctor.", "ms": 234.6}
+{"id": "s0439", "hyp": "Stop taking pain meds and call a doctor.", "ms": 287.2}
+{"id": "s0440", "hyp": "The doctor gave you a metformin.", "ms": 225.1}
+{"id": "s0441", "hyp": "The doctor gave you a metformin.", "ms": 256.3}
+{"id": "s0442", "hyp": "The doctor gave you aoxicillin.", "ms": 314.2}
+{"id": "s0443", "hyp": "The doctor gave you paracetamol.", "ms": 371.5}
+{"id": "s0444", "hyp": "The doctor gave you the EPA.", "ms": 218.9}
+{"id": "s0445", "hyp": "The doctor has prescribed you a eprazole.", "ms": 380.9}
+{"id": "s0446", "hyp": "The doctor gave you paracetamol.", "ms": 302.2}
+{"id": "s0447", "hyp": "The doctor gave you adrenaline.", "ms": 176.2}
+{"id": "s0448", "hyp": "The doctor gave you antibiotics.", "ms": 181.5}
+{"id": "s0449", "hyp": "The doctor gave you the one who gave you the one.", "ms": 381.0}
+{"id": "s0450", "hyp": "The doctor has prescribed your pain meds.", "ms": 248.6}
+{"id": "s0451", "hyp": "The doctor gave you adrenaline.", "ms": 205.7}
+{"id": "s0452", "hyp": "The doctor gave you paracetamol.", "ms": 318.5}
+{"id": "s0453", "hyp": "The doctor has prescribed you a eprazole.", "ms": 371.4}
+{"id": "s0454", "hyp": "The doctor gave you the one who gave you the one.", "ms": 328.2}
+{"id": "s0455", "hyp": "The doctor gave you aoxicillin.", "ms": 299.5}
+{"id": "s0456", "hyp": "The doctor has prescribed your pain meds.", "ms": 219.3}
+{"id": "s0457", "hyp": "The doctor gave you paracetamol.", "ms": 309.8}
+{"id": "s0458", "hyp": "The doctor gave you the one who gave you the one.", "ms": 398.4}
+{"id": "s0459", "hyp": "The doctor gave you a metformin.", "ms": 265.2}
+{"id": "s0460", "hyp": "The doctor gave you a metformin.", "ms": 276.5}
+{"id": "s0461", "hyp": "The doctor gave you a metformin.", "ms": 280.7}
+{"id": "s0462", "hyp": "The doctor gave you adrenaline.", "ms": 202.6}
+{"id": "s0463", "hyp": "The doctor gave you insulin.", "ms": 180.8}
+{"id": "s0464", "hyp": "The doctor gave you a metformin.", "ms": 291.8}
+{"id": "s0465", "hyp": "The doctor has prescribed aspirin for you.", "ms": 231.2}
+{"id": "s0466", "hyp": "The doctor gave you a prescription for Epstein.", "ms": 288.1}
+{"id": "s0467", "hyp": "The doctor has prescribed morphine for you.", "ms": 257.9}
+{"id": "s0468", "hyp": "The doctor gave you the one who gave you the one.", "ms": 332.0}
+{"id": "s0469", "hyp": "The doctor gave you the EPA.", "ms": 226.5}
+{"id": "s0470", "hyp": "We'll give you penicillin.", "ms": 228.9}
+{"id": "s0471", "hyp": "We'll give you adrenaline.", "ms": 205.0}
+{"id": "s0472", "hyp": "We'll give you a Brewer shot.", "ms": 298.3}
+{"id": "s0473", "hyp": "We'll give you insulin.", "ms": 216.9}
+{"id": "s0474", "hyp": "We'll give you a eprazole shot.", "ms": 413.4}
+{"id": "s0475", "hyp": "We'll give you penicillin.", "ms": 234.2}
+{"id": "s0476", "hyp": "We'll give you a metformin injection.", "ms": 291.0}
+{"id": "s0477", "hyp": "We'll give you a Brewer shot.", "ms": 303.0}
+{"id": "s0478", "hyp": "We'll give you penicillin.", "ms": 242.4}
+{"id": "s0479", "hyp": "We'll give you a metformin injection.", "ms": 306.4}
+{"id": "s0480", "hyp": "We'll give you a shot of the garland.", "ms": 323.9}
+{"id": "s0481", "hyp": "We'll give you a shot of the garland.", "ms": 430.8}
+{"id": "s0482", "hyp": "We'll give you penicillin.", "ms": 249.1}
+{"id": "s0483", "hyp": "We'll give you morphine.", "ms": 194.3}
+{"id": "s0484", "hyp": "We'll inject you with diazepam.", "ms": 374.1}
+{"id": "s0485", "hyp": "We'll give you penicillin.", "ms": 212.0}
+{"id": "s0486", "hyp": "We'll give you an injection of the pain meds.", "ms": 353.3}
+{"id": "s0487", "hyp": "We'll give you an injection of the pain meds.", "ms": 336.1}
+{"id": "s0488", "hyp": "We'll give you insulin.", "ms": 228.2}
+{"id": "s0489", "hyp": "We'll give you insulin.", "ms": 224.7}
+{"id": "s0490", "hyp": "We'll give you aspirin.", "ms": 216.7}
+{"id": "s0491", "hyp": "We'll give you a SAC shot.", "ms": 233.9}
+{"id": "s0492", "hyp": "We'll give you a shot of the garland.", "ms": 431.1}
+{"id": "s0493", "hyp": "We'll give you a SAC shot.", "ms": 260.8}
+{"id": "s0494", "hyp": "We'll give you antibiotics.", "ms": 238.3}
+{"id": "s0495", "hyp": "We'll give you adrenaline.", "ms": 220.3}
+{"id": "s0496", "hyp": "We'll inject you with amoxicillin.", "ms": 334.1}
+{"id": "s0497", "hyp": "We'll give you a Brewer shot.", "ms": 332.1}
+{"id": "s0498", "hyp": "We'll give you a shot of the garland.", "ms": 387.8}
+{"id": "s0499", "hyp": "We'll give you a metformin injection.", "ms": 311.3}
+{"id": "s0500", "hyp": "She used diazepam this morning.", "ms": 259.1}
+{"id": "s0501", "hyp": "She took aspirin this morning.", "ms": 187.0}
+{"id": "s0502", "hyp": "She was on insulin this morning.", "ms": 219.1}
+{"id": "s0503", "hyp": "She used lyeprazole this morning.", "ms": 361.2}
+{"id": "s0504", "hyp": "She took aspirin this morning.", "ms": 188.6}
+{"id": "s0505", "hyp": "Patient was on antibiotics this morning.", "ms": 249.7}
+{"id": "s0506", "hyp": "She was on paracetamol this morning.", "ms": 376.4}
+{"id": "s0507", "hyp": "She was on metformin this morning.", "ms": 314.6}
+{"id": "s0508", "hyp": "She was on insulin this morning.", "ms": 226.3}
+{"id": "s0509", "hyp": "She was on amoxicillin this morning.", "ms": 321.6}
+{"id": "s0510", "hyp": "She was on ibuprofen this morning.", "ms": 313.4}
+{"id": "s0511", "hyp": "She was on amoxicillin this morning.", "ms": 295.5}
+{"id": "s0512", "hyp": "Patient used a garland this morning.", "ms": 259.4}
+{"id": "s0513", "hyp": "Patient took a pain meds this morning.", "ms": 234.7}
+{"id": "s0514", "hyp": "She was on metformin this morning.", "ms": 241.5}
+{"id": "s0515", "hyp": "She was on morphine this morning.", "ms": 259.0}
+{"id": "s0516", "hyp": "She was on insulin this morning.", "ms": 186.1}
+{"id": "s0517", "hyp": "She was on ibuprofen this morning.", "ms": 310.3}
+{"id": "s0518", "hyp": "She was on insulin this morning.", "ms": 231.3}
+{"id": "s0519", "hyp": "Patient was on antibiotics this morning.", "ms": 282.1}
+{"id": "s0520", "hyp": "She used lyeprazole this morning.", "ms": 298.5}
+{"id": "s0521", "hyp": "She was on penicillin this morning.", "ms": 183.7}
+{"id": "s0522", "hyp": "She was on insulin this morning.", "ms": 215.4}
+{"id": "s0523", "hyp": "Patient took a pain meds this morning.", "ms": 217.5}
+{"id": "s0524", "hyp": "She took aspirin this morning.", "ms": 228.0}
+{"id": "s0525", "hyp": "She was on insulin this morning.", "ms": 216.7}
+{"id": "s0526", "hyp": "She was on paracetamol this morning.", "ms": 383.4}
+{"id": "s0527", "hyp": "She was on morphine this morning.", "ms": 221.2}
+{"id": "s0528", "hyp": "She was on penicillin this morning.", "ms": 193.4}
+{"id": "s0529", "hyp": "She used diazepam this morning.", "ms": 304.4}
+{"id": "s0530", "hyp": "How long have you been on antibiotics?", "ms": 247.0}
+{"id": "s0531", "hyp": "How long have you been on aspirin?", "ms": 201.2}
+{"id": "s0532", "hyp": "How long have you been using diazepam?", "ms": 322.9}
+{"id": "s0533", "hyp": "How long have you been on adrenaline?", "ms": 231.0}
+{"id": "s0534", "hyp": "How long have you been on penicillin?", "ms": 210.5}
+{"id": "s0535", "hyp": "How long have you been on morphine?", "ms": 244.0}
+{"id": "s0536", "hyp": "How long have you been on antibiotics?", "ms": 217.2}
+{"id": "s0537", "hyp": "How long have you been using eprazole?", "ms": 301.3}
+{"id": "s0538", "hyp": "How long have you been on aspirin?", "ms": 198.5}
+{"id": "s0539", "hyp": "How long have you been on ibuprofen?", "ms": 358.4}
+{"id": "s0540", "hyp": "How long have you been on aspirin?", "ms": 242.6}
+{"id": "s0541", "hyp": "How long have you been on ibuprofen?", "ms": 319.9}
+{"id": "s0542", "hyp": "How long have you been using diazepam?", "ms": 323.9}
+{"id": "s0543", "hyp": "How long have you been on metformin?", "ms": 289.4}
+{"id": "s0544", "hyp": "How long have you been using eprazole?", "ms": 351.3}
+{"id": "s0545", "hyp": "How long have you been on aspirin?", "ms": 279.0}
+{"id": "s0546", "hyp": "How long have you been on the Twilight?", "ms": 316.2}
+{"id": "s0547", "hyp": "How long have you been on metformin?", "ms": 298.3}
+{"id": "s0548", "hyp": "How long have you been on aspirin?", "ms": 263.1}
+{"id": "s0549", "hyp": "How long have you been on the Twilight?", "ms": 339.7}
+{"id": "s0550", "hyp": "How long have you been using the harbinger?", "ms": 342.3}
+{"id": "s0551", "hyp": "How long have you been on amoxicillin?", "ms": 360.4}
+{"id": "s0552", "hyp": "How long have you been on metformin?", "ms": 257.2}
+{"id": "s0553", "hyp": "How long have you been using diazepam?", "ms": 290.8}
+{"id": "s0554", "hyp": "How long have you been on ibuprofen?", "ms": 377.9}
+{"id": "s0555", "hyp": "How long have you been on metformin?", "ms": 296.1}
+{"id": "s0556", "hyp": "How long have you been on ibuprofen?", "ms": 378.6}
+{"id": "s0557", "hyp": "How long have you been on insulin?", "ms": 205.2}
+{"id": "s0558", "hyp": "How long have you been on morphine?", "ms": 208.4}
+{"id": "s0559", "hyp": "How long have you been on amoxicillin?", "ms": 322.2}
+{"id": "s0560", "hyp": "Take paracetamol on your way to the clinic.", "ms": 344.4}
+{"id": "s0561", "hyp": "Take antibiotics with you while you're at the doctor's office.", "ms": 408.0}
+{"id": "s0562", "hyp": "Take penicillin while you're at the clinic.", "ms": 278.3}
+{"id": "s0563", "hyp": "Take your morphine while you're at the doctor's office.", "ms": 419.3}
+{"id": "s0564", "hyp": "Take your pain meds with you while you're at the doctor's office.", "ms": 475.4}
+{"id": "s0565", "hyp": "Take penicillin while you're at the clinic.", "ms": 302.5}
+{"id": "s0566", "hyp": "Take the eprazole with you while you're at the doctor's office.", "ms": 498.0}
+{"id": "s0567", "hyp": "Take the metformin with you while you're at the doctor's office.", "ms": 465.9}
+{"id": "s0568", "hyp": "Take the metformin with you while you're at the doctor's office.", "ms": 421.5}
+{"id": "s0569", "hyp": "Take the metformin with you while you're at the doctor's office.", "ms": 468.4}
+{"id": "s0570", "hyp": "Take Bremner on your way to the clinic.", "ms": 330.8}
+{"id": "s0571", "hyp": "Take SAC on the way to the clinic.", "ms": 283.5}
+{"id": "s0572", "hyp": "Take antibiotics with you while you're at the doctor's office.", "ms": 398.4}
+{"id": "s0573", "hyp": "Take the eprazole with you while you're at the doctor's office.", "ms": 574.9}
+{"id": "s0574", "hyp": "Take insulin with you while you're at the doctor's office.", "ms": 385.6}
+{"id": "s0575", "hyp": "Take amoxicillin while you're at it.", "ms": 355.9}
+{"id": "s0576", "hyp": "Take insulin with you while you're at the doctor's office.", "ms": 409.7}
+{"id": "s0577", "hyp": "Take SAC on the way to the clinic.", "ms": 302.4}
+{"id": "s0578", "hyp": "Take your morphine while you're at the doctor's office.", "ms": 383.9}
+{"id": "s0579", "hyp": "Take your pain meds with you while you're at the doctor's office.", "ms": 417.2}
+{"id": "s0580", "hyp": "Take the old man's with you on the exam.", "ms": 335.0}
+{"id": "s0581", "hyp": "Take the old man's with you on the exam.", "ms": 292.2}
+{"id": "s0582", "hyp": "Take SAC on the way to the clinic.", "ms": 286.0}
+{"id": "s0583", "hyp": "Take SAC on the way to the clinic.", "ms": 265.8}
+{"id": "s0584", "hyp": "Take insulin with you while you're at the doctor's office.", "ms": 418.4}
+{"id": "s0585", "hyp": "Take Bremner on your way to the clinic.", "ms": 405.7}
+{"id": "s0586", "hyp": "Take paracetamol on your way to the clinic.", "ms": 320.3}
+{"id": "s0587", "hyp": "Take the metformin with you while you're at the doctor's office.", "ms": 514.1}
+{"id": "s0588", "hyp": "Take Bremner on your way to the clinic.", "ms": 386.0}
+{"id": "s0589", "hyp": "Take penicillin while you're at the clinic.", "ms": 261.7}
+{"id": "s0590", "hyp": "This is your diazepam.", "ms": 239.7}
+{"id": "s0591", "hyp": "This is your Babbitt.", "ms": 259.1}
+{"id": "s0592", "hyp": "This is your bellee.", "ms": 216.4}
+{"id": "s0593", "hyp": "This is your morphine.", "ms": 181.5}
+{"id": "s0594", "hyp": "This is your insulin.", "ms": 185.5}
+{"id": "s0595", "hyp": "This is your bellee.", "ms": 232.0}
+{"id": "s0596", "hyp": "This is your bellee.", "ms": 238.8}
+{"id": "s0597", "hyp": "This is your bellee.", "ms": 184.4}
+{"id": "s0598", "hyp": "This is your insulin.", "ms": 177.3}
+{"id": "s0599", "hyp": "This is your penicillin.", "ms": 164.5}
+{"id": "s0600", "hyp": "This is your pain meds.", "ms": 213.7}
+{"id": "s0601", "hyp": "This is your morphine.", "ms": 194.2}
+{"id": "s0602", "hyp": "This is your Babbitt.", "ms": 262.6}
+{"id": "s0603", "hyp": "This is your antibiotics.", "ms": 155.0}
+{"id": "s0604", "hyp": "This is your morphine.", "ms": 149.3}
+{"id": "s0605", "hyp": "This is your morphine.", "ms": 182.8}
+{"id": "s0606", "hyp": "This is your antibiotics.", "ms": 178.6}
+{"id": "s0607", "hyp": "This is your adrenaline.", "ms": 157.2}
+{"id": "s0608", "hyp": "This is your antibiotics.", "ms": 168.5}
+{"id": "s0609", "hyp": "This is your eprazole.", "ms": 243.8}
+{"id": "s0610", "hyp": "This is your aspirin.", "ms": 170.5}
+{"id": "s0611", "hyp": "This is your bellee.", "ms": 220.8}
+{"id": "s0612", "hyp": "This is your antibiotics.", "ms": 193.9}
+{"id": "s0613", "hyp": "This is your insulin.", "ms": 164.9}
+{"id": "s0614", "hyp": "This is your metformin.", "ms": 220.1}
+{"id": "s0615", "hyp": "This is your insulin.", "ms": 191.2}
+{"id": "s0616", "hyp": "This is your eprazole.", "ms": 215.5}
+{"id": "s0617", "hyp": "This is your aspirin.", "ms": 149.7}
+{"id": "s0618", "hyp": "This is your metformin.", "ms": 217.6}
+{"id": "s0619", "hyp": "This is your Sif.", "ms": 153.1}
+{"id": "s0620", "hyp": "Twenty-five aspirin per six hours.", "ms": 209.6}
+{"id": "s0621", "hyp": "Take ten a night's worth of a fucking six.", "ms": 293.6}
+{"id": "s0622", "hyp": "Take two diazepams every six hours.", "ms": 295.1}
+{"id": "s0623", "hyp": "Two penicillin per six hours.", "ms": 167.7}
+{"id": "s0624", "hyp": "Take fifty morphine per six hours.", "ms": 191.7}
+{"id": "s0625", "hyp": "Take five diazepams every six hours.", "ms": 290.8}
+{"id": "s0626", "hyp": "Three tael per six hours.", "ms": 162.7}
+{"id": "s0627", "hyp": "Take five Piotr per six hours.", "ms": 244.9}
+{"id": "s0628", "hyp": "Twenty insulin pills per six hours.", "ms": 210.1}
+{"id": "s0629", "hyp": "Take twenty-five insulin every six hours.", "ms": 211.2}
+{"id": "s0630", "hyp": "Take a hundred paracetamols every six hours.", "ms": 331.8}
+{"id": "s0631", "hyp": "Take ten morphine per six hours.", "ms": 165.9}
+{"id": "s0632", "hyp": "Take a diazepam every six hours.", "ms": 294.3}
+{"id": "s0633", "hyp": "Take twenty-five insulin every six hours.", "ms": 224.9}
+{"id": "s0634", "hyp": "Three metformins per six hours.", "ms": 209.1}
+{"id": "s0635", "hyp": "Take twenty aspirin every six hours.", "ms": 205.9}
+{"id": "s0636", "hyp": "Take five caperazole every six hours.", "ms": 277.8}
+{"id": "s0637", "hyp": "Fifty adrenaline per six hours.", "ms": 200.6}
+{"id": "s0638", "hyp": "Take ten penicillin per six hours.", "ms": 217.0}
+{"id": "s0639", "hyp": "Take ten aspirin every six hours.", "ms": 198.7}
+{"id": "s0640", "hyp": "Fifty metronin per six hours.", "ms": 209.9}
+{"id": "s0641", "hyp": "Three amoxicillins every six hours.", "ms": 283.5}
+{"id": "s0642", "hyp": "Take twenty tael every six hours.", "ms": 163.0}
+{"id": "s0643", "hyp": "Take a hundred morphine pills every six hours.", "ms": 255.6}
+{"id": "s0644", "hyp": "Twenty-five adrenaline per six hours.", "ms": 211.1}
+{"id": "s0645", "hyp": "Intravenous morphine.", "ms": 201.7}
+{"id": "s0646", "hyp": "Take a two-and-a-half millimetre of penicillin.", "ms": 386.5}
+{"id": "s0647", "hyp": "Five millimetres of the gargoyle.", "ms": 368.5}
+{"id": "s0648", "hyp": "One milliliter shot of diazepam.", "ms": 281.7}
+{"id": "s0649", "hyp": "One milligram of eprazole.", "ms": 290.6}
+{"id": "s0650", "hyp": "Take a shot of twenty milligrams of diazepam.", "ms": 301.4}
+{"id": "s0651", "hyp": "Take fifty milligrams of ampm of zinc.", "ms": 297.2}
+{"id": "s0652", "hyp": "Two millimers of penicillin.", "ms": 189.0}
+{"id": "s0653", "hyp": "Take fifty milligrams of ampm of zinc.", "ms": 372.1}
+{"id": "s0654", "hyp": "Inject three milliliters.", "ms": 216.4}
+{"id": "s0655", "hyp": "Five milliliters of diazepam.", "ms": 266.3}
+{"id": "s0656", "hyp": "Take a two-and-a-half-liter shot of paracetamino.", "ms": 501.1}
+{"id": "s0657", "hyp": "Five milliliters of eprazole.", "ms": 291.1}
+{"id": "s0658", "hyp": "Five hundred millimetre amoxicilin.", "ms": 290.3}
+{"id": "s0659", "hyp": "Take a shot of twenty milligrams of zinc.", "ms": 312.0}
+{"id": "s0660", "hyp": "One milliliter per milliliter.", "ms": 236.7}
+{"id": "s0661", "hyp": "Three millimers of aspirin.", "ms": 169.7}
+{"id": "s0662", "hyp": "Take a shot of twenty milligrams of paracetamol.", "ms": 318.9}
+{"id": "s0663", "hyp": "Two milliliters of aspirin.", "ms": 208.0}
+{"id": "s0664", "hyp": "Take a full shot of 20 milligrams of aspirin.", "ms": 264.4}
+{"id": "s0665", "hyp": "Take two hundred and fifty milliliters of aspirin.", "ms": 254.7}
+{"id": "s0666", "hyp": "One milliliter injection.", "ms": 141.3}
+{"id": "s0667", "hyp": "Inject three milliliters.", "ms": 209.4}
+{"id": "s0668", "hyp": "One milliliter of penicillin.", "ms": 210.8}
+{"id": "s0669", "hyp": "In five milliliters of the garland.", "ms": 271.9}
+{"id": "s0670", "hyp": "Five pills each.", "ms": 162.0}
+{"id": "s0671", "hyp": "Every time I drink a hundred milligrams.", "ms": 206.0}
+{"id": "s0672", "hyp": "Three milliliters per time.", "ms": 208.9}
+{"id": "s0673", "hyp": "Every time I drink twenty-five milligrams.", "ms": 261.5}
+{"id": "s0674", "hyp": "Five hundred each.", "ms": 160.0}
+{"id": "s0675", "hyp": "Every time I drink twenty-five milligrams.", "ms": 217.0}
+{"id": "s0676", "hyp": "Every time I drink twenty-five milligrams.", "ms": 216.7}
+{"id": "s0677", "hyp": "Take ten pills each.", "ms": 147.0}
+{"id": "s0678", "hyp": "Two pills each.", "ms": 133.2}
+{"id": "s0679", "hyp": "Five pills each.", "ms": 142.1}
+{"id": "s0680", "hyp": "Fifty milliliters per time.", "ms": 180.6}
+{"id": "s0681", "hyp": "Two milligrams per time.", "ms": 147.3}
+{"id": "s0682", "hyp": "Five millimers per time.", "ms": 213.2}
+{"id": "s0683", "hyp": "Every time I drink a millimorphic.", "ms": 259.1}
+{"id": "s0684", "hyp": "Every time I take a milliliter.", "ms": 214.5}
+{"id": "s0685", "hyp": "Every time I take twenty-five.", "ms": 206.6}
+{"id": "s0686", "hyp": "Every time I drink two hundred fifty milligrams.", "ms": 208.6}
+{"id": "s0687", "hyp": "Take ten pills each.", "ms": 151.0}
+{"id": "s0688", "hyp": "One hundred milliliters per time.", "ms": 228.6}
+{"id": "s0689", "hyp": "One pill at a time.", "ms": 139.0}
+{"id": "s0690", "hyp": "Five millimers per time.", "ms": 186.1}
+{"id": "s0691", "hyp": "One hundred each.", "ms": 98.2}
+{"id": "s0692", "hyp": "Every time I drink two hundred fifty milliliters.", "ms": 322.5}
+{"id": "s0693", "hyp": "Three milligrams per time.", "ms": 146.5}
+{"id": "s0694", "hyp": "Twenty milliliters per time.", "ms": 205.1}
+{"id": "s0695", "hyp": "The dose is three pills a day.", "ms": 229.5}
+{"id": "s0696", "hyp": "The dose is one milliliter per day.", "ms": 285.6}
+{"id": "s0697", "hyp": "The dose is one hundred per day.", "ms": 226.4}
+{"id": "s0698", "hyp": "The dose is twenty milliliters per day.", "ms": 292.5}
+{"id": "s0699", "hyp": "The dose is two hundred fifty milligrams a day.", "ms": 288.5}
+{"id": "s0700", "hyp": "Five hundred per day.", "ms": 199.4}
+{"id": "s0701", "hyp": "The dose is one hundred per day.", "ms": 237.6}
+{"id": "s0702", "hyp": "The dose is three millimetres a day.", "ms": 238.9}
+{"id": "s0703", "hyp": "Five hundred milliliters per day.", "ms": 224.9}
+{"id": "s0704", "hyp": "The dose is twenty pills a day.", "ms": 256.4}
+{"id": "s0705", "hyp": "The dose is twenty milliliters per day.", "ms": 277.0}
+{"id": "s0706", "hyp": "The dose is two millimetres per day.", "ms": 357.7}
+{"id": "s0707", "hyp": "The dose is three pills a day.", "ms": 215.0}
+{"id": "s0708", "hyp": "The dose is five millimetres a day.", "ms": 367.8}
+{"id": "s0709", "hyp": "The dose is five milliliters per day.", "ms": 220.6}
+{"id": "s0710", "hyp": "The dose is one milliliter per day.", "ms": 258.8}
+{"id": "s0711", "hyp": "The dose is twenty-five milligrams a day.", "ms": 243.9}
+{"id": "s0712", "hyp": "The dose is two hundred fifty milliliters a day.", "ms": 270.0}
+{"id": "s0713", "hyp": "The dose is one hundred millimetres a day.", "ms": 348.9}
+{"id": "s0714", "hyp": "Five hundred milligrams a day.", "ms": 169.9}
+{"id": "s0715", "hyp": "The dose is 50 milligrams a day.", "ms": 234.3}
+{"id": "s0716", "hyp": "The dose is twenty milligrams a day.", "ms": 197.9}
+{"id": "s0717", "hyp": "The dose is 50 milliliters per day.", "ms": 249.0}
+{"id": "s0718", "hyp": "The dose is twenty-five milligrams a day.", "ms": 260.1}
+{"id": "s0719", "hyp": "The dose is one hundred milliliters per day.", "ms": 277.8}
+{"id": "s0720", "hyp": "Twenty milligrams of zig twice a day.", "ms": 228.9}
+{"id": "s0721", "hyp": "Two hundred fifty milligrams of paracetamol twice a day.", "ms": 324.9}
+{"id": "s0722", "hyp": "Take a hundred millim of insulin twice a day.", "ms": 288.6}
+{"id": "s0723", "hyp": "Take a hundred eprazole pills twice a day.", "ms": 333.5}
+{"id": "s0724", "hyp": "Three penicillin twice a day.", "ms": 154.3}
+{"id": "s0725", "hyp": "Three amoxicillins a day.", "ms": 222.1}
+{"id": "s0726", "hyp": "Take two-and-a-half milligrams of paracetamino twice a day.", "ms": 472.6}
+{"id": "s0727", "hyp": "Five hundred milligrams of diazepam twice a day.", "ms": 338.9}
+{"id": "s0728", "hyp": "Five hundred milligrams of diazepam twice a day.", "ms": 341.1}
+{"id": "s0729", "hyp": "Take ten of the bells, two times a day.", "ms": 354.0}
+{"id": "s0730", "hyp": "Take ten penicillin twice a day.", "ms": 239.3}
+{"id": "s0731", "hyp": "Five hundred millimetre metformin twice a day.", "ms": 315.3}
+{"id": "s0732", "hyp": "Take ten diazepams twice a day.", "ms": 321.5}
+{"id": "s0733", "hyp": "Two hundred fifty amoxicillins twice a day.", "ms": 370.3}
+{"id": "s0734", "hyp": "Twenty lycrazole pills twice a day.", "ms": 335.7}
+{"id": "s0735", "hyp": "Fifty pills a day of the poprazole.", "ms": 375.8}
+{"id": "s0736", "hyp": "Five hundred paracetamols a day.", "ms": 329.7}
+{"id": "s0737", "hyp": "Five paracetamols a day.", "ms": 317.2}
+{"id": "s0738", "hyp": "Two hundred fifty pills a day.", "ms": 170.0}
+{"id": "s0739", "hyp": "Five hundred milligrams of paracetamol twice a day.", "ms": 345.4}
+{"id": "s0740", "hyp": "Five hundred milligrams of eprazole twice a day.", "ms": 347.4}
+{"id": "s0741", "hyp": "Take five Piotr twice a day.", "ms": 290.8}
+{"id": "s0742", "hyp": "Take a hundred of the rights of the right, two times a day.", "ms": 452.0}
+{"id": "s0743", "hyp": "Fifty paracetamols twice a day.", "ms": 343.1}
+{"id": "s0744", "hyp": "Two hundred fifty milligrams of zinc per day.", "ms": 273.3}
+{"id": "s0745", "hyp": "No more than twenty-five milligrams a day.", "ms": 277.7}
+{"id": "s0746", "hyp": "Don't drink more than a millimim every day.", "ms": 380.3}
+{"id": "s0747", "hyp": "No more than twenty pills a day.", "ms": 257.8}
+{"id": "s0748", "hyp": "Don't drink more than a hundred milligrams a day.", "ms": 303.0}
+{"id": "s0749", "hyp": "Don't drink more than two milligrams a day.", "ms": 350.9}
+{"id": "s0750", "hyp": "Don't drink more than 50 milligrams a day.", "ms": 279.9}
+{"id": "s0751", "hyp": "No more than two hundred fifty milligrams a day.", "ms": 315.4}
+{"id": "s0752", "hyp": "No more than twenty-five milligrams a day.", "ms": 267.8}
+{"id": "s0753", "hyp": "Don't take two more per day.", "ms": 227.0}
+{"id": "s0754", "hyp": "No more than twenty-five per day.", "ms": 244.3}
+{"id": "s0755", "hyp": "Don't take more than five hundred per day.", "ms": 272.8}
+{"id": "s0756", "hyp": "Don't drink more than a millimim every day.", "ms": 335.9}
+{"id": "s0757", "hyp": "Don't drink more than two milligrams a day.", "ms": 265.2}
+{"id": "s0758", "hyp": "Don't drink more than ten milligrams a day.", "ms": 277.3}
+{"id": "s0759", "hyp": "Don't drink more than five milligrams a day.", "ms": 255.9}
+{"id": "s0760", "hyp": "Don't take 50 pills a day.", "ms": 227.6}
+{"id": "s0761", "hyp": "Don't drink more than five milligrams a day.", "ms": 270.6}
+{"id": "s0762", "hyp": "No more than two hundred and fifty a day.", "ms": 244.0}
+{"id": "s0763", "hyp": "Not more than a hundred per day.", "ms": 165.5}
+{"id": "s0764", "hyp": "No more than two hundred fifty milligrams a day.", "ms": 306.0}
+{"id": "s0765", "hyp": "Don't take more than ten per day.", "ms": 222.1}
+{"id": "s0766", "hyp": "Don't take more than ten per day.", "ms": 239.5}
+{"id": "s0767", "hyp": "Don't take five more per day.", "ms": 219.6}
+{"id": "s0768", "hyp": "No more than twenty-five milligrams a day.", "ms": 244.8}
+{"id": "s0769", "hyp": "Don't drink more than ten milligrams a day.", "ms": 311.4}
+{"id": "s0770", "hyp": "We'll give you two milligrams of morphine.", "ms": 265.3}
+{"id": "s0771", "hyp": "We'll give you two milliliters.", "ms": 281.4}
+{"id": "s0772", "hyp": "We'll give you two milliliters.", "ms": 240.2}
+{"id": "s0773", "hyp": "We'll inject you with twenty-five milliliters.", "ms": 332.7}
+{"id": "s0774", "hyp": "We'll inject you with a hundred milliliters.", "ms": 353.1}
+{"id": "s0775", "hyp": "We'll inject you with twenty-five milligrams.", "ms": 274.1}
+{"id": "s0776", "hyp": "We'll inject you with a hundred milliliters.", "ms": 290.1}
+{"id": "s0777", "hyp": "We'll inject you with 50 milligrams.", "ms": 235.9}
+{"id": "s0778", "hyp": "We'll inject you with two hundred fifty milligrams.", "ms": 265.4}
+{"id": "s0779", "hyp": "We'll inject you with two hundred fifty milligrams.", "ms": 330.4}
+{"id": "s0780", "hyp": "We'll inject you with twenty milligrams.", "ms": 211.7}
+{"id": "s0781", "hyp": "We'll inject you with ten millimetres.", "ms": 251.4}
+{"id": "s0782", "hyp": "We'll inject you with a hundred milliliters.", "ms": 298.9}
+{"id": "s0783", "hyp": "We'll give you two milligrams of morphine.", "ms": 252.3}
+{"id": "s0784", "hyp": "We'll inject you with 50 milliliters.", "ms": 273.9}
+{"id": "s0785", "hyp": "We'll inject you with two hundred fifty milligrams.", "ms": 275.7}
+{"id": "s0786", "hyp": "We'll give you two milligrams of morphine.", "ms": 272.9}
+{"id": "s0787", "hyp": "We'll inject you with five hundred milliliters.", "ms": 310.6}
+{"id": "s0788", "hyp": "We'll inject you with 50 milliliters.", "ms": 262.4}
+{"id": "s0789", "hyp": "We'll inject you with three millimers.", "ms": 279.2}
+{"id": "s0790", "hyp": "We'll inject you with a hundred milliliters.", "ms": 282.0}
+{"id": "s0791", "hyp": "We'll give you a milligram.", "ms": 269.9}
+{"id": "s0792", "hyp": "We'll inject you with ten millimetres.", "ms": 293.0}
+{"id": "s0793", "hyp": "We'll inject you with twenty milliliters.", "ms": 276.3}
+{"id": "s0794", "hyp": "We'll give you five hundred milligrams.", "ms": 248.3}
+{"id": "s0795", "hyp": "Twenty-five drops in the right eye.", "ms": 272.3}
+{"id": "s0796", "hyp": "One drop in the right eye.", "ms": 175.8}
+{"id": "s0797", "hyp": "Five hundred drops in the right eye.", "ms": 219.3}
+{"id": "s0798", "hyp": "Twenty drops in the right eye.", "ms": 225.5}
+{"id": "s0799", "hyp": "Twenty drops in the right eye.", "ms": 207.6}
+{"id": "s0800", "hyp": "Fifty drops in the right eye.", "ms": 205.7}
+{"id": "s0801", "hyp": "Five hundred drops in the right eye.", "ms": 217.9}
+{"id": "s0802", "hyp": "Twenty drops in the right eye.", "ms": 192.8}
+{"id": "s0803", "hyp": "Two drops in the right eye.", "ms": 197.6}
+{"id": "s0804", "hyp": "Fifty drops in the right eye.", "ms": 186.2}
+{"id": "s0805", "hyp": "Two hundred fifty drops in the right eye.", "ms": 219.1}
+{"id": "s0806", "hyp": "One drop in the right eye.", "ms": 196.2}
+{"id": "s0807", "hyp": "Five drops in the right eye.", "ms": 159.4}
+{"id": "s0808", "hyp": "One drop in the right eye.", "ms": 245.4}
+{"id": "s0809", "hyp": "Ten drops in the right eye.", "ms": 179.7}
+{"id": "s0810", "hyp": "Two drops in the right eye.", "ms": 179.1}
+{"id": "s0811", "hyp": "Two hundred fifty drops in the right eye.", "ms": 255.4}
+{"id": "s0812", "hyp": "One drop in the right eye.", "ms": 200.2}
+{"id": "s0813", "hyp": "Twenty drops in the right eye.", "ms": 207.8}
+{"id": "s0814", "hyp": "Twenty drops in the right eye.", "ms": 203.5}
+{"id": "s0815", "hyp": "A hundred drops in the right eye.", "ms": 215.3}
+{"id": "s0816", "hyp": "Ten drops in the right eye.", "ms": 191.1}
+{"id": "s0817", "hyp": "Three drops in the right eye.", "ms": 200.0}
+{"id": "s0818", "hyp": "Two drops in the right eye.", "ms": 205.4}
+{"id": "s0819", "hyp": "Five hundred drops in the right eye.", "ms": 218.0}
+{"id": "s0820", "hyp": "Take an insulin after dinner.", "ms": 188.4}
+{"id": "s0821", "hyp": "Take fifty penicillin after dinner.", "ms": 169.0}
+{"id": "s0822", "hyp": "Three metformins after dinner.", "ms": 231.1}
+{"id": "s0823", "hyp": "Take ten diazepams after dinner.", "ms": 212.6}
+{"id": "s0824", "hyp": "Drink two hundred fifty milligrams of eprazole after dinner.", "ms": 355.6}
+{"id": "s0825", "hyp": "Take three milligrams of diazepam after dinner.", "ms": 244.9}
+{"id": "s0826", "hyp": "Take five hundred morphine pills after dinner.", "ms": 187.2}
+{"id": "s0827", "hyp": "Fifty milligrams of amoxicillin after dinner.", "ms": 291.9}
+{"id": "s0828", "hyp": "Drink twenty-five milligrams of diazepam after dinner.", "ms": 292.9}
+{"id": "s0829", "hyp": "Drink twenty-five milligrams of amitt, right after dinner.", "ms": 368.0}
+{"id": "s0830", "hyp": "Drink fifty milligrams of eprazole after dinner.", "ms": 311.9}
+{"id": "s0831", "hyp": "Take two paracetamols after dinner.", "ms": 278.5}
+{"id": "s0832", "hyp": "Take three milligrams of diazepam after dinner.", "ms": 316.2}
+{"id": "s0833", "hyp": "Three taels after dinner.", "ms": 187.3}
+{"id": "s0834", "hyp": "Drink twenty-five milligrams of gumptag after dinner.", "ms": 277.2}
+{"id": "s0835", "hyp": "Drink five hundred milligrams of penicillin after dinner.", "ms": 272.8}
+{"id": "s0836", "hyp": "Drink twenty-five milligrams of amitt, right after dinner.", "ms": 407.2}
+{"id": "s0837", "hyp": "Take five of those eprazole after dinner.", "ms": 301.9}
+{"id": "s0838", "hyp": "Take three milligrams of amoxicillin after dinner.", "ms": 271.2}
+{"id": "s0839", "hyp": "Take twenty-five penicillin after dinner.", "ms": 187.7}
+{"id": "s0840", "hyp": "Take five hundred paracetamols after dinner.", "ms": 302.7}
+{"id": "s0841", "hyp": "Take five of those eprazole after dinner.", "ms": 298.4}
+{"id": "s0842", "hyp": "Drink five millim of penicillin after dinner.", "ms": 230.6}
+{"id": "s0843", "hyp": "Take two hundred fifty milligrams of morphine after dinner.", "ms": 294.7}
+{"id": "s0844", "hyp": "Take a hundred milligrams of amoxicillin after dinner.", "ms": 301.1}
+{"id": "s0845", "hyp": "Passing five hundred milliliters of amoxicillin in an hour.", "ms": 473.3}
+{"id": "s0846", "hyp": "Send one hundred millimetre adrenaline in an hour.", "ms": 276.6}
+{"id": "s0847", "hyp": "Send five hundred milliliters of morphine per hour.", "ms": 277.9}
+{"id": "s0848", "hyp": "Put in three milliliters of the garland in an hour.", "ms": 399.7}
+{"id": "s0849", "hyp": "Send ten milliliters of amoxicillin in an hour.", "ms": 363.8}
+{"id": "s0850", "hyp": "Put in two hundred and fifty milliliters of penicillin per hour.", "ms": 409.1}
+{"id": "s0851", "hyp": "Put two milligrams of eprazole in an hour.", "ms": 351.9}
+{"id": "s0852", "hyp": "Put in 50 milligrams of aspirin per hour.", "ms": 286.4}
+{"id": "s0853", "hyp": "Send ten millimetres of T-shirts per hour.", "ms": 347.3}
+{"id": "s0854", "hyp": "Put in twenty milligrams of paracetamol in an hour.", "ms": 359.1}
+{"id": "s0855", "hyp": "Put two hundred and fifty milligrams of a bead in an hour.", "ms": 428.7}
+{"id": "s0856", "hyp": "Put in twenty-five milliliters per hour.", "ms": 340.7}
+{"id": "s0857", "hyp": "Send one milliliter of aspirin in an hour.", "ms": 283.2}
+{"id": "s0858", "hyp": "Send ten millimetres of T-shirts per hour.", "ms": 373.2}
+{"id": "s0859", "hyp": "Passing five milliliters per hour.", "ms": 281.1}
+{"id": "s0860", "hyp": "Passing five millimetre penicillin in an hour.", "ms": 320.4}
+{"id": "s0861", "hyp": "Put in 50 milliliters of penicillin per hour.", "ms": 302.7}
+{"id": "s0862", "hyp": "Send a milliliter of the typhus in an hour.", "ms": 403.3}
+{"id": "s0863", "hyp": "Put in two hundred and fifty milliliters of insulin per hour.", "ms": 415.9}
+{"id": "s0864", "hyp": "Passing five milliliters of penicillin in an hour.", "ms": 317.2}
+{"id": "s0865", "hyp": "Send a milliliter metformin in an hour.", "ms": 308.7}
+{"id": "s0866", "hyp": "Put two hundred and fifty milliliters of eprazole in an hour.", "ms": 494.4}
+{"id": "s0867", "hyp": "Passing 50 milligrams of amoxicillin in an hour.", "ms": 335.8}
+{"id": "s0868", "hyp": "Send one milligram of eprazole in an hour.", "ms": 372.0}
+{"id": "s0869", "hyp": "Send one hundred millimetre penicillin in an hour.", "ms": 284.2}
+{"id": "s0870", "hyp": "The maximum dose is a milligram of eprazole.", "ms": 399.1}
+{"id": "s0871", "hyp": "The maximum dose is ten morphine.", "ms": 214.7}
+{"id": "s0872", "hyp": "The maximum dose is twenty milligrams of amoxicillin.", "ms": 408.1}
+{"id": "s0873", "hyp": "The maximum dose is twenty-five.", "ms": 230.0}
+{"id": "s0874", "hyp": "The maximum dose is two hundred fifty penicillin.", "ms": 246.3}
+{"id": "s0875", "hyp": "The maximum dose is two hundred fifty penicillin.", "ms": 281.8}
+{"id": "s0876", "hyp": "Maximum dose of three millimers adrenaline.", "ms": 265.2}
+{"id": "s0877", "hyp": "The maximum dose is twenty-five milligrams of paracetamol.", "ms": 506.3}
+{"id": "s0878", "hyp": "The maximum dose is 50 milligrams of amoxicillin.", "ms": 458.5}
+{"id": "s0879", "hyp": "Fifty penicillin, tops.", "ms": 156.4}
+{"id": "s0880", "hyp": "The maximum dose is twenty insulin pills.", "ms": 326.6}
+{"id": "s0881", "hyp": "The maximum dose is twenty-five of a caperazile.", "ms": 377.5}
+{"id": "s0882", "hyp": "The maximum dose is twenty-five morphine.", "ms": 223.5}
+{"id": "s0883", "hyp": "The maximum dose is three millimetre paracetamol.", "ms": 359.2}
+{"id": "s0884", "hyp": "The maximum dose is two millimetres.", "ms": 279.1}
+{"id": "s0885", "hyp": "The maximum dose is one hundred aspirins.", "ms": 280.1}
+{"id": "s0886", "hyp": "Five hundred amoxicillins at maximum.", "ms": 305.6}
+{"id": "s0887", "hyp": "The maximum dose is twenty-five milligrams of morphine.", "ms": 359.9}
+{"id": "s0888", "hyp": "The maximum dose is 50 milligrams of paracetamol.", "ms": 340.7}
+{"id": "s0889", "hyp": "The maximum dose is one hundred millimetre paracetamino.", "ms": 416.2}
+{"id": "s0890", "hyp": "Maximum dose of three millimers adrenaline.", "ms": 264.3}
+{"id": "s0891", "hyp": "Five hundred millimetres tops.", "ms": 200.0}
+{"id": "s0892", "hyp": "The maximum dose is two hundred fifty paracetamols.", "ms": 398.2}
+{"id": "s0893", "hyp": "Five hundred millimetres of amoxicillin at maximum.", "ms": 368.5}
+{"id": "s0894", "hyp": "The maximum dose is 50 milligrams of morphine.", "ms": 307.4}
+{"id": "s0895", "hyp": "You need three aspirins every eight hours.", "ms": 308.2}
+{"id": "s0896", "hyp": "You need five penicillin every eight hours.", "ms": 244.8}
+{"id": "s0897", "hyp": "You need a paracetamol every eight hours.", "ms": 350.1}
+{"id": "s0898", "hyp": "You need five hundred millimetres per eight hours.", "ms": 352.1}
+{"id": "s0899", "hyp": "You need five millim of amoxicillin every eight hours.", "ms": 474.1}
+{"id": "s0900", "hyp": "You need ten piranhas every eight hours.", "ms": 365.1}
+{"id": "s0901", "hyp": "You need twenty oeprazole every eight hours.", "ms": 321.5}
+{"id": "s0902", "hyp": "You need a eprazole every eight hours.", "ms": 292.0}
+{"id": "s0903", "hyp": "You need two hundred fifty millim of penicillin every eight hours.", "ms": 397.7}
+{"id": "s0904", "hyp": "You need twenty millims of penicillin per eight hours.", "ms": 559.1}
+{"id": "s0905", "hyp": "You need a penicillin every eight hours.", "ms": 221.6}
+{"id": "s0906", "hyp": "You need a bead every eight hours.", "ms": 226.7}
+{"id": "s0907", "hyp": "You need three millims of eprazole every eight hours.", "ms": 474.6}
+{"id": "s0908", "hyp": "You need a hundred penicillin per eight hours.", "ms": 262.6}
+{"id": "s0909", "hyp": "You need one hundred millimers of adrenaline every eight hours.", "ms": 344.9}
+{"id": "s0910", "hyp": "You need one milligram per eight hours.", "ms": 284.5}
+{"id": "s0911", "hyp": "You need five hundred Pinots per eight hours.", "ms": 350.5}
+{"id": "s0912", "hyp": "You need two amoxicillins every eight hours.", "ms": 407.0}
+{"id": "s0913", "hyp": "You need two millims of amitt each eight hours.", "ms": 374.0}
+{"id": "s0914", "hyp": "You need ten millims of metformin every eight hours.", "ms": 414.8}
+{"id": "s0915", "hyp": "You need a bead every eight hours.", "ms": 257.3}
+{"id": "s0916", "hyp": "You need two hundred and fifty paracetamols per eight hours.", "ms": 550.6}
+{"id": "s0917", "hyp": "You need two hundred and fifty millimers of insulin every eight hours.", "ms": 369.1}
+{"id": "s0918", "hyp": "You need a milligram of amoxicillin every eight hours.", "ms": 404.2}
+{"id": "s0919", "hyp": "You need twenty Pinots per eight hours.", "ms": 355.0}
+{"id": "s0920", "hyp": "I'm allergic to peanuts.", "ms": 209.7}
+{"id": "s0921", "hyp": "I'm allergic to Sedgwick.", "ms": 268.7}
+{"id": "s0922", "hyp": "I'm allergic to diazepam.", "ms": 296.6}
+{"id": "s0923", "hyp": "I'm allergic to diazepam.", "ms": 292.4}
+{"id": "s0924", "hyp": "I'm allergic to lasers.", "ms": 222.8}
+{"id": "s0925", "hyp": "I'm allergic to peanuts.", "ms": 175.1}
+{"id": "s0926", "hyp": "I'm allergic to Sedgwick.", "ms": 281.4}
+{"id": "s0927", "hyp": "I'm allergic to penicillin.", "ms": 222.2}
+{"id": "s0928", "hyp": "I'm allergic to the gordish.", "ms": 231.5}
+{"id": "s0929", "hyp": "I'm allergic to eggs.", "ms": 210.8}
+{"id": "s0930", "hyp": "I'm allergic to amoxicillin.", "ms": 311.2}
+{"id": "s0931", "hyp": "I'm allergic to morphine.", "ms": 210.5}
+{"id": "s0932", "hyp": "I'm allergic to eprazole.", "ms": 302.1}
+{"id": "s0933", "hyp": "I'm allergic to lasers.", "ms": 272.8}
+{"id": "s0934", "hyp": "I'm allergic to Sedgwick.", "ms": 385.8}
+{"id": "s0935", "hyp": "I'm allergic to aspirin.", "ms": 209.2}
+{"id": "s0936", "hyp": "I'm allergic to paracetamol.", "ms": 299.6}
+{"id": "s0937", "hyp": "I'm allergic to adrenaline.", "ms": 204.7}
+{"id": "s0938", "hyp": "I'm allergic to eprazole.", "ms": 273.3}
+{"id": "s0939", "hyp": "Are you allergic to amoxicillin?", "ms": 346.9}
+{"id": "s0940", "hyp": "Are you allergic to penicillin?", "ms": 325.7}
+{"id": "s0941", "hyp": "Are you allergic to insulin?", "ms": 188.0}
+{"id": "s0942", "hyp": "Are you allergic to eprazole?", "ms": 296.2}
+{"id": "s0943", "hyp": "Are you allergic to eprazole?", "ms": 289.4}
+{"id": "s0944", "hyp": "Are you allergic to the one who is allergic to the one who is not?", "ms": 430.8}
+{"id": "s0945", "hyp": "Are you allergic to aspirin?", "ms": 180.5}
+{"id": "s0946", "hyp": "Are you allergic to the one who is allergic to the one who is not?", "ms": 383.3}
+{"id": "s0947", "hyp": "Are you allergic to amoxicillin?", "ms": 287.7}
+{"id": "s0948", "hyp": "Are you allergic to seafood?", "ms": 188.7}
+{"id": "s0949", "hyp": "Are you allergic to adrenaline?", "ms": 213.0}
+{"id": "s0950", "hyp": "Are you allergic to eggs?", "ms": 170.1}
+{"id": "s0951", "hyp": "Are you allergic to metformin?", "ms": 247.0}
+{"id": "s0952", "hyp": "Are you allergic to morphine?", "ms": 193.8}
+{"id": "s0953", "hyp": "Are you allergic to the one who is allergic to the one who is not?", "ms": 459.7}
+{"id": "s0954", "hyp": "Are you allergic to metformin?", "ms": 269.5}
+{"id": "s0955", "hyp": "Are you allergic to peanuts?", "ms": 194.9}
+{"id": "s0956", "hyp": "Are you allergic to eggs?", "ms": 157.7}
+{"id": "s0957", "hyp": "Are you allergic to the one who is allergic to the one who is not?", "ms": 380.9}
+{"id": "s0958", "hyp": "The patient's allergic to Sedgwick.", "ms": 327.9}
+{"id": "s0959", "hyp": "The patient's allergic to eprazole.", "ms": 286.0}
+{"id": "s0960", "hyp": "The patient's allergic to adrenaline.", "ms": 233.1}
+{"id": "s0961", "hyp": "Patient's allergic to seafood.", "ms": 263.3}
+{"id": "s0962", "hyp": "Patient's allergic to seafood.", "ms": 242.8}
+{"id": "s0963", "hyp": "The patient's allergic to the one with the one.", "ms": 282.5}
+{"id": "s0964", "hyp": "Patient's allergic to morphine.", "ms": 190.7}
+{"id": "s0965", "hyp": "The patient's allergic to lasers.", "ms": 231.1}
+{"id": "s0966", "hyp": "The patient's allergic to lasers.", "ms": 270.3}
+{"id": "s0967", "hyp": "The patient's allergic to insulin.", "ms": 334.5}
+{"id": "s0968", "hyp": "The patient's allergic to lasers.", "ms": 397.2}
+{"id": "s0969", "hyp": "The patient's allergic to insulin.", "ms": 510.7}
+{"id": "s0970", "hyp": "The patient's allergic to eprazole.", "ms": 359.0}
+{"id": "s0971", "hyp": "An allergic patient with eggs.", "ms": 204.3}
+{"id": "s0972", "hyp": "The patient's allergic to metformin.", "ms": 284.7}
+{"id": "s0973", "hyp": "The patient's allergic to peanuts.", "ms": 193.5}
+{"id": "s0974", "hyp": "An allergic patient with eggs.", "ms": 191.5}
+{"id": "s0975", "hyp": "Patient's allergic to aspirin.", "ms": 228.0}
+{"id": "s0976", "hyp": "The patient's allergic to insulin.", "ms": 223.3}
+{"id": "s0977", "hyp": "My son's allergic to diazepam.", "ms": 309.3}
+{"id": "s0978", "hyp": "My son's allergic to paracetamol.", "ms": 392.9}
+{"id": "s0979", "hyp": "My kid's allergic to insulin.", "ms": 259.4}
+{"id": "s0980", "hyp": "My son's allergic to metformin.", "ms": 224.4}
+{"id": "s0981", "hyp": "My kid's allergic to penicillin.", "ms": 194.6}
+{"id": "s0982", "hyp": "My son's allergic to Sedgwick.", "ms": 258.6}
+{"id": "s0983", "hyp": "My son's allergic to the one with the one with the one with the one.", "ms": 445.2}
+{"id": "s0984", "hyp": "My kid's allergic to penicillin.", "ms": 202.3}
+{"id": "s0985", "hyp": "My kid's allergic to peanuts.", "ms": 209.8}
+{"id": "s0986", "hyp": "My son's allergic to paracetamol.", "ms": 287.3}
+{"id": "s0987", "hyp": "My kid's allergic to penicillin.", "ms": 269.3}
+{"id": "s0988", "hyp": "My son's allergic to the one with the one with the one with the one.", "ms": 449.5}
+{"id": "s0989", "hyp": "My son's allergic to Bremen.", "ms": 315.3}
+{"id": "s0990", "hyp": "My kid's allergic to lasers.", "ms": 252.8}
+{"id": "s0991", "hyp": "My son's allergic to Sedgwick.", "ms": 312.6}
+{"id": "s0992", "hyp": "My son's allergic to amoxicillin.", "ms": 417.4}
+{"id": "s0993", "hyp": "My kid's allergic to aspirin.", "ms": 279.7}
+{"id": "s0994", "hyp": "My son's allergic to diazepam.", "ms": 298.4}
+{"id": "s0995", "hyp": "My son's allergic to the one with the one with the one with the one.", "ms": 496.8}
+{"id": "s0996", "hyp": "He's had an allergic reaction to peanuts.", "ms": 363.4}
+{"id": "s0997", "hyp": "He's been allergic to seafood.", "ms": 256.3}
+{"id": "s0998", "hyp": "He's been allergic to seafood.", "ms": 219.7}
+{"id": "s0999", "hyp": "He's been allergic to amoxicillin.", "ms": 339.6}
+{"id": "s1000", "hyp": "He's been allergic to paracetamol.", "ms": 359.1}
+{"id": "s1001", "hyp": "He's been allergic to eprazole.", "ms": 297.8}
+{"id": "s1002", "hyp": "He's been allergic to Brewer.", "ms": 340.5}
+{"id": "s1003", "hyp": "He's had an allergic reaction to peanuts.", "ms": 277.1}
+{"id": "s1004", "hyp": "He's been allergic to amoxicillin.", "ms": 347.6}
+{"id": "s1005", "hyp": "He's been allergic to paracetamol.", "ms": 356.2}
+{"id": "s1006", "hyp": "He's been allergic to Brewer.", "ms": 310.4}
+{"id": "s1007", "hyp": "He's been allergic to diazepam.", "ms": 357.8}
+{"id": "s1008", "hyp": "He's been allergic to adrenaline.", "ms": 235.3}
+{"id": "s1009", "hyp": "He's been allergic to eprazole.", "ms": 358.0}
+{"id": "s1010", "hyp": "He's been allergic to morphine.", "ms": 227.9}
+{"id": "s1011", "hyp": "He's been allergic to aspirin.", "ms": 249.5}
+{"id": "s1012", "hyp": "He's been allergic to metformin.", "ms": 274.7}
+{"id": "s1013", "hyp": "He's been allergic to the one with the one.", "ms": 305.5}
+{"id": "s1014", "hyp": "He's been allergic to adrenaline.", "ms": 240.4}
+{"id": "s1015", "hyp": "She's having a serious allergic reaction to lasers.", "ms": 319.1}
+{"id": "s1016", "hyp": "She's having a serious allergic reaction to diazepam.", "ms": 371.1}
+{"id": "s1017", "hyp": "She's having a serious allergic reaction to the right of the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with", "ms": 1236.7}
+{"id": "s1018", "hyp": "She's having a serious allergic reaction to aspirin.", "ms": 290.3}
+{"id": "s1019", "hyp": "She's having a severe allergic reaction to metformin.", "ms": 391.2}
+{"id": "s1020", "hyp": "She's having a severe allergic reaction to amoxicillin.", "ms": 371.9}
+{"id": "s1021", "hyp": "She's having a serious allergic reaction to the right of the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with", "ms": 1124.8}
+{"id": "s1022", "hyp": "She's having a serious allergic reaction to penicillin.", "ms": 289.7}
+{"id": "s1023", "hyp": "She's having a serious allergic reaction to Arborlon.", "ms": 340.2}
+{"id": "s1024", "hyp": "She's having a serious allergic reaction to paracetamol.", "ms": 407.4}
+{"id": "s1025", "hyp": "She's having a serious allergic reaction to adrenaline.", "ms": 293.3}
+{"id": "s1026", "hyp": "She's having a serious allergic reaction to paracetamol.", "ms": 374.2}
+{"id": "s1027", "hyp": "She's having a severe allergic reaction to amoxicillin.", "ms": 415.5}
+{"id": "s1028", "hyp": "She's having a severe allergic reaction to amoxicillin.", "ms": 385.4}
+{"id": "s1029", "hyp": "She's having a serious allergic reaction to Sedgwick.", "ms": 405.2}
+{"id": "s1030", "hyp": "She's having a serious allergic reaction to the right of the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with the one with", "ms": 1144.4}
+{"id": "s1031", "hyp": "She's having a serious allergic reaction to penicillin.", "ms": 241.8}
+{"id": "s1032", "hyp": "She's having a serious allergic reaction to penicillin.", "ms": 277.0}
+{"id": "s1033", "hyp": "She's having a serious allergic reaction to epagrazole.", "ms": 402.1}
+{"id": "s1034", "hyp": "Tell me if you're allergic to metformin.", "ms": 319.7}
+{"id": "s1035", "hyp": "Tell me if you're allergic to metformin.", "ms": 328.3}
+{"id": "s1036", "hyp": "Tell me if you're allergic to penicillin.", "ms": 253.0}
+{"id": "s1037", "hyp": "Tell me if you are allergic to eggs.", "ms": 263.7}
+{"id": "s1038", "hyp": "Tell me if you are allergic to peanuts.", "ms": 281.3}
+{"id": "s1039", "hyp": "Tell me if you are allergic to aspirin.", "ms": 352.7}
+{"id": "s1040", "hyp": "Tell me if you're allergic to lasers.", "ms": 307.8}
+{"id": "s1041", "hyp": "Tell me if you are allergic to peanuts.", "ms": 258.0}
+{"id": "s1042", "hyp": "Tell me if you are allergic to aspirin.", "ms": 329.8}
+{"id": "s1043", "hyp": "Tell me if you're allergic to penicillin.", "ms": 298.1}
+{"id": "s1044", "hyp": "Tell me if you're allergic to adrenaline.", "ms": 271.2}
+{"id": "s1045", "hyp": "Tell me if you are allergic to peanuts.", "ms": 198.7}
+{"id": "s1046", "hyp": "Tell me if you're allergic to paracetamol.", "ms": 355.7}
+{"id": "s1047", "hyp": "Tell me if you're allergic to lasers.", "ms": 271.3}
+{"id": "s1048", "hyp": "Tell me if you are allergic to Bremen.", "ms": 285.3}
+{"id": "s1049", "hyp": "Tell me if you're allergic to morphine.", "ms": 239.8}
+{"id": "s1050", "hyp": "Tell me if you're allergic to amoxicillin.", "ms": 354.0}
+{"id": "s1051", "hyp": "Tell me if you're allergic to paracetamol.", "ms": 326.1}
+{"id": "s1052", "hyp": "Tell me if you're allergic to adrenaline.", "ms": 230.2}
+{"id": "s1053", "hyp": "My family has an allergic reaction to penicillin.", "ms": 239.8}
+{"id": "s1054", "hyp": "My family has an allergic reaction to amoxicillin.", "ms": 352.9}
+{"id": "s1055", "hyp": "My family has an allergic reaction to eggs.", "ms": 268.7}
+{"id": "s1056", "hyp": "My family has an allergic reaction to penicillin.", "ms": 279.6}
+{"id": "s1057", "hyp": "My family has an allergic reaction to Brewer.", "ms": 287.1}
+{"id": "s1058", "hyp": "My family has an allergic reaction to dizeza.", "ms": 234.1}
+{"id": "s1059", "hyp": "My family has an allergic reaction to Sedgwick.", "ms": 281.8}
+{"id": "s1060", "hyp": "My family has an allergic reaction to aspirin.", "ms": 205.4}
+{"id": "s1061", "hyp": "My family has an allergic reaction to eggs.", "ms": 266.1}
+{"id": "s1062", "hyp": "My family has an allergic reaction to seafood.", "ms": 226.7}
+{"id": "s1063", "hyp": "My family has an allergic family with a caperazile.", "ms": 376.2}
+{"id": "s1064", "hyp": "My family has an allergic reaction to metformin.", "ms": 291.9}
+{"id": "s1065", "hyp": "My family has an allergic reaction to insulin.", "ms": 241.6}
+{"id": "s1066", "hyp": "My family has an allergic reaction to dizeza.", "ms": 295.3}
+{"id": "s1067", "hyp": "My family has an allergic family with lasers.", "ms": 296.7}
+{"id": "s1068", "hyp": "My family has an allergic reaction to dizeza.", "ms": 298.7}
+{"id": "s1069", "hyp": "My family has an allergic reaction to paracetamol.", "ms": 333.4}
+{"id": "s1070", "hyp": "My family has an allergic reaction to peanuts.", "ms": 206.2}
+{"id": "s1071", "hyp": "My family has an allergic reaction to metformin.", "ms": 292.7}
+{"id": "s1072", "hyp": "Your blood pressure is very high.", "ms": 166.5}
+{"id": "s1073", "hyp": "Your blood pressure is very high.", "ms": 196.0}
+{"id": "s1074", "hyp": "Your blood pressure is a little high.", "ms": 212.7}
+{"id": "s1075", "hyp": "Your blood pressure is extremely high.", "ms": 231.8}
+{"id": "s1076", "hyp": "Your blood pressure is extremely high.", "ms": 179.9}
+{"id": "s1077", "hyp": "Your blood pressure is extremely high.", "ms": 164.1}
+{"id": "s1078", "hyp": "Your blood pressure is too high.", "ms": 218.0}
+{"id": "s1079", "hyp": "Your blood pressure is extremely high.", "ms": 213.4}
+{"id": "s1080", "hyp": "Your blood pressure is extremely high.", "ms": 252.5}
+{"id": "s1081", "hyp": "Your blood pressure is extremely high.", "ms": 193.4}
+{"id": "s1082", "hyp": "Your blood pressure is extremely high.", "ms": 199.9}
+{"id": "s1083", "hyp": "Your blood pressure is extremely high.", "ms": 211.5}
+{"id": "s1084", "hyp": "Your blood pressure is a little high.", "ms": 205.9}
+{"id": "s1085", "hyp": "Your blood pressure is too high.", "ms": 194.7}
+{"id": "s1086", "hyp": "Your blood pressure is very high.", "ms": 207.8}
+{"id": "s1087", "hyp": "Your blood pressure is a little high.", "ms": 236.9}
+{"id": "s1088", "hyp": "Your blood pressure is a little high.", "ms": 231.0}
+{"id": "s1089", "hyp": "Your blood pressure is too high.", "ms": 188.3}
+{"id": "s1090", "hyp": "Your blood pressure is very high.", "ms": 195.1}
+{"id": "s1091", "hyp": "The pain is too severe.", "ms": 159.6}
+{"id": "s1092", "hyp": "The pain was extremely intense.", "ms": 183.7}
+{"id": "s1093", "hyp": "The pain is too severe.", "ms": 167.6}
+{"id": "s1094", "hyp": "The pain was intense.", "ms": 176.7}
+{"id": "s1095", "hyp": "The pain was extremely intense.", "ms": 222.5}
+{"id": "s1096", "hyp": "The pain is too severe.", "ms": 192.8}
+{"id": "s1097", "hyp": "The pain is too severe.", "ms": 183.4}
+{"id": "s1098", "hyp": "The pain was a little intense.", "ms": 198.0}
+{"id": "s1099", "hyp": "The pain is too severe.", "ms": 154.9}
+{"id": "s1100", "hyp": "The pain was extremely intense.", "ms": 191.1}
+{"id": "s1101", "hyp": "The pain was intense.", "ms": 155.5}
+{"id": "s1102", "hyp": "The pain was extremely intense.", "ms": 179.3}
+{"id": "s1103", "hyp": "The pain was extremely intense.", "ms": 147.1}
+{"id": "s1104", "hyp": "The pain was intense.", "ms": 136.8}
+{"id": "s1105", "hyp": "The pain is too severe.", "ms": 196.7}
+{"id": "s1106", "hyp": "The pain is too severe.", "ms": 160.4}
+{"id": "s1107", "hyp": "The pain was a little intense.", "ms": 195.2}
+{"id": "s1108", "hyp": "The pain is too severe.", "ms": 205.4}
+{"id": "s1109", "hyp": "The pain was intense.", "ms": 148.5}
+{"id": "s1110", "hyp": "Patient's a little weak.", "ms": 197.3}
+{"id": "s1111", "hyp": "Patient's extremely weak.", "ms": 174.2}
+{"id": "s1112", "hyp": "Patient's too weak.", "ms": 220.0}
+{"id": "s1113", "hyp": "Patient's extremely weak.", "ms": 198.8}
+{"id": "s1114", "hyp": "Patient's extremely weak.", "ms": 151.2}
+{"id": "s1115", "hyp": "Patient's very weak.", "ms": 169.6}
+{"id": "s1116", "hyp": "Patient's a little weak.", "ms": 210.2}
+{"id": "s1117", "hyp": "Patient's a little weak.", "ms": 225.0}
+{"id": "s1118", "hyp": "Patient's too weak.", "ms": 233.0}
+{"id": "s1119", "hyp": "Patient's very sick.", "ms": 189.4}
+{"id": "s1120", "hyp": "Patient's a little weak.", "ms": 242.9}
+{"id": "s1121", "hyp": "Patient's too weak.", "ms": 205.7}
+{"id": "s1122", "hyp": "Patient's a little weak.", "ms": 204.9}
+{"id": "s1123", "hyp": "Patient's extremely weak.", "ms": 150.8}
+{"id": "s1124", "hyp": "Patient's very weak.", "ms": 188.6}
+{"id": "s1125", "hyp": "Patient's extremely weak.", "ms": 174.3}
+{"id": "s1126", "hyp": "Patient's a little weak.", "ms": 176.7}
+{"id": "s1127", "hyp": "Patient's a little weak.", "ms": 183.3}
+{"id": "s1128", "hyp": "Patient's a little weak.", "ms": 162.8}
+{"id": "s1129", "hyp": "I'm extremely tired.", "ms": 179.3}
+{"id": "s1130", "hyp": "I'm very tired.", "ms": 176.0}
+{"id": "s1131", "hyp": "I'm extremely tired.", "ms": 155.0}
+{"id": "s1132", "hyp": "I'm very tired.", "ms": 183.2}
+{"id": "s1133", "hyp": "I'm a little tired.", "ms": 200.3}
+{"id": "s1134", "hyp": "I'm very tired.", "ms": 132.8}
+{"id": "s1135", "hyp": "I'm really tired.", "ms": 167.1}
+{"id": "s1136", "hyp": "I'm extremely tired.", "ms": 176.9}
+{"id": "s1137", "hyp": "I'm very tired.", "ms": 173.4}
+{"id": "s1138", "hyp": "I'm tired.", "ms": 137.8}
+{"id": "s1139", "hyp": "I'm tired.", "ms": 140.2}
+{"id": "s1140", "hyp": "I'm tired.", "ms": 147.3}
+{"id": "s1141", "hyp": "I'm tired.", "ms": 149.9}
+{"id": "s1142", "hyp": "I'm a little tired.", "ms": 207.9}
+{"id": "s1143", "hyp": "I'm very tired.", "ms": 147.9}
+{"id": "s1144", "hyp": "I'm really tired.", "ms": 193.6}
+{"id": "s1145", "hyp": "I'm tired.", "ms": 99.4}
+{"id": "s1146", "hyp": "I'm tired.", "ms": 125.9}
+{"id": "s1147", "hyp": "I'm a little tired.", "ms": 203.8}
+{"id": "s1148", "hyp": "The wound is serious.", "ms": 143.6}
+{"id": "s1149", "hyp": "The wound is extremely severe.", "ms": 161.9}
+{"id": "s1150", "hyp": "The wound is too severe.", "ms": 179.5}
+{"id": "s1151", "hyp": "It's a very serious wound.", "ms": 230.8}
+{"id": "s1152", "hyp": "It's a very serious wound.", "ms": 174.9}
+{"id": "s1153", "hyp": "The wound is serious.", "ms": 141.0}
+{"id": "s1154", "hyp": "The wound is too severe.", "ms": 167.7}
+{"id": "s1155", "hyp": "The wound is extremely severe.", "ms": 156.7}
+{"id": "s1156", "hyp": "The wound is extremely severe.", "ms": 177.3}
+{"id": "s1157", "hyp": "It's a very serious wound.", "ms": 218.7}
+{"id": "s1158", "hyp": "It's a very serious wound.", "ms": 194.7}
+{"id": "s1159", "hyp": "The wound is too severe.", "ms": 199.7}
+{"id": "s1160", "hyp": "It's a little severe.", "ms": 186.3}
+{"id": "s1161", "hyp": "It's a little severe.", "ms": 173.0}
+{"id": "s1162", "hyp": "The wound is extremely severe.", "ms": 193.4}
+{"id": "s1163", "hyp": "It's a very serious wound.", "ms": 230.4}
+{"id": "s1164", "hyp": "It's a very serious wound.", "ms": 224.7}
+{"id": "s1165", "hyp": "The wound is extremely severe.", "ms": 149.6}
+{"id": "s1166", "hyp": "The wound is extremely severe.", "ms": 148.5}
+{"id": "s1167", "hyp": "Your heart rate is too fast.", "ms": 186.0}
+{"id": "s1168", "hyp": "Your heart rate is very fast.", "ms": 179.6}
+{"id": "s1169", "hyp": "Your heart rate is too fast.", "ms": 177.3}
+{"id": "s1170", "hyp": "Your heart rate is too fast.", "ms": 191.3}
+{"id": "s1171", "hyp": "Your heartbeat is extremely fast.", "ms": 226.4}
+{"id": "s1172", "hyp": "Your heart rate is very fast.", "ms": 218.3}
+{"id": "s1173", "hyp": "Your heart rate is too fast.", "ms": 212.6}
+{"id": "s1174", "hyp": "Your heart rate is extremely fast.", "ms": 219.0}
+{"id": "s1175", "hyp": "Your heart rate is a little fast.", "ms": 166.0}
+{"id": "s1176", "hyp": "Your heart rate is a little fast.", "ms": 208.1}
+{"id": "s1177", "hyp": "Your heart rate is a little fast.", "ms": 209.7}
+{"id": "s1178", "hyp": "Your heartbeat is extremely fast.", "ms": 187.0}
+{"id": "s1179", "hyp": "Your heart rate is a little fast.", "ms": 247.2}
+{"id": "s1180", "hyp": "Your heart rate is extremely fast.", "ms": 195.2}
+{"id": "s1181", "hyp": "Your heart rate is a little fast.", "ms": 229.5}
+{"id": "s1182", "hyp": "Your heart rate is a little fast.", "ms": 203.2}
+{"id": "s1183", "hyp": "Your heartbeat is extremely fast.", "ms": 192.5}
+{"id": "s1184", "hyp": "Your heart rate is extremely fast.", "ms": 194.6}
+{"id": "s1185", "hyp": "Your heartbeat is extremely fast.", "ms": 178.9}
+{"id": "s1186", "hyp": "The fever's too high.", "ms": 195.3}
+{"id": "s1187", "hyp": "The fever's too high.", "ms": 181.1}
+{"id": "s1188", "hyp": "The fever's a little high.", "ms": 187.9}
+{"id": "s1189", "hyp": "The fever's a little high.", "ms": 215.7}
+{"id": "s1190", "hyp": "The fever's a little high.", "ms": 202.9}
+{"id": "s1191", "hyp": "The fever's too high.", "ms": 214.3}
+{"id": "s1192", "hyp": "The fever is extremely high.", "ms": 183.7}
+{"id": "s1193", "hyp": "The fever is extremely high.", "ms": 156.7}
+{"id": "s1194", "hyp": "The fever is extremely high.", "ms": 149.7}
+{"id": "s1195", "hyp": "The fever is very high.", "ms": 146.2}
+{"id": "s1196", "hyp": "The fever is extremely high.", "ms": 188.3}
+{"id": "s1197", "hyp": "The fever is very high.", "ms": 192.4}
+{"id": "s1198", "hyp": "The fever's a little high.", "ms": 178.6}
+{"id": "s1199", "hyp": "The fever is extremely high.", "ms": 162.3}
+{"id": "s1200", "hyp": "The fever's too high.", "ms": 201.5}
+{"id": "s1201", "hyp": "The fever's too high.", "ms": 186.6}
+{"id": "s1202", "hyp": "The fever is extremely high.", "ms": 177.2}
+{"id": "s1203", "hyp": "The fever is extremely high.", "ms": 147.7}
+{"id": "s1204", "hyp": "The fever's too high.", "ms": 199.7}
+{"id": "s1205", "hyp": "The pain is getting worse.", "ms": 159.6}
+{"id": "s1206", "hyp": "The pain is getting worse.", "ms": 188.7}
+{"id": "s1207", "hyp": "The pain is getting worse.", "ms": 173.4}
+{"id": "s1208", "hyp": "The pain is getting worse.", "ms": 150.8}
+{"id": "s1209", "hyp": "The pain is getting worse.", "ms": 159.3}
+{"id": "s1210", "hyp": "The pain is getting worse.", "ms": 170.3}
+{"id": "s1211", "hyp": "The pain's a little worse.", "ms": 195.2}
+{"id": "s1212", "hyp": "The pain's a little worse.", "ms": 165.3}
+{"id": "s1213", "hyp": "The pain is getting worse.", "ms": 207.8}
+{"id": "s1214", "hyp": "The pain is getting worse.", "ms": 171.2}
+{"id": "s1215", "hyp": "The pain is getting worse.", "ms": 153.7}
+{"id": "s1216", "hyp": "The pain is getting worse.", "ms": 162.8}
+{"id": "s1217", "hyp": "The pain is getting worse.", "ms": 155.9}
+{"id": "s1218", "hyp": "The pain is getting worse.", "ms": 180.6}
+{"id": "s1219", "hyp": "The pain is getting worse.", "ms": 156.8}
+{"id": "s1220", "hyp": "The pain is getting worse.", "ms": 171.5}
+{"id": "s1221", "hyp": "The pain is getting worse.", "ms": 165.0}
+{"id": "s1222", "hyp": "The pain is getting worse.", "ms": 199.3}
+{"id": "s1223", "hyp": "The pain is getting worse.", "ms": 170.0}

@@ -1,0 +1,10 @@
+{
+  "version": "v1-untuned",
+  "note": "Fusion & Safety Gate thresholds. Starting values, not tuned on recordings. Evaluation order is fixed in src/tonebridge/gate.py (FSM).",
+  "asr_confidence_min": 0.5,
+  "asr_abstain_floor": 0.2,
+  "urgency_high": 0.7,
+  "voicing_quality_min": 0.7,
+  "min_text_chars": 1,
+  "max_len_ratio": 6.0
+}

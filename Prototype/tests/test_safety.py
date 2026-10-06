@@ -37,3 +37,8 @@ def test_intensity_confirm_not_block():
     r = C.check_texts("huyết áp rất cao", "High blood pressure.")
     assert r.passed and r.confirm and "intensity_missing:rất" in r.reasons
     assert not C.check_texts("huyết áp rất cao", "Very high blood pressure.").confirm
+
+
+def test_en_number_with_and_and_plural_egg():
+    assert 250 in C._en_numbers("two hundred and fifty milliliters")
+    assert C.check_texts("bệnh nhân dị ứng với trứng", "The patient is allergic to eggs.").passed

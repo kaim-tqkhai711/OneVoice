@@ -23,6 +23,7 @@ ap.add_argument("--split", choices=["dev", "test"], required=True); ap.add_argum
 ap.add_argument("--snrs", nargs="+", default=["10", "5", "0", "-5"]); ap.add_argument("--with-clean", action="store_true")
 ap.add_argument("--arms", nargs="+", default=["off", "on", "oa0.25", "oa0.5", "oa0.75", "cns"]); ap.add_argument("--out", type=Path, required=True)
 ap.add_argument("--limit", type=int, default=None); ap.add_argument("--threads", type=int, default=2)
+ap.add_argument("--asr-method", default="greedy_search"); ap.add_argument("--chunked", action="store_true", help="decode per Silero VAD segment and join")
 a = ap.parse_args()
 
 split = json.loads((ROOT / "configs/splits/fleurs_vi_dev_test.json").read_text())
@@ -46,7 +47,13 @@ elif a.noise == "babble":
 else:
     noise_tracks.append(("alarm", make_alarm(90.0, SEED + 2)))
 
-asr = SherpaZipformerVi(decoder="decoder-epoch-12-avg-8.int8.onnx", threads=a.threads)
+asr = SherpaZipformerVi(decoder="decoder-epoch-12-avg-8.int8.onnx", threads=a.threads, decoding_method=a.asr_method)
+
+def transcribe(y):
+    if not a.chunked:
+        return asr.transcribe(y, "vi").text
+    sp = vad.segments(y)
+    return " ".join(asr.transcribe(y[int(max(0, s0 - 0.1) * 16000): int((e0 + 0.1) * 16000)], "vi").text for s0, e0 in sp) if sp else asr.transcribe(y, "vi").text
 gt = GtcrnDenoiser(threads=a.threads); cns = ClassicalNs()
 res = json.loads(a.out.read_text()) if a.out.exists() else {"split": a.split, "ids": ids, "noise": a.noise, "tracks": [n for n, _ in noise_tracks], "cells": {}, "snr_check": {}}
 clips = []
@@ -78,7 +85,7 @@ for snr in conds:
         for k, (u, x, ref, m) in enumerate(clips):
             y = noisy[k] if arm == "off" else enh[k] if arm == "on" else cn[k] if arm == "cns" else oa_mix(noisy[k], enh[k], float(arm[2:]))
             b = (c.words, c.word_errors, c.chars, c.char_errors)
-            h = asr.transcribe(y, "vi").text; hyps.append(h)
+            h = transcribe(y); hyps.append(h)
             c.add(ref, h)
             per.append([c.words - b[0], c.word_errors - b[1], c.chars - b[2], c.char_errors - b[3]])
         res["cells"][key] = {"WER": round(c.wer, 4), "CER": round(c.cer, 4), "words": c.words, "per_utt": per, "hyp": hyps}

@@ -14,13 +14,14 @@ DEFAULT_DIR = ROOT / "models/asr/zipformer-vi-int8"
 
 
 class SherpaZipformerVi:
-    def __init__(self, model_dir: Path = DEFAULT_DIR, decoder: str = "decoder-epoch-12-avg-8.onnx", threads: int = 2) -> None:
+    def __init__(self, model_dir: Path = DEFAULT_DIR, decoder: str = "decoder-epoch-12-avg-8.onnx", threads: int = 2,
+                 decoding_method: str = "greedy_search", num_active_paths: int = 4) -> None:
         d = Path(model_dir)
         self.decoder_file = decoder
         self._rec = sherpa_onnx.OfflineRecognizer.from_transducer(
             encoder=str(d / "encoder-epoch-12-avg-8.int8.onnx"), decoder=str(d / decoder),
             joiner=str(d / "joiner-epoch-12-avg-8.int8.onnx"), tokens=str(d / "tokens.txt"),
-            num_threads=threads, sample_rate=16000, feature_dim=80, decoding_method="greedy_search", provider="cpu")
+            num_threads=threads, sample_rate=16000, feature_dim=80, decoding_method=decoding_method, max_active_paths=num_active_paths, provider="cpu")
 
     def transcribe(self, wav: np.ndarray, lang: Lang) -> AsrResult:  # [T] float32 @16k -> text
         assert lang == "vi", lang

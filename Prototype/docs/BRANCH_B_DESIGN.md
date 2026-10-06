@@ -78,3 +78,10 @@ Proposal §4.2 module table, row "Vocal urgency", verbatim: "3-level advisory po
 
 ## 7. Estimate
 Features + graph + reference tests: 4.5 h. MLP + LOSO + baseline: 3 h (blocked on recordings; synthetic placeholder only for pipeline plumbing). Included in `docs/TIMELINE_v3.md` D3.
+
+## 8. Implementation notes (2026-10-07, overnight session)
+- Code: `src/tonebridge/branch_b.py` (features, UNKNOWN rules, provenance), `branch_b_graph.py` (band_feats.onnx, built with onnx.helper), `configs/branch_b.json`. Tests: `tests/test_branch_b.py` (band graph vs librosa rel <= 7.6e-7 measured, tolerance 1e-4; features 20-22 vs full reference; features 1-19 vs a plain-python loop reference; SwiftF0 sweep; provenance; pipeline tap hash; golden vectors `golden/branch_b_golden.json`).
+- **21 features, not 22**: F0 statistics are in semitones relative to the utterance's own median F0 (owner instruction 2026-10-07), so `f0_p50_st` is identically 0 and was dropped. `loud_std` is the std in dB (the design said "std_norm"; a ratio of dB values is not meaningful). Nothing was added.
+- UNKNOWN thresholds (0.3 s, 20 voiced frames, voiced_frac 0.15, voicing_quality 0.70) are starting values and **not tuned**; `tuned: false` in the config.
+- No MLP, no urgency F1: `tools/train_urgency.py`, `src/tonebridge/urgency_train.py` implement extraction, LOSO (per speaker, G and S modes), z-score baseline, MLP training/ONNX export; verified only on seeded fake data (`selfcheck`, tests assert structure, never accuracy; fake-data numbers are not reported). Note: with median-relative F0, the baseline term `f0_mean_st` is close to 0 by construction, so the z-score baseline effectively reduces to loudness.
+- Ablation raw vs GTCRN (`results/branchb_ablation_table.md`): median F0 difference is only 1.6-2.7 cents, but GTCRN lowers voiced_frac by 7-16 points at every SNR and the p90 F0 deviation reaches ~3400 cents with alarm noise. Under babble the RAW voiced_frac is inflated (0.62-0.69 vs 0.46 for stationary noise: competing talkers are "voiced"), so `voicing_quality`/UNKNOWN gating matters there.

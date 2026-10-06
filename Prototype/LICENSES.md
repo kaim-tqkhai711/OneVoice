@@ -34,3 +34,12 @@ Status: **V** = verified from the primary source (HF model card/API or GitHub AP
 | silero_vad.onnx (sherpa-onnx `asr-models` release) | VAD | MIT (upstream) | V upstream, packaging U | |
 | vits-piper-en_US-ljspeech-medium (sherpa-onnx `tts-models` release) | EN TTS | voice data public domain (MODEL_CARD, read) | V | 60.6 MB fp32; bundles espeak-ng-data (GPL-3.0), see docs/TTS_GPL_OPTIONS.md |
 | csukuangfj/sherpa-onnx-zipformer-vi-int8-2025-04-20 | ASR packaging of zzasdf checkpoint | Apache-2.0 (README points to zzasdf) | V | decoder INT8 taken from zzasdf/viet_iter3_pseudo_label (Apache-2.0) |
+| swift-f0 0.3.0 (PyPI wheel, `model.onnx` 135 KB) | F0 / voicing (Branch B), installed `--no-deps` | MIT (wheel METADATA `License-Expression: MIT`, LICENSE file in wheel) | V (2026-10-07) | Deps: numpy + onnxruntime only |
+| librosa 0.11.0 | **Test reference only** (STFT equivalence for Branch B); not in the inference path | ISC | known (not re-read) | Portability law: reference allowed |
+| torch (CPU) | Training/export only (urgency MLP code), never inference | BSD-3 | known | |
+| sherpa-onnx v1.13.8 `android-aarch64-termux-static` CLI binaries | Phone session tooling | Apache-2.0 (repo) | V upstream, termux build packaging U | Not yet run on the phone |
+| vits-piper-en_US-ljspeech-medium-int8 (sherpa-onnx `tts-models`) | Smaller EN voice tried for latency (same LJ Speech data, public domain) | PD data (MODEL_CARD in package, same voice as the shipped one) | V | **Slower on x86 (3x), not adopted**; espeak-ng GPL caveat unchanged |
+| Piper en_US-kathleen-low | Candidate smaller voice | dataset CC0 BUT "finetuned from U.S. English Ryan voice (low)" and Ryan is CC BY-NC-SA 4.0 | V (HF MODEL_CARDs read 2026-10-07) | **REJECTED**: derived from NC weights |
+| Piper en_US-ryan-low | Candidate | CC BY-NC-SA 4.0 | V | **REJECTED**: NC |
+| Piper en_US-danny-low | Candidate | "See URL" (Mycroft mimic3-voices) + finetuned from Ryan | V | **REJECTED**: unresolved + NC parent |
+| Synthetic noise (babble from FLEURS speakers, alarm generator) | ADR-001 noise types | FLEURS CC-BY-4.0 (speech) / generated | V | Not hospital recordings |

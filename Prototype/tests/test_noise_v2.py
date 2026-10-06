@@ -38,3 +38,37 @@ def test_whole_file_definition_would_be_wrong():
 def test_generators_deterministic():
     assert np.array_equal(make_alarm(10, 7), make_alarm(10, 7)) and not np.array_equal(make_alarm(10, 7), make_alarm(10, 8))
     assert np.max(np.abs(make_alarm(10, 7))) <= 0.5 + 1e-6
+
+
+def test_exact_snr_on_real_clips_babble_and_demand_within_half_db():
+    """Exact achieved SNR over the VAD mask, computed from the known added noise (y - clean), real FLEURS clips, peak scaling off. The grid's
+    projection-based estimator (measured_snr_masked_db) can read up to ~1.6 dB off per utterance for babble because speech-like noise correlates with the
+    clean clip; the mix itself is exact by construction."""
+    import json
+    from pathlib import Path
+
+    import soundfile as sf
+
+    from tonebridge.evalkit import datasets
+    from tonebridge.evalkit.noise import noise_segment
+
+    root = Path(__file__).resolve().parents[1]
+    sp = root / "configs/splits/fleurs_vi_dev_test.json"
+    if not sp.exists() or not (root / "data/fleurs_vi").exists():
+        pytest.skip("data absent")
+    split = json.loads(sp.read_text())
+    byid = {u: p for u, p, _, _ in datasets.fleurs_vi()}
+    pool = [sf.read(byid[u], dtype="float32")[0] for u in split["babble_pool"][:20]]
+    babble = make_babble(pool, 60.0, 6, 3)
+    for u in split["dev"][:8]:
+        x = sf.read(byid[u], dtype="float32")[0]
+        m = np.zeros(len(x), bool); m[int(0.4 * SR): int(len(x) - 0.4 * SR)] = True
+        for snr in (5, 0, -5):
+            n = noise_segment(babble, len(x), np.random.default_rng(1)).astype(np.float64)
+            y = mix_at_snr_masked(x, babble, snr, m, np.random.default_rng(1)).astype(np.float64)
+            peak = max(np.abs(x + 0).max(), 1e-9)
+            added = y - x
+            if np.abs(y).max() >= 0.989:  # peak-scaled: scale both, skip exact comparison
+                continue
+            exact = 10 * np.log10(np.mean(x[m].astype(np.float64) ** 2) / np.mean(added[m] ** 2))
+            assert abs(exact - snr) <= 0.5

@@ -58,12 +58,13 @@ if a.latency:
     pool = []
     for u in split["dev"]:
         x = sf.read(byid[u][0], dtype="float32")[0]; sp = vad.segments(x)
-        if sp: pool.append((u, x, sp[-1][1] - sp[0][0]))
+        if sp: pool.append((u, x, sp[-1][1] - sp[0][0], sp[0][0]))
     for t in (tts, tts8): t.synth("warm up the model please.")
     ms = lambda t0: (time.perf_counter() - t0) * 1000
     rows = {}
     for tgt in (2, 4, 6):
-        cand = sorted(pool, key=lambda r: abs(r[2] - tgt))[: a.per_bucket]
+        # FLEURS speech spans are >= ~4.5 s, so the 2/4/6 s buckets are CROPS of the speech span (first tgt seconds after speech start); the VAD then runs on the crop
+        cand = [(u, x[int(st * SR): int((st + tgt) * SR)], float(tgt)) for u, x, dur, st in pool if dur >= tgt + 0.3][: a.per_bucket]
         R = {k: [] for k in ["speech_s", "asr_full", "asr_tail", "n_seg", "nmt", "tts_full", "tts_first_clause", "tts8_full", "tts8_first_clause", "n_words_en"]}
         for u, x, dur in cand:
             asr.transcribe(x[: SR], "vi")

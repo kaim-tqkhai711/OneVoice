@@ -191,3 +191,20 @@ def test_gate_input_never_denoised_in_pipeline():
     x = _speechy()
     Pipeline(cfg, st).run(x, "u1")
     assert seen["h"] == hashlib.sha256(np.ascontiguousarray(x).tobytes()).hexdigest()
+
+
+def test_golden_vectors_reproduce():
+    g = ROOT / "golden/branch_b_golden.json"
+    split = ROOT / "configs/splits/fleurs_vi_dev_test.json"
+    if not g.exists() or not (ROOT / "data/fleurs_vi").exists():
+        pytest.skip("golden file or FLEURS data absent")
+    import soundfile as sf
+    from tonebridge.evalkit import datasets
+    byid = {u: p for u, p, _, _ in datasets.fleurs_vi()}
+    b = BranchB()
+    for c in json.loads(g.read_text())["clips"][:5]:
+        x = sf.read(byid[c["utt"]], dtype="float32")[0]
+        assert hashlib.sha256(np.ascontiguousarray(x).tobytes()).hexdigest() == c["audio_sha256"]
+        f, _ = b.features(x)
+        for k, v in c["features"].items():
+            assert abs(f[k] - v) <= (0.02 if k.endswith("_db") else 1e-4 * max(1.0, abs(v))), k

@@ -20,10 +20,17 @@ def build_denoiser(cfg: PipelineConfig):
     return g if cfg.denoise_mode == "on" else OaDenoiser(g, cfg.oa_beta)
 
 
-def real_branch_a(cfg: PipelineConfig, threads: int = 2) -> Stages:
+GLOSSARY_BONUS = 5.0  # locked on dev, M2 round 1 (results/optim_log.jsonl, tag m2_r1)
+
+
+def real_branch_a(cfg: PipelineConfig, threads: int = 2, glossary: bool = True) -> Stages:
     assert cfg.direction == "vi-en", "only vi-en is built (ADR-002)"
+    nmt = OrtMarianNmt(threads=threads)
+    if glossary:
+        from tonebridge.nmt_constraints import GlossaryConstrainer
+        nmt.constrainer, nmt.constraint_bonus = GlossaryConstrainer(), GLOSSARY_BONUS
     return Stages(frontend=stubs.PassthroughFrontEnd(), vad=SileroVad(sample_rate=cfg.sample_rate), denoiser=build_denoiser(cfg),
-                  asr=SherpaZipformerVi(decoder=ASR_DECODER, threads=threads), nmt=OrtMarianNmt(threads=threads),
+                  asr=SherpaZipformerVi(decoder=ASR_DECODER, threads=threads), nmt=nmt,
                   safety=stubs.AlwaysPassSafety(), branch_b=stubs.UnknownBranchB(), tts=PiperEn(threads=threads))
 
 

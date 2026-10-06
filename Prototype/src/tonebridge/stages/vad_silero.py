@@ -21,6 +21,13 @@ class SileroVad:
         self._vad = sherpa_onnx.VoiceActivityDetector(self._cfg, buffer_size_in_seconds=60.0)  # max_utterance_s is 15
 
     def segment(self, wav: np.ndarray) -> tuple[float, float]:  # [T] -> (start_s, end_s)
+        sp = self.segments(wav)
+        if not sp:
+            return 0.0, 0.0
+        dur = len(wav) / self.sr
+        return max(0.0, sp[0][0] - self.pad), min(dur, sp[-1][1] + self.pad)
+
+    def segments(self, wav: np.ndarray) -> list[tuple[float, float]]:  # [T] -> [(start_s, end_s), ...] one per detected speech segment
         vad = self._vad
         vad.reset()
         w = 512
@@ -33,7 +40,4 @@ class SileroVad:
             starts.append(seg.start / self.sr)
             ends.append((seg.start + len(seg.samples)) / self.sr)
             vad.pop()
-        if not starts:
-            return 0.0, 0.0
-        dur = len(wav) / self.sr
-        return max(0.0, starts[0] - self.pad), min(dur, ends[-1] + self.pad)
+        return list(zip(starts, ends))

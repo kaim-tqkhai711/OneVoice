@@ -15,10 +15,30 @@ ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DIR = ROOT / "models/tts/vits-piper-en_US-ljspeech-medium"
 
 
+def split_clauses(text: str, min_words: int = 3) -> list[str]:
+    """Split at punctuation (, ; : . ! ?) and before ' and ' / ' but ' / ' then '; clauses shorter than min_words are merged into the next one."""
+    import re
+
+    raw = [p.strip() for p in re.split(r"(?<=[,;:.!?])\s+|\s+(?=(?:and|but|then)\s)", text) if p.strip()]
+    out: list[str] = []
+    buf = ""
+    for p in raw:
+        buf = (buf + " " + p).strip()
+        if len(buf.split()) >= min_words:
+            out.append(buf)
+            buf = ""
+    if buf:
+        if out:
+            out[-1] = out[-1] + " " + buf
+        else:
+            out.append(buf)
+    return out or [text]
+
+
 class PiperEn:
     sample_rate = 22050
 
-    def __init__(self, model_dir: Path = DEFAULT_DIR, threads: int = 2, chunk_s: float = 0.25) -> None:
+    def __init__(self, model_dir: Path = DEFAULT_DIR, threads: int = 2, chunk_s: float = 0.25) -> None:  # model_dir may be the int8 variant dir
         d = Path(model_dir)
         cfg = sherpa_onnx.OfflineTtsConfig(model=sherpa_onnx.OfflineTtsModelConfig(
             vits=sherpa_onnx.OfflineTtsVitsModelConfig(model=str(d / "en_US-ljspeech-medium.onnx"), tokens=str(d / "tokens.txt"),
@@ -27,6 +47,11 @@ class PiperEn:
         self._tts = sherpa_onnx.OfflineTts(cfg)
         self.sample_rate = self._tts.sample_rate
         self._chunk = int(chunk_s * self.sample_rate)
+
+    def synth_first_clause(self, text: str) -> tuple[np.ndarray, str]:
+        """Synthesise only the first clause (see split_clauses); returns (audio, remaining text). Lowers first-audio latency; the rest is synthesised afterwards."""
+        parts = split_clauses(text)
+        return self.synth(parts[0]), " ".join(parts[1:])
 
     def synth(self, text: str) -> np.ndarray:  # -> [T] float32 @ sample_rate
         return np.asarray(self._tts.generate(text, sid=0, speed=1.0).samples, np.float32)

@@ -1,0 +1,612 @@
+{"id": "s0000", "hyp": "You're not allergic to amoxicillin."}
+{"id": "s0001", "hyp": "You're not allergic to the right one."}
+{"id": "s0002", "hyp": "You're not allergic to Sedgwick."}
+{"id": "s0003", "hyp": "You're not allergic to paracetamol."}
+{"id": "s0004", "hyp": "You're not allergic to aspirin."}
+{"id": "s0005", "hyp": "You're not allergic to adrenaline."}
+{"id": "s0006", "hyp": "You're not allergic to diazepam."}
+{"id": "s0007", "hyp": "You're not allergic to morphine."}
+{"id": "s0008", "hyp": "You're not allergic to metformin."}
+{"id": "s0009", "hyp": "You're not allergic to the right one."}
+{"id": "s0010", "hyp": "You're not allergic to morphine."}
+{"id": "s0011", "hyp": "You're not allergic to aspirin."}
+{"id": "s0012", "hyp": "You're not allergic to amoxicillin."}
+{"id": "s0013", "hyp": "You're not allergic to penicillin."}
+{"id": "s0014", "hyp": "You're not allergic to paracetamol."}
+{"id": "s0015", "hyp": "You're not allergic to antibiotics."}
+{"id": "s0016", "hyp": "You're not allergic to amoxicillin."}
+{"id": "s0017", "hyp": "You're not allergic to morphine."}
+{"id": "s0018", "hyp": "You're not allergic to the right one."}
+{"id": "s0019", "hyp": "You're not allergic to penicillin."}
+{"id": "s0020", "hyp": "You're not allergic to adrenaline."}
+{"id": "s0021", "hyp": "You're not allergic to paracetamol."}
+{"id": "s0022", "hyp": "You're not allergic to the right one."}
+{"id": "s0023", "hyp": "You're not allergic to insulin."}
+{"id": "s0024", "hyp": "You're not allergic to metformin."}
+{"id": "s0025", "hyp": "No metreformin with the beer."}
+{"id": "s0026", "hyp": "No insulin and no beer."}
+{"id": "s0027", "hyp": "No insulin and no beer."}
+{"id": "s0028", "hyp": "No penicillin and no beer."}
+{"id": "s0029", "hyp": "No diazepam with no beer."}
+{"id": "s0030", "hyp": "No peprazole and no alcohol."}
+{"id": "s0031", "hyp": "No amoxicillin and no alcohol."}
+{"id": "s0032", "hyp": "No pain meds and no alcohol."}
+{"id": "s0033", "hyp": "No adrenaline with no alcohol."}
+{"id": "s0034", "hyp": "No more medevacs and no more alcohol."}
+{"id": "s0035", "hyp": "No amoxicillin and no alcohol."}
+{"id": "s0036", "hyp": "No penicillin and no beer."}
+{"id": "s0037", "hyp": "No adrenaline with no alcohol."}
+{"id": "s0038", "hyp": "No penicillin and no beer."}
+{"id": "s0039", "hyp": "No morphine and no alcohol."}
+{"id": "s0040", "hyp": "No penicillin and no beer."}
+{"id": "s0041", "hyp": "No more Talus and no more alcohol."}
+{"id": "s0042", "hyp": "No adrenaline with no alcohol."}
+{"id": "s0043", "hyp": "No paracetamol with no alcohol."}
+{"id": "s0044", "hyp": "No adrenaline with no alcohol."}
+{"id": "s0045", "hyp": "No penicillin and no beer."}
+{"id": "s0046", "hyp": "No more medevacs and no more alcohol."}
+{"id": "s0047", "hyp": "No more medevacs and no more alcohol."}
+{"id": "s0048", "hyp": "No insulin and no beer."}
+{"id": "s0049", "hyp": "No peprazole and no alcohol."}
+{"id": "s0150", "hyp": "She's not allergic to antibiotics."}
+{"id": "s0151", "hyp": "She's not allergic to pain meds."}
+{"id": "s0152", "hyp": "She's not allergic to Sedgwick."}
+{"id": "s0153", "hyp": "She's not allergic to insulin."}
+{"id": "s0154", "hyp": "She's not allergic to amoxicillin."}
+{"id": "s0155", "hyp": "She's not allergic to pain meds."}
+{"id": "s0156", "hyp": "She's not allergic to paracetamol."}
+{"id": "s0157", "hyp": "She's not allergic to amoxicillin."}
+{"id": "s0158", "hyp": "She's not allergic to pain meds."}
+{"id": "s0159", "hyp": "She's not allergic to adrenaline."}
+{"id": "s0160", "hyp": "She's not allergic to amoxicillin."}
+{"id": "s0161", "hyp": "She's not allergic to Arborlon."}
+{"id": "s0162", "hyp": "She's not allergic to metformin."}
+{"id": "s0163", "hyp": "She's not allergic to lyeprazole."}
+{"id": "s0164", "hyp": "She's not allergic to the right one."}
+{"id": "s0165", "hyp": "She's not allergic to amoxicillin."}
+{"id": "s0166", "hyp": "She's not allergic to morphine."}
+{"id": "s0167", "hyp": "She's not allergic to amoxicillin."}
+{"id": "s0168", "hyp": "She's not allergic to morphine."}
+{"id": "s0169", "hyp": "She's not allergic to paracetamol."}
+{"id": "s0170", "hyp": "She's not allergic to morphine."}
+{"id": "s0171", "hyp": "She's not allergic to the right one."}
+{"id": "s0172", "hyp": "She's not allergic to diazepam."}
+{"id": "s0173", "hyp": "She's not allergic to the right one."}
+{"id": "s0174", "hyp": "She's not allergic to pain meds."}
+{"id": "s0175", "hyp": "No lyeprazole if you're pregnant."}
+{"id": "s0176", "hyp": "No paracetamol if you're pregnant."}
+{"id": "s0177", "hyp": "Do not use amoxicillin if you are pregnant."}
+{"id": "s0178", "hyp": "No morphine if you're pregnant."}
+{"id": "s0179", "hyp": "No lyeprazole if you're pregnant."}
+{"id": "s0180", "hyp": "You can't use metformin if you're pregnant."}
+{"id": "s0181", "hyp": "Don't use the T.B.I. if you're pregnant."}
+{"id": "s0182", "hyp": "Do not use amoxicillin if you are pregnant."}
+{"id": "s0183", "hyp": "Don't use the T.B.I. if you're pregnant."}
+{"id": "s0184", "hyp": "No pain meds if you're pregnant."}
+{"id": "s0185", "hyp": "No insulin if you're pregnant."}
+{"id": "s0186", "hyp": "No more gargantua if you're pregnant."}
+{"id": "s0187", "hyp": "You can't use metformin if you're pregnant."}
+{"id": "s0188", "hyp": "You can't use metformin if you're pregnant."}
+{"id": "s0189", "hyp": "No pain meds if you're pregnant."}
+{"id": "s0190", "hyp": "No paracetamol if you're pregnant."}
+{"id": "s0191", "hyp": "No morphine if you're pregnant."}
+{"id": "s0192", "hyp": "No insulin if you're pregnant."}
+{"id": "s0193", "hyp": "Don't use the T.B.I. if you're pregnant."}
+{"id": "s0194", "hyp": "Don't use the T.B.I. if you're pregnant."}
+{"id": "s0195", "hyp": "No aspirin if you're pregnant."}
+{"id": "s0196", "hyp": "Do not use amoxicillin if you are pregnant."}
+{"id": "s0197", "hyp": "Do not use amoxicillin if you are pregnant."}
+{"id": "s0198", "hyp": "No lyeprazole if you're pregnant."}
+{"id": "s0199", "hyp": "You can't use diazepam if you're pregnant."}
+{"id": "s0200", "hyp": "Patient has no history of seizures."}
+{"id": "s0201", "hyp": "Patient has no history of chest pain."}
+{"id": "s0202", "hyp": "Patient has no history of cough."}
+{"id": "s0203", "hyp": "Patient has no history of fever."}
+{"id": "s0204", "hyp": "Patients have no history of breathing problems."}
+{"id": "s0205", "hyp": "Patient has no history of fever."}
+{"id": "s0206", "hyp": "Patient has no history of chest pain."}
+{"id": "s0207", "hyp": "Patient has no history of diarrhea."}
+{"id": "s0208", "hyp": "Patient has no history of fever."}
+{"id": "s0209", "hyp": "Patient has no history of cough."}
+{"id": "s0210", "hyp": "Patient has no history of fever."}
+{"id": "s0211", "hyp": "Patients don't have a history of dizzyity."}
+{"id": "s0212", "hyp": "Patients have no history of breathing problems."}
+{"id": "s0213", "hyp": "Patient has no history of seizures."}
+{"id": "s0214", "hyp": "Patient has no history of diarrhea."}
+{"id": "s0215", "hyp": "Patient has no history of nausea."}
+{"id": "s0216", "hyp": "Patients don't have a history of dizzyity."}
+{"id": "s0217", "hyp": "Patient has no history of chest pain."}
+{"id": "s0218", "hyp": "Patients don't have a history of dizzyity."}
+{"id": "s0219", "hyp": "Patient has no history of seizures."}
+{"id": "s0220", "hyp": "Patient has no history of seizures."}
+{"id": "s0221", "hyp": "Patients have no history of breathing problems."}
+{"id": "s0222", "hyp": "Patients have no history of breathing problems."}
+{"id": "s0223", "hyp": "Patient has no history of diarrhea."}
+{"id": "s0224", "hyp": "Patient has no history of chest pain."}
+{"id": "s0250", "hyp": "You shouldn't drink a Babbitt when you're hungry."}
+{"id": "s0251", "hyp": "You shouldn't drink metformin when you're hungry."}
+{"id": "s0252", "hyp": "You shouldn't drink adrenaline when you're hungry."}
+{"id": "s0253", "hyp": "You shouldn't drink eprazole when you're hungry."}
+{"id": "s0254", "hyp": "You shouldn't drink morphine when you're hungry."}
+{"id": "s0255", "hyp": "You shouldn't drink antibiotics when you're hungry."}
+{"id": "s0256", "hyp": "You shouldn't drink metformin when you're hungry."}
+{"id": "s0257", "hyp": "You shouldn't drink metformin when you're hungry."}
+{"id": "s0258", "hyp": "You shouldn't drink amoxicillin when you're hungry."}
+{"id": "s0259", "hyp": "You shouldn't drink aspirin when you're hungry."}
+{"id": "s0260", "hyp": "You shouldn't drink morphine when you're hungry."}
+{"id": "s0261", "hyp": "You shouldn't drink the old-fashioned-drink-drink."}
+{"id": "s0262", "hyp": "You shouldn't drink penicillin when you're hungry."}
+{"id": "s0263", "hyp": "You shouldn't drink antibiotics when you're hungry."}
+{"id": "s0264", "hyp": "You shouldn't drink amoxicillin when you're hungry."}
+{"id": "s0265", "hyp": "You shouldn't drink aspirin when you're hungry."}
+{"id": "s0266", "hyp": "You shouldn't drink penicillin when you're hungry."}
+{"id": "s0267", "hyp": "You shouldn't drink penicillin when you're hungry."}
+{"id": "s0268", "hyp": "You shouldn't drink diazepam when you're hungry."}
+{"id": "s0269", "hyp": "You shouldn't drink adrenaline when you're hungry."}
+{"id": "s0270", "hyp": "You shouldn't drink adrenaline when you're hungry."}
+{"id": "s0271", "hyp": "You shouldn't drink the old-fashioned-drink-drink."}
+{"id": "s0272", "hyp": "You shouldn't drink metformin when you're hungry."}
+{"id": "s0273", "hyp": "You shouldn't drink ibuprofen when you're hungry."}
+{"id": "s0274", "hyp": "You shouldn't drink insulin when you're hungry."}
+{"id": "s0310", "hyp": "Are you using insulin?"}
+{"id": "s0311", "hyp": "Are you using paracetamol?"}
+{"id": "s0312", "hyp": "Are you taking aspirin?"}
+{"id": "s0313", "hyp": "Are you on penicillin?"}
+{"id": "s0314", "hyp": "Are you on antibiotics?"}
+{"id": "s0315", "hyp": "Are you on pain meds?"}
+{"id": "s0316", "hyp": "Are you taking aspirin?"}
+{"id": "s0317", "hyp": "Are you using escarazile?"}
+{"id": "s0318", "hyp": "Are you using paracetamol?"}
+{"id": "s0319", "hyp": "Are you on adrenaline?"}
+{"id": "s0350", "hyp": "Are you taking aspirin?"}
+{"id": "s0351", "hyp": "Are you using the LPD?"}
+{"id": "s0352", "hyp": "Are you on adrenaline?"}
+{"id": "s0353", "hyp": "Are you taking aspirin?"}
+{"id": "s0354", "hyp": "Are you using the LPD?"}
+{"id": "s0355", "hyp": "Are you on pain meds?"}
+{"id": "s0356", "hyp": "Are you taking aspirin?"}
+{"id": "s0357", "hyp": "Are you taking aspirin?"}
+{"id": "s0358", "hyp": "Are you on pain meds?"}
+{"id": "s0359", "hyp": "Are you on adrenaline?"}
+{"id": "s0360", "hyp": "You're using paracetamol, right?"}
+{"id": "s0361", "hyp": "Are you on antibiotics?"}
+{"id": "s0362", "hyp": "Are you using the LPD?"}
+{"id": "s0363", "hyp": "Are you taking aspirin?"}
+{"id": "s0364", "hyp": "Are you taking aspirin?"}
+{"id": "s0365", "hyp": "Are you on adrenaline?"}
+{"id": "s0366", "hyp": "Are you on penicillin?"}
+{"id": "s0367", "hyp": "Are you using metformin?"}
+{"id": "s0368", "hyp": "Are you using the right one?"}
+{"id": "s0369", "hyp": "Are you using the right one?"}
+{"id": "s0370", "hyp": "Are you using the LPD?"}
+{"id": "s0371", "hyp": "Are you using morphine?"}
+{"id": "s0372", "hyp": "Are you using metformin?"}
+{"id": "s0373", "hyp": "Are you using the right one?"}
+{"id": "s0374", "hyp": "You're using paracetamol, right?"}
+{"id": "s0375", "hyp": "Are you using metformin?"}
+{"id": "s0376", "hyp": "Are you using metformin?"}
+{"id": "s0377", "hyp": "Are you using dizezam?"}
+{"id": "s0378", "hyp": "You're using amoxicillin, right?"}
+{"id": "s0379", "hyp": "You're using paracetamol, right?"}
+{"id": "s0410", "hyp": "Stop taking pain meds and call a doctor."}
+{"id": "s0411", "hyp": "Stop taking penicillin and call a doctor."}
+{"id": "s0412", "hyp": "Stop taking amoxicillin and call a doctor."}
+{"id": "s0413", "hyp": "Stop taking the harp and call a doctor."}
+{"id": "s0414", "hyp": "Stop taking Escondido and call a doctor."}
+{"id": "s0415", "hyp": "Stop taking penicillin and call a doctor."}
+{"id": "s0416", "hyp": "Stop taking the eprazole and call a doctor."}
+{"id": "s0417", "hyp": "Stop taking antibiotics and call a doctor."}
+{"id": "s0418", "hyp": "Stop taking paracetamol and call a doctor."}
+{"id": "s0419", "hyp": "Stop taking aspirin and call a doctor."}
+{"id": "s0420", "hyp": "Stop taking the eprazole and call a doctor."}
+{"id": "s0421", "hyp": "Stop taking amoxicillin and call a doctor."}
+{"id": "s0422", "hyp": "Stop taking paracetamol and call a doctor."}
+{"id": "s0423", "hyp": "Stop taking penicillin and call a doctor."}
+{"id": "s0424", "hyp": "Stop taking penicillin and call a doctor."}
+{"id": "s0425", "hyp": "Stop the adrenaline and call the doctor."}
+{"id": "s0426", "hyp": "Stop taking Escondido and call a doctor."}
+{"id": "s0427", "hyp": "Stop taking antibiotics and call a doctor."}
+{"id": "s0428", "hyp": "Stop taking amoxicillin and call a doctor."}
+{"id": "s0429", "hyp": "Stop taking paracetamol and call a doctor."}
+{"id": "s0430", "hyp": "Stop the morphine and call the doctor."}
+{"id": "s0431", "hyp": "Stop taking antibiotics and call a doctor."}
+{"id": "s0432", "hyp": "Stop the morphine and call the doctor."}
+{"id": "s0433", "hyp": "Stop taking embezzling and call a doctor."}
+{"id": "s0434", "hyp": "Stop taking the harp and call a doctor."}
+{"id": "s0435", "hyp": "Stop taking amoxicillin and call a doctor."}
+{"id": "s0436", "hyp": "Stop taking pain meds and call a doctor."}
+{"id": "s0437", "hyp": "Stop taking antibiotics and call a doctor."}
+{"id": "s0438", "hyp": "Stop taking penicillin and call a doctor."}
+{"id": "s0439", "hyp": "Stop taking pain meds and call a doctor."}
+{"id": "s0440", "hyp": "The doctor gave you a metformin."}
+{"id": "s0441", "hyp": "The doctor gave you a metformin."}
+{"id": "s0442", "hyp": "The doctor gave you aoxicillin."}
+{"id": "s0443", "hyp": "The doctor gave you paracetamino."}
+{"id": "s0444", "hyp": "The doctor gave you the LPD."}
+{"id": "s0445", "hyp": "The doctor has prescribed you a peerazile."}
+{"id": "s0446", "hyp": "The doctor gave you paracetamino."}
+{"id": "s0447", "hyp": "The doctor gave you adrenaline."}
+{"id": "s0448", "hyp": "The doctor gave you antibiotics."}
+{"id": "s0449", "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one."}
+{"id": "s0450", "hyp": "The doctor has prescribed your pain meds."}
+{"id": "s0451", "hyp": "The doctor gave you adrenaline."}
+{"id": "s0452", "hyp": "The doctor gave you paracetamino."}
+{"id": "s0453", "hyp": "The doctor has prescribed you a peerazile."}
+{"id": "s0454", "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one."}
+{"id": "s0455", "hyp": "The doctor gave you aoxicillin."}
+{"id": "s0456", "hyp": "The doctor has prescribed your pain meds."}
+{"id": "s0457", "hyp": "The doctor gave you paracetamino."}
+{"id": "s0458", "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one."}
+{"id": "s0459", "hyp": "The doctor gave you a metformin."}
+{"id": "s0460", "hyp": "The doctor gave you a metformin."}
+{"id": "s0461", "hyp": "The doctor gave you a metformin."}
+{"id": "s0462", "hyp": "The doctor gave you adrenaline."}
+{"id": "s0463", "hyp": "The doctor gave you insulin."}
+{"id": "s0464", "hyp": "The doctor gave you a metformin."}
+{"id": "s0465", "hyp": "The doctor has prescribed aspirin for you."}
+{"id": "s0466", "hyp": "The doctor gave you a prescription."}
+{"id": "s0467", "hyp": "The doctor has prescribed morphine for you."}
+{"id": "s0468", "hyp": "The doctor gave you the one, the one who gave you the one who gave you the one."}
+{"id": "s0469", "hyp": "The doctor gave you the LPD."}
+{"id": "s0470", "hyp": "We'll give you penicillin."}
+{"id": "s0471", "hyp": "We'll give you adrenaline."}
+{"id": "s0472", "hyp": "We'll give you a shot of Talus."}
+{"id": "s0473", "hyp": "We'll give you insulin."}
+{"id": "s0474", "hyp": "We'll give you a eprazole shot."}
+{"id": "s0475", "hyp": "We'll give you penicillin."}
+{"id": "s0476", "hyp": "We'll give you a metronin injection."}
+{"id": "s0477", "hyp": "We'll give you a shot of Talus."}
+{"id": "s0478", "hyp": "We'll give you penicillin."}
+{"id": "s0479", "hyp": "We'll give you a metronin injection."}
+{"id": "s0480", "hyp": "We'll give you a shot of the right one."}
+{"id": "s0481", "hyp": "We'll give you a shot of the right one."}
+{"id": "s0482", "hyp": "We'll give you penicillin."}
+{"id": "s0483", "hyp": "We'll give you morphine."}
+{"id": "s0484", "hyp": "We'll inject you with diazepam."}
+{"id": "s0485", "hyp": "We'll give you penicillin."}
+{"id": "s0486", "hyp": "We'll give you an injection of the pain meds."}
+{"id": "s0487", "hyp": "We'll give you an injection of the pain meds."}
+{"id": "s0488", "hyp": "We'll give you insulin."}
+{"id": "s0489", "hyp": "We'll give you insulin."}
+{"id": "s0490", "hyp": "We'll give you aspirin."}
+{"id": "s0491", "hyp": "We'll give you a Twilight shot."}
+{"id": "s0492", "hyp": "We'll give you a shot of the right one."}
+{"id": "s0493", "hyp": "We'll give you a Twilight shot."}
+{"id": "s0494", "hyp": "We'll give you antibiotics."}
+{"id": "s0495", "hyp": "We'll give you adrenaline."}
+{"id": "s0496", "hyp": "We'll inject you with amoxicillin."}
+{"id": "s0497", "hyp": "We'll give you a shot of Talus."}
+{"id": "s0498", "hyp": "We'll give you a shot of the right one."}
+{"id": "s0499", "hyp": "We'll give you a metronin injection."}
+{"id": "s0590", "hyp": "This is your diazepam."}
+{"id": "s0591", "hyp": "This is your Arjan."}
+{"id": "s0592", "hyp": "This is your beta."}
+{"id": "s0593", "hyp": "This is your morphine."}
+{"id": "s0594", "hyp": "This is your insulin."}
+{"id": "s0595", "hyp": "This is your beta."}
+{"id": "s0596", "hyp": "This is your beta."}
+{"id": "s0597", "hyp": "This is your beta."}
+{"id": "s0598", "hyp": "This is your insulin."}
+{"id": "s0599", "hyp": "This is your penicillin."}
+{"id": "s0600", "hyp": "This is your pain meds."}
+{"id": "s0601", "hyp": "This is your morphine."}
+{"id": "s0602", "hyp": "This is your Arjan."}
+{"id": "s0603", "hyp": "This is your antibiotics."}
+{"id": "s0604", "hyp": "This is your morphine."}
+{"id": "s0605", "hyp": "This is your morphine."}
+{"id": "s0606", "hyp": "This is your antibiotics."}
+{"id": "s0607", "hyp": "This is your adrenaline."}
+{"id": "s0608", "hyp": "This is your antibiotics."}
+{"id": "s0609", "hyp": "This is your eprazole."}
+{"id": "s0610", "hyp": "This is your aspirin."}
+{"id": "s0611", "hyp": "This is your beta."}
+{"id": "s0612", "hyp": "This is your antibiotics."}
+{"id": "s0613", "hyp": "This is your insulin."}
+{"id": "s0614", "hyp": "This is your metformin."}
+{"id": "s0615", "hyp": "This is your insulin."}
+{"id": "s0616", "hyp": "This is your eprazole."}
+{"id": "s0617", "hyp": "This is your aspirin."}
+{"id": "s0618", "hyp": "This is your metformin."}
+{"id": "s0619", "hyp": "This is your I.V.I."}
+{"id": "s0645", "hyp": "Intravenous morphine."}
+{"id": "s0646", "hyp": "Give me twenty-five milligrams of penicillin."}
+{"id": "s0647", "hyp": "In five millimetres of the right."}
+{"id": "s0648", "hyp": "One milliliter injection of di Octa."}
+{"id": "s0649", "hyp": "One milligram of eprazole."}
+{"id": "s0650", "hyp": "Take a shot of twenty milligrams of diazepam."}
+{"id": "s0651", "hyp": "Fifty milligrams of amphora."}
+{"id": "s0652", "hyp": "Two milligrams of penicillin."}
+{"id": "s0653", "hyp": "Fifty milligrams of amphora."}
+{"id": "s0654", "hyp": "Inject three milliliters."}
+{"id": "s0655", "hyp": "Five milliliters of diazepam."}
+{"id": "s0656", "hyp": "Intravenous twenty-five milliliters of paracetamino."}
+{"id": "s0657", "hyp": "Five milliliters of eprazole."}
+{"id": "s0658", "hyp": "Five hundred milligrams of amoxicilin."}
+{"id": "s0659", "hyp": "Take a shot of twenty milligrams of zinc."}
+{"id": "s0660", "hyp": "Inject a milliliter paracetamino."}
+{"id": "s0661", "hyp": "Three milligrams of aspirin."}
+{"id": "s0662", "hyp": "Take a shot of twenty milligrams of paracetamino."}
+{"id": "s0663", "hyp": "Two milliliters of aspirin."}
+{"id": "s0664", "hyp": "Give me 20 milligrams of aspirin."}
+{"id": "s0665", "hyp": "Intravenous two hundred and fifty milliliters of aspirin."}
+{"id": "s0666", "hyp": "One milliliter per shot."}
+{"id": "s0667", "hyp": "Inject three milliliters."}
+{"id": "s0668", "hyp": "One milliliter of penicillin."}
+{"id": "s0669", "hyp": "In five milliliters of the garland."}
+{"id": "s0670", "hyp": "Five at a time."}
+{"id": "s0671", "hyp": "Every time I drink a hundred milligrams."}
+{"id": "s0672", "hyp": "Three milliliters per time."}
+{"id": "s0673", "hyp": "Every time I drink twenty-five milligrams."}
+{"id": "s0674", "hyp": "Five hundred each."}
+{"id": "s0675", "hyp": "Every time I drink twenty-five milligrams."}
+{"id": "s0676", "hyp": "Every time I drink twenty-five milligrams."}
+{"id": "s0677", "hyp": "Take ten each time."}
+{"id": "s0678", "hyp": "Two pills at a time."}
+{"id": "s0679", "hyp": "Five at a time."}
+{"id": "s0680", "hyp": "Fifty milliliters per time."}
+{"id": "s0681", "hyp": "Two milligrams per time."}
+{"id": "s0682", "hyp": "Five millimers at a time."}
+{"id": "s0683", "hyp": "Every time I take a millimorphic."}
+{"id": "s0684", "hyp": "Every time I drink a milliliter."}
+{"id": "s0685", "hyp": "Every time I take twenty-five."}
+{"id": "s0686", "hyp": "Every time I drink two hundred fifty milligrams."}
+{"id": "s0687", "hyp": "Take ten each time."}
+{"id": "s0688", "hyp": "Every time I drink a hundred milliliters."}
+{"id": "s0689", "hyp": "One pill at a time."}
+{"id": "s0690", "hyp": "Five millimers at a time."}
+{"id": "s0691", "hyp": "One hundred each."}
+{"id": "s0692", "hyp": "Every time I drink two hundred fifty milliliters."}
+{"id": "s0693", "hyp": "Three milligrams per time."}
+{"id": "s0694", "hyp": "Twenty milliliters at a time."}
+{"id": "s0695", "hyp": "The dose is three pills a day."}
+{"id": "s0696", "hyp": "The dose is one milliliter per day."}
+{"id": "s0697", "hyp": "The dose is one hundred per day."}
+{"id": "s0698", "hyp": "The dose is twenty milliliters per day."}
+{"id": "s0699", "hyp": "The risk is two hundred fifty milligrams a day."}
+{"id": "s0700", "hyp": "Five hundred per day."}
+{"id": "s0701", "hyp": "The dose is one hundred per day."}
+{"id": "s0702", "hyp": "The dose is three millimers a day."}
+{"id": "s0703", "hyp": "The dose is five hundred milliliters a day."}
+{"id": "s0704", "hyp": "The dose is twenty pills a day."}
+{"id": "s0705", "hyp": "The dose is twenty milliliters per day."}
+{"id": "s0706", "hyp": "The dose is two millimers a day."}
+{"id": "s0707", "hyp": "The dose is three pills a day."}
+{"id": "s0708", "hyp": "The risk is five millimetres a day."}
+{"id": "s0709", "hyp": "The dose is five milliliters per day."}
+{"id": "s0710", "hyp": "The dose is one milliliter per day."}
+{"id": "s0711", "hyp": "The dose is twenty-five milligrams a day."}
+{"id": "s0712", "hyp": "The dose is two hundred fifty milliliters a day."}
+{"id": "s0713", "hyp": "The dose is a hundred millimetres a day."}
+{"id": "s0714", "hyp": "Five hundred milligrams a day."}
+{"id": "s0715", "hyp": "The risk is 50 milligrams a day."}
+{"id": "s0716", "hyp": "The risk is twenty milligrams a day."}
+{"id": "s0717", "hyp": "The dose is 50 milliliters per day."}
+{"id": "s0718", "hyp": "The dose is twenty-five milligrams a day."}
+{"id": "s0719", "hyp": "The dose is one hundred milliliters a day."}
+{"id": "s0720", "hyp": "Twenty milligrams of zinc per day."}
+{"id": "s0721", "hyp": "Two hundred fifty milligrams of paracetamino twice a day."}
+{"id": "s0722", "hyp": "Take a hundred milligrams of insulin twice a day."}
+{"id": "s0723", "hyp": "Take a hundred tyeprazole twice a day."}
+{"id": "s0724", "hyp": "Three penicillins a day."}
+{"id": "s0725", "hyp": "Three amoxicillins a day."}
+{"id": "s0726", "hyp": "Take two-and-a-half milligrams of paracetamino twice a day."}
+{"id": "s0727", "hyp": "Five hundred milligrams of diazepam twice a day."}
+{"id": "s0728", "hyp": "Five hundred milligrams of diazepam twice a day."}
+{"id": "s0729", "hyp": "Take ten of the right to the right, two times a day."}
+{"id": "s0730", "hyp": "Take ten penicillin twice a day."}
+{"id": "s0731", "hyp": "Five hundred milligrams metformin twice a day."}
+{"id": "s0732", "hyp": "Take ten diazepams twice a day."}
+{"id": "s0733", "hyp": "Two hundred and fifty amoxicillins twice a day."}
+{"id": "s0734", "hyp": "Twenty lygrazole twice a day."}
+{"id": "s0735", "hyp": "Fifty pills a day of the poprazole."}
+{"id": "s0736", "hyp": "Five hundred paracetamols a day."}
+{"id": "s0737", "hyp": "Five paracetamols a day."}
+{"id": "s0738", "hyp": "Two hundred fifty pills a day."}
+{"id": "s0739", "hyp": "Five hundred milligrams of paracetamol twice a day."}
+{"id": "s0740", "hyp": "Take five hundred milligrams of eprazole twice a day."}
+{"id": "s0741", "hyp": "Take five Piotr twice a day."}
+{"id": "s0742", "hyp": "Take a hundred of the rights of the right, a couple of times a day."}
+{"id": "s0743", "hyp": "Fifty paracetamols twice a day."}
+{"id": "s0744", "hyp": "Two hundred fifty milligrams of zinc per day."}
+{"id": "s0820", "hyp": "Take an insulin after dinner."}
+{"id": "s0821", "hyp": "Take fifty penicillin after dinner."}
+{"id": "s0822", "hyp": "Three metreformins after dinner."}
+{"id": "s0823", "hyp": "Take ten diazepams after dinner."}
+{"id": "s0824", "hyp": "Drink two hundred fifty milligrams of eprazole after dinner."}
+{"id": "s0825", "hyp": "Take three milligrams of diazepam after dinner."}
+{"id": "s0826", "hyp": "Take five hundred morphine pills after dinner."}
+{"id": "s0827", "hyp": "Fifty milligrams of amoxicillin after dinner."}
+{"id": "s0828", "hyp": "Drink twenty-five milligrams of dinar after dinner."}
+{"id": "s0829", "hyp": "Drink twenty-five milligrams of the right one, the next."}
+{"id": "s0830", "hyp": "Drink fifty milligrams of eprazole after dinner."}
+{"id": "s0831", "hyp": "Take two paracetamols after dinner."}
+{"id": "s0832", "hyp": "Take three milligrams of diazepam after dinner."}
+{"id": "s0833", "hyp": "Three more Piscetons after dinner."}
+{"id": "s0834", "hyp": "Drink twenty-five milligrams of zinc after dinner."}
+{"id": "s0835", "hyp": "Drink five hundred milligrams of penicillin after dinner."}
+{"id": "s0836", "hyp": "Drink twenty-five milligrams of the right one, the next."}
+{"id": "s0837", "hyp": "Take five of those eprazole after dinner."}
+{"id": "s0838", "hyp": "Take three milligrams of amoxicillin after dinner."}
+{"id": "s0839", "hyp": "Take twenty-five penicillin after dinner."}
+{"id": "s0840", "hyp": "Five hundred paracetaminos after dinner."}
+{"id": "s0841", "hyp": "Take five of those eprazole after dinner."}
+{"id": "s0842", "hyp": "Drink five millimittrium penicillin after dinner."}
+{"id": "s0843", "hyp": "Take two hundred fifty milligrams of morphine after dinner."}
+{"id": "s0844", "hyp": "Take a hundred milligrams of amoxicillin after dinner."}
+{"id": "s0870", "hyp": "Maximum dose is a millimetre of aphorazole."}
+{"id": "s0871", "hyp": "The maximum dose is ten morphine."}
+{"id": "s0872", "hyp": "Maximum dose is twenty milligrams of amoxicillin."}
+{"id": "s0873", "hyp": "The maximum dose is twenty-five."}
+{"id": "s0874", "hyp": "The maximum dose is two hundred fifty penicillin."}
+{"id": "s0875", "hyp": "The maximum dose is two hundred fifty penicillin."}
+{"id": "s0876", "hyp": "Maximum dose of three millimers adrenaline."}
+{"id": "s0877", "hyp": "The maximum dose is twenty-five milligrams of paracetamino."}
+{"id": "s0878", "hyp": "The maximum dose is 50 milligrams of amoxicillin."}
+{"id": "s0879", "hyp": "Fifty penicillin at maximum."}
+{"id": "s0880", "hyp": "The maximum dose is twenty insulin pills."}
+{"id": "s0881", "hyp": "The maximum dose is twenty-five of a caperazile."}
+{"id": "s0882", "hyp": "The maximum dose is twenty-five morphine."}
+{"id": "s0883", "hyp": "The maximum dose is three millims of paracetamol."}
+{"id": "s0884", "hyp": "The maximum dose is two millimetres."}
+{"id": "s0885", "hyp": "The maximum dose is one hundred aspirins."}
+{"id": "s0886", "hyp": "Five hundred amoxicillins max."}
+{"id": "s0887", "hyp": "The maximum dose is twenty-five milligrams of morphine."}
+{"id": "s0888", "hyp": "The maximum dose is 50 milligrams of paracetamino."}
+{"id": "s0889", "hyp": "The maximum dose is one hundred millimetre paracetamino."}
+{"id": "s0890", "hyp": "Maximum dose of three millimers adrenaline."}
+{"id": "s0891", "hyp": "Five hundred milligrams of the maximum risk, the right is the full amount of it."}
+{"id": "s0892", "hyp": "The maximum risk is two hundred fifty paracetamols."}
+{"id": "s0893", "hyp": "Five hundred milligrams of amoxicillin at maximum."}
+{"id": "s0894", "hyp": "The maximum dose is 50 milligrams of morphine."}
+{"id": "s0958", "hyp": "The patient's allergic to Sedgwick."}
+{"id": "s0959", "hyp": "The patient's allergic to eprazole."}
+{"id": "s0960", "hyp": "The patient's allergic to adrenaline."}
+{"id": "s0961", "hyp": "Patient's allergic to seafood."}
+{"id": "s0962", "hyp": "Patient's allergic to seafood."}
+{"id": "s0963", "hyp": "The patient's allergic to the gorilla."}
+{"id": "s0964", "hyp": "Patient's allergic to morphine."}
+{"id": "s0965", "hyp": "The patient's allergic to lasers."}
+{"id": "s0966", "hyp": "The patient's allergic to lasers."}
+{"id": "s0967", "hyp": "The patient's allergic to insulin."}
+{"id": "s0968", "hyp": "The patient's allergic to lasers."}
+{"id": "s0969", "hyp": "The patient's allergic to insulin."}
+{"id": "s0970", "hyp": "The patient's allergic to eprazole."}
+{"id": "s0971", "hyp": "The patient's allergic to eggs."}
+{"id": "s0972", "hyp": "The patient's allergic to metformin."}
+{"id": "s0973", "hyp": "The patient's allergic to peanuts."}
+{"id": "s0974", "hyp": "The patient's allergic to eggs."}
+{"id": "s0975", "hyp": "Patient's allergic to aspirin."}
+{"id": "s0976", "hyp": "The patient's allergic to insulin."}
+{"id": "s0977", "hyp": "My son's allergic to diazepam."}
+{"id": "s0978", "hyp": "My son's allergic to paracetamol."}
+{"id": "s0979", "hyp": "My kid's allergic to insulin."}
+{"id": "s0980", "hyp": "My son's allergic to metreformin."}
+{"id": "s0981", "hyp": "My kid's allergic to penicillin."}
+{"id": "s0982", "hyp": "My kid's allergic to Sedgwick."}
+{"id": "s0983", "hyp": "My son's allergic to the one with the one with the one."}
+{"id": "s0984", "hyp": "My kid's allergic to penicillin."}
+{"id": "s0985", "hyp": "My kid's allergic to peanuts."}
+{"id": "s0986", "hyp": "My son's allergic to paracetamol."}
+{"id": "s0987", "hyp": "My kid's allergic to penicillin."}
+{"id": "s0988", "hyp": "My son's allergic to the one with the one with the one."}
+{"id": "s0989", "hyp": "My son's allergic to Arborlon."}
+{"id": "s0990", "hyp": "My kid's allergic to lasers."}
+{"id": "s0991", "hyp": "My kid's allergic to Sedgwick."}
+{"id": "s0992", "hyp": "My son's allergic to amoxicillin."}
+{"id": "s0993", "hyp": "My kid's allergic to aspirin."}
+{"id": "s0994", "hyp": "My son's allergic to diazepam."}
+{"id": "s0995", "hyp": "My son's allergic to the one with the one with the one."}
+{"id": "s1034", "hyp": "Tell me if you're allergic to metformin."}
+{"id": "s1035", "hyp": "Tell me if you're allergic to metformin."}
+{"id": "s1036", "hyp": "Tell me if you're allergic to penicillin."}
+{"id": "s1037", "hyp": "Tell me if you're allergic to eggs."}
+{"id": "s1038", "hyp": "Tell me if you're allergic to peanuts."}
+{"id": "s1039", "hyp": "Tell me if you are allergic to aspirin."}
+{"id": "s1040", "hyp": "Tell me if you're allergic to lasers."}
+{"id": "s1041", "hyp": "Tell me if you're allergic to peanuts."}
+{"id": "s1042", "hyp": "Tell me if you are allergic to aspirin."}
+{"id": "s1043", "hyp": "Tell me if you're allergic to penicillin."}
+{"id": "s1044", "hyp": "Tell me if you're allergic to adrenaline."}
+{"id": "s1045", "hyp": "Tell me if you're allergic to peanuts."}
+{"id": "s1046", "hyp": "Tell me if you're allergic to paracetamol."}
+{"id": "s1047", "hyp": "Tell me if you're allergic to lasers."}
+{"id": "s1048", "hyp": "Tell me if you are allergic to Erebus."}
+{"id": "s1049", "hyp": "Tell me if you're allergic to morphine."}
+{"id": "s1050", "hyp": "Tell me if you're allergic to amoxicillin."}
+{"id": "s1051", "hyp": "Tell me if you're allergic to paracetamol."}
+{"id": "s1052", "hyp": "Tell me if you're allergic to adrenaline."}
+{"id": "s1053", "hyp": "My family has an allergic reaction to penicillin."}
+{"id": "s1054", "hyp": "My family has an allergic reaction to amoxicillin."}
+{"id": "s1055", "hyp": "My family has an allergic reaction to eggs."}
+{"id": "s1056", "hyp": "My family has an allergic reaction to penicillin."}
+{"id": "s1057", "hyp": "My family has an allergic reaction to Arborlon."}
+{"id": "s1058", "hyp": "My family has an allergic reaction to dizeza."}
+{"id": "s1059", "hyp": "My family has an allergic reaction to Sedgwick."}
+{"id": "s1060", "hyp": "My family has an allergic reaction to aspirin."}
+{"id": "s1061", "hyp": "My family has an allergic reaction to eggs."}
+{"id": "s1062", "hyp": "My family has people who are allergic to seafood."}
+{"id": "s1063", "hyp": "My family has an allergic reaction to lyeprazole."}
+{"id": "s1064", "hyp": "My family has an allergic reaction to metformin."}
+{"id": "s1065", "hyp": "My family has an allergic reaction to insulin."}
+{"id": "s1066", "hyp": "My family has an allergic reaction to dizeza."}
+{"id": "s1067", "hyp": "My family has an allergic reaction to lasers."}
+{"id": "s1068", "hyp": "My family has an allergic reaction to dizeza."}
+{"id": "s1069", "hyp": "My family has an allergic reaction to paracetamol."}
+{"id": "s1070", "hyp": "My family has an allergic reaction to peanuts."}
+{"id": "s1071", "hyp": "My family has an allergic reaction to metformin."}
+{"id": "s1072", "hyp": "Your blood pressure is very high."}
+{"id": "s1073", "hyp": "Your blood pressure is very high."}
+{"id": "s1074", "hyp": "Your blood pressure is a little high."}
+{"id": "s1075", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1076", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1077", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1078", "hyp": "Your blood pressure is too high."}
+{"id": "s1079", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1080", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1081", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1082", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1083", "hyp": "Your blood pressure is extremely high."}
+{"id": "s1084", "hyp": "Your blood pressure is a little high."}
+{"id": "s1085", "hyp": "Your blood pressure is too high."}
+{"id": "s1086", "hyp": "Your blood pressure is very high."}
+{"id": "s1087", "hyp": "Your blood pressure is a little high."}
+{"id": "s1088", "hyp": "Your blood pressure is a little high."}
+{"id": "s1089", "hyp": "Your blood pressure is too high."}
+{"id": "s1090", "hyp": "Your blood pressure is very high."}
+{"id": "s1129", "hyp": "I'm extremely tired."}
+{"id": "s1130", "hyp": "I'm tired."}
+{"id": "s1131", "hyp": "I'm extremely tired."}
+{"id": "s1132", "hyp": "I'm tired."}
+{"id": "s1133", "hyp": "I'm a little tired."}
+{"id": "s1134", "hyp": "I'm tired."}
+{"id": "s1135", "hyp": "I'm really tired."}
+{"id": "s1136", "hyp": "I'm extremely tired."}
+{"id": "s1137", "hyp": "I'm tired."}
+{"id": "s1138", "hyp": "I'm tired."}
+{"id": "s1139", "hyp": "I'm tired."}
+{"id": "s1140", "hyp": "I'm tired."}
+{"id": "s1141", "hyp": "I'm tired."}
+{"id": "s1142", "hyp": "I'm a little tired."}
+{"id": "s1143", "hyp": "I'm tired."}
+{"id": "s1144", "hyp": "I'm really tired."}
+{"id": "s1145", "hyp": "I'm tired."}
+{"id": "s1146", "hyp": "I'm tired."}
+{"id": "s1147", "hyp": "I'm a little tired."}
+{"id": "s1148", "hyp": "The wound is serious."}
+{"id": "s1149", "hyp": "The wound is extremely severe."}
+{"id": "s1150", "hyp": "The wound is too severe."}
+{"id": "s1151", "hyp": "It's a very serious injury."}
+{"id": "s1152", "hyp": "It's a very serious injury."}
+{"id": "s1153", "hyp": "The wound is serious."}
+{"id": "s1154", "hyp": "The wound is too severe."}
+{"id": "s1155", "hyp": "The wound is extremely severe."}
+{"id": "s1156", "hyp": "The wound is extremely severe."}
+{"id": "s1157", "hyp": "It's a very serious injury."}
+{"id": "s1158", "hyp": "It's a very serious injury."}
+{"id": "s1159", "hyp": "The wound is too severe."}
+{"id": "s1160", "hyp": "It's a little severe."}
+{"id": "s1161", "hyp": "It's a little severe."}
+{"id": "s1162", "hyp": "The wound is extremely severe."}
+{"id": "s1163", "hyp": "It's a very serious injury."}
+{"id": "s1164", "hyp": "It's a very serious injury."}
+{"id": "s1165", "hyp": "The wound is extremely severe."}
+{"id": "s1166", "hyp": "The wound is extremely severe."}
+{"id": "s1205", "hyp": "The pain is getting worse."}
+{"id": "s1206", "hyp": "The pain is worse."}
+{"id": "s1207", "hyp": "The pain is getting worse."}
+{"id": "s1208", "hyp": "The pain is getting worse."}
+{"id": "s1209", "hyp": "The pain is worse."}
+{"id": "s1210", "hyp": "The pain is getting worse."}
+{"id": "s1211", "hyp": "The pain's a little worse."}
+{"id": "s1212", "hyp": "The pain's a little worse."}
+{"id": "s1213", "hyp": "The pain is worse."}
+{"id": "s1214", "hyp": "The pain is worse."}
+{"id": "s1215", "hyp": "The pain is worse."}
+{"id": "s1216", "hyp": "The pain is getting worse."}
+{"id": "s1217", "hyp": "The pain is getting worse."}
+{"id": "s1218", "hyp": "The pain is worse."}
+{"id": "s1219", "hyp": "The pain is getting worse."}
+{"id": "s1220", "hyp": "The pain is getting worse."}
+{"id": "s1221", "hyp": "The pain is worse."}
+{"id": "s1222", "hyp": "The pain is getting worse."}
+{"id": "s1223", "hyp": "The pain is worse."}

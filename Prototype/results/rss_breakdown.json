@@ -1,0 +1,30 @@
+[
+ {
+  "stage": "asr",
+  "rss_baseline_mb": 44.6,
+  "after_load": 194.6,
+  "after_20_utts": 398.7,
+  "peak_wset_mb": 398.7
+ },
+ {
+  "stage": "nmt",
+  "rss_baseline_mb": 44.7,
+  "after_load": 246.9,
+  "after_20_utts": 249.6,
+  "peak_wset_mb": 299.6
+ },
+ {
+  "stage": "tts",
+  "rss_baseline_mb": 44.6,
+  "after_load": 161.6,
+  "after_20_utts": 377.9,
+  "peak_wset_mb": 382.2
+ },
+ {
+  "stage": "vad",
+  "rss_baseline_mb": 44.6,
+  "after_load": 72.0,
+  "after_20_utts": 76.6,
+  "peak_wset_mb": 83.5
+ }
+]

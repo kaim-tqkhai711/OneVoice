@@ -19,8 +19,11 @@ DEFAULT_DIR = ROOT / "models/nmt/vi-en-int8-arm64"
 
 
 class OrtMarianNmt:
-    def __init__(self, model_dir: Path = DEFAULT_DIR, threads: int = 2, max_new_tokens: int = 48) -> None:
+    def __init__(self, model_dir: Path = DEFAULT_DIR, threads: int = 2, max_new_tokens: int = 48,
+                 enc_file: str = "encoder_model_quantized.onnx", dec_file: str = "decoder_model_merged_quantized.onnx",
+                 num_beams: int = 1, length_penalty: float = 1.0) -> None:
         d = Path(model_dir)
+        self.num_beams, self.length_penalty = num_beams, length_penalty
         cfg = json.loads((d / "config.json").read_text(encoding="utf8"))
         self.eos, self.pad = cfg["eos_token_id"], cfg["pad_token_id"]  # decoder start = pad
         self.n_layers, self.heads = cfg["decoder_layers"], cfg["decoder_attention_heads"]
@@ -36,8 +39,8 @@ class OrtMarianNmt:
         so.intra_op_num_threads, so.inter_op_num_threads = threads, 1
         so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
         p = ["CPUExecutionProvider"]
-        self.enc = ort.InferenceSession(str(d / "encoder_model_quantized.onnx"), so, providers=p)
-        self.dec = ort.InferenceSession(str(d / "decoder_model_merged_quantized.onnx"), so, providers=p)
+        self.enc = ort.InferenceSession(str(d / enc_file), so, providers=p)
+        self.dec = ort.InferenceSession(str(d / dec_file), so, providers=p)
         self.dec_in = [i.name for i in self.dec.get_inputs()]
         self.dec_out = [o.name for o in self.dec.get_outputs()]  # logits, present.*
 
@@ -81,7 +84,70 @@ class OrtMarianNmt:
                     past[n] = pres[n.replace("past_key_values", "present")]
         return out_ids, {"encoder_ms": enc_ms, "decoder_steps": float(len(out_ids) + 1)}
 
+    def beam(self, src_ids: list[int], k: int = 4, length_penalty: float | None = None,
+             bias: dict[int, float] | None = None) -> tuple[list[int], dict[str, float]]:
+        """Beam search over the merged decoder with batch = k. Hypothesis score = sum(log p) / len**length_penalty (len counts the EOS).
+        ``bias``: optional {token_id: additive log-prob bonus} applied every step (used for glossary-constrained decoding).
+        All beams share the same encoder states, so cross-attention K/V never need re-ordering."""
+        import time
+
+        lp_pow = self.length_penalty if length_penalty is None else length_penalty
+        ids = np.asarray([src_ids], np.int64)
+        mask1 = np.ones_like(ids)
+        t = time.perf_counter()
+        h1 = self.enc.run(None, {"input_ids": ids, "attention_mask": mask1})[0]  # [1, S, 512]
+        enc_ms = (time.perf_counter() - t) * 1000
+        h, mask = np.repeat(h1, k, axis=0), np.repeat(mask1, k, axis=0)  # [k, S, 512], [k, S]
+        past = {n: np.repeat(v, k, axis=0) for n, v in self._empty_past(ids.shape[1]).items()}
+        beams: list[list[int]] = [[] for _ in range(k)]
+        scores = np.array([0.0] + [-1e9] * (k - 1))
+        cur = np.full((k, 1), self.pad, np.int64)
+        finished: list[tuple[float, list[int]]] = []
+        steps = 0
+        for step in range(self.max_new):
+            feed = {"encoder_attention_mask": mask, "input_ids": cur, "encoder_hidden_states": h,
+                    "use_cache_branch": np.asarray([step > 0]), **past}
+            res = self.dec.run(None, feed)
+            steps += 1
+            logits = res[0][:, -1, :].astype(np.float64)  # [k, V]
+            logits[:, self.pad] = -np.inf
+            logp = logits - (np.log(np.exp(logits - logits.max(1, keepdims=True)).sum(1, keepdims=True)) + logits.max(1, keepdims=True))
+            if bias:
+                for tid, b in bias.items():
+                    logp[:, tid] += b
+            cand = (scores[:, None] + logp).reshape(-1)
+            top = np.argsort(-cand)[: 2 * k]
+            nxt: list[tuple[float, int, int]] = []
+            for c in top:
+                bi, tok = divmod(int(c), logp.shape[1])
+                sc = float(cand[c])
+                if tok == self.eos:
+                    if sc > -1e8:
+                        finished.append((sc / ((len(beams[bi]) + 1) ** lp_pow), beams[bi]))
+                else:
+                    nxt.append((sc, bi, tok))
+                if len(nxt) == k:
+                    break
+            if len(finished) >= k and nxt and max(f[0] for f in finished) >= nxt[0][0] / ((step + 1) ** lp_pow if lp_pow > 0 else 1.0):
+                break  # best finished beats the best running hypothesis' (optimistic) normalised score
+            if not nxt:
+                break
+            sel = np.array([bi for _, bi, _ in nxt] + [nxt[-1][1]] * (k - len(nxt)))
+            beams = [beams[bi] + [tok] for _, bi, tok in nxt] + [beams[nxt[-1][1]] + [nxt[-1][2]]] * (k - len(nxt))
+            scores = np.array([sc for sc, _, _ in nxt] + [-1e9] * (k - len(nxt)))
+            cur = np.array([[tok] for _, _, tok in nxt] + [[nxt[-1][2]]] * (k - len(nxt)), np.int64)
+            pres = dict(zip(self.dec_out[1:], res[1:]))
+            for n in past:
+                if step == 0 or ".decoder." in n:
+                    v = pres[n.replace("past_key_values", "present")]
+                    past[n] = v[sel] if ".decoder." in n else v
+        if not finished:
+            finished = [(scores[i] / (max(len(beams[i]), 1) ** lp_pow), beams[i]) for i in range(k)]
+        best = max(finished, key=lambda f: f[0])[1]
+        return best, {"encoder_ms": enc_ms, "decoder_steps": float(steps)}
+
     def translate(self, text: str, src: Lang, tgt: Lang) -> MtResult:
         assert (src, tgt) == ("vi", "en"), (src, tgt)
-        out, _ = self.greedy(self.encode_ids(text))
+        ids = self.encode_ids(text)
+        out, _ = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
         return MtResult(src_text=text, tgt_text=self.decode_ids(out), src_lang=src, tgt_lang=tgt, hops=["vi>en"])

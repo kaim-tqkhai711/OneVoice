@@ -63,14 +63,15 @@ class MtResult(BaseModel):
 
 
 class SlotCheck(BaseModel):
-    slot: Literal["negation", "medication", "dose_unit", "allergy", "symptom"]
+    slot: Literal["negation", "medication", "dose_unit", "dose_number", "allergy", "symptom", "intensity"]
     src_value: str | None
     tgt_value: str | None
     preserved: bool
 
 
 class SafetyReport(BaseModel):
-    passed: bool
+    passed: bool  # False = a critical slot (negation / medication / dose / allergy) is missing, contradictory or uncertain
+    confirm: bool = False  # True = only the severity ("mức độ") group differs: gate asks for CONFIRM, nothing critical is missing
     checks: list[SlotCheck] = Field(default_factory=list)
     reasons: list[str] = Field(default_factory=list)
 
@@ -79,6 +80,7 @@ class UrgencyResult(BaseModel):
     label: UrgencyLabel
     score: float | None = None
     voicing_quality: float | None = None  # SwiftF0 pitch-quality evidence, 0..1
+    reasons: list[str] = Field(default_factory=list)  # why UNKNOWN (silence, too_short, voicing_quality_low, mlp_not_trained, ...)
 
 
 class GateDecision(BaseModel):

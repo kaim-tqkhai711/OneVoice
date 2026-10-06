@@ -1,0 +1,7 @@
+{
+  "version": "v0-untuned",
+  "note": "Branch B constants. unknown_rules are STARTING VALUES from docs/BRANCH_B_DESIGN.md section 5b: NOT TUNED (no team recordings yet). Any later change must be logged in PROGRESS.md.",
+  "unknown_rules": {"min_duration_s": 0.3, "min_voiced_frames": 20, "min_voiced_frac": 0.15, "min_voicing_quality": 0.70, "voiced_conf": 0.5, "silence_peak": 0.001, "high_threshold": 0.7, "tuned": false},
+  "standardizer": null,
+  "mlp": null
+}

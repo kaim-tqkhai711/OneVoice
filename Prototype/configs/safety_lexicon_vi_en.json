@@ -1,0 +1,41 @@
+{
+  "version": "v1",
+  "note": "Pure-data lexicon for src/tonebridge/safety.py (portable: the Kotlin port reads this file). Source side = Vietnamese ASR text (lowercase, usually no punctuation). Target forms are accepted English renderings; a form is matched on a word boundary on the left, and on the right too if it is <= 3 chars or starts with a digit.",
+  "negation": {
+    "src_cues": ["không", "chưa", "đừng", "chẳng", "chớ", "tránh", "cấm"],
+    "question_final": ["không", "chưa"],
+    "tgt_forms": ["not", "no", "n't", "never", "cannot", "without", "none", "nothing", "neither", "nor", "avoid", "prohibited", "forbidden"],
+    "tgt_forms_extra_negation_check": ["not", "no", "n't", "never", "cannot", "without", "none", "nothing", "neither", "nor"]
+  },
+  "allergy": {"src": ["dị ứng"], "tgt_forms": ["allerg"]},
+  "medications": [
+    {"vi": "penicillin", "en": ["penicillin"]}, {"vi": "paracetamol", "en": ["paracetamol", "acetaminophen", "tylenol"]},
+    {"vi": "ibuprofen", "en": ["ibuprofen", "advil", "motrin"]}, {"vi": "aspirin", "en": ["aspirin"]}, {"vi": "amoxicillin", "en": ["amoxicillin"]},
+    {"vi": "insulin", "en": ["insulin"]}, {"vi": "morphin", "en": ["morphine"]}, {"vi": "morphine", "en": ["morphine"]}, {"vi": "heparin", "en": ["heparin"]},
+    {"vi": "warfarin", "en": ["warfarin"]}, {"vi": "metformin", "en": ["metformin"]}, {"vi": "omeprazole", "en": ["omeprazole"]},
+    {"vi": "diazepam", "en": ["diazepam"]}, {"vi": "adrenaline", "en": ["adrenaline", "epinephrine"]},
+    {"vi": "kháng sinh", "en": ["antibiotic"]}, {"vi": "thuốc giảm đau", "en": ["painkiller", "pain medication", "pain medicine", "analgesic", "pain relief", "pain reliever"]},
+    {"vi": "thuốc chống đông máu", "en": ["blood thinner", "anticoagulant"]}, {"vi": "ceftriaxone", "en": ["ceftriaxone"]},
+    {"vi": "atorvastatin", "en": ["atorvastatin"]}, {"vi": "salbutamol", "en": ["salbutamol", "albuterol"]}, {"vi": "nitroglycerin", "en": ["nitroglycerin", "nitroglycerine", "glyceryl trinitrate"]},
+    {"vi": "furosemide", "en": ["furosemide"]}, {"vi": "prednisolone", "en": ["prednisolone", "prednisone"]}, {"vi": "lisinopril", "en": ["lisinopril"]}
+  ],
+  "allergens_other": [
+    {"vi": "hải sản", "en": ["seafood", "shellfish"]}, {"vi": "đậu phộng", "en": ["peanut"]}, {"vi": "trứng", "en": ["egg"]}, {"vi": "latex", "en": ["latex"]}
+  ],
+  "dose_units": [
+    {"vi": "miligam", "en": ["mg", "milligram", "milligramme"]}, {"vi": "microgam", "en": ["mcg", "microgram", "microgramme"]},
+    {"vi": "mililít", "en": ["ml", "milliliter", "millilitre"]}, {"vi": "gam", "en": ["gram", "g"]},
+    {"vi": "viên", "en": ["tablet", "pill", "capsule"]}, {"vi": "giọt", "en": ["drop"]}, {"vi": "ống", "en": ["vial", "ampoule", "ampule"]}
+  ],
+  "vi_numbers": {"không": 0, "một": 1, "mốt": 1, "hai": 2, "ba": 3, "bốn": 4, "tư": 4, "năm": 5, "lăm": 5, "sáu": 6, "bảy": 7, "tám": 8, "chín": 9, "mười": 10, "mươi": "x10", "trăm": "x100", "nghìn": "x1000", "ngàn": "x1000"},
+  "en_numbers": {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90, "hundred": "x100", "thousand": "x1000"},
+  "intensity": [
+    {"vi": "rất", "en": ["very", "extremely", "severe", "severely", "really", "highly", "so ", "seriously", "critically", "profoundly"]},
+    {"vi": "cực kỳ", "en": ["extremely", "very", "severe", "severely", "extreme", "highly", "incredibly"]},
+    {"vi": "vô cùng", "en": ["extremely", "very", "incredibly", "severe", "highly"]},
+    {"vi": "quá", "en": ["too", "very", "so ", "excessively", "overly", "extremely"]},
+    {"vi": "hơi", "en": ["slightly", "a little", "somewhat", "mildly", "a bit", "slight"]},
+    {"vi": "khá", "en": ["fairly", "quite", "rather", "pretty", "somewhat", "very"]},
+    {"vi": "dữ dội", "en": ["severe", "intense", "violent", "sharp", "extreme", "terrible"]}
+  ]
+}

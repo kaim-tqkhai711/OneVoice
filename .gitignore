@@ -1,0 +1,62 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+Prototype/.venv/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Heavy model files & artifacts (stored locally, referenced via docs/OFFLINE_FILES.md)
+Prototype/models/
+*.onnx
+*.bin
+*.tar.gz
+*.whl
+
+# Audio data & recordings (keep scripts and templates, ignore recorded audio dumps)
+Prototype/data/
+Prototype/recording_kit/recordings/
+*.tmp
+out*.wav

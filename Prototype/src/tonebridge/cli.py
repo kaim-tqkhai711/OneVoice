@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -38,6 +39,8 @@ def build_stub_stages(cfg: PipelineConfig, transcript: Path | None) -> Stages:
 
 
 def main() -> None:
+    for st in (sys.stdout, sys.stderr):
+        st.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles/pipes default to cp1258/cp1252: Vietnamese text would crash the final print
     ap = argparse.ArgumentParser()
     ap.add_argument("--wav", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)

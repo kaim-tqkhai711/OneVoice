@@ -100,6 +100,7 @@ class TurnRecord(BaseModel):
     audio_s: float
     stage_ms: dict[str, float]  # keys: denoise, vad, asr, nmt, safety, branch_b, gate, tts
     endpoint_to_first_audio_ms: float | None  # PTT release -> first TTS sample
+    endpoint_to_text_ms: float | None = None  # PTT release -> EN text available (after safety check + gate)
     total_ms: float
     rtf: float  # total processing time / audio duration
     peak_rss_mb: float

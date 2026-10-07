@@ -118,16 +118,30 @@ def unknown_reasons(cfg: BranchBConfig, duration_s: float, peak: float, feats: d
     return r
 
 
+def load_swiftf0(model: Path, threads: int):
+    """SwiftF0 detector whose ONNX session is built from OUR copy under models/ (byte-identical to the wheel's model.onnx, hash checked in
+    tests/test_offline.py); the wheel's bundled file is never opened. Only ``SwiftF0.session`` is used by ``detect``."""
+    import onnxruntime as ort
+    from swift_f0 import SwiftF0
+
+    o = ort.SessionOptions()
+    o.intra_op_num_threads = threads
+    o.add_session_config_entry("session.intra_op.allow_spinning", "0")
+    det = SwiftF0.__new__(SwiftF0)  # skip __init__: it would open the copy inside site-packages
+    det.session = ort.InferenceSession(str(model), o, providers=["CPUExecutionProvider"])
+    return det
+
+
 class BranchB:
     """Implements the ``BranchB`` stage protocol. ``mlp`` = optional callable standardised-feature-vector -> P(HIGH); None => UNKNOWN (no trained model)."""
 
     def __init__(self, cfg: BranchBConfig | None = None, band_model: Path = ROOT / "models/branch_b/band_feats.onnx", threads: int = 1,
+                 swiftf0_model: Path = ROOT / "models/branch_b/swiftf0_model.onnx",
                  mlp=None, standardizer: tuple[np.ndarray, np.ndarray] | None = None) -> None:
         import onnxruntime as ort
-        from swift_f0 import SwiftF0
 
         self.cfg = cfg or BranchBConfig.load()
-        self.f0 = SwiftF0(threads=threads, spin=False)
+        self.f0 = load_swiftf0(swiftf0_model, threads)
         so = ort.SessionOptions()
         so.intra_op_num_threads, so.log_severity_level = threads, 3
         if not Path(band_model).exists():

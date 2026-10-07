@@ -44,20 +44,31 @@ def main() -> None:
     ap.add_argument("--config", type=Path, default=Path("configs/pipeline.json"))
     ap.add_argument("--real", action="store_true", help="real VAD/denoise/ASR/NMT/TTS, Branch A only (Branch B, safety, gate stubbed)")
     ap.add_argument("--full", action="store_true", help="all stages real (0 stubs)")
+    ap.add_argument("--assert-offline", action="store_true", help="block + count network use during the run; adds net_attempts_python / net_conns_os_seen to the JSONL row (expect 0)")
     ap.add_argument("--log", type=Path, default=Path("results/turns.jsonl"))
     a = ap.parse_args()
     cfg = PipelineConfig.load(a.config) if a.config.exists() else PipelineConfig()
-    if a.full:
-        from tonebridge.stages.factory import real_full
-        stages = real_full(cfg)
-    elif a.real:
-        from tonebridge.stages.factory import real_branch_a
-        stages = real_branch_a(cfg)
-    else:
-        stages = build_stub_stages(cfg, a.wav.with_suffix(".txt"))
-    pipe = Pipeline(cfg, stages)
-    res = pipe.run(load_wav(a.wav, cfg.sample_rate), utt_id=a.wav.stem)
+    guard = None
+    if a.assert_offline:
+        from tonebridge.offline_guard import OfflineGuard
+        guard = OfflineGuard().__enter__()  # active from before the models load until after the turn
+    try:
+        if a.full:
+            from tonebridge.stages.factory import real_full
+            stages = real_full(cfg)
+        elif a.real:
+            from tonebridge.stages.factory import real_branch_a
+            stages = real_branch_a(cfg)
+        else:
+            stages = build_stub_stages(cfg, a.wav.with_suffix(".txt"))
+        pipe = Pipeline(cfg, stages)
+        res = pipe.run(load_wav(a.wav, cfg.sample_rate), utt_id=a.wav.stem)
+    finally:
+        if guard:
+            guard.__exit__(None, None, None)
     row = json.loads(res.record.model_dump_json())
+    if guard:
+        row["offline_audit"] = guard.report()
     JsonlLogger(a.log).write(row)
     if res.out_wav.size:
         wavfile.write(a.out, getattr(stages.tts, 'sample_rate', cfg.tts_sample_rate), res.out_wav)  # [T_out] float32

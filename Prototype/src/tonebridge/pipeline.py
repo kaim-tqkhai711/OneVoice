@@ -80,6 +80,7 @@ class Pipeline:
                 urgency = fb.result()
             with clk.stage("gate"):
                 decision = self.s.gate(asr, safety, urgency, mt.tgt_text, cfg)
+            clk.mark("text_ready")  # EN text (after safety + gate) can be displayed
             chunks: list[np.ndarray] = []
             if decision.action in (GateAction.SPEAK, GateAction.SPEAK_CUE) and decision.speak_text:
                 with clk.stage("tts"):
@@ -92,6 +93,7 @@ class Pipeline:
         rec = TurnRecord(
             session_id=session_id, utterance_id=utt_id, config_hash=cfg.config_hash(), direction=cfg.direction,
             audio_s=audio_s, stage_ms=dict(t_proc), endpoint_to_first_audio_ms=clk.between_ms("endpoint", "first_audio"),
+            endpoint_to_text_ms=clk.between_ms("endpoint", "text_ready"),
             total_ms=total_ms, rtf=rtf(total_ms, audio_s), peak_rss_mb=peak_rss_mb(), gate=decision,
             asr_text=asr.text, nmt_text=mt.tgt_text)
         return TurnResult(record=rec, out_wav=out)

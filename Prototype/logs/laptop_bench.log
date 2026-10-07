@@ -1,0 +1,9 @@
+{'cpu': 'Intel64 Family 6 Model 170 Stepping 4, GenuineIntel', 'logical_cores': 22, 'ram_gb': 15.5, 'os': 'Windows-10-10.0.26200-SP0', 'other_python_procs_at_start': 1, 'cpu_percent_idle_1s': 4.7, 'label': 'x86, offline, 2 thread'}
+load {"rss_before_mb": 61.0, "stages": {"vad_silero": {"load_ms": 111.8, "rss_delta_mb": 20.6}, "asr_zipformer_int8": {"load_ms": 1673.2, "rss_delta_mb": 121.9}, "nmt_marian_int8": {"load_ms": 1420.3, "rss_delta_mb": 176.5}, "tts_piper": {"load_ms": 1959.6, "rss_delta_mb": 72.1}, "branch_b": {"load_ms": 68.4, "rss_delta_mb": 5.2}, "safety_gate": {"load_ms": 0.4, "rss_delta_mb": 0.0}}, "total_load_ms": 5233.7, "rss_after_load_mb": 457.3}
+e2e 20
+e2e 40
+e2e 60
+e2e 80
+e2e 100
+offline audit: 0 0
+{"n": 92, "p50": 1731.6575500008184, "p95": 2911.5001500009384, "p50_ci95": [1513.2713499988313, 1875.8097500031], "p95_ci95": [2539.5496999968605, 3598.135200000252]} {"n": 100, "p50": 731.5496500013978, "p95": 1310.8273800058664, "p50_ci95": [665.5396999994991, 807.0516000007046], "p95_ci95": [1122.4379999985103, 1668.8277400007792]}

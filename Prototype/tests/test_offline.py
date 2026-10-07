@@ -70,3 +70,10 @@ def test_no_network_capable_libs_imported_and_swiftf0_copy_identical():
     import swift_f0
     wheel = Path(swift_f0.__file__).parent / "model.onnx"
     assert hashlib.sha256(wheel.read_bytes()).hexdigest() == hashlib.sha256((ROOT / "models/branch_b/swiftf0_model.onnx").read_bytes()).hexdigest()
+
+
+@needs_models
+def test_empty_segment_does_not_crash_asr():
+    from tonebridge.stages.asr_sherpa import SherpaZipformerVi
+    r = SherpaZipformerVi(decoder="decoder-epoch-12-avg-8.int8.onnx").transcribe(np.zeros(0, np.float32), "vi")
+    assert r.text == "" and r.confidence == 0.0

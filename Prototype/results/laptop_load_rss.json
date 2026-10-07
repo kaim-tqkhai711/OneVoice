@@ -1,0 +1,68 @@
+{
+ "env": {
+  "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+  "logical_cores": 22,
+  "ram_gb": 15.5,
+  "os": "Windows-10-10.0.26200-SP0",
+  "other_python_procs_at_start": 1,
+  "cpu_percent_idle_1s": 4.7,
+  "label": "x86, offline, 2 thread"
+ },
+ "load": {
+  "rss_before_mb": 61.0,
+  "stages": {
+   "vad_silero": {
+    "load_ms": 111.8,
+    "rss_delta_mb": 20.6
+   },
+   "asr_zipformer_int8": {
+    "load_ms": 1673.2,
+    "rss_delta_mb": 121.9
+   },
+   "nmt_marian_int8": {
+    "load_ms": 1420.3,
+    "rss_delta_mb": 176.5
+   },
+   "tts_piper": {
+    "load_ms": 1959.6,
+    "rss_delta_mb": 72.1
+   },
+   "branch_b": {
+    "load_ms": 68.4,
+    "rss_delta_mb": 5.2
+   },
+   "safety_gate": {
+    "load_ms": 0.4,
+    "rss_delta_mb": 0.0
+   }
+  },
+  "total_load_ms": 5233.7,
+  "rss_after_load_mb": 457.3,
+  "cold_first_turns": [
+   {
+    "endpoint_to_first_audio_ms": 656.0566999978619,
+    "audio_s": 3.74
+   },
+   {
+    "endpoint_to_first_audio_ms": 437.14619999809656,
+    "audio_s": 2.4
+   },
+   {
+    "endpoint_to_first_audio_ms": 475.7162000023527,
+    "audio_s": 1.55
+   }
+  ],
+  "peak_rss_mb_end": 1444.3
+ },
+ "offline_audit": {
+  "net_attempts_python": 0,
+  "net_conns_os_seen": 0,
+  "offline_env": {
+   "HF_HUB_OFFLINE": "1",
+   "TRANSFORMERS_OFFLINE": "1",
+   "HF_DATASETS_OFFLINE": "1"
+  },
+  "attempt_detail": [],
+  "os_detail": []
+ }
+}

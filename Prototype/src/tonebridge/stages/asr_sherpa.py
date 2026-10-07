@@ -25,6 +25,8 @@ class SherpaZipformerVi:
 
     def transcribe(self, wav: np.ndarray, lang: Lang) -> AsrResult:  # [T] float32 @16k -> text
         assert lang == "vi", lang
+        if wav.size < 1600:  # < 0.1 s (e.g. VAD found no speech -> empty segment): sherpa/onnxruntime crash on an empty feature map
+            return AsrResult(text="", lang="vi", confidence=0.0)
         s = self._rec.create_stream()
         s.accept_waveform(16000, wav.astype(np.float32, copy=False))
         self._rec.decode_stream(s)

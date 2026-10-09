@@ -1,6 +1,6 @@
 # ToneBridge prototype (laptop reference pipeline)
 
-**Current laptop workflow (2026-10-09):** see [runtime setup and NMT/safety handoff](docs/LAPTOP_RUNTIME_HANDOFF.md). Audio adapters and routing support VI→EN, EN→VI, EN→KO, KO→EN; real E2E translation currently has VI→EN registered. New directions require the partner's text factory. Normal CLI enables safety; test doubles require `--stub`. The older measurements and commands below describe the previous VI→EN experiment.
+**Current laptop workflow (2026-10-09):** see [four-direction integration and setup](docs/LAPTOP_FOUR_DIRECTION_INTEGRATION.md). VI→EN, EN→VI, EN→KO and KO→EN now have real local NMT/audio adapters and strict safety. Korean speech remains blocked pending bilingual review; EN→KO uses an experimental Argos replacement because the Helsinki candidate fails its tokenizer audit. Normal CLI enables safety; test doubles require `--stub`. The older measurements and commands below describe the previous VI→EN experiment.
 
 VI -> EN speech-to-speech, all stages real, all local. Models live under `models/` (git-ignored); the complete list of files the pipeline reads is `docs/OFFLINE_FILES.md`.
 

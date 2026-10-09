@@ -144,6 +144,11 @@
       "sha256": "6385e8c2ebc3872e82c9ff5946228de44cd3be77a750ea53698b7dbfe94b0a22"
     },
     {
+      "path": "models/nmt/vi-en-int8-arm64/asset_manifest.json",
+      "bytes": 989,
+      "sha256": "b087bad69c8e15c971cbc7d64b7af34e6ea49be9f5e7d3da8c4107d0661d76f6"
+    },
+    {
       "path": "models/nmt/vi-en-int8-arm64/config.json",
       "bytes": 1389,
       "sha256": "c62a203a0183755af37b96a33cc125e7f74f97c1e90aaae1d1f404fd8a42eea8"
@@ -177,6 +182,256 @@
       "path": "models/nmt/vi-en-int8-arm64/vocab.json",
       "bytes": 1301077,
       "sha256": "f84f995b939f2411294d0723df4aaf7853d0bd07143b530edec0697c7d75aa5d"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/config.json",
+      "bytes": 1068,
+      "sha256": "5364df1626882820628dec67310bb7ca14c8938e9f2b0b7766cf4f051d188413"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/generation_config.json",
+      "bytes": 293,
+      "sha256": "95b6219063f279c3b0ee22a19981d1afe6f3f52c16a08453eaddadc51b0ce4ad"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/README.md",
+      "bytes": 7656,
+      "sha256": "6b2480ba58ec6c69d70ebec86dd93261b0a41e20ec816a479334de3606320bcf"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/source.spm",
+      "bytes": 789870,
+      "sha256": "3d0591e65c49541d82f48df33d7b322c3d4ee7aa0ee8747f9a7f9355dbf22c95"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/target.spm",
+      "bytes": 815483,
+      "sha256": "3d2aa641a0890d8966ab8703b109895a4e522713ce99b4a0192bfacb495bc97c"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/tokenizer_config.json",
+      "bytes": 341,
+      "sha256": "9160c71f954e46e4616cf13501c392b8ec0c4a05b5c663a654cfa44cbbf83b3f"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/_upstream/vocab.json",
+      "bytes": 958876,
+      "sha256": "9e03014979d240f6a6d1c5dc53cd14f4841351326d345d437d48d115eff67b5f"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko/tokenizer_audit.json",
+      "bytes": 310,
+      "sha256": "6bf3f52f18e13f0febfd647d04612e3b5f27afa04e38935d836444bb803076f8"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/asset_manifest.json",
+      "bytes": 1123,
+      "sha256": "0a8780ac097f1bff84df392052739b4e56c3c43fdae1cb67c0c7c6456e2025f8"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/metadata.json",
+      "bytes": 158,
+      "sha256": "d62149092f03a99e5f4ac21bcdedece27f7c25ef14c3841dce06df898c0ce60e"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/model/model.bin",
+      "bytes": 132573333,
+      "sha256": "3ad29824a57f3842b165c87513bc8723deb1486f91dbb154137be6dc2fa0a777"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/model/shared_vocabulary.txt",
+      "bytes": 397468,
+      "sha256": "ba4229260f55ffdafa706e26aae6b2e956ff2eefcb9f25ca4ff613c63f2b1102"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/README.md",
+      "bytes": 1232,
+      "sha256": "53cbfcaac1cda06fb5b5dc291a0493a8c2a03f74f2f479dc238f898362f8c6e3"
+    },
+    {
+      "path": "models/nmt-laptop/en-ko-argos/sentencepiece.model",
+      "bytes": 775634,
+      "sha256": "1e732c7195cf4d192bec9abf8f7f91d086edbd8f48aca8be3b1cdcffa530ad8b"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/config.json",
+      "bytes": 1394,
+      "sha256": "35c71b5df9d9500d557b90c7f6b86d5277ad8fdbff63a26a621ca1d23f4045fb"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/generation_config.json",
+      "bytes": 293,
+      "sha256": "0891a4a4b224b5cf3cf119abb271969bbbfad657466702dba333646b1f41688b"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/pytorch_model.bin",
+      "bytes": 288866577,
+      "sha256": "50eec80a5807001b9efdf06e76a2d3a7ed61d798af6bc96539ea7679f7d97a99"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/README.md",
+      "bytes": 2188,
+      "sha256": "1a41a58687158940cd4fa0c334a1e3ccd73f6f778433638191af96933940fcbd"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/source.spm",
+      "bytes": 808612,
+      "sha256": "fdd9ab486ca8ea060967105e30db7d8928729c78a67448711d2dd7c3153b37cd"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/target.spm",
+      "bytes": 756198,
+      "sha256": "fb8ad63c818f073c246952c91b2cb1f16aa30728bf51b5c179b8481bc0e20bb5"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/tokenizer_config.json",
+      "bytes": 44,
+      "sha256": "980f614eaf68229ed1b38762d39c9ffaa1801524ad134b9e364248e2eca79f05"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/_upstream/vocab.json",
+      "bytes": 1192392,
+      "sha256": "fccff4e1ed80f65ebc9b13352b4267d735595480c86378534d46f9d4b3c13c7c"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/asset_manifest.json",
+      "bytes": 2647,
+      "sha256": "51ba4fe68b02cee978766cab221260b4d26f739e05334b6616070eb2b7c509a3"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/config.json",
+      "bytes": 1366,
+      "sha256": "2b4a7102decedf2fc54e52b73c6e6cb0aae8f2870c4ec727e03a92bd267f3c20"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/generation_config.json",
+      "bytes": 304,
+      "sha256": "fbabada3a5937ba492382308af4933b4026ec20cd8892aa3f502b0461438a4cb"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/model.safetensors",
+      "bytes": 286744660,
+      "sha256": "435b1b4a377b169e6592348fa0d2d909f1afa606331b63b69a6f29783c09dcf5"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/source.spm",
+      "bytes": 808612,
+      "sha256": "fdd9ab486ca8ea060967105e30db7d8928729c78a67448711d2dd7c3153b37cd"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/special_tokens_map.json",
+      "bytes": 79,
+      "sha256": "2783f25e6fa0bd93f6e621623b33f32d5ab978715fb8c9f2584252b03837a323"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/target.spm",
+      "bytes": 756198,
+      "sha256": "fb8ad63c818f073c246952c91b2cb1f16aa30728bf51b5c179b8481bc0e20bb5"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/tokenizer_audit.json",
+      "bytes": 295,
+      "sha256": "2169cddb521ce7e2c19ed4547c5016e9976275e33adf25a7083e0cb6fbad3fb7"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/tokenizer_config.json",
+      "bytes": 888,
+      "sha256": "47e0a59cc69895a991de9a710cf5492f1df3296720dfdb08132a0888b02086a5"
+    },
+    {
+      "path": "models/nmt-laptop/en-vi/vocab.json",
+      "bytes": 1353450,
+      "sha256": "64f4d61a22508d316d92b7323786ebdda8ab734620abfcc7ddefb723e94ab5ee"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/config.json",
+      "bytes": 1394,
+      "sha256": "abe3c36f13da71bf49f175b114d8415dce5301330f849f66a1aeccd5d177a581"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/generation_config.json",
+      "bytes": 293,
+      "sha256": "81f06422302b9f4666f20c6f20f43b904e38ccce9326a208f82ff97c2c9699e5"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/pytorch_model.bin",
+      "bytes": 312087009,
+      "sha256": "4b2209fbd0c58a05e9c4b818b49b6b7e54406cdee93acdccf840752a94fe34f4"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/README.md",
+      "bytes": 2122,
+      "sha256": "b570727abdf8bfd6ab579e3648d999fc8b4ace4b81a22160c0f03fb501ad07a3"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/source.spm",
+      "bytes": 841805,
+      "sha256": "c9496f7c2be9aecb84c751ae9f35a875915dde8e3892f652a5c76811ab2a0f49"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/target.spm",
+      "bytes": 813126,
+      "sha256": "f1531ac8576fe64267dfca0dc33950a6e9a2d3fd9e05346558ad7ea5ee0e65bf"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/tokenizer_config.json",
+      "bytes": 44,
+      "sha256": "a0b1b53b32e8fe6a39c07dc7dfa8e7e09a466bc29d9c38edf3ed07a6b73b3b40"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/_upstream/vocab.json",
+      "bytes": 1719866,
+      "sha256": "d42e3838e7ed0e43785fa013ef22ab4d382248cdf4e959c46a2b48db5eb019e9"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/asset_manifest.json",
+      "bytes": 2647,
+      "sha256": "9ba6d78142093953f391111934570bbf6e31a22b7bbe2ad1780aec8ac6f8c445"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/config.json",
+      "bytes": 1366,
+      "sha256": "a2bfa7a9d3de3dbe5c232457fbcfb9479b4de1d57737058689adefe3428cf356"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/generation_config.json",
+      "bytes": 304,
+      "sha256": "89364dccc0798fc66a44121badad36aba170932af63331dc96c61f70c08c6b86"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/model.safetensors",
+      "bytes": 309965092,
+      "sha256": "6351873c9259f7d0fe445ef62275ecc1bcfa4f561289fbef671639162a97a087"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/source.spm",
+      "bytes": 841805,
+      "sha256": "c9496f7c2be9aecb84c751ae9f35a875915dde8e3892f652a5c76811ab2a0f49"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/special_tokens_map.json",
+      "bytes": 79,
+      "sha256": "2783f25e6fa0bd93f6e621623b33f32d5ab978715fb8c9f2584252b03837a323"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/target.spm",
+      "bytes": 813126,
+      "sha256": "f1531ac8576fe64267dfca0dc33950a6e9a2d3fd9e05346558ad7ea5ee0e65bf"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/tokenizer_audit.json",
+      "bytes": 295,
+      "sha256": "9dbe2220d902486a9251e788bc5dfa6c3d2387d694c195be9fca62a14441e779"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/tokenizer_config.json",
+      "bytes": 888,
+      "sha256": "d73f30a17904be10d9fa339923bf4a70160662eeafe6ea0356a8179e35304ce9"
+    },
+    {
+      "path": "models/nmt-laptop/ko-en/vocab.json",
+      "bytes": 1914872,
+      "sha256": "013275bfc76a9a6eee309bec6055fff27733fb036e2f7725716c1a6e57db59d7"
     },
     {
       "path": "models/silero_vad.onnx",

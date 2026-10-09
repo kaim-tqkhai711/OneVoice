@@ -27,6 +27,13 @@ def public_row(record, log_content=False):
         row.pop("asr_text", None)
         row.pop("nmt_text", None)
         row["gate"].pop("speak_text", None)
+        # Checker diagnostics and constraint/tokenizer details can contain source words.
+        row["gate"]["reasons"] = [reason.split(":", 1)[0] for reason in row["gate"]["reasons"]]
+        row["safety_reasons"] = [reason.split(":", 1)[0] for reason in row.get("safety_reasons", [])]
+        if row.get("nmt_evidence"):
+            evidence = row["nmt_evidence"]
+            evidence["unsatisfied_constraint_count"] = len(evidence.pop("unsatisfied_constraints", []))
+            evidence["tokenizer_issues"] = [reason.split(":", 1)[0] for reason in evidence["tokenizer_issues"]]
     return row
 
 
@@ -49,9 +56,9 @@ def main() -> int:
     ap.add_argument("--assert-offline", action="store_true")
     ap.add_argument("--log-content", action="store_true", help="include transcript/translation in logs")
     ap.add_argument("--play", action="store_true", help="play completed approved WAV on Windows")
-    ap.add_argument("--log", type=Path, default=ROOT / "results/turns.jsonl")
+    ap.add_argument("--log", type=Path, default=ROOT / "results/laptop_current/turns.jsonl")
     a = ap.parse_args()
-    guard, cfg, res = None, None, None
+    guard, cfg, res, pipe = None, None, None, None
     try:
         if a.out.exists():
             raise FileExistsError("output_already_exists")
@@ -75,7 +82,8 @@ def main() -> int:
             x = record_microphone(a.record_seconds, cfg.sample_rate)
         else:
             assert x is not None
-        res = Pipeline(cfg, stages).run(x, utt_id=a.wav.stem if a.wav else "microphone")
+        pipe = Pipeline(cfg, stages)
+        res = pipe.run(x, utt_id=a.wav.stem if a.wav else "microphone")
         row = public_row(res.record, a.log_content or cfg.log_content)
         row["mode"] = "stub" if a.stub else "guarded"
         row["output_written"] = False
@@ -93,6 +101,8 @@ def main() -> int:
         if res is None:
             print(f"{type(error).__name__}: {error}", file=sys.stderr)
     finally:
+        if pipe:
+            pipe.close()
         if guard:
             guard.__exit__(None, None, None)
     if guard:

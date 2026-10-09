@@ -80,9 +80,11 @@ def test_incomplete_translation_never_reaches_tts(evidence):
     assert result.record.gate.action == GateAction.CONFIRM and not result.out_wav.size
 
 
-def test_missing_new_direction_fails_explicitly():
-    with pytest.raises(ValueError, match="not registered"):
-        build_text_stages(PipelineConfig(direction="en-ko"))
+def test_quarantined_direction_fails_explicitly(tmp_path):
+    registry = tmp_path / "registry.json"
+    registry.write_text(json.dumps({"models": {"en-ko": {"status": "quarantined_pending_tokenizer_audit"}}}))
+    with pytest.raises(ValueError, match="nmt_quarantined"):
+        build_text_stages(PipelineConfig(direction="en-ko", nmt_config=str(registry)))
 
 
 def test_source_override_cannot_disagree_with_direction():
@@ -183,8 +185,10 @@ def test_watchdog_kills_worker_before_output(tmp_path):
     import sys
     root = Path(__file__).resolve().parents[1]
     result = subprocess.run([sys.executable, str(root / "tools/run_laptop.py"), "--timeout", "0.001", "--",
-                             "--wav", str(tmp_path / "unused.wav"), "--out", str(tmp_path / "output.wav"), "--stub"],
+                             "--wav", str(tmp_path / "unused.wav"), "--out", str(tmp_path / "output.wav"),
+                             "--log", str(tmp_path / "worker.jsonl"), "--stub"],
                             capture_output=True, text=True, encoding="utf-8", timeout=10)
     assert result.returncode == 124
     assert json.loads(result.stdout)["error_type"] == "Timeout"
     assert not (tmp_path / "output.wav").exists()
+    assert json.loads((tmp_path / "worker.jsonl").read_text())["error_type"] == "Timeout"

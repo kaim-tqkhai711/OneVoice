@@ -1,0 +1,426 @@
+{
+  "version": "clinical-relations-v1",
+  "korean_reviewed": false,
+  "entities": [
+    {
+      "id": "paracetamol",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "paracetamol",
+          "acetaminophen"
+        ],
+        "en": [
+          "paracetamol",
+          "acetaminophen"
+        ],
+        "ko": [
+          "아세트아미노펜",
+          "파라세타몰"
+        ]
+      }
+    },
+    {
+      "id": "aspirin",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "aspirin"
+        ],
+        "en": [
+          "aspirin"
+        ],
+        "ko": [
+          "아스피린"
+        ]
+      }
+    },
+    {
+      "id": "penicillin",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "penicillin"
+        ],
+        "en": [
+          "penicillin"
+        ],
+        "ko": [
+          "페니실린"
+        ]
+      }
+    },
+    {
+      "id": "ibuprofen",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "ibuprofen"
+        ],
+        "en": [
+          "ibuprofen"
+        ],
+        "ko": [
+          "이부프로펜"
+        ]
+      }
+    },
+    {
+      "id": "morphine",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "morphin",
+          "morphine"
+        ],
+        "en": [
+          "morphine"
+        ],
+        "ko": [
+          "모르핀"
+        ]
+      }
+    },
+    {
+      "id": "warfarin",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "warfarin"
+        ],
+        "en": [
+          "warfarin"
+        ],
+        "ko": [
+          "와파린"
+        ]
+      }
+    },
+    {
+      "id": "insulin",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "insulin"
+        ],
+        "en": [
+          "insulin"
+        ],
+        "ko": [
+          "인슐린"
+        ]
+      }
+    },
+    {
+      "id": "prednisolone",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "prednisolone"
+        ],
+        "en": [
+          "prednisolone"
+        ],
+        "ko": [
+          "프레드니솔론"
+        ]
+      }
+    },
+    {
+      "id": "prednisone",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "prednisone"
+        ],
+        "en": [
+          "prednisone"
+        ],
+        "ko": [
+          "프레드니손"
+        ]
+      }
+    },
+    {
+      "id": "amoxicillin",
+      "kind": "medication",
+      "forms": {
+        "vi": [
+          "amoxicillin"
+        ],
+        "en": [
+          "amoxicillin"
+        ],
+        "ko": [
+          "아목시실린"
+        ]
+      }
+    },
+    {
+      "id": "egg",
+      "kind": "allergen",
+      "forms": {
+        "vi": [
+          "trứng"
+        ],
+        "en": [
+          "egg",
+          "eggs"
+        ],
+        "ko": [
+          "계란",
+          "달걀"
+        ]
+      }
+    },
+    {
+      "id": "peanut",
+      "kind": "allergen",
+      "forms": {
+        "vi": [
+          "đậu phộng"
+        ],
+        "en": [
+          "peanut",
+          "peanuts"
+        ],
+        "ko": [
+          "땅콩"
+        ]
+      }
+    },
+    {
+      "id": "chest_pain",
+      "kind": "symptom",
+      "forms": {
+        "vi": [
+          "đau ngực"
+        ],
+        "en": [
+          "chest pain"
+        ],
+        "ko": [
+          "흉통",
+          "가슴 통증",
+          "가슴이 아프"
+        ]
+      }
+    },
+    {
+      "id": "abdominal_pain",
+      "kind": "symptom",
+      "forms": {
+        "vi": [
+          "đau bụng"
+        ],
+        "en": [
+          "abdominal pain",
+          "stomach pain"
+        ],
+        "ko": [
+          "복통",
+          "배가 아프"
+        ]
+      }
+    }
+  ],
+  "units": [
+    {
+      "id": "mg",
+      "forms": {
+        "vi": [
+          "mg",
+          "miligam"
+        ],
+        "en": [
+          "mg",
+          "milligram",
+          "milligrams"
+        ],
+        "ko": [
+          "mg",
+          "밀리그램"
+        ]
+      }
+    },
+    {
+      "id": "mcg",
+      "forms": {
+        "vi": [
+          "mcg",
+          "microgam"
+        ],
+        "en": [
+          "mcg",
+          "microgram",
+          "micrograms"
+        ],
+        "ko": [
+          "mcg",
+          "마이크로그램"
+        ]
+      }
+    },
+    {
+      "id": "g",
+      "forms": {
+        "vi": [
+          "g",
+          "gam"
+        ],
+        "en": [
+          "g",
+          "gram",
+          "grams"
+        ],
+        "ko": [
+          "g",
+          "그램"
+        ]
+      }
+    },
+    {
+      "id": "ml",
+      "forms": {
+        "vi": [
+          "ml",
+          "mililít",
+          "mililit"
+        ],
+        "en": [
+          "ml",
+          "milliliter",
+          "milliliters",
+          "millilitre",
+          "millilitres"
+        ],
+        "ko": [
+          "ml",
+          "밀리리터"
+        ]
+      }
+    },
+    {
+      "id": "tablet",
+      "forms": {
+        "vi": [
+          "viên"
+        ],
+        "en": [
+          "tablet",
+          "tablets",
+          "pill",
+          "pills"
+        ],
+        "ko": [
+          "정",
+          "알"
+        ]
+      }
+    },
+    {
+      "id": "capsule",
+      "forms": {
+        "vi": [
+          "viên nang"
+        ],
+        "en": [
+          "capsule",
+          "capsules"
+        ],
+        "ko": [
+          "캡슐"
+        ]
+      }
+    },
+    {
+      "id": "drop",
+      "forms": {
+        "vi": [
+          "giọt"
+        ],
+        "en": [
+          "drop",
+          "drops"
+        ],
+        "ko": [
+          "방울"
+        ]
+      }
+    }
+  ],
+  "patterns": {
+    "vi": {
+      "allergy": "dị ứng",
+      "stop": "(?:ngừng|ngưng|dừng)(?: uống| dùng)?",
+      "continue": "tiếp tục(?: uống| dùng)?",
+      "inject": "tiêm",
+      "take": "(?:uống|dùng)",
+      "negation": "(?:không|chưa|đừng|chẳng|chớ)",
+      "certainty": "(?:có thể|có khả năng|nghi ngờ)",
+      "comparator_more": "(?:quá|hơn)",
+      "comparator_less": "(?:dưới|ít hơn)",
+      "frequency_every": "mỗi (?P<n>.+?) (?P<u>giờ|ngày)",
+      "frequency_daily": "(?P<n>.+?) lần (?:mỗi|một) ngày"
+    },
+    "en": {
+      "allergy": "(?:allergic|allergy|allergies)",
+      "stop": "(?:stop|discontinue)(?: taking| using)?",
+      "continue": "continue(?: taking| using)?",
+      "inject": "(?:inject|injection)",
+      "take": "(?:take|taking|use|using)",
+      "negation": "(?:not|no|never|cannot|without|n't)",
+      "certainty": "(?:may|might|possibly|possible|perhaps)",
+      "comparator_more": "(?:more than|over)",
+      "comparator_less": "(?:fewer than|less than|under)",
+      "frequency_every": "every (?P<n>.+?) (?P<u>hours?|days?)",
+      "frequency_daily": "(?P<n>.+?) times? (?:a|per) day"
+    },
+    "ko": {
+      "allergy": "알레르기",
+      "stop": "(?:중단(?:하세요|합니다)?|멈추(?:세요)?)",
+      "continue": "(?:계속|지속)",
+      "inject": "(?:주사(?:하세요|합니다)?|투여(?:하세요|합니다)?)",
+      "take": "(?:복용(?:하세요|합니다|하지)?|먹(?:으세요|어요)?|드세요)",
+      "negation": "(?:없|아니|않|못|금지|마세요)",
+      "certainty": "(?:수 있|가능성|의심|아마)",
+      "comparator_more": "(?:초과|넘)",
+      "comparator_less": "(?:미만|보다 적)",
+      "frequency_every": "(?P<n>[0-9]+|한|두|세|네|다섯|여섯)\\s*(?P<u>시간|일)마다",
+      "frequency_daily": "하루(?:에)?\\s*(?P<n>[0-9]+|한|두|세|네)\\s*번"
+    }
+  },
+  "ordinary": [
+    {
+      "vi": [
+        "xin chào"
+      ],
+      "en": [
+        "hello",
+        "hi"
+      ],
+      "ko": [
+        "안녕하세요"
+      ]
+    },
+    {
+      "vi": [
+        "cảm ơn",
+        "cảm ơn bạn"
+      ],
+      "en": [
+        "thank you",
+        "thanks"
+      ],
+      "ko": [
+        "감사합니다",
+        "고맙습니다"
+      ]
+    }
+  ],
+  "filler": {
+    "vi": "tôi bạn bệnh nhân chúng tôi cô ấy anh ấy bị với và nhưng của cho hãy một có này cần",
+    "en": "i you the patient we she he am is are be have has to of with this medicine medication do does please a an",
+    "ko": "저는 나는 제가 환자는 환자가 당신은 저는 당신 에 을 를 이 가 은 는 입니다 있어요 있습니다 있습니다를 하세요 합니다 하지 않으세요"
+  }
+}

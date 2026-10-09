@@ -114,3 +114,6 @@ class TurnRecord(BaseModel):
     error_stage: str | None = None
     error_type: str | None = None
     runtime_manifest_sha256: str | None = None
+    nmt_evidence: dict | None = None
+    safety_status: str | None = None
+    safety_reasons: list[str] = Field(default_factory=list)

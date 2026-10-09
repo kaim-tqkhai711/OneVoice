@@ -1,0 +1,3 @@
+{"id": "smoke-0", "wav": "../results/laptop_current/integration-final/ko-en/greeting_ko.wav", "direction": "ko-en"}
+{"id": "smoke-1", "wav": "../models/asr/zipformer-ko-int8/test_wavs/0.wav", "direction": "ko-en"}
+{"id": "smoke-2", "wav": "../models/asr/zipformer-ko-int8/test_wavs/1.wav", "direction": "ko-en"}

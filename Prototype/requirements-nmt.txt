@@ -1,0 +1,14 @@
+# Isolated Python 3.12 NMT environment; does not replace requirements-bench.txt.
+numpy==2.5.2
+pydantic==2.14.0
+pytest==9.1.1
+sentencepiece==0.2.2
+onnxruntime==1.31.0
+transformers==4.57.6
+huggingface-hub==0.36.2
+safetensors==0.8.0
+sacremoses==0.2.0
+psutil==7.2.2
+sacrebleu==2.6.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu

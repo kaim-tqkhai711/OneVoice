@@ -1,0 +1,10 @@
+# Additional packages for the integrated laptop environment.
+-r requirements-laptop.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+transformers==4.57.6
+huggingface-hub==0.36.2
+safetensors==0.8.0
+sacremoses==0.2.0
+sacrebleu==2.6.0
+ctranslate2==4.8.2

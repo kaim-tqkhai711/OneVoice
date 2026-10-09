@@ -38,6 +38,8 @@ class PipelineConfig(BaseModel):
     max_utterance_s: float = Field(15.0, gt=0, le=60)
     audio_config: str = "configs/audio_laptop.json"
     text_factory: str | None = None  # module:function(cfg, threads) -> (Nmt, SafetyChecker)
+    nmt_config: str = "configs/nmt/models_laptop.json"
+    format_asr_source: bool = True
     urgency_enabled: bool = True
     log_content: bool = False
     models: dict[str, ModelSpec] = Field(default_factory=dict)

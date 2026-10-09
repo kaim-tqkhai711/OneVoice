@@ -8,7 +8,7 @@ Flow (shapes in comments):
 """
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, wait
 from dataclasses import dataclass, field
 import hashlib
 from pathlib import Path
@@ -63,6 +63,21 @@ class Pipeline:
         cfg.seed_everything()
         manifest = Path(__file__).resolve().parents[2] / "configs/laptop_assets_manifest.json"
         self.manifest_hash = hashlib.sha256(manifest.read_bytes()).hexdigest() if manifest.exists() else None
+        self._workers = None
+        self._closed = False
+
+    def close(self):
+        """Release the persistent branch workers after the final sequential turn."""
+        self._closed = True
+        if self._workers is not None:
+            self._workers.shutdown(wait=True)
+            self._workers = None
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.close()
 
     def _branch_a(self, seg: np.ndarray, src: Lang, tgt: Lang, clk: TurnClock) -> tuple[AsrResult, MtResult, SafetyReport]:
         x = _call(clk, "denoise", self.s.denoiser.process, seg)
@@ -78,7 +93,15 @@ class Pipeline:
             raise StageFailure("nmt", ValueError("translation_contract_mismatch"))
         if mt.truncated or mt.terminated_by_eos is False or mt.constraints_satisfied is False:
             return asr, mt, SafetyReport(passed=False, reasons=["translation_incomplete"])
-        if self.cfg.direction != "vi-en" and mt.terminated_by_eos is None:
+        evidence = getattr(mt, "evidence", None)
+        if evidence is not None and (evidence.truncated or evidence.input_truncated or not evidence.eos_reached
+                                    or evidence.source_unknown_tokens or evidence.output_unknown_tokens
+                                    or evidence.tokenizer_issues or evidence.unsatisfied_constraints
+                                    or evidence.constraints_satisfied != evidence.constraints_requested
+                                    or evidence.source_unknown_tokens > evidence.source_tokens
+                                    or evidence.output_unknown_tokens > evidence.output_tokens):
+            return asr, mt, SafetyReport(passed=False, reasons=["translation_evidence_invalid_or_incomplete"])
+        if evidence is None and mt.terminated_by_eos is None:
             return asr, mt, SafetyReport(passed=False, reasons=["translation_evidence_missing"])
         safety = _call(clk, "safety", self.s.safety.check, mt)
         return asr, mt, safety
@@ -98,11 +121,14 @@ class Pipeline:
         t_proc = clk.stage_ms  # alias for readability
         asr = AsrResult(text="", lang=source, confidence=0.0)
         mt = MtResult(src_text="", tgt_text="", src_lang=source, tgt_lang=tgt)
+        safety = None
         status, error_stage, error_type = "ok", None, None
         chunks: list[np.ndarray] = []
         decision = GateDecision(action=GateAction.REPEAT, reasons=["no_speech_or_empty_asr"])
         with clk.stage("total_proc"):
             try:
+                if self._closed:
+                    raise StageFailure("input", RuntimeError("pipeline_closed"))
                 if src is not None and src != source:
                     raise StageFailure("input", ValueError("source_direction_mismatch"))
                 if not isinstance(wav, np.ndarray) or wav.ndim != 1 or not np.isfinite(wav).all() or (wav.size and np.max(np.abs(wav)) > 1.001):
@@ -120,11 +146,15 @@ class Pipeline:
                         raise StageFailure("vad", ValueError("invalid_timestamps"))
                     seg = x[int(t0 * cfg.sample_rate): int(t1 * cfg.sample_rate)]
                     if seg.size:
-                        with ThreadPoolExecutor(max_workers=2) as pool:
-                            fa = pool.submit(self._branch_a, seg, source, tgt, clk)
-                            fb = pool.submit(self._branch_b, seg, clk)
-                            asr, mt, safety = fa.result()
-                            urgency = fb.result()
+                        # Native CPU libraries keep thread-local workspaces.
+                        # Creating fresh branch threads per turn grows those caches.
+                        if self._workers is None:
+                            self._workers = ThreadPoolExecutor(max_workers=2, thread_name_prefix="tonebridge")
+                        fa = self._workers.submit(self._branch_a, seg, source, tgt, clk)
+                        fb = self._workers.submit(self._branch_b, seg, clk)
+                        wait((fa, fb))  # settle both branches even if A failed
+                        asr, mt, safety = fa.result()
+                        urgency = fb.result()
                         decision = _call(clk, "gate", self.s.gate, asr, safety, urgency, mt.tgt_text, cfg)
                         # Safety and completion checks cannot be bypassed by a custom gate.
                         if not safety.passed or safety.confirm:
@@ -164,7 +194,10 @@ class Pipeline:
             endpoint_to_text_ms=clk.between_ms("endpoint", "text_ready"),
             total_ms=total_ms, rtf=rtf(total_ms, audio_s), peak_rss_mb=peak_rss_mb(), gate=decision,
             asr_text=asr.text, nmt_text=mt.tgt_text, status=status, error_stage=error_stage, error_type=error_type,
-            runtime_manifest_sha256=self.manifest_hash)
+            runtime_manifest_sha256=self.manifest_hash,
+            nmt_evidence=getattr(mt, "evidence", None).model_dump(mode="json") if getattr(mt, "evidence", None) is not None else None,
+            safety_status=(getattr(safety, "status", None) or ("FAIL" if not safety.passed else "CONFIRM" if safety.confirm else "PASS")) if safety is not None else None,
+            safety_reasons=safety.reasons if safety is not None else [])
         return TurnResult(record=rec, out_wav=out)
 
 

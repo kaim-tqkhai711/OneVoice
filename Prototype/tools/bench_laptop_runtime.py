@@ -47,6 +47,7 @@ def benchmark(config, manifest, destination, warmup=3, repeats=1):
                     rows.append(row)
                     log.write(json.dumps(row, ensure_ascii=False) + "\n")
                 print("completed", len(rows), "turns", flush=True)
+        pipe.close()
     def stats(key):
         values = [r[key] for r in rows if r.get(key) is not None]
         return summarize_latency(values) if values else None

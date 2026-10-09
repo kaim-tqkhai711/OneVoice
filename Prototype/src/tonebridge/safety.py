@@ -60,6 +60,8 @@ class SemanticSafetyChecker:
         self.inten = sorted(lex["intensity"], key=lambda m: -len(m["vi"]))
         self.vi_num = lex["vi_numbers"]
         self.en_num = lex["en_numbers"]
+        from tonebridge.clinical_safety import ClinicalSafetyChecker
+        self.clinical = ClinicalSafetyChecker()
 
     # ---- number parsing -------------------------------------------------------------------------------------------------------------
     def _parse_vi_number(self, toks: list[str]) -> int | None:
@@ -214,7 +216,22 @@ class SemanticSafetyChecker:
                     hit = _any(t, m["en"])
                     rec("intensity", m["vi"], hit, hit is not None, f"intensity_missing:{m['vi']}", critical=False)
 
-        return SafetyReport(passed=not critical_fail, confirm=confirm and not critical_fail, checks=checks, reasons=reasons)
+        # Preserve the public text-only helper and number parser for existing tools.
+        # Add relational checks; ordinary/intensity-only legacy calls remain lexical.
+        # Explicit legacy ablation flags are text-evaluation-only. Runtime check()
+        # always uses the strict checker; disabling a lexical group cannot bypass it.
+        if all(self.enable.values()):
+            relation = self.clinical.check_texts(src, tgt)
+            if relation.status == "FAIL":
+                critical_fail = True
+                reasons.extend(relation.reasons)
+            elif relation.status == "CONFIRM" and any(c.slot in ("medication", "dose_unit", "dose_number", "allergy", "negation")
+                                                      for c in checks):
+                confirm = True
+                reasons.extend(relation.reasons)
+        return SafetyReport(passed=not critical_fail, confirm=confirm and not critical_fail,
+                            checks=checks, reasons=list(dict.fromkeys(reasons)))
 
     def check(self, mt: MtResult) -> SafetyReport:
-        return self.check_texts(mt.src_text, mt.tgt_text)
+        # Runtime path is deliberately strict, including EOS/tokenizer evidence.
+        return self.clinical.check(mt)

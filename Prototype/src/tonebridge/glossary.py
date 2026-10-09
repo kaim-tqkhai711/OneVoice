@@ -46,6 +46,10 @@ class Glossary:
     def check(self, src: str, tgt: str) -> list[TermCheck]:
         out, tl = [], _norm(tgt) + " "
         for t in self.find(src):
-            hit = any(f in tl for f in t["en"])
+            def accepted(form):
+                left = "" if form.startswith("n't") else r"(?<!\w)"
+                suffix = r"(?:y|ies|ic)" if form == "allerg" else r"(?:s|es)?" if t["slot"] in ("medication", "dose_unit") else ""
+                return re.search(left + re.escape(form) + suffix + r"(?!\w)", tl) is not None
+            hit = any(accepted(f) for f in t["en"])
             out.append(TermCheck(t["vi"], t["slot"], t["strict"], t["en"], hit))
         return out

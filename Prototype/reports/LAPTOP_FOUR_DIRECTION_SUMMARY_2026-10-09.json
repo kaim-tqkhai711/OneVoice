@@ -1,0 +1,408 @@
+{
+  "scope": "Laptop CPU four directions; integration smoke, not clinical validation",
+  "tests": {
+    "passed": 204,
+    "skipped": 3,
+    "warnings": 1
+  },
+  "assets": {
+    "count": 452,
+    "manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a"
+  },
+  "directions": {
+    "vi-en": {
+      "smoke": {
+        "direction": "vi-en",
+        "label": "Real model integration smoke; generated/model-provided WAVs; draft dev text; no clinical quality or hardware claim",
+        "model_load_ms": 6574.119999999766,
+        "config_hash": "4ab5a84c322ab6fa",
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "audio_turns": 4,
+        "gate_counts": {
+          "SPEAK": 1,
+          "CONFIRM": 3
+        },
+        "status_counts": {
+          "ok": 1,
+          "rejected": 3
+        },
+        "text_dev_count": 20,
+        "text_safety_counts": {
+          "PASS": 4,
+          "CONFIRM": 14,
+          "FAIL": 2
+        },
+        "nmt_p50_ms": 131.37054999970132,
+        "nmt_p95_ms": 224.53421999994134,
+        "rss_mb": 807.6640625,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "stability": {
+        "direction": "vi-en",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "threads_per_model": 2,
+        "config_hash": "4ab5a84c322ab6fa",
+        "model_load_ms": 8419.551500000125,
+        "warmup_turns": 3,
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "n_turns": 104,
+        "n_manifest_entries": 4,
+        "n_distinct_wavs": 4,
+        "repeats": 26,
+        "label": "Repeated-sample runtime stability smoke",
+        "gate_actions": {
+          "SPEAK": 26,
+          "CONFIRM": 78
+        },
+        "statuses": {
+          "ok": 26,
+          "rejected": 78
+        },
+        "endpoint_to_first_sample_ms": {
+          "n": 26,
+          "p50": 211.03545000005397,
+          "p95": 234.44304999998167,
+          "p50_ci95": [
+            208.12270000033095,
+            215.76600000003054
+          ],
+          "p95_ci95": [
+            217.30920000027254,
+            239.3875000002481
+          ]
+        },
+        "endpoint_to_text_ms": {
+          "n": 104,
+          "p50": 243.13420000021324,
+          "p95": 459.2545349998318,
+          "p50_ci95": [
+            186.85540000024048,
+            279.14400000008754
+          ],
+          "p95_ci95": [
+            452.9135550000092,
+            467.07870000000185
+          ]
+        },
+        "first_audible_ms": null,
+        "peak_rss_mb": 845.6484375,
+        "rss_first_mb": 808.67578125,
+        "rss_last_mb": 845.6484375,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "draft_reference_chrf": 65.52434057721707
+    },
+    "en-vi": {
+      "smoke": {
+        "direction": "en-vi",
+        "label": "Real model integration smoke; generated/model-provided WAVs; draft dev text; no clinical quality or hardware claim",
+        "model_load_ms": 13046.169400000053,
+        "config_hash": "c4376674231557d2",
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "audio_turns": 3,
+        "gate_counts": {
+          "SPEAK": 1,
+          "CONFIRM": 1,
+          "REPEAT": 1
+        },
+        "status_counts": {
+          "ok": 1,
+          "rejected": 2
+        },
+        "text_dev_count": 20,
+        "text_safety_counts": {
+          "PASS": 4,
+          "FAIL": 12,
+          "CONFIRM": 4
+        },
+        "nmt_p50_ms": 162.96160000001692,
+        "nmt_p95_ms": 276.5295899999728,
+        "rss_mb": 1150.0078125,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "stability": {
+        "direction": "en-vi",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "threads_per_model": 2,
+        "config_hash": "c4376674231557d2",
+        "model_load_ms": 13624.055900000258,
+        "warmup_turns": 3,
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "n_turns": 201,
+        "n_manifest_entries": 3,
+        "n_distinct_wavs": 3,
+        "repeats": 67,
+        "label": "Repeated-sample runtime stability smoke",
+        "gate_actions": {
+          "SPEAK": 67,
+          "CONFIRM": 67,
+          "REPEAT": 67
+        },
+        "statuses": {
+          "ok": 67,
+          "rejected": 134
+        },
+        "endpoint_to_first_sample_ms": {
+          "n": 67,
+          "p50": 1126.324199999999,
+          "p95": 1163.346040000033,
+          "p50_ci95": [
+            1119.0037999999731,
+            1130.6713999997555
+          ],
+          "p95_ci95": [
+            1154.7662400000263,
+            1168.1140999999116
+          ]
+        },
+        "endpoint_to_text_ms": {
+          "n": 134,
+          "p50": 426.47360000000845,
+          "p95": 798.0161249999355,
+          "p50_ci95": [
+            146.88249375004716,
+            762.6960999998573
+          ],
+          "p95_ci95": [
+            787.1740475000257,
+            809.9391199997854
+          ]
+        },
+        "first_audible_ms": null,
+        "peak_rss_mb": 1182.046875,
+        "rss_first_mb": 1157.7421875,
+        "rss_last_mb": 1179.765625,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "draft_reference_chrf": 33.55229815841157
+    },
+    "en-ko": {
+      "smoke": {
+        "direction": "en-ko",
+        "label": "Real model integration smoke; generated/model-provided WAVs; draft dev text; no clinical quality or hardware claim",
+        "model_load_ms": 2800.336799999968,
+        "config_hash": "2f9c50e0450151e1",
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "audio_turns": 3,
+        "gate_counts": {
+          "CONFIRM": 2,
+          "REPEAT": 1
+        },
+        "status_counts": {
+          "rejected": 3
+        },
+        "text_dev_count": 20,
+        "text_safety_counts": {
+          "CONFIRM": 8,
+          "FAIL": 12
+        },
+        "nmt_p50_ms": 68.22614999987309,
+        "nmt_p95_ms": 113.19556000014474,
+        "rss_mb": 676.6875,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "stability": {
+        "direction": "en-ko",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "threads_per_model": 2,
+        "config_hash": "2f9c50e0450151e1",
+        "model_load_ms": 2989.0579000002617,
+        "warmup_turns": 3,
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "n_turns": 102,
+        "n_manifest_entries": 3,
+        "n_distinct_wavs": 3,
+        "repeats": 34,
+        "label": "Repeated-sample runtime stability smoke",
+        "gate_actions": {
+          "CONFIRM": 68,
+          "REPEAT": 34
+        },
+        "statuses": {
+          "rejected": 102
+        },
+        "endpoint_to_first_sample_ms": null,
+        "endpoint_to_text_ms": {
+          "n": 68,
+          "p50": 216.47170000028382,
+          "p95": 506.234654999912,
+          "p50_ci95": [
+            63.78715000005286,
+            458.6106000001564
+          ],
+          "p95_ci95": [
+            488.76269000022603,
+            534.40240000009
+          ]
+        },
+        "first_audible_ms": null,
+        "peak_rss_mb": 698.9375,
+        "rss_first_mb": 674.73046875,
+        "rss_last_mb": 696.890625,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "draft_reference_chrf": 23.069811594640175
+    },
+    "ko-en": {
+      "smoke": {
+        "direction": "ko-en",
+        "label": "Real model integration smoke; generated/model-provided WAVs; draft dev text; no clinical quality or hardware claim",
+        "model_load_ms": 19130.092299999887,
+        "config_hash": "057747174ecfe6a5",
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "audio_turns": 3,
+        "gate_counts": {
+          "CONFIRM": 3
+        },
+        "status_counts": {
+          "rejected": 3
+        },
+        "text_dev_count": 20,
+        "text_safety_counts": {
+          "CONFIRM": 16,
+          "FAIL": 4
+        },
+        "nmt_p50_ms": 200.76494999989336,
+        "nmt_p95_ms": 303.694520000181,
+        "rss_mb": 974.59765625,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "stability": {
+        "direction": "ko-en",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "threads_per_model": 2,
+        "config_hash": "057747174ecfe6a5",
+        "model_load_ms": 17426.297500000146,
+        "warmup_turns": 3,
+        "runtime_manifest_sha256": "8cee471dde353ea35a80ced7f5f2f87a5e00f249272a6cfdf681acf86e538d4a",
+        "n_turns": 201,
+        "n_manifest_entries": 3,
+        "n_distinct_wavs": 3,
+        "repeats": 67,
+        "label": "Repeated-sample runtime stability smoke",
+        "gate_actions": {
+          "CONFIRM": 201
+        },
+        "statuses": {
+          "rejected": 201
+        },
+        "endpoint_to_first_sample_ms": null,
+        "endpoint_to_text_ms": {
+          "n": 201,
+          "p50": 466.7672999999013,
+          "p95": 562.1220000002722,
+          "p50_ci95": [
+            464.71219999966706,
+            471.0459999996601
+          ],
+          "p95_ci95": [
+            553.1382999997732,
+            578.7261999998918
+          ]
+        },
+        "first_audible_ms": null,
+        "peak_rss_mb": 998.50390625,
+        "rss_first_mb": 973.40625,
+        "rss_last_mb": 997.05078125,
+        "offline_audit": {
+          "net_attempts_python": 0,
+          "net_conns_os_seen": 0,
+          "offline_env": {
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "HF_DATASETS_OFFLINE": "1"
+          },
+          "attempt_detail": [],
+          "os_detail": []
+        }
+      },
+      "draft_reference_chrf": 64.9340378669169
+    }
+  },
+  "hardware_vi_en": {
+    "microphone_capture_completed": true,
+    "safety_status": "PASS",
+    "gate": "SPEAK",
+    "output_written": true,
+    "playback_api_completed": true,
+    "human_listening_confirmed": true,
+    "endpoint_to_first_sample_ms": 404.9377,
+    "source_audio_saved": false
+  },
+  "limitations": [
+    "Only 3 or 4 distinct WAVs per repeated benchmark, not 100 independent utterances",
+    "Korean remains CONFIRM pending human review",
+    "Clinical model quality and false accept/block rates require human labels",
+    "No overnight memory, noise-corpus, Android or NPU validation"
+  ]
+}

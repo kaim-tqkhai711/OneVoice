@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "status": "local_setup_results_recorded; see per-direction status",
+  "models": {
+    "vi-en": {
+      "backend": "onnx",
+      "adapter": "OrtMarianNmt",
+      "model_id": "Xenova/opus-mt-vi-en",
+      "revision": "541dfd72ec07e8f1563795e0224408ad8d729e80",
+      "assets": "models/nmt/vi-en-int8-arm64",
+      "status": "local_assets_ready"
+    },
+    "en-vi": {
+      "adapter": "EnViNmt",
+      "model_id": "Helsinki-NLP/opus-mt-en-vi",
+      "assets": "models/nmt-laptop/en-vi",
+      "status": "local_assets_ready",
+      "revision": "989c9fb9ec63987901022baf0182dcec3e149be6",
+      "allow_partial_vocabulary": true
+    },
+    "en-ko": {
+      "backend": "argos",
+      "adapter": "ArgosEnKoNmt",
+      "model_id": "argosopentech/translate-en_ko-1_1",
+      "revision": "ff90de60728f7c1338ff6b75974e4c89b2442d22",
+      "assets": "models/nmt-laptop/en-ko-argos",
+      "status": "experimental_local_smoke_passed",
+      "license_status": "Package does not supply a license; release requires separate review",
+      "korean_safety": "confirmation_required_pending_human_review"
+    },
+    "ko-en": {
+      "adapter": "KoEnNmt",
+      "model_id": "Helsinki-NLP/opus-mt-ko-en",
+      "assets": "models/nmt-laptop/ko-en",
+      "status": "local_assets_ready",
+      "revision": "e42d1f41b66194e6d10512f8a27bebc1f4f5097e",
+      "allow_partial_vocabulary": true
+    }
+  },
+  "korean_safety": "confirmation_required_pending_human_review",
+  "quarantined_en_ko": {
+    "adapter": "EnKoNmt",
+    "model_id": "Helsinki-NLP/opus-mt-tc-big-en-ko",
+    "revision": "ae8606b7b29a495f31ce679cee2007f536a3a5ce",
+    "assets": "models/nmt-laptop/en-ko",
+    "status": "quarantined_pending_tokenizer_audit",
+    "note": "Do not reconstruct embedding IDs from SentencePiece order; published HF config/files do not prove valid source mapping."
+  }
+}

@@ -9,18 +9,31 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def worker_error(arguments, stage, error_type, **extra):
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--log", type=Path, default=ROOT / "results/laptop_current/turns.jsonl")
+    parser.add_argument("--out", type=Path)
+    parser.add_argument("--direction")
+    args, _ = parser.parse_known_args(arguments)
+    row = {"status": "error", "error_stage": stage, "error_type": error_type,
+           "direction": args.direction, "gate": {"action": "ABSTAIN"},
+           "output_written": bool(args.out and args.out.exists()), **extra}
+    args.log.parent.mkdir(parents=True, exist_ok=True)
+    with args.log.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(row) + "\n")
+    print(json.dumps(row))
+
+
 def supervise(arguments, timeout):
-    env = {**os.environ, "PYTHONPATH": str(ROOT / "src") + os.pathsep + os.environ.get("PYTHONPATH", ""), "PYTHONIOENCODING": "utf-8"}
+    env = {**os.environ, "PYTHONPATH": str(ROOT / "src") + os.pathsep + os.environ.get("PYTHONPATH", ""), "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
     try:
-        result = subprocess.run([sys.executable, "-m", "tonebridge.cli", *arguments], env=env, timeout=timeout)
+        result = subprocess.run([sys.executable, "-X", "utf8", "-m", "tonebridge.cli", *arguments], env=env, timeout=timeout)
         if result.returncode < 0 or result.returncode > 2:
-            print(json.dumps({"status": "error", "error_stage": "worker", "error_type": "WorkerExit",
-                              "worker_exit_code": result.returncode, "gate": {"action": "ABSTAIN"}, "output_written": False}))
+            worker_error(arguments, "worker", "WorkerExit", worker_exit_code=result.returncode)
         return result.returncode
     except subprocess.TimeoutExpired:
         # subprocess.run has killed and reaped the entire inference process, including its threads.
-        print(json.dumps({"status": "error", "error_stage": "watchdog", "error_type": "Timeout",
-                          "gate": {"action": "ABSTAIN"}, "output_written": False}))
+        worker_error(arguments, "watchdog", "Timeout")
         return 124
 
 

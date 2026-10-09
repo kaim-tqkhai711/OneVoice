@@ -1,0 +1,1905 @@
+{
+  "kind": "checker_on_draft_references",
+  "n_items": 80,
+  "counts": {
+    "PASS": 32,
+    "CONFIRM": 48
+  },
+  "rows": [
+    {
+      "id": "vi-en:greeting",
+      "source": "xin chào",
+      "hypothesis": "Hello.",
+      "reference": "Hello.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:greeting",
+      "source": "Hello.",
+      "hypothesis": "xin chào",
+      "reference": "xin chào",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:greeting",
+      "source": "Hello.",
+      "hypothesis": "안녕하세요.",
+      "reference": "안녕하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:greeting",
+      "source": "안녕하세요.",
+      "hypothesis": "Hello.",
+      "reference": "Hello.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:thanks",
+      "source": "cảm ơn bạn",
+      "hypothesis": "Thank you.",
+      "reference": "Thank you.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:thanks",
+      "source": "Thank you.",
+      "hypothesis": "cảm ơn bạn",
+      "reference": "cảm ơn bạn",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:thanks",
+      "source": "Thank you.",
+      "hypothesis": "감사합니다.",
+      "reference": "감사합니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:thanks",
+      "source": "감사합니다.",
+      "hypothesis": "Thank you.",
+      "reference": "Thank you.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:dose_two",
+      "source": "uống hai viên paracetamol",
+      "hypothesis": "Take two tablets of paracetamol.",
+      "reference": "Take two tablets of paracetamol.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:dose_two",
+      "source": "Take two tablets of paracetamol.",
+      "hypothesis": "uống hai viên paracetamol",
+      "reference": "uống hai viên paracetamol",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:dose_two",
+      "source": "Take two tablets of paracetamol.",
+      "hypothesis": "아세트아미노펜 2정을 복용하세요.",
+      "reference": "아세트아미노펜 2정을 복용하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:dose_two",
+      "source": "아세트아미노펜 2정을 복용하세요.",
+      "hypothesis": "Take two tablets of paracetamol.",
+      "reference": "Take two tablets of paracetamol.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:dose_decimal",
+      "source": "tiêm 0.5 miligam morphin",
+      "hypothesis": "Inject 0.5 mg morphine.",
+      "reference": "Inject 0.5 mg morphine.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:dose_decimal",
+      "source": "Inject 0.5 mg morphine.",
+      "hypothesis": "tiêm 0.5 miligam morphin",
+      "reference": "tiêm 0.5 miligam morphin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:dose_decimal",
+      "source": "Inject 0.5 mg morphine.",
+      "hypothesis": "모르핀 0.5mg을 주사하세요.",
+      "reference": "모르핀 0.5mg을 주사하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:dose_decimal",
+      "source": "모르핀 0.5mg을 주사하세요.",
+      "hypothesis": "Inject 0.5 mg morphine.",
+      "reference": "Inject 0.5 mg morphine.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:allergy_no",
+      "source": "tôi không dị ứng với penicillin",
+      "hypothesis": "I am not allergic to penicillin.",
+      "reference": "I am not allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:allergy_no",
+      "source": "I am not allergic to penicillin.",
+      "hypothesis": "tôi không dị ứng với penicillin",
+      "reference": "tôi không dị ứng với penicillin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:allergy_no",
+      "source": "I am not allergic to penicillin.",
+      "hypothesis": "저는 페니실린에 알레르기가 없습니다.",
+      "reference": "저는 페니실린에 알레르기가 없습니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가 습니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:allergy_no",
+      "source": "저는 페니실린에 알레르기가 없습니다.",
+      "hypothesis": "I am not allergic to penicillin.",
+      "reference": "I am not allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가 습니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:allergy_yes",
+      "source": "tôi dị ứng với penicillin",
+      "hypothesis": "I am allergic to penicillin.",
+      "reference": "I am allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:allergy_yes",
+      "source": "I am allergic to penicillin.",
+      "hypothesis": "tôi dị ứng với penicillin",
+      "reference": "tôi dị ứng với penicillin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:allergy_yes",
+      "source": "I am allergic to penicillin.",
+      "hypothesis": "저는 페니실린에 알레르기가 있습니다.",
+      "reference": "저는 페니실린에 알레르기가 있습니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:allergy_yes",
+      "source": "저는 페니실린에 알레르기가 있습니다.",
+      "hypothesis": "I am allergic to penicillin.",
+      "reference": "I am allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:two_drugs",
+      "source": "uống hai viên paracetamol và một viên aspirin",
+      "hypothesis": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "reference": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:two_drugs",
+      "source": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "hypothesis": "uống hai viên paracetamol và một viên aspirin",
+      "reference": "uống hai viên paracetamol và một viên aspirin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:two_drugs",
+      "source": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "hypothesis": "아세트아미노펜 2정을 복용하고 아스피린 1정을 복용하세요.",
+      "reference": "아세트아미노펜 2정을 복용하고 아스피린 1정을 복용하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "relation_not_comparable",
+          "ambiguous_entity_binding",
+          "unparsed_content:하고"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:two_drugs",
+      "source": "아세트아미노펜 2정을 복용하고 아스피린 1정을 복용하세요.",
+      "hypothesis": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "reference": "Take two tablets of paracetamol and one tablet of aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "relation_not_comparable",
+          "ambiguous_entity_binding",
+          "unparsed_content:하고"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:stop",
+      "source": "ngừng uống ibuprofen",
+      "hypothesis": "Stop taking ibuprofen.",
+      "reference": "Stop taking ibuprofen.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:stop",
+      "source": "Stop taking ibuprofen.",
+      "hypothesis": "ngừng uống ibuprofen",
+      "reference": "ngừng uống ibuprofen",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:stop",
+      "source": "Stop taking ibuprofen.",
+      "hypothesis": "이부프로펜 복용을 중단하세요.",
+      "reference": "이부프로펜 복용을 중단하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:을"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:stop",
+      "source": "이부프로펜 복용을 중단하세요.",
+      "hypothesis": "Stop taking ibuprofen.",
+      "reference": "Stop taking ibuprofen.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:을"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:continue",
+      "source": "tiếp tục uống aspirin",
+      "hypothesis": "Continue taking aspirin.",
+      "reference": "Continue taking aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:continue",
+      "source": "Continue taking aspirin.",
+      "hypothesis": "tiếp tục uống aspirin",
+      "reference": "tiếp tục uống aspirin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:continue",
+      "source": "Continue taking aspirin.",
+      "hypothesis": "아스피린을 계속 복용하세요.",
+      "reference": "아스피린을 계속 복용하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:continue",
+      "source": "아스피린을 계속 복용하세요.",
+      "hypothesis": "Continue taking aspirin.",
+      "reference": "Continue taking aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:frequency",
+      "source": "uống hai viên paracetamol mỗi sáu giờ",
+      "hypothesis": "Take two tablets of paracetamol every six hours.",
+      "reference": "Take two tablets of paracetamol every six hours.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:frequency",
+      "source": "Take two tablets of paracetamol every six hours.",
+      "hypothesis": "uống hai viên paracetamol mỗi sáu giờ",
+      "reference": "uống hai viên paracetamol mỗi sáu giờ",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:frequency",
+      "source": "Take two tablets of paracetamol every six hours.",
+      "hypothesis": "6시간마다 아세트아미노펜 2정을 복용하세요.",
+      "reference": "6시간마다 아세트아미노펜 2정을 복용하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:frequency",
+      "source": "6시간마다 아세트아미노펜 2정을 복용하세요.",
+      "hypothesis": "Take two tablets of paracetamol every six hours.",
+      "reference": "Take two tablets of paracetamol every six hours.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:uncertainty",
+      "source": "có thể dị ứng với penicillin",
+      "hypothesis": "Possibly allergic to penicillin.",
+      "reference": "Possibly allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:uncertainty",
+      "source": "Possibly allergic to penicillin.",
+      "hypothesis": "có thể dị ứng với penicillin",
+      "reference": "có thể dị ứng với penicillin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:uncertainty",
+      "source": "Possibly allergic to penicillin.",
+      "hypothesis": "페니실린에 알레르기가 있을 수 있습니다.",
+      "reference": "페니실린에 알레르기가 있을 수 있습니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가 있을"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:uncertainty",
+      "source": "페니실린에 알레르기가 있을 수 있습니다.",
+      "hypothesis": "Possibly allergic to penicillin.",
+      "reference": "Possibly allergic to penicillin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가 있을"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:dose_limit",
+      "source": "không uống quá hai viên",
+      "hypothesis": "Do not take more than two tablets.",
+      "reference": "Do not take more than two tablets.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:dose_limit",
+      "source": "Do not take more than two tablets.",
+      "hypothesis": "không uống quá hai viên",
+      "reference": "không uống quá hai viên",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:dose_limit",
+      "source": "Do not take more than two tablets.",
+      "hypothesis": "2정을 초과하여 복용하지 마세요.",
+      "reference": "2정을 초과하여 복용하지 마세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:하여"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:dose_limit",
+      "source": "2정을 초과하여 복용하지 마세요.",
+      "hypothesis": "Do not take more than two tablets.",
+      "reference": "Do not take more than two tablets.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:하여"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:chest_pain",
+      "source": "tôi bị đau ngực",
+      "hypothesis": "I have chest pain.",
+      "reference": "I have chest pain.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:chest_pain",
+      "source": "I have chest pain.",
+      "hypothesis": "tôi bị đau ngực",
+      "reference": "tôi bị đau ngực",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:chest_pain",
+      "source": "I have chest pain.",
+      "hypothesis": "저는 가슴 통증이 있습니다.",
+      "reference": "저는 가슴 통증이 있습니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:chest_pain",
+      "source": "저는 가슴 통증이 있습니다.",
+      "hypothesis": "I have chest pain.",
+      "reference": "I have chest pain.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:egg_allergy",
+      "source": "bệnh nhân dị ứng với trứng",
+      "hypothesis": "The patient is allergic to eggs.",
+      "reference": "The patient is allergic to eggs.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:egg_allergy",
+      "source": "The patient is allergic to eggs.",
+      "hypothesis": "bệnh nhân dị ứng với trứng",
+      "reference": "bệnh nhân dị ứng với trứng",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:egg_allergy",
+      "source": "The patient is allergic to eggs.",
+      "hypothesis": "환자는 계란에 알레르기가 있습니다.",
+      "reference": "환자는 계란에 알레르기가 있습니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:egg_allergy",
+      "source": "환자는 계란에 알레르기가 있습니다.",
+      "hypothesis": "The patient is allergic to eggs.",
+      "reference": "The patient is allergic to eggs.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:가"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:prednisolone",
+      "source": "uống prednisolone",
+      "hypothesis": "Take prednisolone.",
+      "reference": "Take prednisolone.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:prednisolone",
+      "source": "Take prednisolone.",
+      "hypothesis": "uống prednisolone",
+      "reference": "uống prednisolone",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:prednisolone",
+      "source": "Take prednisolone.",
+      "hypothesis": "프레드니솔론을 복용하세요.",
+      "reference": "프레드니솔론을 복용하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:prednisolone",
+      "source": "프레드니솔론을 복용하세요.",
+      "hypothesis": "Take prednisolone.",
+      "reference": "Take prednisolone.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:plain_request",
+      "source": "xin vui lòng nói chậm",
+      "hypothesis": "Please speak slowly.",
+      "reference": "Please speak slowly.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:speak slowly",
+          "unparsed_content:xin vui lòng nói chậm"
+        ],
+        "status": "CONFIRM",
+        "direction": "vi-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:plain_request",
+      "source": "Please speak slowly.",
+      "hypothesis": "xin vui lòng nói chậm",
+      "reference": "xin vui lòng nói chậm",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:speak slowly",
+          "unparsed_content:xin vui lòng nói chậm"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-vi",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:plain_request",
+      "source": "Please speak slowly.",
+      "hypothesis": "천천히 말씀해 주세요.",
+      "reference": "천천히 말씀해 주세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:speak slowly",
+          "unparsed_content:천천히 말씀해 주세요"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:plain_request",
+      "source": "천천히 말씀해 주세요.",
+      "hypothesis": "Please speak slowly.",
+      "reference": "Please speak slowly.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:speak slowly",
+          "unparsed_content:천천히 말씀해 주세요"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:name",
+      "source": "tên tôi là an",
+      "hypothesis": "My name is An.",
+      "reference": "My name is An.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:my name",
+          "unparsed_content:tên là an"
+        ],
+        "status": "CONFIRM",
+        "direction": "vi-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:name",
+      "source": "My name is An.",
+      "hypothesis": "tên tôi là an",
+      "reference": "tên tôi là an",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:my name",
+          "unparsed_content:tên là an"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-vi",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:name",
+      "source": "My name is An.",
+      "hypothesis": "제 이름은 안입니다.",
+      "reference": "제 이름은 안입니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:my name",
+          "unparsed_content:제 이름은 안입니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:name",
+      "source": "제 이름은 안입니다.",
+      "hypothesis": "My name is An.",
+      "reference": "My name is An.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:my name",
+          "unparsed_content:제 이름은 안입니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:question",
+      "source": "bạn có bị đau ngực không",
+      "hypothesis": "Do you have chest pain?",
+      "reference": "Do you have chest pain?",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:question",
+      "source": "Do you have chest pain?",
+      "hypothesis": "bạn có bị đau ngực không",
+      "reference": "bạn có bị đau ngực không",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": false,
+        "checks": [],
+        "reasons": [],
+        "status": "PASS",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:question",
+      "source": "Do you have chest pain?",
+      "hypothesis": "가슴 통증이 있습니까?",
+      "reference": "가슴 통증이 있습니까?",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "relation_not_comparable",
+          "unparsed_content:있습니까"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:question",
+      "source": "가슴 통증이 있습니까?",
+      "hypothesis": "Do you have chest pain?",
+      "reference": "Do you have chest pain?",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "relation_not_comparable",
+          "unparsed_content:있습니까"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:water",
+      "source": "tôi cần nước",
+      "hypothesis": "I need water.",
+      "reference": "I need water.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:need water",
+          "unparsed_content:nước"
+        ],
+        "status": "CONFIRM",
+        "direction": "vi-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:water",
+      "source": "I need water.",
+      "hypothesis": "tôi cần nước",
+      "reference": "tôi cần nước",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "semantic_coverage_unverified",
+          "unparsed_content:need water",
+          "unparsed_content:nước"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-vi",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:water",
+      "source": "I need water.",
+      "hypothesis": "물이 필요합니다.",
+      "reference": "물이 필요합니다.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:need water",
+          "unparsed_content:물이 필요합니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:water",
+      "source": "물이 필요합니다.",
+      "hypothesis": "I need water.",
+      "reference": "I need water.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "korean_lexicon_pending_human_review",
+          "semantic_coverage_unverified",
+          "unparsed_content:need water",
+          "unparsed_content:물이 필요합니다"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "ordinary_phrase"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "vi-en:condition",
+      "source": "nếu dị ứng thì ngừng uống aspirin",
+      "hypothesis": "If you are allergic, stop taking aspirin.",
+      "reference": "If you are allergic, stop taking aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "ambiguous_action_scope",
+          "unparsed_content:if",
+          "unparsed_content:nếu thì"
+        ],
+        "status": "CONFIRM",
+        "direction": "vi-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-vi:condition",
+      "source": "If you are allergic, stop taking aspirin.",
+      "hypothesis": "nếu dị ứng thì ngừng uống aspirin",
+      "reference": "nếu dị ứng thì ngừng uống aspirin",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "ambiguous_action_scope",
+          "unparsed_content:if",
+          "unparsed_content:nếu thì"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-vi",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "en-ko:condition",
+      "source": "If you are allergic, stop taking aspirin.",
+      "hypothesis": "알레르기가 있으면 아스피린 복용을 중단하세요.",
+      "reference": "알레르기가 있으면 아스피린 복용을 중단하세요.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "ambiguous_action_scope",
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:if",
+          "unparsed_content:가 있으면 을"
+        ],
+        "status": "CONFIRM",
+        "direction": "en-ko",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    },
+    {
+      "id": "ko-en:condition",
+      "source": "알레르기가 있으면 아스피린 복용을 중단하세요.",
+      "hypothesis": "If you are allergic, stop taking aspirin.",
+      "reference": "If you are allergic, stop taking aspirin.",
+      "reference_status": "draft_requires_bilingual_review",
+      "safety": {
+        "passed": true,
+        "confirm": true,
+        "checks": [],
+        "reasons": [
+          "ambiguous_action_scope",
+          "korean_lexicon_pending_human_review",
+          "unparsed_content:if",
+          "unparsed_content:가 있으면 을"
+        ],
+        "status": "CONFIRM",
+        "direction": "ko-en",
+        "coverage": [
+          "entities",
+          "event_relations"
+        ],
+        "limitations": [
+          "finite clinical grammar; not a diagnosis or ASR correctness check"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "No keyword score is clinical gold",
+    "Draft references require bilingual review",
+    "Korean automatic speech remains blocked pending review"
+  ]
+}

@@ -1,0 +1,3 @@
+{"id": "smoke-0", "wav": "../results/laptop_current/integration-final/en-vi/greeting_en.wav", "direction": "en-vi"}
+{"id": "smoke-1", "wav": "../models/asr/zipformer-en-int8/test_wavs/0.wav", "direction": "en-vi"}
+{"id": "smoke-2", "wav": "../models/asr/zipformer-en-int8/test_wavs/1.wav", "direction": "en-vi"}

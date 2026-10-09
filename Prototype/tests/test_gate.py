@@ -6,6 +6,7 @@ from tonebridge.gate import Gate, GateConfig, decide
 from tonebridge.pipeline import Pipeline, Stages
 from tonebridge.safety import SemanticSafetyChecker
 from tonebridge.stages import stubs
+from tonebridge.nmt_evidence import EvidenceMtResult, TranslationEvidence
 
 CFG = GateConfig()
 OK = SafetyReport(passed=True)
@@ -71,7 +72,9 @@ class _Nmt:
         self.out = out
 
     def translate(self, text, src, tgt):
-        return MtResult(src_text=text, tgt_text=self.out, src_lang=src, tgt_lang=tgt, hops=["vi>en"])
+        return EvidenceMtResult(src_text=text, tgt_text=self.out, src_lang=src, tgt_lang=tgt, hops=["vi>en"],
+                                evidence=TranslationEvidence(eos_reached=True, truncated=False,
+                                    source_tokens=len(text.split()), output_tokens=len(self.out.split())))
 
 
 class _CountTts(stubs.ToneTts):

@@ -6,6 +6,8 @@ Inference deps: onnxruntime + sentencepiece + numpy only (no torch / transformer
 from __future__ import annotations
 
 import json
+import hashlib
+import re
 from pathlib import Path
 
 import numpy as np
@@ -13,6 +15,7 @@ import onnxruntime as ort
 import sentencepiece as spm
 
 from ..contracts import Lang, MtResult
+from ..nmt_evidence import EvidenceMtResult, TranslationEvidence
 
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DIR = ROOT / "models/nmt/vi-en-int8-arm64"
@@ -23,6 +26,8 @@ class OrtMarianNmt:
                  enc_file: str = "encoder_model_quantized.onnx", dec_file: str = "decoder_model_merged_quantized.onnx",
                  num_beams: int = 1, length_penalty: float = 1.0) -> None:
         d = Path(model_dir)
+        if max_new_tokens < 1 or threads < 1 or num_beams < 1:
+            raise ValueError("positive token budget, threads and beam count required")
         self.num_beams, self.length_penalty = num_beams, length_penalty
         cfg = json.loads((d / "config.json").read_text(encoding="utf8"))
         self.eos, self.pad = cfg["eos_token_id"], cfg["pad_token_id"]  # decoder start = pad
@@ -34,6 +39,37 @@ class OrtMarianNmt:
         self.unk = self.vocab["<unk>"]
         self.sp_src = spm.SentencePieceProcessor(model_file=str(d / "source.spm"))
         self.sp_tgt = spm.SentencePieceProcessor(model_file=str(d / "target.spm"))
+        self.source_limit = int(cfg.get("max_position_embeddings", 512))
+        self.model_dir = d
+        self.model_id, self.revision = str(d), ""
+        self.provenance_issues = []
+        manifest = d / "asset_manifest.json"
+        if manifest.exists():
+            metadata = json.loads(manifest.read_text(encoding="utf-8"))
+            required = {"config.json", "source.spm", "target.spm", "vocab.json", enc_file, dec_file}
+            if not required.issubset(metadata.get("files", {})) or not re.fullmatch("[0-9a-f]{40}", metadata.get("revision", "")):
+                raise ValueError("incomplete_asset_manifest")
+            for name, expected in metadata["files"].items():
+                path = (d / name).resolve()
+                if not path.is_relative_to(d.resolve()):
+                    raise ValueError("asset_manifest_path_escape")
+                with path.open("rb") as stream:
+                    digest = hashlib.file_digest(stream, "sha256").hexdigest()
+                if digest != expected["sha256"] or path.stat().st_size != expected["bytes"]:
+                    raise ValueError("asset_integrity_mismatch:" + name)
+            self.model_id, self.revision = metadata["model_id"], metadata["revision"]
+        else:
+            self.provenance_issues = ["asset_provenance_unverified"]
+        self.vocabulary_warnings = []
+        for sp in (self.sp_src, self.sp_tgt):
+            missing = [sp.id_to_piece(i) for i in range(sp.get_piece_size())
+                       if sp.id_to_piece(i) not in self.vocab and not sp.id_to_piece(i).startswith("<")]
+            if missing:
+                # Preserve the published pruned vocabulary. Never invent IDs;
+                # unknown source pieces are counted and the runtime blocks them.
+                self.vocabulary_warnings.append(f"sentencepiece_vocab_mismatch:{len(missing)}")
+        if min(self.vocab.values()) < 0 or max(self.vocab.values()) >= cfg["vocab_size"] or len(self.inv) != len(self.vocab):
+            raise ValueError("invalid_published_vocabulary_ids")
         so = ort.SessionOptions()
         so.log_severity_level = 3
         so.intra_op_num_threads, so.inter_op_num_threads = threads, 1
@@ -57,7 +93,7 @@ class OrtMarianNmt:
         return {n: z[n.split(".")[2]] for n in self.dec_in if n.startswith("past_key_values")}
 
     def greedy(self, src_ids: list[int], constraints: list[list[list[int]]] | None = None, bonus: float = 0.0,
-               eos_penalty: float | None = None) -> tuple[list[int], dict[str, float]]:
+               eos_penalty: float | None = None) -> tuple[list[int], dict]:
         """Returns generated ids (no start/eos) and {"encoder_ms", "decoder_steps"} for composed-latency accounting."""
         import time
 
@@ -75,10 +111,12 @@ class OrtMarianNmt:
         sat = [False] * len(cons)
         active: tuple[int, list[int], int] | None = None
         eos_pen = bonus if eos_penalty is None else eos_penalty
+        steps, eos_reached = 0, False
         for step in range(self.max_new):
             feed = {"encoder_attention_mask": mask, "input_ids": np.asarray([[cur]], np.int64), "encoder_hidden_states": h,
                     "use_cache_branch": np.asarray([step > 0]), **past}
             res = self.dec.run(None, feed)
+            steps += 1
             logits = res[0][0, -1].copy()  # [V]
             logits[self.pad] = -np.inf  # bad_words_ids in generation_config
             if active is not None:
@@ -107,13 +145,29 @@ class OrtMarianNmt:
                     if sat[i] or active is not None:
                         break
             if cur == self.eos:
+                eos_reached = True
                 break
             out_ids.append(cur)
             pres = dict(zip(self.dec_out[1:], res[1:]))
             for n in past:  # past_key_values.L.{decoder,encoder}.{key,value} <- present.L....
                 if step == 0 or ".decoder." in n:  # cached steps return empty cross-attn presents: keep step-0 encoder K/V
                     past[n] = pres[n.replace("past_key_values", "present")]
-        return out_ids, {"encoder_ms": enc_ms, "decoder_steps": float(len(out_ids) + 1)}
+        # Verify complete emitted phrases; never report a first-token hit as coverage.
+        covered = []
+        occupied = set()
+        for ci, alternatives in enumerate(cons):
+            for alt in alternatives:
+                start = next((j for j in range(len(out_ids) - len(alt) + 1)
+                              if out_ids[j:j + len(alt)] == alt
+                              and not occupied.intersection(range(j, j + len(alt)))), None)
+                if start is not None:
+                    occupied.update(range(start, start + len(alt)))
+                    covered.append(ci)
+                    break
+        return out_ids, {"encoder_ms": enc_ms, "decoder_steps": steps,
+                         "eos_reached": eos_reached, "truncated": not eos_reached,
+                         "constraints_requested": len(cons), "constraints_satisfied": len(covered),
+                         "unsatisfied_constraints": [str(i) for i in range(len(cons)) if i not in covered]}
 
     def beam(self, src_ids: list[int], k: int = 4, length_penalty: float | None = None,
              bias: dict[int, float] | None = None) -> tuple[list[int], dict[str, float]]:
@@ -159,8 +213,9 @@ class OrtMarianNmt:
                     nxt.append((sc, bi, tok))
                 if len(nxt) == k:
                     break
-            if len(finished) >= k and nxt and max(f[0] for f in finished) >= nxt[0][0] / ((step + 1) ** lp_pow if lp_pow > 0 else 1.0):
-                break  # best finished beats the best running hypothesis' (optimistic) normalised score
+            if (len(finished) >= k and nxt and not bias and lp_pow >= 0
+                    and max(f[0] for f in finished) >= max(sc for sc, _, _ in nxt) / ((self.max_new + 1) ** lp_pow)):
+                break  # upper bound uses maximum future length for negative log scores
             if not nxt:
                 break
             sel = np.array([bi for _, bi, _ in nxt] + [nxt[-1][1]] * (k - len(nxt)))
@@ -172,10 +227,12 @@ class OrtMarianNmt:
                 if step == 0 or ".decoder." in n:
                     v = pres[n.replace("past_key_values", "present")]
                     past[n] = v[sel] if ".decoder." in n else v
+        eos_reached = bool(finished)
         if not finished:
             finished = [(scores[i] / (max(len(beams[i]), 1) ** lp_pow), beams[i]) for i in range(k)]
         best = max(finished, key=lambda f: f[0])[1]
-        return best, {"encoder_ms": enc_ms, "decoder_steps": float(steps)}
+        return best, {"encoder_ms": enc_ms, "decoder_steps": steps,
+                      "eos_reached": eos_reached, "truncated": not eos_reached}
 
     def piece_ids(self, word: str) -> list[int]:
         """Target-side token ids for a surface form (SentencePiece pieces -> vocab ids)."""
@@ -185,10 +242,27 @@ class OrtMarianNmt:
     constraint_bonus = 0.0
 
     def translate(self, text: str, src: Lang, tgt: Lang) -> MtResult:
-        assert (src, tgt) == ("vi", "en"), (src, tgt)
+        if (src, tgt) != ("vi", "en"):
+            raise ValueError(f"direction_mismatch:{src}-{tgt}")
+        if not text.strip():
+            raise ValueError("empty_source")
         ids = self.encode_ids(text)
+        if len(ids) > self.source_limit:
+            raise ValueError(f"source_too_long:{len(ids)}>{self.source_limit}")
         if getattr(self, "constrainer", None) is not None:
-            out, _ = self.greedy(ids, self.constrainer(text, self.piece_ids), self.constraint_bonus)
+            if self.num_beams > 1:
+                raise ValueError("constrained_beam_not_implemented; use greedy explicitly")
+            out, info = self.greedy(ids, self.constrainer(text, self.piece_ids), self.constraint_bonus)
         else:
-            out, _ = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
-        return MtResult(src_text=text, tgt_text=self.decode_ids(out), src_lang=src, tgt_lang=tgt, hops=["vi>en"])
+            out, info = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
+        evidence = TranslationEvidence(
+            eos_reached=info["eos_reached"], truncated=info["truncated"],
+            source_tokens=len(ids), output_tokens=len(out),
+            source_unknown_tokens=ids.count(self.unk), output_unknown_tokens=out.count(self.unk),
+            constraints_requested=info.get("constraints_requested", 0),
+            constraints_satisfied=info.get("constraints_satisfied", 0),
+            unsatisfied_constraints=info.get("unsatisfied_constraints", []),
+            tokenizer_issues=getattr(self, "provenance_issues", []),
+            model_id=getattr(self, "model_id", str(self.model_dir)), revision=getattr(self, "revision", ""), backend="onnx-cpu")
+        return EvidenceMtResult(src_text=text, tgt_text=self.decode_ids(out), src_lang=src,
+                                tgt_lang=tgt, hops=["vi>en"], evidence=evidence)

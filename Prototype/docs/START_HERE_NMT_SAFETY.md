@@ -1,5 +1,7 @@
 # Bàn giao phần NMT / safety
 
+**Branch NMT/safety đã được tích hợp:** xem [hướng dẫn hiện tại và việc còn lại](LAPTOP_FOUR_DIRECTION_INTEGRATION.md), [báo cáo kiểm chứng](../reports/LAPTOP_FOUR_DIRECTION_VERIFICATION_2026-10-09.md) và [gói review 80 câu dev](../reports/LAPTOP_DEV_REVIEW_PACKET_2026-10-09.jsonl). Danh sách bên dưới là phạm vi bàn giao ban đầu, không còn là trạng thái thiếu adapter hiện tại.
+
 Scope leader đã chốt: **laptop CPU trước**, bốn chiều **VI→EN, EN→VI, EN→KO, KO→EN**. Tiếng Hàn dùng mã `ko`, không dùng `kr` trong code. Android/NPU chưa thuộc vòng công việc này.
 
 ## Đọc trước

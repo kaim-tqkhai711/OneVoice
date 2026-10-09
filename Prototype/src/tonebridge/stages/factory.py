@@ -63,11 +63,33 @@ def build_text_stages(cfg: PipelineConfig, threads: int = 2):
         if not callable(getattr(nmt, "translate", None)) or not callable(getattr(safety, "check", None)):
             raise TypeError("text_factory must return (Nmt, SafetyChecker)")
         return nmt, safety
+    from tonebridge.clinical_safety import ClinicalSafetyChecker
+    source, target = cfg.direction.split("-")
     if cfg.direction != "vi-en":
-        raise ValueError(f"NMT/safety for {cfg.direction} not registered; set text_factory to your partner's adapter")
+        import json
+        from pathlib import Path
+        from tonebridge.stages.audio_factory import ROOT
+        registry_path = Path(cfg.nmt_config)
+        if not registry_path.is_absolute():
+            registry_path = ROOT / registry_path
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        spec = registry["models"].get(cfg.direction)
+        if spec is None:
+            raise ValueError(f"NMT/safety for {cfg.direction} not registered")
+        if spec.get("status", "").startswith("quarantined"):
+            raise ValueError("nmt_quarantined:" + cfg.direction)
+        assets = Path(spec["assets"])
+        if not assets.is_absolute():
+            assets = ROOT / assets
+        if spec.get("backend") == "argos":
+            from tonebridge.stages.nmt_argos import ArgosEnKoNmt
+            return ArgosEnKoNmt(assets, threads=threads, format_asr_source=cfg.format_asr_source), ClinicalSafetyChecker(source, target)
+        from tonebridge.stages.nmt_marian import MarianTextAdapter
+        return MarianTextAdapter(assets, source, target, threads=threads,
+                                 allow_partial_vocabulary=spec.get("allow_partial_vocabulary", False),
+                                 format_asr_source=cfg.format_asr_source), ClinicalSafetyChecker(source, target)
     from tonebridge.stages.nmt_ort import OrtMarianNmt
-    from tonebridge.safety import SemanticSafetyChecker
     from tonebridge.nmt_constraints import GlossaryConstrainer
     nmt = OrtMarianNmt(threads=threads)
     nmt.constrainer, nmt.constraint_bonus = GlossaryConstrainer(), GLOSSARY_BONUS
-    return nmt, SemanticSafetyChecker()
+    return nmt, ClinicalSafetyChecker(source, target)

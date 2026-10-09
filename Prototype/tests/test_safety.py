@@ -46,5 +46,8 @@ def test_en_number_with_and_and_plural_egg():
 
 def test_khong_qua_is_a_limit_not_an_intensifier():
     r = C.check_texts("không uống quá hai mươi lăm miligam mỗi ngày", "No more than 25 milligrams a day.")
-    assert r.passed and not r.confirm
+    # Lexical comparator regression remains fixed. Elliptical frequency/action
+    # is now conservatively blocked by relational checks rather than certified.
+    assert "intensity_missing:quá" not in r.reasons
+    assert not (r.passed and not r.confirm)
     assert C.check_texts("tôi thấy quá mệt", "I feel tired.").confirm  # a real intensifier still needs the English counterpart

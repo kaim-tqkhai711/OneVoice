@@ -1,5 +1,7 @@
 # Laptop runtime và ranh giới làm việc — 09/10/2026
 
+**Cập nhật sau tích hợp:** đọc [hướng dẫn bốn chiều](LAPTOP_FOUR_DIRECTION_INTEGRATION.md) và [báo cáo mới](../reports/LAPTOP_FOUR_DIRECTION_VERIFICATION_2026-10-09.md). Ba chiều mới đã đăng ký adapter; microphone/loa VI→EN đã được thử cùng người dùng. Phần bên dưới giữ làm snapshot bàn giao trước tích hợp.
+
 Scope hiện tại: laptop CPU, VI→EN / EN→VI / EN→KO / KO→EN. Mã ngôn ngữ Hàn là `ko`.
 
 Phần audio/runtime đã có adapter ASR/TTS cho cả VI, EN, KO và routing cho bốn chiều. E2E bằng NMT/safety thật hiện chạy VI→EN; ba chiều mới chờ module text của người phụ trách NMT/safety. Chọn chiều chưa đăng ký sẽ báo lỗi và không phát audio. Không tự dùng checker VI→EN cho chiều khác.

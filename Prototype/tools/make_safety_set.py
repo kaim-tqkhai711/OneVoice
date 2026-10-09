@@ -32,7 +32,7 @@ UNITS = {"mg": ("miligam", "milligrams", ["mg", "milligram", "milligrams", "mill
          "drop": ("giọt", "drops", ["drop", "drops"]),
          "vial": ("ống", "vials", ["vial", "vials", "ampoule", "ampoules", "ampule", "ampules"])}
 ALLERGENS = [(d[0], d[1], d[2]) for d in DRUGS[:13]] + [("hải sản", "seafood", ["seafood", "shellfish"]), ("đậu phộng", "peanuts", ["peanut"]),
-                                                         ("trứng", "eggs", ["egg"]), ("latex", "latex", ["latex"])]
+                                                         ("trứng", "eggs", ["egg", "eggs"]), ("latex", "latex", ["latex"])]
 DRUG_VI = {d[0] for d in DRUGS}
 INTENS = [("rất", ["very", "extremely", "severe", "severely", "really", "highly", "so "]),
           ("cực kỳ", ["extremely", "very", "severe", "severely", "extreme", "highly"]),

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "status": "no_checkpoints_downloaded",
+  "models": {
+    "vi-en": {
+      "adapter": "ViEnNmt",
+      "model_id": "Helsinki-NLP/opus-mt-vi-en",
+      "assets": "models/nmt-laptop/vi-en",
+      "status": "pending_local_model_test"
+    },
+    "en-vi": {
+      "adapter": "EnViNmt",
+      "model_id": "Helsinki-NLP/opus-mt-en-vi",
+      "assets": "models/nmt-laptop/en-vi",
+      "status": "pending_local_model_test"
+    },
+    "en-ko": {
+      "adapter": "EnKoNmt",
+      "model_id": "Helsinki-NLP/opus-mt-tc-big-en-ko",
+      "revision": "ae8606b7b29a495f31ce679cee2007f536a3a5ce",
+      "assets": "models/nmt-laptop/en-ko",
+      "status": "quarantined_pending_tokenizer_audit",
+      "note": "Do not reconstruct embedding IDs from SentencePiece order; published HF config/files do not prove valid source mapping."
+    },
+    "ko-en": {
+      "adapter": "KoEnNmt",
+      "model_id": "Helsinki-NLP/opus-mt-ko-en",
+      "assets": "models/nmt-laptop/ko-en",
+      "status": "pending_local_model_test"
+    }
+  },
+  "korean_safety": "confirmation_required_pending_human_review"
+}

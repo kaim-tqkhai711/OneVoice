@@ -8,7 +8,10 @@ import re
 def _has(text: str, form: str) -> bool:
     left = "" if form.startswith("n't") else r"(?<![a-z0-9])"
     right = r"(?![a-z0-9])" if (len(form.strip()) <= 3 or form[0].isdigit()) else ""
-    return re.search(left + re.escape(form) + right, text) is not None
+    # Historical dataset lists "egg" while its own correct reference says "eggs".
+    # Repair this known noun inflection; do not turn arbitrary prefixes into gold.
+    noun_suffix = r"s?" if form == "egg" else ""
+    return re.search(left + re.escape(form) + noun_suffix + right, text) is not None
 
 
 def norm_en(t: str) -> str:

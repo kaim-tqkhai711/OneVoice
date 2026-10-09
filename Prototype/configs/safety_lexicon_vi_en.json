@@ -17,7 +17,7 @@
     {"vi": "kháng sinh", "en": ["antibiotic"]}, {"vi": "thuốc giảm đau", "en": ["painkiller", "pain medication", "pain medicine", "analgesic", "pain relief", "pain reliever"]},
     {"vi": "thuốc chống đông máu", "en": ["blood thinner", "anticoagulant"]}, {"vi": "ceftriaxone", "en": ["ceftriaxone"]},
     {"vi": "atorvastatin", "en": ["atorvastatin"]}, {"vi": "salbutamol", "en": ["salbutamol", "albuterol"]}, {"vi": "nitroglycerin", "en": ["nitroglycerin", "nitroglycerine", "glyceryl trinitrate"]},
-    {"vi": "furosemide", "en": ["furosemide"]}, {"vi": "prednisolone", "en": ["prednisolone", "prednisone"]}, {"vi": "lisinopril", "en": ["lisinopril"]}
+    {"vi": "furosemide", "en": ["furosemide"]}, {"vi": "prednisolone", "en": ["prednisolone"]}, {"vi": "lisinopril", "en": ["lisinopril"]}
   ],
   "allergens_other": [
     {"vi": "hải sản", "en": ["seafood", "shellfish"]}, {"vi": "đậu phộng", "en": ["peanut"]}, {"vi": "trứng", "en": ["egg", "eggs"]}, {"vi": "latex", "en": ["latex"]}

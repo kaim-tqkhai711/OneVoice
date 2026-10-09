@@ -4,8 +4,10 @@ intensity words. Each constraint is a list of accepted target surface forms; the
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 from tonebridge.safety import SemanticSafetyChecker, _norm, _word_re
+from tonebridge.clinical_numbers import number
 
 ROOT = Path(__file__).resolve().parents[2]
 UNIT_PREF = {"miligam": ["milligrams", "mg"], "microgam": ["micrograms", "mcg"], "mililít": ["milliliters", "ml"], "gam": ["grams"],
@@ -37,16 +39,23 @@ class GlossaryConstrainer:
                 for i, w in enumerate(toks):
                     if w != u["vi"]:
                         continue
-                    j = i
-                    while j > 0 and (toks[j - 1] in self.chk.vi_num or toks[j - 1].isdigit()):
-                        j -= 1
-                    num = self.chk._parse_vi_number(toks[j:i]) if j < i else None
+                    num = None
+                    for start in range(i - 1, max(-1, i - 9), -1):
+                        candidate = number(" ".join(toks[start:i]), "vi")
+                        if candidate is None:
+                            if num is not None:
+                                break
+                        else:
+                            num = candidate
                     if "unit" in self.groups:
                         out.append(UNIT_PREF.get(u["vi"], u["en"]))
                     if "number" in self.groups and num is not None:
-                        out.append([str(num)])
+                        out.append([format(num.normalize(), "f")])
         if "intensity" in self.groups:
             rest = s
+            # Comparator "quá N" means a dose bound, not the intensity "too/very".
+            nums = "|".join(re.escape(k) for k in self.chk.vi_num)
+            rest = re.sub(r"quá (?=(?:[0-9]|" + nums + r")(?!\w))", "    ", rest)
             for m in self.chk.inten:
                 mo = _word_re(m["vi"]).search(rest)
                 if mo:

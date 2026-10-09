@@ -4,3 +4,6 @@ __pycache__/
 *.onnx
 
 data/
+
+# Local smoke-test audio and content logs; share the verification report instead.
+results/laptop_current/

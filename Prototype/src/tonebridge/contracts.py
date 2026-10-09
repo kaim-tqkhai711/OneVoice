@@ -60,6 +60,9 @@ class MtResult(BaseModel):
     src_lang: Lang
     tgt_lang: Lang
     hops: list[str] = Field(default_factory=list)  # e.g. ["vi>en", "en>ko"]
+    terminated_by_eos: bool | None = None  # None = legacy adapter did not report evidence
+    truncated: bool = False
+    constraints_satisfied: bool | None = None
 
 
 class SlotCheck(BaseModel):
@@ -107,3 +110,7 @@ class TurnRecord(BaseModel):
     gate: GateDecision
     asr_text: str
     nmt_text: str
+    status: Literal["ok", "rejected", "error"] = "ok"
+    error_stage: str | None = None
+    error_type: str | None = None
+    runtime_manifest_sha256: str | None = None

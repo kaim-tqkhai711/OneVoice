@@ -1,0 +1,3 @@
+{"id":"model-sample-0","direction":"vi-en","wav":"../models/asr/zipformer-vi-int8/test_wavs/0.wav"}
+{"id":"model-sample-1","direction":"vi-en","wav":"../models/asr/zipformer-vi-int8/test_wavs/1.wav"}
+{"id":"model-sample-2","direction":"vi-en","wav":"../models/asr/zipformer-vi-int8/test_wavs/2.wav"}

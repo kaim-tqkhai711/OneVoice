@@ -52,6 +52,10 @@ def decide(asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: s
             return out(GateAction.ABSTAIN, ["asr_confidence_low", "safety_failed"] + safety.reasons)
         return out(GateAction.REPEAT, ["asr_confidence_low"])
     n_src, n_tgt = len(asr.text.split()), len(text.split())
+    if asr.lang == "ko" or any("\uac00" <= c <= "\ud7a3" for c in text):
+        # Korean transducers can return unspaced Hangul; word counts are not comparable.
+        n_src = sum(c.isalnum() for c in asr.text)
+        n_tgt = sum(c.isalnum() for c in text)
     if n_tgt == 0 or (n_src > 0 and (n_tgt / n_src > cfg.max_len_ratio or n_src / n_tgt > cfg.max_len_ratio)):
         return out(GateAction.ABSTAIN, ["translation_empty_or_length_ratio"])
     if not safety.passed:

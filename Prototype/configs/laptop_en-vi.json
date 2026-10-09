@@ -1,0 +1,19 @@
+{
+  "seed": 1234,
+  "sample_rate": 16000,
+  "tts_sample_rate": 22050,
+  "direction": "en-vi",
+  "denoise_mode": "off",
+  "oa_beta": 0.5,
+  "thresholds": {
+    "asr_confidence_min": 0.5,
+    "voicing_quality_min": 0.5,
+    "urgency_high": 0.7
+  },
+  "max_utterance_s": 15.0,
+  "audio_config": "configs/audio_laptop.json",
+  "text_factory": null,
+  "urgency_enabled": false,
+  "log_content": false,
+  "models": {}
+}

@@ -53,5 +53,7 @@ class BranchB(Protocol):
 
 
 class Tts(Protocol):
+    sample_rate: int
+
     def stream(self, text: str, lang: Lang) -> Iterator[np.ndarray]:  # yields [T_chunk] float32 @ tts_sample_rate
         ...

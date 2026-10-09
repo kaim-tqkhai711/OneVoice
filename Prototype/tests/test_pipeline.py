@@ -85,8 +85,8 @@ def test_cli_end_to_end(tmp_path):
     root = Path(__file__).resolve().parents[1]
     env = {"PYTHONPATH": str(root / "src"), "PYTHONIOENCODING": "utf-8", "SYSTEMROOT": "C:\\Windows"}
     p = subprocess.run([sys.executable, "-m", "tonebridge.cli", "--wav", str(inp), "--out", str(out),
-                        "--config", str(root / "configs" / "pipeline.json"), "--log", str(log)],
-                       capture_output=True, text=True, env=env, cwd=root)
+                       "--config", str(root / "configs" / "pipeline.json"), "--log", str(log), "--stub", "--log-content"],
+                       capture_output=True, text=True, encoding="utf-8", env=env, cwd=root)
     assert p.returncode == 0, p.stderr
     sr, y = wavfile.read(out)
     assert sr == 22050 and y.size > 0

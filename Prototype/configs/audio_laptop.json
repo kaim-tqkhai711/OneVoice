@@ -1,0 +1,12 @@
+{
+  "asr": {
+    "vi": {"encoder":"models/asr/zipformer-vi-int8/encoder-epoch-12-avg-8.int8.onnx","decoder":"models/asr/zipformer-vi-int8/decoder-epoch-12-avg-8.int8.onnx","joiner":"models/asr/zipformer-vi-int8/joiner-epoch-12-avg-8.int8.onnx","tokens":"models/asr/zipformer-vi-int8/tokens.txt"},
+    "en": {"encoder":"models/asr/zipformer-en-int8/encoder-epoch-99-avg-1.int8.onnx","decoder":"models/asr/zipformer-en-int8/decoder-epoch-99-avg-1.int8.onnx","joiner":"models/asr/zipformer-en-int8/joiner-epoch-99-avg-1.int8.onnx","tokens":"models/asr/zipformer-en-int8/tokens.txt"},
+    "ko": {"encoder":"models/asr/zipformer-ko-int8/encoder-epoch-99-avg-1.int8.onnx","decoder":"models/asr/zipformer-ko-int8/decoder-epoch-99-avg-1.int8.onnx","joiner":"models/asr/zipformer-ko-int8/joiner-epoch-99-avg-1.int8.onnx","tokens":"models/asr/zipformer-ko-int8/tokens.txt"}
+  },
+  "tts": {
+    "en": {"kind":"vits","model":"models/tts/vits-piper-en_US-ljspeech-medium/en_US-ljspeech-medium.onnx","tokens":"models/tts/vits-piper-en_US-ljspeech-medium/tokens.txt","data_dir":"models/tts/vits-piper-en_US-ljspeech-medium/espeak-ng-data"},
+    "vi": {"kind":"supertonic","duration_predictor":"models/tts/supertonic-multilingual/duration_predictor.int8.onnx","text_encoder":"models/tts/supertonic-multilingual/text_encoder.int8.onnx","vector_estimator":"models/tts/supertonic-multilingual/vector_estimator.int8.onnx","vocoder":"models/tts/supertonic-multilingual/vocoder.int8.onnx","tts_json":"models/tts/supertonic-multilingual/tts.json","unicode_indexer":"models/tts/supertonic-multilingual/unicode_indexer.bin","voice_style":"models/tts/supertonic-multilingual/voice.bin"},
+    "ko": {"kind":"supertonic","duration_predictor":"models/tts/supertonic-multilingual/duration_predictor.int8.onnx","text_encoder":"models/tts/supertonic-multilingual/text_encoder.int8.onnx","vector_estimator":"models/tts/supertonic-multilingual/vector_estimator.int8.onnx","vocoder":"models/tts/supertonic-multilingual/vocoder.int8.onnx","tts_json":"models/tts/supertonic-multilingual/tts.json","unicode_indexer":"models/tts/supertonic-multilingual/unicode_indexer.bin","voice_style":"models/tts/supertonic-multilingual/voice.bin"}
+  }
+}

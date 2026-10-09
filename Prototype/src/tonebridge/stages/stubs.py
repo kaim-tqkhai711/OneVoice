@@ -52,12 +52,12 @@ class TagNmt:
     """Stub NMT: tags the text with the hop chain. Real Opus-MT / bake-off winner: D2."""
 
     def __init__(self, direction: str) -> None:
-        self.hops = {"vi-ko": ["vi>en", "en>ko"], "vi-en": ["vi>en"]}[direction]
+        self.hops = ["vi>en", "en>ko"] if direction == "vi-ko" else [direction.replace("-", ">")]
         self.tgt: Lang = direction.split("-")[1]  # type: ignore[assignment]
 
     def translate(self, text: str, src: Lang, tgt: Lang) -> MtResult:
         return MtResult(src_text=text, tgt_text=f"[STUB {'+'.join(self.hops)}] {text}", src_lang=src, tgt_lang=tgt,
-                        hops=self.hops)
+                        hops=self.hops, terminated_by_eos=True, constraints_satisfied=True)
 
 
 class AlwaysPassSafety:
@@ -79,6 +79,7 @@ class ToneTts:
 
     def __init__(self, sample_rate: int) -> None:
         self.sr = sample_rate
+        self.sample_rate = sample_rate
 
     def stream(self, text: str, lang: Lang) -> Iterator[np.ndarray]:
         n = max(int(0.05 * len(text) * self.sr), self.sr // 10)  # duration ~ 50 ms per char

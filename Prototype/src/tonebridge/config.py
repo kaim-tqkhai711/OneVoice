@@ -29,13 +29,17 @@ class Thresholds(BaseModel):
 
 class PipelineConfig(BaseModel):
     seed: int = 1234
-    sample_rate: int = 16000
+    sample_rate: Literal[16000] = 16000
     tts_sample_rate: int = 22050
-    direction: Literal["vi-ko", "vi-en"] = "vi-en"
+    direction: Literal["vi-en", "en-vi", "en-ko", "ko-en", "vi-ko"] = "vi-en"
     denoise_mode: Literal["off", "on", "oa"] = "off"
     oa_beta: float = Field(0.5, ge=0.0, le=1.0)  # x_oa = beta*x_enh + (1-beta)*x_raw; locked on dev before test
     thresholds: Thresholds = Thresholds()
-    max_utterance_s: float = 15.0
+    max_utterance_s: float = Field(15.0, gt=0, le=60)
+    audio_config: str = "configs/audio_laptop.json"
+    text_factory: str | None = None  # module:function(cfg, threads) -> (Nmt, SafetyChecker)
+    urgency_enabled: bool = True
+    log_content: bool = False
     models: dict[str, ModelSpec] = Field(default_factory=dict)
 
     def config_hash(self) -> str:

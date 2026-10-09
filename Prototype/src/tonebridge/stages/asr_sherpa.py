@@ -13,24 +13,38 @@ ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DIR = ROOT / "models/asr/zipformer-vi-int8"
 
 
-class SherpaZipformerVi:
-    def __init__(self, model_dir: Path = DEFAULT_DIR, decoder: str = "decoder-epoch-12-avg-8.onnx", threads: int = 2,
-                 decoding_method: str = "greedy_search", num_active_paths: int = 4) -> None:
-        d = Path(model_dir)
-        self.decoder_file = decoder
-        self._rec = sherpa_onnx.OfflineRecognizer.from_transducer(
-            encoder=str(d / "encoder-epoch-12-avg-8.int8.onnx"), decoder=str(d / decoder),
-            joiner=str(d / "joiner-epoch-12-avg-8.int8.onnx"), tokens=str(d / "tokens.txt"),
-            num_threads=threads, sample_rate=16000, feature_dim=80, decoding_method=decoding_method, max_active_paths=num_active_paths, provider="cpu")
+class SherpaTransducer:
+    """Language-specific local Zipformer pack; only the active source is loaded."""
 
-    def transcribe(self, wav: np.ndarray, lang: Lang) -> AsrResult:  # [T] float32 @16k -> text
-        assert lang == "vi", lang
-        if wav.size < 1600:  # < 0.1 s (e.g. VAD found no speech -> empty segment): sherpa/onnxruntime crash on an empty feature map
-            return AsrResult(text="", lang="vi", confidence=0.0)
+    def __init__(self, lang: Lang, encoder: Path, decoder: Path, joiner: Path, tokens: Path, threads: int = 2,
+                 decoding_method: str = "greedy_search", num_active_paths: int = 4) -> None:
+        for path in (encoder, decoder, joiner, tokens):
+            if not Path(path).is_file():
+                raise FileNotFoundError(f"ASR asset missing: {path}")
+        self.lang = lang
+        self._rec = sherpa_onnx.OfflineRecognizer.from_transducer(
+            encoder=str(encoder), decoder=str(decoder), joiner=str(joiner), tokens=str(tokens),
+            num_threads=threads, sample_rate=16000, feature_dim=80, decoding_method=decoding_method,
+            max_active_paths=num_active_paths, provider="cpu")
+
+    def transcribe(self, wav: np.ndarray, lang: Lang) -> AsrResult:
+        if lang != self.lang:
+            raise ValueError(f"ASR {self.lang} cannot transcribe {lang}")
+        if wav.size < 1600:
+            return AsrResult(text="", lang=lang, confidence=0.0)
         s = self._rec.create_stream()
         s.accept_waveform(16000, wav.astype(np.float32, copy=False))
         self._rec.decode_stream(s)
         r = s.result
         lp = list(r.ys_log_probs)
-        conf = math.exp(sum(lp) / len(lp)) if lp else 0.0  # geometric-mean token prob, 0..1
-        return AsrResult(text=r.text.strip().lower(), lang="vi", confidence=min(1.0, max(0.0, conf)))
+        conf = math.exp(sum(lp) / len(lp)) if lp else 0.0
+        return AsrResult(text=r.text.strip().lower(), lang=lang, confidence=min(1.0, max(0.0, conf)))
+
+
+class SherpaZipformerVi(SherpaTransducer):
+    def __init__(self, model_dir: Path = DEFAULT_DIR, decoder: str = "decoder-epoch-12-avg-8.onnx", threads: int = 2,
+                 decoding_method: str = "greedy_search", num_active_paths: int = 4) -> None:
+        d = Path(model_dir)
+        self.decoder_file = decoder
+        super().__init__("vi", d / "encoder-epoch-12-avg-8.int8.onnx", d / decoder,
+                         d / "joiner-epoch-12-avg-8.int8.onnx", d / "tokens.txt", threads, decoding_method, num_active_paths)

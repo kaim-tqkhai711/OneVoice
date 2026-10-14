@@ -4,7 +4,7 @@ from provision_laptop import ROOT, MODELS, digest
 
 
 def inventory():
-    directory = MODELS / "nmt/vi-en-int8-arm64"
+    directory = MODELS / "nmt-laptop/vi-en"
     names = ["config.json", "source.spm", "target.spm", "vocab.json", "encoder_model_quantized.onnx", "decoder_model_merged_quantized.onnx"]
     # Existing recorded assets must match before recording an export identity.
     previous = json.loads((ROOT / "configs/laptop_assets_manifest.json").read_text(encoding="utf-8"))
@@ -21,7 +21,7 @@ def inventory():
     registry_path = ROOT / "configs/nmt/models_laptop.json"
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     registry["models"]["vi-en"] = {"backend": "onnx", "adapter": "OrtMarianNmt", "model_id": metadata["model_id"],
-        "revision": metadata["revision"], "assets": "models/nmt/vi-en-int8-arm64", "status": "local_assets_ready"}
+        "revision": metadata["revision"], "assets": "models/nmt-laptop/vi-en", "status": "local_assets_ready"}
     registry_path.write_text(json.dumps(registry, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k:v for k,v in metadata.items() if k != "files"}))
 

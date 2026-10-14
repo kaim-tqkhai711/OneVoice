@@ -1,4 +1,4 @@
-"""Offline proof: the --full pipeline runs end-to-end with every socket blocked, HF/Transformers offline env set, and all library caches redirected to
+"""Offline proof: the full pipeline runs end-to-end with every socket blocked, HF/Transformers offline env set, and all library caches redirected to
 EMPTY temp dirs (so a model fetched from a library cache would fail, and anything written to a cache is detected). Pass = 0 connection attempts."""
 import socket
 import urllib.request

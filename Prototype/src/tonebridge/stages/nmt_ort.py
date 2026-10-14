@@ -240,6 +240,7 @@ class OrtMarianNmt:
 
     constrainer = None  # optional callable (src_text, piece_ids) -> constraints; set by the factory when the glossary lever is on
     constraint_bonus = 0.0
+    eos_penalty = None
 
     def translate(self, text: str, src: Lang, tgt: Lang) -> MtResult:
         if (src, tgt) != ("vi", "en"):
@@ -252,7 +253,7 @@ class OrtMarianNmt:
         if getattr(self, "constrainer", None) is not None:
             if self.num_beams > 1:
                 raise ValueError("constrained_beam_not_implemented; use greedy explicitly")
-            out, info = self.greedy(ids, self.constrainer(text, self.piece_ids), self.constraint_bonus)
+            out, info = self.greedy(ids, self.constrainer(text, self.piece_ids), self.constraint_bonus, self.eos_penalty)
         else:
             out, info = self.greedy(ids) if self.num_beams <= 1 else self.beam(ids, self.num_beams)
         evidence = TranslationEvidence(

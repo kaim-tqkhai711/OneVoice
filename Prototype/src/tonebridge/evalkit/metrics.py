@@ -28,8 +28,9 @@ class ErrorCounts:
         r, h = normalize_vi(ref), normalize_vi(hyp)
         if not r:
             return
-        w = jiwer.process_words(r, h if h else "<empty>")
-        c = jiwer.process_characters(r, h if h else "<empty>")
+        # jiwer 4 supports empty hypotheses: pure deletions, no invented token.
+        w = jiwer.process_words(r, h)
+        c = jiwer.process_characters(r, h)
         self.words += len(r.split())
         self.word_errors += w.substitutions + w.deletions + w.insertions
         self.chars += len(r)

@@ -104,3 +104,7 @@ python -m venv .venv
 ```
 
 Provision là bước setup có mạng, tách khỏi inference. Model files nằm trong `models/` và được git-ignore; cần chạy provision ở checkout mới. Giữ manifest cùng báo cáo để truy nguồn assets. Không tải lại dataset test cũ hoặc sửa checker chỉ để làm đẹp số liệu.
+
+### Đồng bộ Milestone A–C (14/10/2026)
+
+CLI trực tiếp dùng `--mode` bắt buộc và `--eval-mode` để opt-in text. Cờ legacy chỉ được wrapper chuyển thành mode rõ ràng. Audio strict vẫn là mặc định ở core; laptop entrypoint opt-in conversion trước validation. Full runtime giữ quality calibration fail-closed; registry và active asset hashes được snapshot vào fingerprint trước load. Xem `MILESTONES_ABC_RUNTIME.md` và `MAIN_SYNC_2026-10-14.md` cho trạng thái mới; các kết quả cũ không thay cho nghiệm thu inference trên máy hiện tại.

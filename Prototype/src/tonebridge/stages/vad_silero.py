@@ -14,6 +14,7 @@ class SileroVad:
     def __init__(self, model: Path = ROOT / "models/silero_vad.onnx", sample_rate: int = 16000, min_silence_s: float = 0.5,
                  min_speech_s: float = 0.15, threshold: float = 0.5, pad_s: float = 0.1) -> None:
         self.sr, self.pad = sample_rate, pad_s
+        self.last_speech_ratio: float | None = None
         self._cfg = sherpa_onnx.VadModelConfig(
             silero_vad=sherpa_onnx.SileroVadModelConfig(model=str(model), threshold=threshold, min_silence_duration=min_silence_s,
                                                         min_speech_duration=min_speech_s, window_size=512),
@@ -22,6 +23,7 @@ class SileroVad:
 
     def segment(self, wav: np.ndarray) -> tuple[float, float]:  # [T] -> (start_s, end_s)
         sp = self.segments(wav)
+        self.last_speech_ratio = min(1., sum(end - start for start, end in sp) / max(1e-9, len(wav) / self.sr))
         if not sp:
             return 0.0, 0.0
         dur = len(wav) / self.sr

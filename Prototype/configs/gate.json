@@ -1,6 +1,6 @@
 {
   "version": "v1-untuned",
-  "note": "Fusion & Safety Gate thresholds. Starting values, not tuned on recordings. Evaluation order is fixed in src/tonebridge/gate.py (FSM).",
+  "note": "HISTORICAL evaluation config only. Runtime ignores this file; edit thresholds in configs/pipeline.json. Values were not tuned on recordings.",
   "asr_confidence_min": 0.5,
   "asr_abstain_floor": 0.2,
   "urgency_high": 0.7,

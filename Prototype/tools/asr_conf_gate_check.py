@@ -16,6 +16,10 @@ from tonebridge.evalkit.noisegen import make_babble
 from tonebridge.evalkit.textnorm import normalize_vi
 from tonebridge.stages.asr_sherpa import SherpaZipformerVi
 from tonebridge.stages.vad_silero import SileroVad
+from tonebridge.config import PipelineConfig
+from tonebridge.quality_gate import acoustic_evidence, assess_quality
+
+quality_cfg = PipelineConfig.load(ROOT / "configs/pipeline.json").quality
 
 split = json.loads((ROOT / "configs/splits/fleurs_vi_dev_test.json").read_text()); byid = {u: (p, r) for u, p, r, _ in datasets.fleurs_vi()}
 SEED = split["seed"]
@@ -30,18 +34,30 @@ res = {}
 for name, snr, tracks in (("babble", 0, [babble]), ("babble", -5, [babble]), ("demand", -5, envs), ("clean", None, None)):
     rng = np.random.default_rng(SEED + 5)
     rows = []
+    quality_rows = []
     for k, u in enumerate(split["dev"]):
         x = sf.read(byid[u][0], dtype="float32")[0]; ref = normalize_vi(byid[u][1])
         if snr is not None:
             t0, t1 = vad.segment(x); m = speech_mask(len(x), [(t0, t1)] if t1 > t0 else [])
             x = mix_at_snr_masked(x, tracks[k % len(tracks)], float(snr), m, rng)
         r = asr.transcribe(x, "vi"); h = normalize_vi(r.text)
+        vad.segment(x)
+        evidence = acoustic_evidence(x, text=r.text, vad_ratio=vad.last_speech_ratio)
+        quality_action, quality_reasons = assess_quality(evidence, quality_cfg, required=True)
         w = jiwer.process_words(ref, h if h else "<empty>"); n = len(ref.split())
         rows.append((100 * (w.substitutions + w.deletions + w.insertions) / max(n, 1), r.confidence))
+        quality_rows.append({"action": quality_action.value if quality_action else "ACCEPT",
+                             "reasons": quality_reasons, "evidence": evidence.model_dump()})
     a = np.array(rows); bad = a[:, 0] > 30
     out = {"n": len(a), "n_bad_utts_wer_gt30": int(bad.sum()), "mean_conf_bad": round(float(a[bad, 1].mean()), 3) if bad.any() else None, "mean_conf_ok": round(float(a[~bad, 1].mean()), 3)}
     for th in (0.3, 0.5, 0.7):
         out[f"th{th}"] = {"caught_bad": round(float((a[bad, 1] < th).mean()), 3) if bad.any() else None, "false_reject_ok": round(float((a[~bad, 1] < th).mean()), 3) if (~bad).any() else None}
+    rejected = np.array([r["action"] != "ACCEPT" for r in quality_rows])
+    out["acoustic_policy"] = {"settings": quality_cfg.model_dump(), "voicing_measured": False,
+        "note": "Incomplete context cannot authorize SPEAK; this probe measures conservative rejection, not calibration.",
+        "caught_bad": float(rejected[bad].mean()) if bad.any() else None,
+        "false_reject_ok": float(rejected[~bad].mean()) if (~bad).any() else None,
+        "automatic_coverage": float((~rejected).mean()), "rows": quality_rows}
     res[f"{name}|{snr}"] = out
     print(name, snr, out, flush=True)
 (ROOT / "results/asr_conf_gate_check_dev.json").write_text(json.dumps(res, indent=1))

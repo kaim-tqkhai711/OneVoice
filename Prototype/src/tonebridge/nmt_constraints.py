@@ -8,6 +8,7 @@ import re
 
 from tonebridge.safety import SemanticSafetyChecker, _norm, _word_re
 from tonebridge.clinical_numbers import number
+from tonebridge.clinical_relations import decimal_number
 
 ROOT = Path(__file__).resolve().parents[2]
 UNIT_PREF = {"miligam": ["milligrams", "mg"], "microgam": ["micrograms", "mcg"], "mililít": ["milliliters", "ml"], "gam": ["grams"],
@@ -41,11 +42,9 @@ class GlossaryConstrainer:
                         continue
                     num = None
                     for start in range(i - 1, max(-1, i - 9), -1):
-                        candidate = number(" ".join(toks[start:i]), "vi")
-                        if candidate is None:
-                            if num is not None:
-                                break
-                        else:
+                        span = " ".join(toks[start:i])
+                        candidate = decimal_number(span, "vi", self.chk.vi_num)
+                        if candidate is not None:
                             num = candidate
                     if "unit" in self.groups:
                         out.append(UNIT_PREF.get(u["vi"], u["en"]))

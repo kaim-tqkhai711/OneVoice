@@ -1,4 +1,8 @@
-"""Branch B: vocal-urgency features and UNKNOWN rules (docs/BRANCH_B_DESIGN.md, approved 2026-10-06).
+"""Branch B: raw acoustic evidence and an optional verified urgency classifier.
+
+Absent configured weights/scaler -> UNCONFIGURED, cue disabled. Configured model
+with weak acoustic evidence -> UNKNOWN with explicit reasons. Loaded, untuned
+classifiers may produce LOW/HIGH probabilities but cannot enable an urgency cue.
 
 Inference path = SwiftF0 ONNX (pitch/confidence/loudness per 256-sample hop) + ``band_feats.onnx`` (STFT band energies, built by
 branch_b_graph.py) + numpy statistics + optional MLP ONNX. No librosa / torch / pyworld here (those are test references only).
@@ -10,13 +14,12 @@ Branch B must never see denoised audio: ``analyze`` raises ProvenanceError when 
 """
 from __future__ import annotations
 
-import json
-from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 
 from tonebridge.contracts import UrgencyResult
+from tonebridge.config import BranchBSettings
 
 ROOT = Path(__file__).resolve().parents[2]
 HOP, SR = 256, 16000
@@ -33,21 +36,7 @@ class ProvenanceError(RuntimeError):
     """Raised when Branch B is handed audio that went through the Branch A denoiser."""
 
 
-@dataclass
-class BranchBConfig:
-    min_duration_s: float = 0.3
-    min_voiced_frames: int = 20
-    min_voiced_frac: float = 0.15
-    min_voicing_quality: float = 0.70
-    voiced_conf: float = 0.5
-    silence_peak: float = 1e-3
-    high_threshold: float = 0.7
-    tuned: bool = False  # starting values: not tuned on any recording
-
-    @classmethod
-    def load(cls, path: Path = ROOT / "configs/branch_b.json") -> "BranchBConfig":
-        d = json.loads(Path(path).read_text(encoding="utf8"))
-        return cls(**{k: v for k, v in d["unknown_rules"].items() if k in cls.__dataclass_fields__})
+BranchBConfig = BranchBSettings
 
 
 def _runs(mask: np.ndarray) -> list[tuple[int, int]]:
@@ -133,24 +122,31 @@ def load_swiftf0(model: Path, threads: int):
 
 
 class BranchB:
-    """Implements the ``BranchB`` stage protocol. ``mlp`` = optional callable standardised-feature-vector -> P(HIGH); None => UNKNOWN (no trained model)."""
+    """Raw acoustic evidence plus an explicitly configured/offline urgency classifier."""
 
     def __init__(self, cfg: BranchBConfig | None = None, band_model: Path = ROOT / "models/branch_b/band_feats.onnx", threads: int = 1,
                  swiftf0_model: Path = ROOT / "models/branch_b/swiftf0_model.onnx",
-                 mlp=None, standardizer: tuple[np.ndarray, np.ndarray] | None = None) -> None:
+                 root: Path = ROOT) -> None:
         import onnxruntime as ort
 
-        self.cfg = cfg or BranchBConfig.load()
+        self.cfg = cfg.model_copy(deep=True) if cfg is not None else BranchBConfig()
+        self.classifier = None
+        self.classifier_status = "UNCONFIGURED"
+        self.configuration_reasons = []
+        for name in ("mlp_path", "standardizer"):
+            if getattr(self.cfg, name) is None:
+                self.configuration_reasons.append(name + "_unconfigured")
+        if not self.configuration_reasons:
+            from tonebridge.urgency_model import UrgencyModel
+            def resolve(path):
+                value = Path(path)
+                return value if value.is_absolute() else root / value
+            self.classifier = UrgencyModel(resolve(self.cfg.mlp_path), resolve(self.cfg.standardizer), threads)
+            self.classifier_status = "READY"
         self.f0 = load_swiftf0(swiftf0_model, threads)
         so = ort.SessionOptions()
         so.intra_op_num_threads, so.log_severity_level = threads, 3
-        if not Path(band_model).exists():
-            from tonebridge.branch_b_graph import build
-
-            Path(band_model).parent.mkdir(parents=True, exist_ok=True)
-            build(str(band_model))
         self.band = ort.InferenceSession(str(band_model), so, providers=["CPUExecutionProvider"])
-        self.mlp, self.standardizer = mlp, standardizer
         self.last_features: dict[str, float] | None = None
 
     def features(self, wav: np.ndarray) -> tuple[dict[str, float], int]:
@@ -167,23 +163,25 @@ class BranchB:
             raise ProvenanceError(f"Branch B accepts only raw16k audio, got {provenance!r}")
         x = np.asarray(wav, np.float32)
         peak = float(np.max(np.abs(x))) if len(x) else 0.0
+        def unavailable(why, quality):
+            return UrgencyResult(label="UNCONFIGURED" if self.classifier is None else "UNKNOWN",
+                classifier_status=self.classifier_status, cue_enabled=False, voicing_quality=quality,
+                reasons=self.configuration_reasons + why)
         if len(x) < HOP or peak < self.cfg.silence_peak:
-            res = UrgencyResult(label="UNKNOWN", voicing_quality=0.0)
-            res.reasons = ["silence" if peak < self.cfg.silence_peak else "too_short"]
-            return res
+            return unavailable(["silence" if peak < self.cfg.silence_peak else "too_short"], 0.0)
         f, nv = self.features(x)
         self.last_features = f
         why = unknown_reasons(self.cfg, len(x) / SR, peak, f, nv)
         if why:
-            res = UrgencyResult(label="UNKNOWN", voicing_quality=f["voicing_quality"])
-            res.reasons = why
-            return res
-        if self.mlp is None:
-            res = UrgencyResult(label="UNKNOWN", voicing_quality=f["voicing_quality"])
-            res.reasons = ["mlp_not_trained"]
-            return res
-        v = np.array([f[k] for k in FEATURE_NAMES], np.float64)
-        if self.standardizer is not None:
-            v = (v - self.standardizer[0]) / self.standardizer[1]
-        p = float(self.mlp(v))
-        return UrgencyResult(label="HIGH" if p >= self.cfg.high_threshold else "LOW", score=p, voicing_quality=f["voicing_quality"])
+            return unavailable(why, f["voicing_quality"])
+        if self.classifier is None:
+            return unavailable([], f["voicing_quality"])
+        from tonebridge.urgency_model import UrgencyArtifactError
+        try:
+            p = self.classifier.predict_high(f)
+        except (UrgencyArtifactError, RuntimeError):
+            return UrgencyResult(label="UNKNOWN", classifier_status="ERROR", cue_enabled=False,
+                voicing_quality=f["voicing_quality"], reasons=["urgency_inference_failed"])
+        return UrgencyResult(label="HIGH" if p >= self.cfg.high_threshold else "LOW", score=p,
+            classifier_status="READY", cue_enabled=self.cfg.tuned, voicing_quality=f["voicing_quality"],
+            reasons=[] if self.cfg.tuned else ["urgency_threshold_untuned"])

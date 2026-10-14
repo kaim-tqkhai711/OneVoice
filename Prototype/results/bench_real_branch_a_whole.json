@@ -1,0 +1,15 @@
+{
+  "schema_version": "tonebridge-e2e-v1",
+  "status": "BLOCKED_PREFLIGHT",
+  "mode": "branch-a-bench",
+  "requested_turns": 100,
+  "processed_turns": 0,
+  "audio_turns": 0,
+  "config_hash": "7ef849bcf534ee06",
+  "assets_checked": 368,
+  "missing_assets": 1,
+  "preflight_error_count": 1,
+  "latency": null,
+  "rss": null,
+  "note": "No model inference executed; no measured latency/RSS or automatic fallback."
+}

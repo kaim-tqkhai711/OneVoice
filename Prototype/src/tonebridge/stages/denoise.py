@@ -4,7 +4,6 @@ from __future__ import annotations
 from pathlib import Path
 
 import numpy as np
-import sherpa_onnx
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -22,6 +21,7 @@ class GtcrnDenoiser:
     """GTCRN (0.5 MB ONNX) through sherpa-onnx; output is trimmed/padded to the input length so downstream mixing stays aligned."""
 
     def __init__(self, model: Path = ROOT / "models/denoise/gtcrn_simple.onnx", threads: int = 1) -> None:
+        import sherpa_onnx
         cfg = sherpa_onnx.OfflineSpeechDenoiserConfig(
             model=sherpa_onnx.OfflineSpeechDenoiserModelConfig(
                 gtcrn=sherpa_onnx.OfflineSpeechDenoiserGtcrnModelConfig(model=str(model)), num_threads=threads, provider="cpu"))

@@ -144,42 +144,42 @@
       "sha256": "6385e8c2ebc3872e82c9ff5946228de44cd3be77a750ea53698b7dbfe94b0a22"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/asset_manifest.json",
+      "path": "models/nmt-laptop/vi-en/asset_manifest.json",
       "bytes": 989,
       "sha256": "b087bad69c8e15c971cbc7d64b7af34e6ea49be9f5e7d3da8c4107d0661d76f6"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/config.json",
+      "path": "models/nmt-laptop/vi-en/config.json",
       "bytes": 1389,
       "sha256": "c62a203a0183755af37b96a33cc125e7f74f97c1e90aaae1d1f404fd8a42eea8"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/decoder_model_merged_quantized.onnx",
+      "path": "models/nmt-laptop/vi-en/decoder_model_merged_quantized.onnx",
       "bytes": 54401611,
       "sha256": "540edbcc08bab0b42c03576a759fd9b4d5fc99996ac3178630733916dc2325cb"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/encoder_model_quantized.onnx",
+      "path": "models/nmt-laptop/vi-en/encoder_model_quantized.onnx",
       "bytes": 47133597,
       "sha256": "fa7bd78e8bed6bdc03728f62f1592c4bb52d9e12795496604c1e990e102abdb2"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/README.md",
+      "path": "models/nmt-laptop/vi-en/README.md",
       "bytes": 571,
       "sha256": "0309dbabda663d5083661a9240e74b637d7f3cd8d05326617493cf34a7ff5e62"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/source.spm",
+      "path": "models/nmt-laptop/vi-en/source.spm",
       "bytes": 756168,
       "sha256": "9deb4f9e7bebd3876f4bf238a9eb52f2f95a1fba2210a4a8239167c55c15e67d"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/target.spm",
+      "path": "models/nmt-laptop/vi-en/target.spm",
       "bytes": 808853,
       "sha256": "629182070d11db929990c603779345a11743b749f6586f224829303fa979c138"
     },
     {
-      "path": "models/nmt/vi-en-int8-arm64/vocab.json",
+      "path": "models/nmt-laptop/vi-en/vocab.json",
       "bytes": 1301077,
       "sha256": "f84f995b939f2411294d0723df4aaf7853d0bd07143b530edec0697c7d75aa5d"
     },

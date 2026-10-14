@@ -69,3 +69,7 @@ Người phụ trách runtime: thu hoặc nhận corpus ASR/WAV độc lập t�
 Hai bên nên tạo branch mới từ branch tích hợp này. Text owner sửa adapter/lexicon/tools text và tests tương ứng; runtime owner sửa pipeline/audio/CLI/benchmark. Nếu cần đổi contract/config/factory, trao đổi trước để tránh sửa cùng file.
 
 Nguồn model: [Helsinki EN→VI](https://huggingface.co/Helsinki-NLP/opus-mt-en-vi), [Helsinki KO→EN](https://huggingface.co/Helsinki-NLP/opus-mt-ko-en), [ứng viên Helsinki EN→KO cách ly](https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-en-ko), [Argos index đã pin](https://github.com/argosopentech/argospm-index/blob/ff90de60728f7c1338ff6b75974e4c89b2442d22/index.json), [CTranslate2 EOS và input-length API](https://opennmt.net/CTranslate2/python/ctranslate2.Translator.html).
+
+### Đồng bộ Milestone A–C (14/10/2026)
+
+CLI trực tiếp dùng `--mode` bắt buộc và `--eval-mode` để opt-in text. Cờ legacy chỉ được wrapper chuyển thành mode rõ ràng. Audio strict vẫn là mặc định ở core; laptop entrypoint opt-in conversion trước validation. Full runtime giữ quality calibration fail-closed; registry và active asset hashes được snapshot vào fingerprint trước load. Xem `MILESTONES_ABC_RUNTIME.md` và `MAIN_SYNC_2026-10-14.md` cho trạng thái mới; các kết quả cũ không thay cho nghiệm thu inference trên máy hiện tại.

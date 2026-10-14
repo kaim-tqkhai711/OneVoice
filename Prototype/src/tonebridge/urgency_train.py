@@ -85,6 +85,31 @@ def export_onnx(net, path: str, d: int = len(FEATURE_NAMES)) -> None:
     import torch
 
     torch.onnx.export(net, torch.zeros(1, d), path, input_names=["z"], output_names=["logits"], opset_version=17, dynamic_axes={"z": {0: "b"}})
+    import json
+    import onnx
+    from tonebridge.urgency_model import SCHEMA_VERSION
+    graph = onnx.load(path)
+    onnx.helper.set_model_props(graph, {"tonebridge.schema_version": SCHEMA_VERSION,
+        "tonebridge.feature_names": json.dumps(FEATURE_NAMES), "tonebridge.class_names": json.dumps(["LOW", "HIGH"])})
+    onnx.save(graph, path)
+
+
+def export_standardizer(path: str, model_path: str, mean: np.ndarray, scale: np.ndarray) -> None:
+    """Export only population statistics fitted to real training rows.
+
+    This does not train weights or claim calibration; paths must additionally be
+    pinned in runtime_files.json before production factories can consume them.
+    """
+    import json
+    from pathlib import Path
+    from tonebridge.config import sha256_file
+    from tonebridge.urgency_model import SCHEMA_VERSION
+    mean, scale = np.asarray(mean), np.asarray(scale)
+    if mean.shape != (21,) or scale.shape != (21,) or not np.isfinite(mean).all() or not np.isfinite(scale).all() or np.any(scale <= 0):
+        raise ValueError("invalid 21-feature population standardizer")
+    Path(path).write_text(json.dumps({"schema_version": SCHEMA_VERSION,
+        "feature_names": FEATURE_NAMES, "class_names": ["LOW", "HIGH"],
+        "mean": mean.tolist(), "scale": scale.tolist(), "model_sha256": sha256_file(Path(model_path))}, indent=2) + "\n", encoding="utf8")
 
 
 def loso(rows: list[dict], mode: str = "G", seed: int = 0, epochs: int = 300) -> dict:

@@ -15,7 +15,7 @@
  },
  {
   "path": "models/asr/zipformer-vi-int8/decoder-epoch-12-avg-8.int8.onnx",
-  "reader": "stages/asr_sherpa.py (factory.ASR_DECODER)",
+  "reader": "stages/asr_sherpa.py (pipeline.decode.asr_decoder)",
   "required": true,
   "bytes": 1308690,
   "sha256": "0cf67da076d09c78b47c39de5fee80cb6608593db8eaf1b6ca9fd0d818220677"

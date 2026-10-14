@@ -7,7 +7,7 @@
       "adapter": "OrtMarianNmt",
       "model_id": "Xenova/opus-mt-vi-en",
       "revision": "541dfd72ec07e8f1563795e0224408ad8d729e80",
-      "assets": "models/nmt/vi-en-int8-arm64",
+      "assets": "models/nmt-laptop/vi-en",
       "status": "local_assets_ready"
     },
     "en-vi": {

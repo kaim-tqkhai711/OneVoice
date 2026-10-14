@@ -154,15 +154,19 @@ def test_swiftf0_sweep_median_error_under_1pct():
 
 @pytest.fixture(scope="module")
 def bb(tmp_path_factory):
-    return BranchB(band_model=tmp_path_factory.mktemp("b") / "band_feats.onnx")
+    if not (ROOT / "models/branch_b/swiftf0_model.onnx").is_file():
+        pytest.skip("pinned SwiftF0 asset absent; provision models/ before this integration test")
+    model = tmp_path_factory.mktemp("b") / "band_feats.onnx"
+    G.build(str(model))  # explicit development build; runtime never creates assets
+    return BranchB(band_model=model)
 
 
 def test_unknown_rules_and_provenance(bb):
-    assert bb.analyze(np.zeros(SR, np.float32)).label == "UNKNOWN"  # silence
+    assert bb.analyze(np.zeros(SR, np.float32)).label == "UNCONFIGURED"  # classifier absent, silence reason retained
     r = bb.analyze(_speechy()[: int(0.2 * SR)])
-    assert r.label == "UNKNOWN" and "too_short" in r.reasons
+    assert r.label == "UNCONFIGURED" and "too_short" in r.reasons
     r = bb.analyze(_speechy())
-    assert r.label == "UNKNOWN" and r.reasons == ["mlp_not_trained"] and r.voicing_quality and r.voicing_quality > 0.7  # features fine, model absent
+    assert r.label == "UNCONFIGURED" and r.reasons == ["mlp_path_unconfigured", "standardizer_unconfigured"] and r.voicing_quality and r.voicing_quality > 0.7
     with pytest.raises(ProvenanceError):
         bb.analyze(_speechy(), provenance="denoised")
 

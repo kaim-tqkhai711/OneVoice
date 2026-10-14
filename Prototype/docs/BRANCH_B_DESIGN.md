@@ -85,3 +85,12 @@ Features + graph + reference tests: 4.5 h. MLP + LOSO + baseline: 3 h (blocked o
 - UNKNOWN thresholds (0.3 s, 20 voiced frames, voiced_frac 0.15, voicing_quality 0.70) are starting values and **not tuned**; `tuned: false` in the config.
 - No MLP, no urgency F1: `tools/train_urgency.py`, `src/tonebridge/urgency_train.py` implement extraction, LOSO (per speaker, G and S modes), z-score baseline, MLP training/ONNX export; verified only on seeded fake data (`selfcheck`, tests assert structure, never accuracy; fake-data numbers are not reported). Note: with median-relative F0, the baseline term `f0_mean_st` is close to 0 by construction, so the z-score baseline effectively reduces to loudness.
 - Ablation raw vs GTCRN (`results/branchb_ablation_table.md`): median F0 difference is only 1.6-2.7 cents, but GTCRN lowers voiced_frac by 7-16 points at every SNR and the p90 F0 deviation reaches ~3400 cents with alarm noise. Under babble the RAW voiced_frac is inflated (0.62-0.69 vs 0.46 for stationary noise: competing talkers are "voiced"), so `voicing_quality`/UNKNOWN gating matters there.
+
+
+## Milestone C implementation update (2026-10-14)
+
+The design/evaluation notes above are historical. Current runtime uses only `pipeline.json.branch_b`; `branch_b.json` is a contract reference. Null MLP/scaler paths report UNCONFIGURED and disable SPEAK_CUE, while retaining raw acoustic evidence. Stub/benchmark urgency is explicitly DISABLED. A configured model with weak evidence returns UNKNOWN with reasons; configured but untuned weights cannot enable a cue.
+
+`urgency_model.py` validates the exact 21-feature and LOW/HIGH class order, positive population scales, model SHA-256 binding and matching ONNX metadata. It standardizes features and computes P(HIGH) by stable softmax over two logits. Configured artifacts must be pinned in the asset manifest. Invalid artifacts fail loading. Runtime does not auto-build a missing band graph.
+
+No real urgency model or accuracy measurement was created for this milestone: recordings/weights remain absent. Loader tests use small contract-only ONNX graphs and never report fake-data F1. See `reports/MILESTONE_C_2026-10-14.md` for tests, measured control-flow E2E and outstanding real-model acceptance.

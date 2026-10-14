@@ -8,6 +8,7 @@ import numpy as np
 import sherpa_onnx
 
 from ..contracts import AsrResult, Lang
+from ..quality_gate import acoustic_evidence
 
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DIR = ROOT / "models/asr/zipformer-vi-int8"
@@ -38,13 +39,17 @@ class SherpaTransducer:
         r = s.result
         lp = list(r.ys_log_probs)
         conf = math.exp(sum(lp) / len(lp)) if lp else 0.0
-        return AsrResult(text=r.text.strip().lower(), lang=lang, confidence=min(1.0, max(0.0, conf)))
+        text = r.text.strip().lower()
+        return AsrResult(text=text, lang=lang, confidence=min(1.0, max(0.0, conf)),
+                         quality=acoustic_evidence(wav, 16000, text=text))
 
 
 class SherpaZipformerVi(SherpaTransducer):
     def __init__(self, model_dir: Path = DEFAULT_DIR, decoder: str = "decoder-epoch-12-avg-8.onnx", threads: int = 2,
-                 decoding_method: str = "greedy_search", num_active_paths: int = 4) -> None:
+                 decoding_method: str = "greedy_search", num_active_paths: int = 4,
+                 encoder: str = "encoder-epoch-12-avg-8.int8.onnx",
+                 joiner: str = "joiner-epoch-12-avg-8.int8.onnx") -> None:
         d = Path(model_dir)
         self.decoder_file = decoder
-        super().__init__("vi", d / "encoder-epoch-12-avg-8.int8.onnx", d / decoder,
-                         d / "joiner-epoch-12-avg-8.int8.onnx", d / "tokens.txt", threads, decoding_method, num_active_paths)
+        super().__init__("vi", d / encoder, d / decoder,
+                         d / joiner, d / "tokens.txt", threads, decoding_method, num_active_paths)

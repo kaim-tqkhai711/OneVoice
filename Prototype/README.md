@@ -62,7 +62,7 @@ Ví dụ EN→VI:
 
 Mẫu WAV của nhà cung cấp có thể nằm ngoài grammar clinical và bị CONFIRM; không phải mẫu nào cũng sinh audio. Chỉ SPEAK/SPEAK_CUE ghi WAV. Thêm `--play` để phát WAV đã qua gate trên Windows.
 
-Runtime thật là mặc định; `--full`/`--real` là alias. `--stub` dùng pipeline giả/tone cho debug, không dùng để đánh giá model thật.
+CLI yêu cầu `--mode stub|branch-a-bench|full`. Wrapper `run_laptop.py` chọn full rõ ràng và chuyển các cờ legacy `--full`/`--real`/`--stub` thành mode tương ứng; không fallback sang stub. Dùng `--mode stub` chỉ để kiểm control-flow/tone.
 
 ## 4. Đọc kết quả và log
 
@@ -78,7 +78,7 @@ Hai chiều Hàn hiện không được phát tự động. CLI chưa có bướ
 
 Xem `gate.action`, `safety_status` và `output_written` trong kết quả/log để biết lượt có được phát hay không. CLI trả exit code 1 khi lỗi, nhưng một lượt bị safety chặn có thể vẫn trả 0. Watchdog trả 124 khi timeout và ghi sự kiện; exit code 0 không đồng nghĩa với SPEAK.
 
-Log mặc định: `results/laptop_current/turns.jsonl`. Log loại transcript, translation và nội dung trong diagnostic. `--log-content` chỉ bật khi chủ động debug với dữ liệu được phép lưu; `--log` đổi đường dẫn. Không commit audio/log chứa dữ liệu người dùng.
+Log mặc định: `results/laptop_current/turns.jsonl`. Log loại transcript, translation và nội dung trong diagnostic. `--eval-mode` chỉ bật khi chủ động debug với dữ liệu được phép lưu; `--log` đổi đường dẫn. Không commit audio/log chứa dữ liệu người dùng.
 
 NMT nhận transcript tiếng Anh sau định dạng tối thiểu: viết hoa ký tự đầu và thêm dấu kết thúc nếu thiếu. Transcript gốc được giữ; từ/số trong câu không được sửa. Đây chưa phải khôi phục dấu câu tổng quát. UNK, thiếu EOS, truncation hoặc evidence/constraints không hợp lệ chặn TTS; PASS của checker không chứng minh ASR đúng.
 
@@ -140,3 +140,7 @@ Bạn phụ trách runtime/audio, bạn của bạn phụ trách NMT/safety. T�
 - [Báo cáo kiểm chứng](reports/LAPTOP_FOUR_DIRECTION_VERIFICATION_2026-10-09.md) và [summary JSON](reports/LAPTOP_FOUR_DIRECTION_SUMMARY_2026-10-09.json).
 - [Audit ngày 08/10/2026](docs/ToneBridge_Deep_Codebase_Audit_2026-10-08.md), [handoff runtime](docs/LAPTOP_RUNTIME_HANDOFF.md), [handoff NMT/safety](docs/NMT_SAFETY_HANDOFF.md): tài liệu lịch sử, cần đọc cùng báo cáo tích hợp.
 - [README Prototype trước cập nhật](docs/README_PROTOTYPE_LEGACY_2026-10-09.md): giữ để tham khảo lịch sử; lệnh và đường dẫn cũ có thể không còn phù hợp.
+
+## Milestones A–C và trạng thái sau đồng bộ 14/10/2026
+
+Đã giữ runtime bốn hướng từ main cùng runtime VI→EN được pin của Milestone A–C. Hướng dẫn chế độ explicit, acoustic/clinical gates, privacy và benchmark: [MILESTONES_ABC_RUNTIME.md](docs/MILESTONES_ABC_RUNTIME.md). Nguồn model và blocker merged decoder gốc: [MODEL_PROVISIONING.md](docs/MODEL_PROVISIONING.md). Các số liệu 09/10 ở phần trên là checkpoint trước lần đồng bộ; pack và các output thật cần được nghiệm thu lại trên máy hiện tại. Full mặc định yêu cầu calibration acoustic và không tự bật cue khi chưa có classifier/scaler đã train.

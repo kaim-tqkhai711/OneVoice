@@ -1,0 +1,26 @@
+[
+  {
+    "path": "results\\inputs\\zipformer_vi_0.wav",
+    "source": "https://huggingface.co/csukuangfj/sherpa-onnx-zipformer-vi-int8-2025-04-20/resolve/b2745a435379992ad3f299635468db0c34918e1e/test_wavs/0.wav",
+    "sha256": "8df4b0109649125ea0c8415bd10a23ad3dc9aa393432021c815a0bafba04cfd7",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 3.74
+  },
+  {
+    "path": "results\\inputs\\zipformer_vi_1.wav",
+    "source": "https://huggingface.co/csukuangfj/sherpa-onnx-zipformer-vi-int8-2025-04-20/resolve/b2745a435379992ad3f299635468db0c34918e1e/test_wavs/1.wav",
+    "sha256": "6d3a8d713f59b821f32c889d24e66368e7f684d7e143bb49532fd2b59d9c6437",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 2.4
+  },
+  {
+    "path": "results\\inputs\\zipformer_vi_2.wav",
+    "source": "https://huggingface.co/csukuangfj/sherpa-onnx-zipformer-vi-int8-2025-04-20/resolve/b2745a435379992ad3f299635468db0c34918e1e/test_wavs/2.wav",
+    "sha256": "8e6821f71b608ec9fa947571af7f631cad1f9d45b22287e22e70e7411c62b802",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 1.55
+  }
+]

@@ -1,4 +1,8 @@
-"""Semantic Safety Check v1 (VI->EN). Pure logic over ``configs/safety_lexicon_vi_en.json``: no model, no framework (portable by design).
+"""Semantic safety (VI->EN) over one effective lexicon snapshot.
+
+Scoped clinical relations are mandatory and fail closed on unsupported critical
+syntax, additions or changed bindings. Legacy slot diagnostics and severity
+checks remain supplementary; they can never override a failed relation check.
 
 For every critical slot found in the Vietnamese source it demands an accepted English rendering in the translation:
   negation, medication, allergy, dose (number AND unit)  -> missing / contradictory / uncertain = CRITICAL (``passed=False``, TTS blocked)
@@ -13,6 +17,7 @@ import unicodedata
 from pathlib import Path
 
 from tonebridge.contracts import MtResult, SafetyReport, SlotCheck
+from tonebridge.clinical_relations import RelationParser, compare_relations
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -60,8 +65,7 @@ class SemanticSafetyChecker:
         self.inten = sorted(lex["intensity"], key=lambda m: -len(m["vi"]))
         self.vi_num = lex["vi_numbers"]
         self.en_num = lex["en_numbers"]
-        from tonebridge.clinical_safety import ClinicalSafetyChecker
-        self.clinical = ClinicalSafetyChecker()
+        self.relations = RelationParser(lex)
 
     # ---- number parsing -------------------------------------------------------------------------------------------------------------
     def _parse_vi_number(self, toks: list[str]) -> int | None:
@@ -121,7 +125,10 @@ class SemanticSafetyChecker:
     # ---- main -----------------------------------------------------------------------------------------------------------------------
     def check_texts(self, src: str, tgt: str) -> SafetyReport:
         s, t = _norm(src).rstrip(" ?.!"), _norm(tgt)
-        toks = s.split()
+        source = self.relations.parse(src, "vi")
+        target = self.relations.parse(tgt, "en")
+        # The zero in 'không phẩy năm' is numeric, not a legacy negation cue.
+        toks = self.relations._numbers(s, "vi").split()
         checks: list[SlotCheck] = []
         reasons: list[str] = []
         critical_fail, confirm = False, False
@@ -138,7 +145,11 @@ class SemanticSafetyChecker:
                     confirm = True
 
         # negation (question particle = final "không"/"chưa" or "có ... không" => not a negation)
-        if self.enable["negation"]:
+        # Clinical negation belongs to the relation/bound, not the sentence.
+        # E.g. 'không ... quá 25' and 'maximum 25' preserve the same upper bound
+        # despite not sharing a negative keyword. Keep the legacy check only
+        # for nonclinical utterances outside the relation grammar.
+        if self.enable["negation"] and not (source.critical or target.critical):
             cues = lex["negation"]["src_cues"]
             neg_idx = [i for i, w in enumerate(toks) if w in cues]
             qfinal = lex["negation"]["question_final"]
@@ -180,27 +191,20 @@ class SemanticSafetyChecker:
                         hit = _any_word(t, m["en"])
                         rec("medication", m["vi"], hit, hit is not None, f"allergen_missing:{m['vi']}")
 
-        # dose: number immediately before a dose unit; unit must appear, number must match
+        # Decimal dosage diagnostics come from the scoped parser. The former
+        # integer word scan misread "không phẩy năm" as 5, vetoing correct 0.5.
         if self.enable["dose"]:
-            en_vals = self._en_numbers(t)
-            for u in self.units:
-                uw = u["vi"]
-                for i, w in enumerate(toks):
-                    if w != uw:
-                        continue
-                    j = i
-                    while j > 0 and (toks[j - 1] in self.vi_num or toks[j - 1].isdigit()):
-                        j -= 1
-                    num = self._parse_vi_number(toks[j:i]) if j < i else None
-                    hit = _any(t, u["en"])
-                    if num is None:
-                        # unit without a number (e.g. "uống thuốc theo viên"): only the unit must survive if it is a strict unit
-                        if uw not in ("viên",):
-                            rec("dose_unit", uw, hit, hit is not None, f"dose_unit_missing:{uw}")
-                        continue
-                    rec("dose_unit", uw, hit, hit is not None, f"dose_unit_missing:{uw}")
-                    ok = num in en_vals
-                    rec("dose_number", str(num), ",".join(map(str, sorted(en_vals))) or None, ok, f"dose_number_mismatch:{num}")
+            for relation in source.relations:
+                if relation.unit is None:
+                    continue
+                candidates = [r for r in target.relations if r.drug == relation.drug]
+                units_ok = any(r.unit == relation.unit for r in candidates)
+                rec("dose_unit", relation.unit, relation.unit if units_ok else None,
+                    units_ok, "dose_unit_missing:" + relation.unit)
+                if relation.amount is not None:
+                    number_ok = any(r.amount == relation.amount and r.unit == relation.unit for r in candidates)
+                    rec("dose_number", str(relation.amount), str(relation.amount) if number_ok else None,
+                        number_ok, "dose_number_mismatch:" + str(relation.amount))
 
         # intensity -> CONFIRM
         if self.enable["intensity"]:
@@ -216,22 +220,29 @@ class SemanticSafetyChecker:
                     hit = _any(t, m["en"])
                     rec("intensity", m["vi"], hit, hit is not None, f"intensity_missing:{m['vi']}", critical=False)
 
-        # Preserve the public text-only helper and number parser for existing tools.
-        # Add relational checks; ordinary/intensity-only legacy calls remain lexical.
-        # Explicit legacy ablation flags are text-evaluation-only. Runtime check()
-        # always uses the strict checker; disabling a lexical group cannot bypass it.
-        if all(self.enable.values()):
-            relation = self.clinical.check_texts(src, tgt)
-            if relation.status == "FAIL":
-                critical_fail = True
-                reasons.extend(relation.reasons)
-            elif relation.status == "CONFIRM" and any(c.slot in ("medication", "dose_unit", "dose_number", "allergy", "negation")
-                                                      for c in checks):
-                confirm = True
-                reasons.extend(relation.reasons)
-        return SafetyReport(passed=not critical_fail, confirm=confirm and not critical_fail,
-                            checks=checks, reasons=list(dict.fromkeys(reasons)))
+        # Scoped relation matching is mandatory even when optional legacy groups
+        # are disabled by a benchmark. Keywords alone cannot grant clinical PASS.
+        relation_errors = compare_relations(source, target)
+        if source.critical or target.critical:
+            checks.append(SlotCheck(slot="clinical_relation", src_value=None,
+                                    tgt_value=None, preserved=not relation_errors))
+        if relation_errors:
+            critical_fail = True
+            reasons.extend(relation_errors)
+        # A bare bound without a medication or action verb leaves its scope
+        # implicit. Preserve the upstream conservative handling of ellipsis.
+        if any(r.limit in ("upper", "lower") and r.amount is not None and r.drug is None for r in target.relations) and not re.search(
+                r"\b(?:take|give|inject|administer|drink|use)\b", t):
+            confirm = True
+            reasons.append("unscoped_dose_limit")
+        return SafetyReport(passed=not critical_fail, confirm=confirm and not critical_fail, checks=checks, reasons=reasons)
 
     def check(self, mt: MtResult) -> SafetyReport:
-        # Runtime path is deliberately strict, including EOS/tokenizer evidence.
-        return self.clinical.check(mt)
+        report = self.check_texts(mt.src_text, mt.tgt_text)
+        evidence = getattr(mt, "evidence", None)
+        if mt.truncated or mt.terminated_by_eos is False or mt.constraints_satisfied is False or (evidence is not None and (
+                evidence.truncated or evidence.input_truncated or not evidence.eos_reached
+                or evidence.source_unknown_tokens or evidence.output_unknown_tokens or evidence.tokenizer_issues
+                or evidence.unsatisfied_constraints or evidence.constraints_requested != evidence.constraints_satisfied)):
+            return SafetyReport(passed=False, reasons=[*report.reasons, "translation_evidence_invalid_or_incomplete"], checks=report.checks)
+        return report

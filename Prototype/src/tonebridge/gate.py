@@ -1,4 +1,4 @@
-"""Fusion & Safety Gate (Proposal 1.2 / 4.2): five actions SPEAK / SPEAK_CUE / REPEAT / CONFIRM / ABSTAIN. Pure logic, thresholds from configs/gate.json.
+"""Fusion & Safety Gate: five actions, thresholds from the effective pipeline config.
 
 FSM, evaluated in this fixed order (first match wins):
   S0  no speech / empty ASR text                                   -> REPEAT   (VAD or ASR produced nothing usable)
@@ -9,37 +9,22 @@ FSM, evaluated in this fixed order (first match wins):
   S3  empty translation, or length ratio out of range              -> ABSTAIN
   S4  safety check: critical slot missing/contradictory/uncertain  -> CONFIRM   (TTS blocked)
   S5  safety check: severity group differs                         -> CONFIRM   (TTS blocked)
+  S5a independent acoustic evidence weak/missing/uncalibrated      -> REPEAT/CONFIRM (full runtime requires evidence)
   S6  urgency HIGH with voicing quality >= voicing_quality_min     -> SPEAK_CUE
   S7  otherwise (LOW, UNKNOWN, weak voicing)                       -> SPEAK     (a safe translation is spoken even when urgency is UNKNOWN)
 Only SPEAK and SPEAK_CUE carry ``speak_text``: every other action blocks TTS.
 """
 from __future__ import annotations
 
-import json
-from dataclasses import dataclass
-from pathlib import Path
-
+from tonebridge.config import Thresholds, QualitySettings
+from tonebridge.quality_gate import assess_quality
 from tonebridge.contracts import AsrResult, GateAction, GateDecision, SafetyReport, UrgencyResult
 
-ROOT = Path(__file__).resolve().parents[2]
+GateConfig = Thresholds
 
 
-@dataclass
-class GateConfig:
-    asr_confidence_min: float = 0.5
-    asr_abstain_floor: float = 0.2
-    urgency_high: float = 0.7
-    voicing_quality_min: float = 0.7
-    min_text_chars: int = 1
-    max_len_ratio: float = 6.0
-
-    @classmethod
-    def load(cls, path: Path = ROOT / "configs/gate.json") -> "GateConfig":
-        d = json.loads(Path(path).read_text(encoding="utf8"))
-        return cls(**{k: v for k, v in d.items() if k in cls.__dataclass_fields__})
-
-
-def decide(asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: str, cfg: GateConfig) -> GateDecision:
+def decide(asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: str, cfg: GateConfig,
+           quality_cfg: QualitySettings | None = None, *, require_quality: bool = False) -> GateDecision:
     def out(a: GateAction, why: list[str], speak: str | None = None) -> GateDecision:
         return GateDecision(action=a, reasons=why, speak_text=speak, urgency=urgency)
 
@@ -62,7 +47,12 @@ def decide(asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: s
         return out(GateAction.CONFIRM, safety.reasons or ["safety_failed"])
     if safety.confirm:
         return out(GateAction.CONFIRM, safety.reasons or ["severity_confirm"])
-    if urgency.label == "HIGH" and (urgency.voicing_quality is None or urgency.voicing_quality >= cfg.voicing_quality_min):
+    quality_action, quality_reasons = assess_quality(asr.quality, quality_cfg or QualitySettings(), required=require_quality)
+    if quality_action is not None:
+        return out(quality_action, quality_reasons)
+    if (urgency.label == "HIGH" and urgency.cue_enabled and urgency.classifier_status in ("READY", "LEGACY") and urgency.voicing_quality is not None
+            and urgency.voicing_quality >= cfg.voicing_quality_min
+            and urgency.score is not None and urgency.score >= cfg.urgency_high):
         return out(GateAction.SPEAK_CUE, ["urgency_high"], text)
     return out(GateAction.SPEAK, ["urgency_" + urgency.label.lower()], text)
 
@@ -71,7 +61,10 @@ class Gate:
     """Callable with the pipeline's gate signature ``gate(asr, safety, urgency, text, pipeline_cfg)``."""
 
     def __init__(self, cfg: GateConfig | None = None) -> None:
-        self.cfg = cfg or GateConfig.load()
+        self.cfg = cfg.model_copy(deep=True) if cfg is not None else GateConfig()
 
-    def __call__(self, asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: str, _pipeline_cfg=None) -> GateDecision:
-        return decide(asr, safety, urgency, text, self.cfg)
+    def __call__(self, asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: str, pipeline_cfg=None) -> GateDecision:
+        cfg = pipeline_cfg.thresholds if pipeline_cfg is not None else self.cfg
+        quality = pipeline_cfg.quality if pipeline_cfg is not None else QualitySettings()
+        required = pipeline_cfg is not None and pipeline_cfg._mode == "full"
+        return decide(asr, safety, urgency, text, cfg, quality, require_quality=required)

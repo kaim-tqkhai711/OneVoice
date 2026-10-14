@@ -1,7 +1,22 @@
 {
-  "version": "v0-untuned",
-  "note": "Branch B constants. unknown_rules are STARTING VALUES from docs/BRANCH_B_DESIGN.md section 5b: NOT TUNED (no team recordings yet). Any later change must be logged in PROGRESS.md.",
-  "unknown_rules": {"min_duration_s": 0.3, "min_voiced_frames": 20, "min_voiced_frac": 0.15, "min_voicing_quality": 0.70, "voiced_conf": 0.5, "silence_peak": 0.001, "high_threshold": 0.7, "tuned": false},
+  "version": "v1-artifact-contract",
+  "note": "HISTORICAL contract reference; runtime reads ONLY pipeline.json.branch_b. Null artifacts mean UNCONFIGURED; SPEAK_CUE disabled.",
+  "unknown_rules": {
+    "min_duration_s": 0.3,
+    "min_voiced_frames": 20,
+    "min_voiced_frac": 0.15,
+    "min_voicing_quality": 0.7,
+    "voiced_conf": 0.5,
+    "silence_peak": 0.001,
+    "high_threshold": 0.7,
+    "tuned": false
+  },
   "standardizer": null,
-  "mlp": null
+  "mlp_path": null,
+  "artifact_schema": {
+    "schema_version": "tonebridge-urgency-v1",
+    "standardizer_format": "JSON: feature_names, class_names [LOW,HIGH], mean[21], scale[21], model_sha256",
+    "onnx": "float z[B,21] -> logits[B,2], matching schema metadata; stable softmax -> P(HIGH)",
+    "cue_policy": "requires both verified artifacts, valid acoustic evidence and tuned=true"
+  }
 }

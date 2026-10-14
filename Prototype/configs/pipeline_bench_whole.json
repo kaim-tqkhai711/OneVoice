@@ -1,0 +1,130 @@
+{
+  "seed": 1234,
+  "sample_rate": 16000,
+  "tts_sample_rate": 22050,
+  "direction": "vi-en",
+  "denoise_mode": "off",
+  "oa_beta": 0.5,
+  "thresholds": {
+    "asr_confidence_min": 0.5,
+    "asr_abstain_floor": 0.2,
+    "voicing_quality_min": 0.7,
+    "urgency_high": 0.7,
+    "min_text_chars": 1,
+    "max_len_ratio": 6.0
+  },
+  "branch_b": {
+    "min_duration_s": 0.3,
+    "min_voiced_frames": 20,
+    "min_voiced_frac": 0.15,
+    "min_voicing_quality": 0.7,
+    "voiced_conf": 0.5,
+    "silence_peak": 0.001,
+    "high_threshold": 0.7,
+    "tuned": false,
+    "mlp_path": null,
+    "standardizer": null
+  },
+  "decode": {
+    "threads": 2,
+    "branch_b_threads": 1,
+    "asr_method": "greedy_search",
+    "asr_active_paths": 4,
+    "asr_encoder": "encoder-epoch-12-avg-8.int8.onnx",
+    "asr_decoder": "decoder-epoch-12-avg-8.int8.onnx",
+    "asr_joiner": "joiner-epoch-12-avg-8.int8.onnx",
+    "nmt_encoder": "encoder_model_quantized.onnx",
+    "nmt_decoder": "decoder_model_merged_quantized.onnx",
+    "max_new_tokens": 48,
+    "num_beams": 1,
+    "length_penalty": 1.0,
+    "glossary_enabled": true,
+    "glossary_groups": [
+      "medication",
+      "unit",
+      "number",
+      "intensity"
+    ],
+    "glossary_bonus": 5.0,
+    "eos_penalty": null,
+    "preferred_only_meds": false,
+    "tts_model": "en_US-ljspeech-medium.onnx",
+    "tts_chunk_s": 0.25,
+    "tts_first_clause": false
+  },
+  "vad": {
+    "min_silence_s": 0.5,
+    "min_speech_s": 0.15,
+    "threshold": 0.5,
+    "pad_s": 0.1
+  },
+  "max_utterance_s": 15.0,
+  "silence_peak": 1e-06,
+  "branch_timeout_s": 10.0,
+  "turn_timeout_s": 30.0,
+  "model_load_timeout_s": 60.0,
+  "asset_manifest": "configs/runtime_files.json",
+  "safety_lexicon": "configs/safety_lexicon_vi_en.json",
+  "models": {
+    "asr_vi": {
+      "name": "zipformer-vi-int8",
+      "version": "2025-04-20",
+      "license": "Apache-2.0",
+      "path": "models/asr/zipformer-vi-int8",
+      "sha256": null
+    },
+    "nmt_vi_en": {
+      "name": "opus-mt-vi-en INT8 arm64",
+      "version": "runtime_files.json",
+      "license": "Apache-2.0",
+      "path": "models/nmt/vi-en-int8-arm64",
+      "sha256": null
+    },
+    "tts_en": {
+      "name": "piper en_US-ljspeech-medium",
+      "version": "runtime_files.json",
+      "license": "LJ Speech PD; phonemizer license unresolved",
+      "path": "models/tts/vits-piper-en_US-ljspeech-medium",
+      "sha256": null
+    },
+    "vad": {
+      "name": "silero-vad",
+      "version": "runtime_files.json",
+      "license": "MIT",
+      "path": "models/silero_vad.onnx",
+      "sha256": null
+    },
+    "swift_f0": {
+      "name": "swift-f0",
+      "version": "0.3.0",
+      "license": "MIT",
+      "path": "models/branch_b/swiftf0_model.onnx",
+      "sha256": null
+    },
+    "band_features": {
+      "name": "tonebridge band features",
+      "version": "v1",
+      "license": "project",
+      "path": "models/branch_b/band_feats.onnx",
+      "sha256": null
+    },
+    "denoise": {
+      "name": "GTCRN",
+      "version": "runtime_files.json",
+      "license": "MIT; weights terms unresolved",
+      "path": "models/denoise/gtcrn_simple.onnx",
+      "sha256": null
+    }
+  },
+  "quality": {
+    "min_vad_ratio": 0.15,
+    "min_rms_dbfs": -45.0,
+    "min_snr_proxy_db": 6.0,
+    "max_clipping_fraction": 0.01,
+    "min_voicing_quality": 0.35,
+    "max_words_per_second": 8.0,
+    "max_repeated_bigram_fraction": 0.6,
+    "calibrated": false,
+    "calibration_id": null
+  }
+}

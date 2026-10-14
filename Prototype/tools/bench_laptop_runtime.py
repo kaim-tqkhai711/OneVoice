@@ -52,8 +52,8 @@ def benchmark(config, manifest, destination, warmup=3, repeats=1):
         values = [r[key] for r in rows if r.get(key) is not None]
         return summarize_latency(values) if values else None
     report = {"direction": cfg.direction, "platform": platform.platform(), "threads_per_model": 2,
-              "config_hash": cfg.config_hash(), "model_load_ms": load_ms, "warmup_turns": warmup,
-              "runtime_manifest_sha256": pipe.manifest_hash,
+              "config_hash": pipe.cfg.config_hash(), "model_load_ms": load_ms, "warmup_turns": warmup,
+              "runtime_manifest_sha256": pipe.manifest_hash, "rss_unit": "MiB",
               "n_turns": len(rows), "n_manifest_entries": len(samples),
               "n_distinct_wavs": len({str((manifest.parent / s['wav']).resolve()) for s in samples}), "repeats": repeats,
               "label": "Repeated-sample runtime stability smoke" if repeats > 1 else "Local WAV runtime benchmark; quality not assessed",

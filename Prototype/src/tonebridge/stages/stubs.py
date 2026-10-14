@@ -68,10 +68,11 @@ class AlwaysPassSafety:
 
 
 class UnknownBranchB:
-    """Stub Branch B (real SwiftF0 + eGeMAPS + MLP: D3)."""
+    """Existing benchmark skeleton: urgency classifier explicitly DISABLED."""
 
     def analyze(self, wav: np.ndarray) -> UrgencyResult:  # [T_seg] -> urgency
-        return UrgencyResult(label="UNKNOWN")
+        return UrgencyResult(label="DISABLED", classifier_status="DISABLED", cue_enabled=False,
+                             reasons=["benchmark_urgency_disabled"])
 
 
 class ToneTts:
@@ -97,5 +98,5 @@ def v0_gate(asr: AsrResult, safety: SafetyReport, urgency: UrgencyResult, text: 
         return GateDecision(action=GateAction.REPEAT, reasons=["asr_confidence_low"], urgency=urgency)
     if not safety.passed:
         return GateDecision(action=GateAction.CONFIRM, reasons=safety.reasons or ["safety_failed"], urgency=urgency)
-    action = GateAction.SPEAK_CUE if urgency.label == "HIGH" else GateAction.SPEAK
+    action = GateAction.SPEAK_CUE if urgency.label == "HIGH" and urgency.cue_enabled and urgency.classifier_status in ("READY", "LEGACY") else GateAction.SPEAK
     return GateDecision(action=action, speak_text=text, urgency=urgency)

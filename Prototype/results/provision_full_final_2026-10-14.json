@@ -1,0 +1,54 @@
+{
+  "mode": "full",
+  "assets_selected": 370,
+  "sources": {
+    "vad": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx",
+    "asr": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-vi-int8-2025-04-20.tar.bz2",
+    "tts": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_US-ljspeech-medium.tar.bz2",
+    "nmt": "https://huggingface.co/Helsinki-NLP/opus-mt-vi-en/tree/c8d2853e77f5fae31124d993e0b35176b1c8914e",
+    "swift_f0": "https://pypi.org/project/swift-f0/0.3.0/",
+    "band_features": "src/tonebridge/branch_b_graph.py",
+    "piper_origin": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/medium",
+    "export_tool": "https://github.com/huggingface/optimum-onnx"
+  },
+  "manifest_sha256": "075b9e87d0a5c1e74294442ca6ba94583573c9ca851518ad9645775e126f91ee",
+  "groups": [
+    {
+      "group": "vad",
+      "verified": 1,
+      "installed": 0
+    },
+    {
+      "group": "asr",
+      "verified": 4,
+      "installed": 0
+    },
+    {
+      "group": "tts",
+      "verified": 357,
+      "installed": 0
+    },
+    {
+      "group": "swift_f0",
+      "verified": 1,
+      "installed": 0
+    },
+    {
+      "group": "band_features",
+      "verified": 1,
+      "installed": 0
+    }
+  ],
+  "ok": false,
+  "nmt_export_hash_seed": "0",
+  "toolchain": {
+    "numpy": "2.3.5",
+    "onnxruntime": "1.22.1",
+    "swift-f0": "0.3.0"
+  },
+  "error": "ProvisionError: integrity mismatch: decoder_model_merged_quantized.onnx; expected bytes=81649685 sha256=ea35145e4b0b6757a9b1bde31c0363423115418fad23c0379cd1d3a9a2d5518d; actual bytes=81649685 sha256=14afbaeb4e4771d7866fd7286bdc759314fa045858027ee13a8b0416f65d3400",
+  "errors": [
+    "missing asset: D:\\bachkhoa\\OneVoice\\OneVoice\\Prototype\\models\\nmt\\vi-en-int8-arm64\\decoder_model_merged_quantized.onnx"
+  ],
+  "assets_verified": 369
+}

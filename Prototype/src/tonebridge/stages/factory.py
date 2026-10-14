@@ -1,95 +1,123 @@
-"""Build guarded runtime stages. real_branch_a is retained only for historical research tools."""
+"""Explicit stage modes, constructed exclusively from the effective config."""
 from __future__ import annotations
 
-from tonebridge.config import PipelineConfig
+from pathlib import Path
+
+from tonebridge.config import Mode, PipelineConfig
 from tonebridge.pipeline import Stages
 from tonebridge.stages import stubs
 
-ASR_DECODER = "decoder-epoch-12-avg-8.int8.onnx"  # locked shipped file (PROGRESS.md, D2)
+
+def capabilities(cfg: PipelineConfig, mode: Mode) -> dict[str, str]:
+    """Describe disabled/experimental stages honestly before model loading."""
+    if mode == "stub":
+        return {"frontend": "passthrough", "vad": "stub: whole clip", "denoiser": "passthrough",
+                "asr": "stub: sidecar or fixed phrase", "nmt": "stub: tag only",
+                "safety": "stub: always pass", "branch_b": "stub: DISABLED (no urgency classifier)", "gate": "stub: v0",
+                "tts": "stub: sine tone"}
+    return {"frontend": "passthrough: APM disabled", "vad": "Silero CPU",
+            "denoiser": "disabled: OFF passthrough" if cfg.denoise_mode == "off" else f"GTCRN CPU ({cfg.denoise_mode})",
+            "asr": "Zipformer VI CPU", "nmt": "Marian VI->EN ORT CPU",
+            "safety": "scoped clinical relations; unsupported syntax blocks" if mode == "full" else "stub: always pass (benchmark only)",
+            "branch_b": ("SwiftF0 + band features; " + ("ONNX classifier configured; " + ("cue threshold tuned" if cfg.branch_b.tuned else "SPEAK_CUE disabled (untuned)")
+                if cfg.branch_b.mlp_path and cfg.branch_b.standardizer else "UNCONFIGURED (MLP not trained); SPEAK_CUE disabled")) if mode == "full" else "stub: DISABLED (benchmark only; cue disabled)",
+            "gate": ("clinical + acoustic quality gate; " + ("explicit calibration" if cfg.quality.calibrated else "uncalibrated: CONFIRM/REPEAT")) if mode == "full" else "stub: v0 (benchmark only)",
+            "tts": "Piper EN CPU; first-clause synthesis" if cfg.decode.tts_first_clause else "Piper EN CPU; whole-utterance synthesis"}
+
+
+def build_stub_stages(cfg: PipelineConfig, transcript: Path | None = None) -> Stages:
+    """Use existing skeleton stages only when the caller explicitly selects stub."""
+    effective = cfg.prepare("stub")
+    if transcript is not None and transcript.is_file():
+        from tonebridge.config import sha256_file
+        effective._resources["stub_transcript"] = {"path": str(transcript.resolve()), "sha256": sha256_file(transcript)}
+    return Stages(frontend=stubs.PassthroughFrontEnd(), vad=stubs.WholeClipVad(effective.sample_rate),
+                  denoiser=stubs.PassthroughDenoiser(), asr=stubs.SidecarAsr(transcript),
+                  nmt=stubs.TagNmt(effective.direction), safety=stubs.AlwaysPassSafety(),
+                  branch_b=stubs.UnknownBranchB(), tts=stubs.ToneTts(effective.tts_sample_rate),
+                  mode="stub", capabilities=capabilities(effective, "stub"), effective_config=effective)
 
 
 def build_denoiser(cfg: PipelineConfig):
     if cfg.denoise_mode == "off":
         return stubs.PassthroughDenoiser()
     from tonebridge.stages.denoise import GtcrnDenoiser, OaDenoiser
-    g = GtcrnDenoiser()
-    return g if cfg.denoise_mode == "on" else OaDenoiser(g, cfg.oa_beta)
+    model = GtcrnDenoiser(model=cfg.model_path("denoise"), threads=cfg.decode.threads)
+    return model if cfg.denoise_mode == "on" else OaDenoiser(model, cfg.oa_beta)
 
 
-GLOSSARY_BONUS = 5.0  # locked on dev, M2 round 1 (results/optim_log.jsonl, tag m2_r1)
-
-
-def real_branch_a(cfg: PipelineConfig, threads: int = 2, glossary: bool = True) -> Stages:
+def build_stages(cfg: PipelineConfig, mode: Mode, transcript: Path | None = None) -> Stages:
+    """Verify all active assets before constructing any native model session."""
+    if mode == "stub":
+        return build_stub_stages(cfg, transcript)
+    effective = cfg.prepare(mode)
     from tonebridge.stages.asr_sherpa import SherpaZipformerVi
     from tonebridge.stages.nmt_ort import OrtMarianNmt
     from tonebridge.stages.tts_piper import PiperEn
     from tonebridge.stages.vad_silero import SileroVad
-    assert cfg.direction == "vi-en", "only vi-en is built (ADR-002)"
-    nmt = OrtMarianNmt(threads=threads)
-    if glossary:
+
+    d, v = effective.decode, effective.vad
+    nmt = OrtMarianNmt(model_dir=effective.model_path("nmt_vi_en"), threads=d.threads,
+                      enc_file=d.nmt_encoder, dec_file=d.nmt_decoder, max_new_tokens=d.max_new_tokens,
+                      num_beams=d.num_beams, length_penalty=d.length_penalty)
+    # The central manifest has authenticated every model byte before this load;
+    # a separate laptop asset_manifest.json is not a second trust requirement.
+    nmt.provenance_issues = []
+    nmt.model_id = effective.models["nmt_vi_en"].name
+    nmt.revision = effective.models["nmt_vi_en"].version
+    if d.glossary_enabled:
         from tonebridge.nmt_constraints import GlossaryConstrainer
-        nmt.constrainer, nmt.constraint_bonus = GlossaryConstrainer(), GLOSSARY_BONUS
-    return Stages(frontend=stubs.PassthroughFrontEnd(), vad=SileroVad(sample_rate=cfg.sample_rate), denoiser=build_denoiser(cfg),
-                  asr=SherpaZipformerVi(decoder=ASR_DECODER, threads=threads), nmt=nmt,
-                  safety=stubs.AlwaysPassSafety(), branch_b=stubs.UnknownBranchB(), tts=PiperEn(threads=threads))
-
-
-def real_full(cfg: PipelineConfig, threads: int = 2) -> Stages:
-    """Guarded audio + registered text stages. Urgency is optional and remains UNKNOWN without a trained MLP."""
-    from tonebridge.gate import Gate, GateConfig
-    from tonebridge.stages.audio_factory import ROOT, build_asr, build_tts
-    from tonebridge.stages.vad_silero import SileroVad
-    nmt, safety = build_text_stages(cfg, threads)
-    branch_b = stubs.UnknownBranchB()
-    if cfg.urgency_enabled:
+        nmt.constrainer = GlossaryConstrainer(groups=d.glossary_groups, preferred_only_meds=d.preferred_only_meds,
+                                             lexicon=effective._lexicon_data)
+        nmt.constraint_bonus, nmt.eos_penalty = d.glossary_bonus, d.eos_penalty
+    tts = PiperEn(model_dir=effective.model_path("tts_en"), threads=d.threads,
+                  chunk_s=d.tts_chunk_s, model_file=d.tts_model, first_clause=d.tts_first_clause)
+    if tts.sample_rate != effective.tts_sample_rate:
+        raise ValueError("tts_sample_rate does not match the selected voice")
+    stages = Stages(
+        frontend=stubs.PassthroughFrontEnd(),
+        vad=SileroVad(model=effective.model_path("vad"), sample_rate=effective.sample_rate,
+                      min_silence_s=v.min_silence_s, min_speech_s=v.min_speech_s, threshold=v.threshold, pad_s=v.pad_s),
+        denoiser=build_denoiser(effective),
+        asr=SherpaZipformerVi(model_dir=effective.model_path("asr_vi"), decoder=d.asr_decoder,
+                             encoder=d.asr_encoder, joiner=d.asr_joiner, threads=d.threads,
+                             decoding_method=d.asr_method, num_active_paths=d.asr_active_paths),
+        nmt=nmt, safety=stubs.AlwaysPassSafety(), branch_b=stubs.UnknownBranchB(), tts=tts,
+        mode=mode, capabilities=capabilities(effective, mode), effective_config=effective)
+    if mode == "full":
         from tonebridge.branch_b import BranchB
-        branch_b = BranchB(threads=1)
-    return Stages(frontend=stubs.PassthroughFrontEnd(), vad=SileroVad(model=ROOT / "models/silero_vad.onnx"),
-                  denoiser=build_denoiser(cfg), asr=build_asr(cfg, threads), nmt=nmt, safety=safety,
-                  branch_b=branch_b, tts=build_tts(cfg, threads),
-                  gate=Gate(GateConfig(asr_confidence_min=cfg.thresholds.asr_confidence_min,
-                                       urgency_high=cfg.thresholds.urgency_high,
-                                       voicing_quality_min=cfg.thresholds.voicing_quality_min)))
+        from tonebridge.gate import Gate
+        from tonebridge.safety import SemanticSafetyChecker
+        stages.safety = SemanticSafetyChecker(lexicon=effective._lexicon_data)
+        stages.branch_b = BranchB(cfg=effective.branch_b, threads=d.branch_b_threads,
+                                  band_model=effective.model_path("band_features"),
+                                  swiftf0_model=effective.model_path("swift_f0"), root=effective.root)
+        stages.gate = Gate(effective.thresholds)
+    return stages
+
+
+def _overrides(cfg: PipelineConfig, threads: int | None, glossary: bool | None = None) -> PipelineConfig:
+    """Retain programmatic benchmark entry points while hashing their overrides."""
+    out = cfg.model_copy(deep=True)
+    if threads is not None:
+        out.decode.threads = threads
+    if glossary is not None:
+        out.decode.glossary_enabled = glossary
+    return out
+
+
+def real_branch_a(cfg: PipelineConfig, threads: int | None = None, glossary: bool | None = None) -> Stages:
+    return build_stages(_overrides(cfg, threads, glossary), "branch-a-bench")
+
+
+def real_full(cfg: PipelineConfig, threads: int | None = None) -> Stages:
+    if cfg.audio_config is not None:
+        from tonebridge.stages.laptop_factory import real_full as laptop_full
+        return laptop_full(cfg, threads or cfg.decode.threads)
+    return build_stages(_overrides(cfg, threads), "full")
 
 
 def build_text_stages(cfg: PipelineConfig, threads: int = 2):
-    """Friend-owned handoff: module:function(cfg, threads) -> (Nmt, SafetyChecker)."""
-    if cfg.text_factory:
-        from importlib import import_module
-        module, separator, name = cfg.text_factory.partition(":")
-        if not separator:
-            raise ValueError("text_factory must be module:function")
-        nmt, safety = getattr(import_module(module), name)(cfg, threads)
-        if not callable(getattr(nmt, "translate", None)) or not callable(getattr(safety, "check", None)):
-            raise TypeError("text_factory must return (Nmt, SafetyChecker)")
-        return nmt, safety
-    from tonebridge.clinical_safety import ClinicalSafetyChecker
-    source, target = cfg.direction.split("-")
-    if cfg.direction != "vi-en":
-        import json
-        from pathlib import Path
-        from tonebridge.stages.audio_factory import ROOT
-        registry_path = Path(cfg.nmt_config)
-        if not registry_path.is_absolute():
-            registry_path = ROOT / registry_path
-        registry = json.loads(registry_path.read_text(encoding="utf-8"))
-        spec = registry["models"].get(cfg.direction)
-        if spec is None:
-            raise ValueError(f"NMT/safety for {cfg.direction} not registered")
-        if spec.get("status", "").startswith("quarantined"):
-            raise ValueError("nmt_quarantined:" + cfg.direction)
-        assets = Path(spec["assets"])
-        if not assets.is_absolute():
-            assets = ROOT / assets
-        if spec.get("backend") == "argos":
-            from tonebridge.stages.nmt_argos import ArgosEnKoNmt
-            return ArgosEnKoNmt(assets, threads=threads, format_asr_source=cfg.format_asr_source), ClinicalSafetyChecker(source, target)
-        from tonebridge.stages.nmt_marian import MarianTextAdapter
-        return MarianTextAdapter(assets, source, target, threads=threads,
-                                 allow_partial_vocabulary=spec.get("allow_partial_vocabulary", False),
-                                 format_asr_source=cfg.format_asr_source), ClinicalSafetyChecker(source, target)
-    from tonebridge.stages.nmt_ort import OrtMarianNmt
-    from tonebridge.nmt_constraints import GlossaryConstrainer
-    nmt = OrtMarianNmt(threads=threads)
-    nmt.constrainer, nmt.constraint_bonus = GlossaryConstrainer(), GLOSSARY_BONUS
-    return nmt, ClinicalSafetyChecker(source, target)
+    """Preserve the upstream registered, guarded text-adapter handoff."""
+    from tonebridge.stages.laptop_factory import build_text_stages as registered
+    return registered(cfg, threads)

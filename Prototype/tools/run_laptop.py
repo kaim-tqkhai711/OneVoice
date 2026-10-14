@@ -25,6 +25,24 @@ def worker_error(arguments, stage, error_type, **extra):
 
 
 def supervise(arguments, timeout):
+    arguments = list(arguments)
+    # Legacy wrapper flags are explicit requests, translated to the mandatory
+    # CLI modes. A wrapper with no legacy flag requests guarded full, never stub.
+    selected = [f for f in ("--stub", "--full", "--real") if f in arguments]
+    if len(selected) > 1 or (selected and "--mode" in arguments):
+        raise ValueError("conflicting explicit modes")
+    if selected:
+        arguments.remove(selected[0])
+        arguments += ["--mode", "stub" if selected[0] == "--stub" else "full"]
+    elif "--mode" not in arguments:
+        arguments += ["--mode", "full"]
+    if "--log-content" in arguments:
+        arguments[arguments.index("--log-content")] = "--eval-mode"
+    if "--config" not in arguments:
+        direction = arguments[arguments.index("--direction") + 1] if "--direction" in arguments else "vi-en"
+        if direction not in ("vi-en", "en-vi", "en-ko", "ko-en"):
+            raise ValueError("unsupported_direction")
+        arguments += ["--config", str(ROOT / "configs" / ("laptop_" + direction + ".json"))]
     env = {**os.environ, "PYTHONPATH": str(ROOT / "src") + os.pathsep + os.environ.get("PYTHONPATH", ""), "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
     try:
         result = subprocess.run([sys.executable, "-X", "utf8", "-m", "tonebridge.cli", *arguments], env=env, timeout=timeout)

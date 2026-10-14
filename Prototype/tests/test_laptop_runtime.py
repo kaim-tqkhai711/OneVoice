@@ -67,7 +67,10 @@ def test_invalid_turn_does_not_call_models(audio, reason):
     stages = build_stub_stages(cfg, None)
     stages.asr.transcribe = lambda *args: pytest.fail("ASR must not run")
     result = Pipeline(cfg, stages).run(audio, "rejected")
-    assert result.record.gate.action == GateAction.REPEAT
+    # Empty/overlong buffers are malformed input under Milestone A's stricter
+    # boundary. Silence remains a legitimate REPEAT; all cases still skip ASR.
+    expected = GateAction.ABSTAIN if not audio.size or audio.size > 15 * 16000 else GateAction.REPEAT
+    assert result.record.gate.action == expected
     assert reason in result.record.gate.reasons and not result.out_wav.size
 
 
@@ -112,7 +115,7 @@ def test_audio_encodings_downmix_and_resample(tmp_path, dtype, sr):
         data = x.astype(dtype)
     path = tmp_path / "stereo.wav"
     wavfile.write(path, sr, np.stack([data, data], axis=1))
-    audio = load_wav(path)
+    audio = load_wav(path, convert=True)
     assert audio.shape == (16000,) and audio.dtype == np.float32
     assert 0.18 < np.max(audio) < 0.22
 

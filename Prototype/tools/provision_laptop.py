@@ -79,7 +79,7 @@ def provision(groups):
     if "baseline" in groups:
         # Same checkpoint family, a public ONNX export. These are not the old audit's exact NMT artifacts.
         repo, revision = "Xenova/opus-mt-vi-en", "541dfd72ec07e8f1563795e0224408ad8d729e80"
-        dest = MODELS / "nmt/vi-en-int8-arm64"
+        dest = MODELS / "nmt-laptop/vi-en"
         for file in ("config.json", "source.spm", "target.spm", "vocab.json", "README.md"):
             hf(repo, revision, file, dest / file)
         for file in ("encoder_model_quantized.onnx", "decoder_model_merged_quantized.onnx"):

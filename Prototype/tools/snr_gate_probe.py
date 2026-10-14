@@ -18,14 +18,12 @@ from tonebridge.evalkit.noisegen import make_babble
 from tonebridge.evalkit.textnorm import normalize_vi
 from tonebridge.stages.asr_sherpa import SherpaZipformerVi
 from tonebridge.stages.vad_silero import SileroVad
+from tonebridge.quality_gate import acoustic_evidence
 
 
 def blind_snr_db(x: np.ndarray, sr: int = 16000) -> float:
-    n = int(0.02 * sr)
-    f = x[: len(x) // n * n].reshape(-1, n).astype(np.float64)
-    e = np.sort((f ** 2).mean(1)) + 1e-12
-    k = len(e)
-    return float(10 * np.log10(e[int(0.7 * k):].mean() / e[: max(int(0.2 * k), 1)].mean()))
+    """Use exactly the runtime proxy, including short/empty input policy."""
+    return acoustic_evidence(x, sr).snr_proxy_db
 
 
 def auc(score_bad: np.ndarray, score_ok: np.ndarray) -> float:

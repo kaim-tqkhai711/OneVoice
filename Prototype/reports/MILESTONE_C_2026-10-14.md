@@ -2,7 +2,7 @@
 
 Ngày nghiệm thu: **14/10/2026**. Cơ sở: audit Tech Lead, Milestone A và Milestone B cùng ngày.
 
-**Kết luận cập nhật sau provisioning:** đã triển khai urgency artifact loader, cue disable minh bạch, first-clause synthesis/delivery, benchmark E2E cold/warm với RSS nhị phân, fail-fast batch/checkpoint và provisioner xác thực asset. Suite cuối đạt **336 passed, 6 skipped**, giữ toàn bộ 309 tests trước provisioning. Đã có **369/370 assets full**, **367/368 assets branch-a-bench** khớp size/SHA-256. **Chưa nghiệm thu E2E inference/TTS thật**: còn merged decoder NMT không tái tạo được đúng hash gốc; các candidate sai hash đã bị xóa. Preflight cả hai mode exit 1 với đúng một missing asset. Benchmark thật yêu cầu 100 turns nhưng thực đo 0, không có latency/RSS để công bố. Chi tiết cập nhật ở Mục 8; số stub và checkpoint ban đầu trong Mục 4/6 được giữ như lịch sử.
+**Kết luận cập nhật ngày 15/10/2026:** decoder NMT gốc đã khớp pin; preflight **368/368 branch-a-bench**, **370/370 full**, cả hai exit **0**, không thay manifest. Suite hợp nhất đạt **466 passed, 9 skipped**, exit **0**. Hai lượt benchmark model thật first-clause/whole-utterance đều **COMPLETE, 100/100 turns có audio**. Warm first-buffer p50/p95 lần lượt **234.44/389.21 ms** và **240.16/413.80 ms**; process-tree peak RSS **907.01/868.43 MiB**. Ba câu dịch trong diagnostic riêng đều chỉ có một mệnh đề: chênh lệch quan sát **chưa chứng minh lợi ích clause streaming**. Mục 10 ghi toàn bộ nghiệm thu; Mục 4/6/8 giữ checkpoint lịch sử. Benchmark Branch A dùng safety/gate benchmark và Branch B DISABLED, không thay thế nghiệm thu full clinical safety, urgency hoặc audible playback.
 
 ## 1. Diff logic so với Milestone B
 
@@ -154,10 +154,12 @@ Virtualenv sạch của A/B: `.venv/clean`, không dùng system-site-packages.
 - [x] ≥100-turn stub cold/warm E2E + actual process-tree RSS, đơn vị MiB/GiB.
 - [x] PID/exit-code supervision, atomic completion và fingerprinted resume/fault tests.
 - [x] Giữ 251 test B; full suite/dependency checks.
-- [x] Provisioner nguồn chính thức, size/SHA-256 bắt buộc, cleanup/fail-fast; 369/370 full assets hợp lệ (Mục 8).
+- [x] Provisioner nguồn chính thức, size/SHA-256 bắt buộc, cleanup/fail-fast; 370/370 full assets hợp lệ sau phục hồi decoder gốc (Mục 10).
 - [x] Chuẩn bị ba speech WAV thật mono 16 kHz, ≤15 s, kèm source/hash provenance.
-- [ ] Cả hai preflight exit 0: còn một merged decoder NMT chưa khớp pin gốc.
-- [ ] ≥100-turn **branch-a-bench model thật**, full resident-stage RSS và so sánh first-clause vs whole-utterance trên cùng inputs.
+- [x] Cả hai preflight exit 0: 368/368 bench và 370/370 full (15/10/2026).
+- [x] Hai lượt 100-turn **branch-a-bench model thật**, process-tree RSS và so sánh first-clause vs whole-utterance trên cùng inputs (Mục 10).
+- [ ] Đo RSS/latency full với Branch B và clinical/quality gate thực; benchmark Branch A không bao gồm các stage này.
+- [ ] Chứng minh lợi ích clause streaming trên speech nhiều mệnh đề; ba inputs hiện tại chỉ có một mệnh đề trong diagnostic riêng.
 - [ ] Đo audible onset qua output device/loopback.
 - [ ] Real recordings/urgency weights, speaker-disjoint evaluation và calibration quality/cue trước khi bật automatic clinical output.
 
@@ -170,7 +172,7 @@ Sau khi provision đúng packs và speech WAV 16-kHz mono (≤15 s), dùng fresh
 .venv/clean/Scripts/python.exe tools/bench_e2e.py --mode full --wav speech1.wav speech2.wav --turns 100 --out results/bench_full_fresh.json
 ```
 
-Full default có thể CONFIRM/REPEAT tất cả turns do quality chưa calibration; tool báo TTS coverage và first-audio sample count thực (0 nếu bị chặn). Không bật calibration/tuning để ép benchmark có SPEAK. Milestone C hoàn tất implementation/control-flow regression; **sign-off Alpha inference thực còn bị chặn bởi missing artifacts/data**.
+Full default có thể CONFIRM/REPEAT tất cả turns do quality chưa calibration; tool báo TTS coverage và first-audio sample count thực (0 nếu bị chặn). Không bật calibration/tuning để ép benchmark có SPEAK. Milestone C hoàn tất implementation/control-flow regression; **sign-off Branch A inference thực đã đạt ngày 15/10/2026 (Mục 10)**. Full clinical/urgency calibration và audible onset còn cần nghiệm thu.
 
 ## 8. Cập nhật provision và nghiệm thu Alpha — 14/10/2026
 
@@ -278,4 +280,109 @@ Cần đúng **một binary gốc** khớp hash `ea35145e…`, hoặc đầy đ�
 
 ## 9. Đồng bộ GitHub main
 
-Các kết quả 336/6 ở Mục 8 thuộc checkpoint trước đồng bộ. Đã giữ các thay đổi A–C cùng runtime bốn hướng của upstream; xem [MAIN_SYNC_2026-10-14.md](MAIN_SYNC_2026-10-14.md) cho giải quyết xung đột, nghiệm thu suite hợp nhất và trạng thái push. Blocker binary NMT historical vẫn giữ nguyên.
+Các kết quả 336/6 ở Mục 8 thuộc checkpoint trước đồng bộ. Đã giữ các thay đổi A–C cùng runtime bốn hướng của upstream; xem [MAIN_SYNC_2026-10-14.md](MAIN_SYNC_2026-10-14.md) cho giải quyết xung đột, nghiệm thu suite hợp nhất và trạng thái push. Blocker binary NMT còn tồn tại tại checkpoint Git này, sau đó được giải quyết bằng binary gốc vào 15/10/2026 (Mục 10).
+
+## 10. Nghiệm thu Branch A model thật — 15/10/2026
+
+### Asset integrity và môi trường
+
+Binary người dùng phục hồi tại `models/nmt/vi-en-int8-arm64/decoder_model_merged_quantized.onnx` có **81,649,685 bytes**, SHA-256 **`ea35145e4b0b6757a9b1bde31c0363423115418fad23c0379cd1d3a9a2d5518d`**, đúng pin gốc. Không quantize lại, không đổi hashes, decode settings hay ngưỡng gate để ép PASS. SHA-256 `configs/runtime_files.json` vẫn là `075b9e87d0a5c1e74294442ca6ba94583573c9ca851518ad9645775e126f91ee`.
+
+| Kiểm tra | Kết quả | Exit / bằng chứng |
+|---|---|---|
+| Preflight branch-a-bench | **368/368**, errors=[] | **0**, [JSON](../results/preflight_branch_a_verified_2026-10-15.json), config `ad0de63e9d6ae76e` |
+| Preflight full | **370/370**, errors=[] | **0**, [JSON](../results/preflight_full_verified_2026-10-15.json), config `1bb18d73cf09ff17` |
+| Test suite hợp nhất | **466 passed, 9 skipped, 1 warning**, **92.91 s** | **0**, giữ số pass sau main sync và vượt yêu cầu ≥336 |
+| `pip check` | No broken requirements found | **0** |
+
+Virtualenv `.venv/clean`, **Python 3.13.9**, runtime **ORT 1.22.1**, NumPy **2.3.5**, sherpa-onnx **1.13.8**. Hardware do benchmark ghi nhận: Windows AMD64, `Intel64 Family 6 Model 165 Stepping 3, GenuineIntel`, **12 logical CPUs**, RAM **23.899 GiB**.
+
+Lệnh tests nghiệm thu:
+
+```powershell
+$env:PYTHONUTF8='1'
+.venv/clean/Scripts/python.exe -m pytest tests/ -q -rs -p no:cacheprovider --basetemp .venv/test-alpha-verified-2026-10-15
+```
+
+Lượt chạy đầu trong sandbox với lệnh không có `--basetemp` chưa đạt: **138 setup errors** do pytest không tạo được thư mục tạm mặc định và một lỗi `GetExtendedTcpTable` do Windows hạn chế truy vấn socket. Lượt nghiệm thu chạy ngoài sandbox, dùng thư mục tạm trong project; **không sửa source/test, không skip thêm hoặc nới assertion**. Raw output giữ tại `.venv/alpha-tests-2026-10-15.txt` (ignored).
+
+Chín skips: golden/FLEURS (1), pretrained EN→VI/EN→KO packs riêng (2), GTCRN/frontend (1), noise corpus (1), offline integrations (3), real Branch A integration (1). Bốn cases cuối kiểm WAV ở `models/asr/zipformer-vi-int8/test_wavs/`, trong khi WAV nghiệm thu có ở `results/inputs/`; skip reason legacy là “models not present/downloaded”, **không có nghĩa 370 assets manifest còn thiếu**. Không copy dữ liệu để thay skip thành PASS. Benchmark bên dưới thực thi inference trên WAVs hợp lệ ở đúng vị trí người dùng yêu cầu. Warning duy nhất từ Transformers về generation config của tiny fixture, không phải inference failure.
+
+### Protocol và phạm vi đo
+
+Chạy đúng hai lệnh trong [runbook](../docs/MODEL_PROVISIONING.md), **first-clause trước, whole-utterance sau**, tuần tự sau khi pytest kết thúc. Mỗi lượt spawn worker riêng và giữ sessions/stages qua **100 turns**. Turn index 0 là cold inference; **99 warm turns** không cộng startup. Cold load là một lần factory xác thực/load, startup cộng spawn/import trước khi worker ready; **không phải phép đo cold disk cache**, vì preflight/tests/lượt trước có thể đã làm ấm OS cache. Không đo p95 cold từ n=1.
+
+Hai config JSON đã được đối chiếu: **chỉ khác `decode.tts_first_clause`**. Ba input buffers có SHA-256 giống nhau giữa hai benchmark; file hashes khớp [provenance](../results/inputs/provenance.json). Input mono **16 kHz**, dài **3.74 / 2.40 / 1.55 s**, không resample hoặc thay bằng tone. Round-robin tương ứng **34 / 33 / 33 turns**, warm mỗi file **33 turns**. Đây là ba public speech samples lặp lại, không phải 100 ca y khoa độc lập.
+
+Trong **branch-a-bench**, Silero/Zipformer/Marian/Piper là models thật; frontend/denoiser passthrough, **safety always-pass, gate v0, Branch B DISABLED** theo capability đã công bố. RSS bên dưới là pipeline worker thực của mode này cùng parent, **không phải RSS full gồm SwiftF0/band/clinical gate**. Không bật full calibration/tuning hoặc ép clinical gate SPEAK.
+
+| Coverage | First-clause | Whole-utterance |
+|---|---:|---:|
+| Status / exit | **COMPLETE / 0** | **COMPLETE / 0** |
+| Requested / processed / successful / audio | **100 / 100 / 100 / 100** | **100 / 100 / 100 / 100** |
+| Gate SPEAK / warm samples | **100 / 99** | **100 / 99** |
+| Config hash | `ad0de63e9d6ae76e` | `d60d2c38a9c85a98` |
+
+Artifacts: [first-clause](../results/bench_real_branch_a_verified.json), [whole-utterance](../results/bench_real_branch_a_whole_verified.json), [comparison + clause coverage](../results/bench_real_branch_a_comparison_verified.json). Rows được kiểm tra không chứa `asr_text`, `nmt_text`, `speak_text`; chỉ metadata. Native output được worker suppression theo runtime hiện có.
+
+### Cold — n=1 mỗi lượt
+
+| Metric (ms) | First-clause | Whole-utterance |
+|---|---:|---:|
+| Factory verification/model load | **5993.17** | **5237.01** |
+| Spawn/import/factory ready | **7069.62** | **6311.87** |
+| First turn processing, không gồm startup | **501.82** | **463.14** |
+| First turn endpoint→first-buffer readiness | **474.08** | **432.93** |
+| Từ trước spawn→parent nhận first-buffer event | **7546.42** | **6747.79** |
+| Từ trước spawn→parent nhận completed turn | **7578.41** | **6778.05** |
+
+Cold startup/load của first-clause cao hơn trong cặp đo này; chưa thể quy khác biệt cho TTS mode hoặc suy ra phân phối cold từ một observation.
+
+### Warm — n=99 mỗi lượt
+
+| Metric (ms) | First-clause min / p50 / p95 / max | Whole-utterance min / p50 / p95 / max |
+|---|---|---|
+| Endpoint→first-buffer readiness | **181.58 / 234.44 / 389.21 / 399.87** | **182.54 / 240.16 / 413.80 / 611.24** |
+| Endpoint→callback submission complete | **184.28 / 237.49 / 391.98 / 402.56** | **185.17 / 244.30 / 417.23 / 614.02** |
+| Turn completion | **198.93 / 253.74 / 419.91 / 429.21** | **199.46 / 259.66 / 441.36 / 647.67** |
+
+RTF warm p50/p95: **0.1092 / 0.1427** first-clause, **0.1132 / 0.1650** whole-utterance, tính trên input duration. Readiness là buffer TTS đầu đã sẵn sàng, callback là thông báo IPC; **không phải audible onset qua loa**. `audible_playback_ms=null` ở cả hai artifacts.
+
+### RSS thực và đơn vị
+
+| Metric | First-clause | Whole-utterance |
+|---|---:|---:|
+| Process-tree resident sum peak (bytes) | **951,070,720** | **910,610,432** |
+| Process-tree peak (MiB) | **907.0117** | **868.4258** |
+| Process-tree peak (GiB) | **0.885754** | **0.848072** |
+| Warm worker RSS p50 / p95 (MiB) | **757.7578 / 781.8984** | **742.6484 / 742.7734** |
+| RSS snapshots, requested interval 10 ms | **1314** | **1326** |
+
+`MiB=bytes/2^20`, `GiB=bytes/2^30`. Process-tree là sampled parent + descendants tại từng thời điểm; shared resident pages có thể được đếm ở nhiều process và sampling có thể bỏ lỡ peak ngắn. Chênh RSS giữa hai process/run chưa chứng minh streaming giảm bộ nhớ; ở cặp đo này first-clause dùng peak cao hơn **38.5859 MiB**.
+
+### So sánh và giới hạn kết luận
+
+Công thức mức giảm quan sát: `(whole - first) / whole × 100%`, tính từ unrounded JSON:
+
+| Warm metric | Chênh p50 | Chênh p95 |
+|---|---:|---:|
+| First-buffer readiness | **5.72 ms (2.38%)** thấp hơn | **24.59 ms (5.94%)** thấp hơn |
+| Turn completion | **5.92 ms (2.28%)** thấp hơn | **21.45 ms (4.86%)** thấp hơn |
+
+Diagnostic riêng sau hai benchmark chạy lại ba inputs qua pipeline thật và đếm `split_clauses()` trên bản dịch trong memory, không ghi text: **cả ba đều 1 clause; 0/3 inputs có remainder**. Diagnostic không nằm trong 200 turns đo latency, không giả định waveform tái tổng hợp byte-identical. Vì không có nhiều mệnh đề, tập này **không kích hoạt lợi ích synth clause đầu trước phần còn lại**; các mức giảm trên chỉ là chênh lệch quan sát, có thể do cache, scheduler, native synthesis variability và thứ tự chạy. Không công bố causal speedup của first-clause từ bộ này.
+
+Để nghiệm thu lợi ích first-clause cần thêm speech nhiều mệnh đề, ghi actual split coverage trong lượt đo, chạy nhiều cặp với thứ tự luân phiên và đo audible onset qua loopback nếu cần. Các dữ liệu này chưa được tạo hoặc thay vào tập người dùng chỉ định.
+
+### Checklist cập nhật
+
+- [x] Decoder gốc đúng size/SHA-256; manifest không đổi.
+- [x] Preflight branch-a-bench 368/368 và full 370/370, exit 0.
+- [x] Suite hợp nhất 466 passed / 9 skipped, không hồi quy; pip check PASS.
+- [x] Hai lượt 100-turn real Branch A COMPLETE, 100% TTS coverage trên cùng inputs.
+- [x] Cold load/startup, warm p50/p95/min/max, actual process-tree RSS MiB/GiB và comparison artifacts.
+- [x] Xác thực file/input hashes, config chỉ khác first-clause flag và metadata-only artifacts.
+- [ ] Chứng minh streaming benefit trên inputs có nhiều mệnh đề; bộ hiện tại không đủ coverage.
+- [ ] Full clinical/quality/urgency nghiệm thu và calibration; không suy ra từ bench gate.
+- [ ] Audible playback onset/device validation.
+
+**Kết luận:** blocker artifact gốc đã được giải quyết, real VI→EN Branch A latency benchmark đã nghiệm thu. Full production/clinical readiness, urgency accuracy và lợi ích streaming trên câu nhiều mệnh đề vẫn cần bằng chứng riêng. Lần nghiệm thu này chỉ thêm artifacts/tài liệu; không sửa runtime/source/config/test và không commit/push model files.

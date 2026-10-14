@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-15",
+  "inputs_identical": true,
+  "config_only_difference": "decode.tts_first_clause",
+  "config_hash_first": "ad0de63e9d6ae76e",
+  "config_hash_whole": "d60d2c38a9c85a98",
+  "input_clause_coverage": [
+    {
+      "input_index": 0,
+      "file_sha256": "8df4b0109649125ea0c8415bd10a23ad3dc9aa393432021c815a0bafba04cfd7",
+      "duration_s": 3.74,
+      "clause_count": 1,
+      "diagnostic_output_samples": 59392,
+      "first_clause_split": false,
+      "measured_turns": 34,
+      "warm_turns": 33
+    },
+    {
+      "input_index": 1,
+      "file_sha256": "6d3a8d713f59b821f32c889d24e66368e7f684d7e143bb49532fd2b59d9c6437",
+      "duration_s": 2.4,
+      "clause_count": 1,
+      "diagnostic_output_samples": 35072,
+      "first_clause_split": false,
+      "measured_turns": 33,
+      "warm_turns": 33
+    },
+    {
+      "input_index": 2,
+      "file_sha256": "8e6821f71b608ec9fa947571af7f631cad1f9d45b22287e22e70e7411c62b802",
+      "duration_s": 1.55,
+      "clause_count": 1,
+      "diagnostic_output_samples": 40192,
+      "first_clause_split": false,
+      "measured_turns": 33,
+      "warm_turns": 33
+    }
+  ],
+  "clause_diagnostic_separate_from_measured_runs": true,
+  "multi_clause_inputs": 0,
+  "comparisons": {
+    "endpoint_to_first_audio_ms": {
+      "p50": {
+        "first_clause_ms": 234.43950000000768,
+        "whole_utterance_ms": 240.1588000011543,
+        "observed_reduction_ms": 5.719300001146621,
+        "observed_reduction_percent": 2.3814659305089516
+      },
+      "p95": {
+        "first_clause_ms": 389.21144000069035,
+        "whole_utterance_ms": 413.8033600011112,
+        "observed_reduction_ms": 24.591920000420828,
+        "observed_reduction_percent": 5.942900028737029
+      }
+    },
+    "total_ms": {
+      "p50": {
+        "first_clause_ms": 253.73659999968368,
+        "whole_utterance_ms": 259.65879999967,
+        "observed_reduction_ms": 5.922199999986333,
+        "observed_reduction_percent": 2.280762292667862
+      },
+      "p95": {
+        "first_clause_ms": 419.9126100003923,
+        "whole_utterance_ms": 441.35882000009576,
+        "observed_reduction_ms": 21.446209999703456,
+        "observed_reduction_percent": 4.8591325306921025
+      }
+    }
+  },
+  "interpretation": "Single sequential pair; differences are observed, not causal proof of clause-streaming speedup. No audible playback measured.",
+  "benchmark_artifact_sha256": {
+    "bench_real_branch_a_verified.json": "e563c07313b83da9f581f304a3f53d32e04005e318cec3eb5f1c2d9505277f3f",
+    "bench_real_branch_a_whole_verified.json": "dcb7461dda4513c13a44658c15052907ccb8d492e25e6e562d685ca78eac791e"
+  },
+  "runtime_manifest_sha256": "075b9e87d0a5c1e74294442ca6ba94583573c9ca851518ad9645775e126f91ee"
+}

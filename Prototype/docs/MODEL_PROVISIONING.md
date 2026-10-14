@@ -4,6 +4,14 @@ Run from `Prototype/` in a virtualenv installed from `requirements-bench.txt`.
 Inference uses `requirements-runtime.txt`; export tooling is not imported by
 the runtime. `models/` stays ignored by Git.
 
+**Verified 15 October 2026:** the original merged decoder is installed and
+matches the existing pin. Both preflights exit 0 (**368/368** bench,
+**370/370** full). Both requested real Branch A benchmarks completed
+**100/100 audio turns**; the regression suite is **466 passed, 9 skipped**.
+See [Milestone C, section 10](../reports/MILESTONE_C_2026-10-14.md#10-nghiệm-thu-branch-a-model-thật--15102026)
+for measured cold/warm latency, process-tree RSS and limitations. No manifest
+hash was changed. The older blocker description below is historical.
+
 ```powershell
 .venv/clean/Scripts/python.exe tools/provision_models.py --mode branch-a-bench --out results/provision_branch_a.json
 .venv/clean/Scripts/python.exe tools/provision_models.py --mode full --out results/provision_full.json
@@ -47,7 +55,7 @@ errors roll back newly installed members. NMT tokenizer/config/encoder are an
 independent verified subgroup. A missing decoder still prevents both preflights
 and the factory from opening any inference session. No stub fallback is used.
 
-## Current merged-decoder blocker (14 October 2026)
+## Historical merged-decoder blocker (14 October 2026; resolved 15 October)
 
 The public source revision and quantization recipe reproduce **369/370 full
 assets** (**367/368 branch-a-bench**). The reconstructed merged decoder has the
@@ -87,7 +95,7 @@ manifest to make an unverified candidate pass preflight.
 tooling directory during reconstruction experiments; it never changes the
 runtime ORT dependency. It cannot substitute for the missing original graph.
 
-## Benchmark inputs and pending execution
+## Benchmark inputs and verified execution
 
 Three original ASR test WAVs are saved in `results/inputs/`; their immutable
 URLs, SHA-256, mono/16-kHz validation and durations (3.74/2.40/1.55 seconds) are
@@ -95,8 +103,10 @@ in `provenance.json`. They are public speech samples, not synthetic stub tones
 or a clinical accuracy corpus. `configs/pipeline_bench_whole.json` differs from
 the runtime config only in `decode.tts_first_clause=false`.
 
-After both preflights pass, choose fresh paths (the current benchmark files are
-blocked diagnostic records, and the tool refuses to overwrite them):
+The following two commands completed successfully on 15 October 2026. Their
+result paths now exist: for a new run, choose fresh paths because the tool
+refuses to overwrite evidence. Older `bench_real_branch_a.json` and
+`bench_real_branch_a_whole.json` remain blocked historical diagnostics.
 
 ```powershell
 .venv/clean/Scripts/python.exe tools/bench_e2e.py --mode branch-a-bench --wav results/inputs/zipformer_vi_0.wav results/inputs/zipformer_vi_1.wav results/inputs/zipformer_vi_2.wav --turns 100 --out results/bench_real_branch_a_verified.json
@@ -109,3 +119,11 @@ cannot demonstrate a first-clause speedup. First buffer is readiness, not
 physical audible onset. Repeat these public samples for latency/coverage only;
 100 repeated turns are not 100 independent clinical examples. Full mode retains
 uncalibrated quality checks and UNCONFIGURED urgency, without forced SPEAK.
+
+The verified pair observed warm first-buffer p50/p95 **234.44/389.21 ms** versus
+**240.16/413.80 ms**, and resident process-tree peaks **907.01/868.43 MiB**.
+Separate metadata-only diagnostics found **0/3 multi-clause inputs**; the
+observed latency differences do not establish a clause-streaming speedup.
+Artifacts: [first-clause](../results/bench_real_branch_a_verified.json),
+[whole-utterance](../results/bench_real_branch_a_whole_verified.json),
+[comparison/coverage](../results/bench_real_branch_a_comparison_verified.json).

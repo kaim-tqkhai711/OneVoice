@@ -1,0 +1,60 @@
+{
+  "mode": "full",
+  "ok": true,
+  "errors": [],
+  "assets_checked": 370,
+  "python": "3.13.9",
+  "executable": "D:\\bachkhoa\\OneVoice\\OneVoice\\Prototype\\.venv\\clean\\Scripts\\python.exe",
+  "profile": "runtime",
+  "dependencies": [
+    {
+      "distribution": "numpy",
+      "expected": "2.3.5",
+      "installed": "2.3.5",
+      "import_ok": true
+    },
+    {
+      "distribution": "onnxruntime",
+      "expected": "1.22.1",
+      "installed": "1.22.1",
+      "import_ok": true
+    },
+    {
+      "distribution": "psutil",
+      "expected": "7.0.0",
+      "installed": "7.0.0",
+      "import_ok": true
+    },
+    {
+      "distribution": "pydantic",
+      "expected": "2.13.5",
+      "installed": "2.13.5",
+      "import_ok": true
+    },
+    {
+      "distribution": "scipy",
+      "expected": "1.16.3",
+      "installed": "1.16.3",
+      "import_ok": true
+    },
+    {
+      "distribution": "sentencepiece",
+      "expected": "0.2.2",
+      "installed": "0.2.2",
+      "import_ok": true
+    },
+    {
+      "distribution": "sherpa-onnx",
+      "expected": "1.13.8",
+      "installed": "1.13.8",
+      "import_ok": true
+    },
+    {
+      "distribution": "swift-f0",
+      "expected": "0.3.0",
+      "installed": "0.3.0",
+      "import_ok": true
+    }
+  ],
+  "config_hash": "1bb18d73cf09ff17"
+}
